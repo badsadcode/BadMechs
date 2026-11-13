@@ -5,7 +5,9 @@
 import type { Builder, NodeRef } from './builder';
 import type { MaterialId, Vec3 } from './model';
 import type { Rng } from './rng';
-import { block, clampBand, clevis, hatchPanel, hub, memberDown, memberOut, shellDown, shellOut } from './hs/kit';
+import { block, clampBand, clevis, hatchPanel, hub, memberDown, memberOut, shellDown, shellOut, slewRing } from './hs/kit';
+import type { Section } from './hs/shapes';
+import { hoodSections, pauldron } from './hs/hulls';
 
 const D2R = Math.PI / 180;
 
@@ -144,10 +146,10 @@ export function uprightLeg(b: Builder, parent: string, at: Vec3, sp: UprightLegS
   const s = sp.side;
 
   const yaw = b.node(`${p}_hip_yaw`, parent, at, { system: sys, joint: { axis: 'y', min: -25, max: 25, purpose: 'locomotion', kind: 'hip-yaw' } });
-  yaw.comp('joint-housing').cyl([0, sp.d * 0.15, 0], sp.d * 0.55, sp.d * 0.3, 'steel', { segments: 18 });
+  slewRing(yaw.comp('joint-housing'), [0, sp.d * 0.15, 0], sp.d * 0.58, sp.d * 0.26);
   joints.push(yaw.name);
   const roll = yaw.child(`${p}_hip_roll`, [0, 0, 0], { joint: { axis: 'z', min: s > 0 ? -12 : -22, max: s > 0 ? 22 : 12, purpose: 'locomotion', kind: 'hip-roll' } });
-  roll.comp('joint-housing').cylZ([0, 0, 0], sp.d * 0.42, sp.d * 0.9, 'darkMetal');
+  hub(roll.comp('joint-housing'), [0, 0, 0], 'z', { r: sp.d * 0.42, w: sp.d * 0.85, bolts: 8 });
   joints.push(roll.name);
 
   let prev = roll;
@@ -222,7 +224,7 @@ export function uprightLeg(b: Builder, parent: string, at: Vec3, sp: UprightLegS
 
   // ankle pitch + roll, foot levelled
   const ankle = prev.child(`${p}_ankle`, pos, { rot: [sp.phis[n - 1] * D2R, 0, 0], joint: { axis: 'x', min: -35, max: 35, purpose: 'locomotion', kind: 'ankle-pitch' } });
-  ankle.comp('joint-housing').cylX([0, 0, 0], sp.d * 0.3, sp.w * 0.8, 'steel');
+  hub(ankle.comp('joint-housing'), [0, 0, 0], 'x', { r: sp.d * 0.3, w: sp.w * 0.62, bolts: 6 });
   joints.push(ankle.name);
   const foot = ankle.child(`${p}_foot`, [0, 0, 0], { joint: { axis: 'z', min: -18, max: 18, purpose: 'locomotion', kind: 'ankle-roll' } });
   joints.push(foot.name);
@@ -235,40 +237,50 @@ function buildFoot(foot: NodeRef, sp: UprightLegSpec): Vec3 {
   const { footLen: L, footW: W, footH: H } = sp;
   const fr = foot.comp('frame');
   const ar = foot.comp('armor');
-  fr.cylZ([0, 0, 0], sp.d * 0.24, sp.d * 0.5, 'steel');
+  // ankle-roll cradle: bearing along Z sitting in a lofted saddle block
+  hub(fr, [0, 0, 0], 'z', { r: sp.d * 0.24, w: sp.d * 0.55, bolts: 6 });
+  const rr = (w: number, h: number, r: number, extra: object = {}) => ({ k: 'rect' as const, w, h, r, segs: 2, ...extra });
   switch (sp.foot) {
     case 'flat': {
-      // block sole + sloped toe cap + heel spur
-      fr.box([0, -H * 0.82, L * 0.1], [W, H * 0.36, L * 0.95], 'rubber');
-      ar.taper([0, -H * 0.45, L * 0.12], [W * 0.95, H * 0.5, L * 0.85], [0.7, 0.55], [0, -L * 0.08], sp.style.armor);
-      ar.taper([0, -H * 0.62, L * 0.55], [W * 0.9, H * 0.38, L * 0.22], [0.8, 0.4], [0, -L * 0.04], 'darkMetal');
-      fr.box([0, -H * 0.7, -L * 0.42], [W * 0.5, H * 0.45, L * 0.18], 'darkMetal');
-      ar.bolts([-W * 0.35, -H * 0.4, L * 0.52], [W * 0.35, -H * 0.4, L * 0.52], 5, Math.max(0.012, W * 0.02), 'z');
+      // saddle from the ankle down to the foot deck
+      fr.shape([0, 0, 0], { t: 'loft', axis: 'y', sections: [{ p: rr(sp.d * 0.5, sp.d * 0.5, sp.d * 0.12), z: -sp.d * 0.1 }, { p: rr(W * 0.7, L * 0.45, W * 0.1), z: -H * 0.55 }], bevel: W * 0.03 }, 'darkMetal');
+      // rubber-tread sole: heel → ball → toe, toe slightly raised
+      const sole = (z: number, w: number, h: number, oy: number): Section => ({ p: rr(W * w, H * h, H * 0.08), z, oy });
+      fr.shape([0, 0, 0], { t: 'loft', sections: [sole(-L * 0.42, 0.78, 0.3, -H * 0.85), sole(-L * 0.2, 0.95, 0.32, -H * 0.84), sole(L * 0.3, 1, 0.32, -H * 0.84), sole(L * 0.6, 0.86, 0.26, -H * 0.8)], bevel: H * 0.04 }, 'rubber');
+      // armoured upper: tall at the heel, sloping down to a chamfered toe cap (2 panels)
+      const up = (z: number, w: number, h: number, oy: number): Section => ({ p: rr(W * w, H * h, W * 0.12, { topScale: 0.78 }), z, oy });
+      ar.shape([0, 0, 0], { t: 'loft', sections: [up(-L * 0.38, 0.88, 0.5, -H * 0.45), up(-L * 0.05, 0.96, 0.52, -H * 0.42), up(L * 0.12, 0.96, 0.5, -H * 0.44)], bevel: W * 0.03 }, sp.style.armor);
+      ar.shape([0, 0, 0], { t: 'loft', sections: [up(L * 0.16, 0.94, 0.48, -H * 0.46), up(L * 0.4, 0.9, 0.34, -H * 0.55), up(L * 0.58, 0.8, 0.14, -H * 0.64)], bevel: W * 0.025 }, sp.style.armor);
+      fr.shape([0, 0, 0], { t: 'loft', sections: [up(-L * 0.5, 0.5, 0.3, -H * 0.6), up(-L * 0.38, 0.62, 0.46, -H * 0.55)], bevel: W * 0.02 }, 'darkMetal'); // heel spur
+      ar.bolts([-W * 0.3, -H * 0.2, L * 0.13], [W * 0.3, -H * 0.2, L * 0.13], 4, Math.max(0.01, W * 0.02), 'y');
       return [0, -H, L * 0.1];
     }
     case 'claw': {
-      // three forward toes and a rear spur, each a fixed claw (no toe joints – kept simple for IK)
-      for (const a of [-28, 0, 28]) {
+      // three forward toes + rear spur: each a curved, tapering claw loft
+      fr.shape([0, 0, 0], { t: 'lathe', pts: [[0, -H * 0.75], [W * 0.38, -H * 0.75], [W * 0.42, -H * 0.6], [W * 0.3, -H * 0.15], [sp.d * 0.2, 0], [0, 0]], segs: 16 }, 'darkMetal');
+      const toe = (len: number, wid: number): Section[] => [
+        { p: rr(wid, H * 0.42, wid * 0.25), z: 0, oy: -H * 0.62 },
+        { p: rr(wid * 0.85, H * 0.36, wid * 0.22), z: len * 0.45, oy: -H * 0.66 },
+        { p: rr(wid * 0.55, H * 0.26, wid * 0.15), z: len * 0.8, oy: -H * 0.78 },
+        { p: rr(wid * 0.2, H * 0.1, wid * 0.05), z: len, oy: -H * 0.94 },
+      ];
+      for (const a of [-30, 0, 30]) {
         const r = a * D2R;
-        const tx = Math.sin(r) * L * 0.42;
-        const tz = Math.cos(r) * L * 0.42;
-        fr.taper([tx, -H * 0.75, tz], [W * 0.28, H * 0.5, L * 0.6], [0.6, 0.5], [0, L * 0.08], 'darkMetal', { rot: [0, r, 0] });
-        ar.chamfer([tx, -H * 0.45, tz * 0.85], [W * 0.26, H * 0.25, L * 0.42], 0.02, sp.style.armor, { rot: [0, r, 0] });
+        fr.shape([0, 0, 0], { t: 'loft', sections: toe(L * (a === 0 ? 0.62 : 0.52), W * 0.3), bevel: W * 0.015 }, 'darkMetal', { rot: [0, r, 0] });
+        ar.shape([0, 0, 0], { t: 'loft', sections: [{ p: rr(W * 0.3, H * 0.12, W * 0.05, { topScale: 0.7 }), z: L * 0.06, oy: -H * 0.38 }, { p: rr(W * 0.24, H * 0.1, W * 0.04, { topScale: 0.7 }), z: L * 0.36, oy: -H * 0.45 }], bevel: W * 0.012 }, sp.style.armor, { rot: [0, r, 0] });
       }
-      fr.taper([0, -H * 0.75, -L * 0.28], [W * 0.3, H * 0.5, L * 0.38], [0.6, 0.5], [0, -L * 0.05], 'darkMetal');
-      fr.cyl([0, -H * 0.35, 0], W * 0.28, H * 0.7, 'steel', { segments: 12 });
+      fr.shape([0, 0, 0], { t: 'loft', sections: toe(L * 0.36, W * 0.3), bevel: W * 0.015 }, 'darkMetal', { rot: [0, Math.PI, 0] });
       return [0, -H, L * 0.12];
     }
     case 'hoof': {
-      fr.cyl([0, -H * 0.5, 0], W * 0.5, H, 'darkMetal', { rTop: W * 0.36, segments: 16 });
-      fr.cyl([0, -H * 0.93, 0], W * 0.54, H * 0.14, 'rubber', { segments: 16 });
-      ar.box([0, -H * 0.35, W * 0.42], [W * 0.6, H * 0.5, W * 0.12], sp.style.armor, { detail: 1 });
+      fr.shape([0, 0, 0], { t: 'lathe', pts: [[0, -H], [W * 0.56, -H], [W * 0.58, -H * 0.86], [W * 0.5, -H * 0.8], [W * 0.46, -H * 0.3], [W * 0.3, -H * 0.05], [sp.d * 0.2, 0], [0, 0]], segs: 20 }, 'darkMetal');
+      fr.shape([0, 0, 0], { t: 'lathe', pts: [[W * 0.5, -H * 0.99], [W * 0.6, -H * 0.97], [W * 0.6, -H * 0.86], [W * 0.5, -H * 0.84]], segs: 20 }, 'rubber', { detail: 1, collide: false });
+      shellDown(ar, -H * 0.15, [0, 0, W * 0.38], '+z', { len: H * 0.6, radius: W * 0.55, span: 1.8, thick: W * 0.07, material: sp.style.armor, taperEnd: 1.15, belly: W * 0.04 });
       return [0, -H, 0];
     }
     case 'pad':
     default: {
-      fr.cyl([0, -H * 0.55, 0], W * 0.42, H * 0.9, 'darkMetal', { segments: 14 });
-      fr.sphere([0, -H + W * 0.3, 0], W * 0.32, 'rubber', { segments: 12 });
+      fr.shape([0, 0, 0], { t: 'lathe', pts: [[0, -H], [W * 0.45, -H], [W * 0.42, -H * 0.8], [W * 0.25, -H * 0.5], [W * 0.25, 0], [0, 0]], segs: 16 }, 'darkMetal');
       return [0, -H, 0];
     }
   }
@@ -296,7 +308,8 @@ export function sprawlLeg(b: Builder, parent: string, at: Vec3, sp: SprawlLegSpe
   const p = `leg_${sp.id}`;
   const joints: string[] = [];
   const coxa = b.node(`${p}_coxa`, parent, at, { system: sys, rot: [0, sp.yaw, 0], joint: { axis: 'y', min: -28, max: 28, purpose: 'locomotion', kind: 'coxa-yaw' } });
-  coxa.comp('joint-housing').cyl([0, 0, 0], sp.h * 0.6, sp.h * 1.1, 'steel', { segments: 18 });
+  slewRing(coxa.comp('joint-housing'), [0, 0, 0], sp.h * 0.62, sp.h * 0.5);
+  hub(coxa.comp('joint-housing'), [0, 0, 0], 'y', { r: sp.h * 0.45, w: sp.h * 1.0, bolts: 0 });
   joints.push(coxa.name);
   const names = ['femur', 'tibia', 'tarsus'];
   const kinds = ['femur-pitch', 'tibia-pitch', 'tarsus-pitch'];
@@ -334,11 +347,14 @@ export function sprawlLeg(b: Builder, parent: string, at: Vec3, sp: SprawlLegSpe
 
   // foot: ball-jointed pad, levelled. modelled as a passive pitch joint for terrain conformance
   const lastElev = sp.elev[sp.elev.length - 1];
-  const foot = prev.child(`${p}_foot`, pos, { rot: [lastElev * D2R * -1 * -1, 0, 0], joint: { axis: 'x', min: -30, max: 30, purpose: 'locomotion', kind: 'foot-pitch' } });
+  const foot = prev.child(`${p}_foot`, pos, { rot: [lastElev * D2R, 0, 0], joint: { axis: 'x', min: -30, max: 30, purpose: 'locomotion', kind: 'foot-pitch' } });
   // foot local frame is level: geometry hangs down from the tip
   const fr = foot.comp('frame');
-  fr.cyl([0, -sp.footR * 0.6, 0], sp.footR * 0.55, sp.footR * 1.2, 'darkMetal', { segments: 12 });
-  fr.cyl([0, -sp.footR * 1.25, 0], sp.footR, sp.footR * 0.3, 'rubber', { rTop: sp.footR * 0.7, segments: 14 });
+  const R = sp.footR;
+  // ball-jointed foot: socket housing, tapered shank, treaded pad
+  hub(fr, [0, 0, 0], 'x', { r: R * 0.5, w: sp.w * 0.5, bolts: 0 });
+  fr.shape([0, 0, 0], { t: 'lathe', pts: [[0, -R * 1.4], [R, -R * 1.4], [R * 1.02, -R * 1.25], [R * 0.75, -R * 1.1], [R * 0.42, -R * 0.75], [R * 0.36, -R * 0.1], [0, -R * 0.1]], segs: 16 }, 'darkMetal');
+  fr.shape([0, 0, 0], { t: 'lathe', pts: [[R * 0.7, -R * 1.42], [R * 1.08, -R * 1.4], [R * 1.08, -R * 1.26], [R * 0.9, -R * 1.2]], segs: 16 }, 'rubber', { detail: 1, collide: false });
   joints.push(foot.name);
   drop += sp.footR * 1.4;
   return { joints, foot: foot.name, contact: [0, -sp.footR * 1.4, 0], drop, reachOut: out };
@@ -368,12 +384,10 @@ export function arm(b: Builder, parent: string, at: Vec3, sp: ArmSpec) {
   const joints: string[] = [];
   const sh = b.node(`${p}_shoulder_pitch`, parent, at, { system: sys, joint: { axis: 'x', min: -110, max: 50, purpose: 'manipulation', kind: 'shoulder-pitch' } });
   const shh = sh.comp('joint-housing');
-  shh.cylX([s * sp.w * 0.2, 0, 0], sp.d * 0.62, sp.w * 0.9, 'darkMetal', { segments: 20 });
-  // pauldron
+  hub(shh, [s * sp.w * 0.2, 0, 0], 'x', { r: sp.d * 0.6, w: sp.w * 0.9, bolts: 10 });
+  // pauldron: curved hood over the shoulder bearing
   if (sp.style.plating > 0.2) {
-    const pa = sh.comp('armor');
-    pa.taper([s * sp.w * 0.45, sp.d * 0.35, 0], [sp.w * 1.15, sp.d * 0.55, sp.d * 1.6], [0.7, 0.8], [-s * sp.w * 0.1, 0], sp.style.armor);
-    pa.bolts([s * sp.w * 0.1, sp.d * 0.66, -sp.d * 0.6], [s * sp.w * 0.1, sp.d * 0.66, sp.d * 0.6], 5, sp.w * 0.03, 'y');
+    pauldron(sh.comp('armor'), [s * sp.w * 0.32, -sp.d * 0.05, 0], s, sp.d * (0.72 + sp.style.plating * 0.2), sp.d * (1.4 + sp.style.plating * 0.4), sp.d * 0.13, sp.style.armor, sp.style.rng);
   }
   joints.push(sh.name);
   const roll = sh.child(`${p}_shoulder_roll`, [s * sp.w * 0.55, 0, 0], { joint: { axis: 'z', min: s > 0 ? -10 : -70, max: s > 0 ? 70 : 10, purpose: 'manipulation', kind: 'shoulder-roll' } });
@@ -408,7 +422,7 @@ function hand(b: Builder, wrist: NodeRef, sp: ArmSpec): string {
   const p = `arm_${sp.id}`;
   const palmH = sp.d * 0.5;
   const palm = wrist.comp('frame');
-  palm.chamfer([0, -sp.d * 0.25 - palmH / 2, 0], [sp.w * 0.95, palmH, sp.d * 0.85], 0.03, 'darkMetal', { rot: [Math.PI / 2, 0, 0] });
+  block(palm, [0, -sp.d * 0.25 - palmH / 2, 0], [sp.w * 0.95, palmH, sp.d * 0.85], 'darkMetal', { r: sp.w * 0.12, segs: 2 });
   const tip = wrist.child(`${p}_tool_tip`, [0, -sp.d * 0.25 - palmH - sp.fore * 0.3, 0], { role: 'socket' });
   if (sp.tool === 'drill') {
     const spin = wrist.child(`${p}_drill_spin`, [0, -sp.d * 0.25 - palmH, 0], { joint: { axis: 'y', min: -180, max: 180, purpose: 'tool', kind: 'spin' }, tags: ['continuous'] });
@@ -444,32 +458,40 @@ function gunArm(b: Builder, fore: NodeRef, sp: ArmSpec): string {
   const L = sp.fore * 1.25;
   const body = fore.comp('weapon');
   // receiver block hangs along the forearm (local -Y, which points forward after the elbow bend)
-  body.chamfer([0, -L * 0.3, 0], [sp.w * 1.15, L * 0.6, sp.d * 1.1], sp.w * 0.12, 'darkMetal', { rot: [Math.PI / 2, 0, 0] });
+  block(body, [0, -L * 0.3, 0], [sp.w * 1.15, L * 0.6, sp.d * 1.1], 'darkMetal', { r: sp.w * 0.16, segs: 2, frontPanel: { inset: sp.w * 0.1, depth: sp.d * 0.06 } });
   const ar = fore.comp('armor');
-  ar.taper([0, -L * 0.28, sp.d * 0.62], [sp.w * 1.2, L * 0.5, sp.d * 0.25], [0.85, 1], [0, 0], sp.style.armor);
-  ar.bolts([-sp.w * 0.4, -L * 0.08, sp.d * 0.76], [-sp.w * 0.4, -L * 0.5, sp.d * 0.76], 5, sp.w * 0.03, 'z');
+  shellDown(ar, -L * 0.02, [0, 0, sp.d * 0.5], '+z', { len: L * 0.55, radius: sp.w * 1.1, span: 1.5, thick: sp.d * 0.12, material: sp.style.armor, panels: 2, taperEnd: 0.85, belly: sp.d * 0.05 });
+  ar.bolts([-sp.w * 0.35, -L * 0.04, sp.d * 0.64], [sp.w * 0.35, -L * 0.04, sp.d * 0.64], 4, sp.w * 0.03, 'z');
+  // side ammo feed / cooling jacket
+  block(body, [sp.side * sp.w * 0.62, -L * 0.3, -sp.d * 0.1], [sp.w * 0.28, L * 0.42, sp.d * 0.7], 'paint2', { r: sp.w * 0.06, detail: 1, frontPanel: { inset: sp.w * 0.04, depth: sp.w * 0.03, slats: 5 }, rot: [Math.PI / 2, 0, 0] });
   const muzzle = fore.child(`${p}_muzzle`, [0, -L * 1.25, 0], { role: 'socket' });
+  const W = sp.w;
   if (sp.tool === 'cannon') {
-    body.cyl([0, -L * 0.85, 0], sp.w * 0.22, L * 0.8, 'steel', { segments: 16 });
-    body.cyl([0, -L * 1.2, 0], sp.w * 0.3, L * 0.14, 'darkMetal', { segments: 8, detail: 1 });
-    body.cyl([0, -L * 0.6, 0], sp.w * 0.3, L * 0.12, 'darkMetal', { segments: 16, detail: 1 });
+    // single heavy barrel: mantlet ring → tapered tube → fume extractor → muzzle brake
+    body.shape([0, 0, 0], { t: 'lathe', segs: 20, pts: [
+      [0, -L * 1.25], [W * 0.2, -L * 1.25], [W * 0.31, -L * 1.235], [W * 0.31, -L * 1.13], [W * 0.2, -L * 1.12], [W * 0.31, -L * 1.11], [W * 0.31, -L * 1.06], [W * 0.17, -L * 1.05],
+      [W * 0.17, -L * 0.92], [W * 0.25, -L * 0.88], [W * 0.25, -L * 0.8], [W * 0.19, -L * 0.77], [W * 0.21, -L * 0.62], [W * 0.36, -L * 0.6], [W * 0.38, -L * 0.56], [W * 0.38, -L * 0.52], [0, -L * 0.52],
+    ] }, 'steel');
+    body.shape([0, 0, 0], { t: 'lathe', segs: 20, pts: [[W * 0.3, -L * 1.244], [W * 0.34, -L * 1.2], [W * 0.34, -L * 1.16], [W * 0.3, -L * 1.14]] }, 'darkMetal', { detail: 2, collide: false });
   } else if (sp.tool === 'rotary') {
     const spin = fore.child(`${p}_barrels_spin`, [0, -L * 0.6, 0], { joint: { axis: 'y', min: -180, max: 180, purpose: 'tool', kind: 'spin' }, tags: ['continuous'] });
     const bc = spin.comp('weapon');
     for (let i = 0; i < 6; i++) {
       const a = (i / 6) * Math.PI * 2;
-      bc.cyl([Math.cos(a) * sp.w * 0.26, -L * 0.32, Math.sin(a) * sp.w * 0.26], sp.w * 0.07, L * 0.64, 'steel', { segments: 8 });
+      bc.shape([Math.cos(a) * W * 0.25, 0, Math.sin(a) * W * 0.25], { t: 'lathe', segs: 8, pts: [[0, -L * 0.66], [W * 0.075, -L * 0.66], [W * 0.075, -L * 0.6], [W * 0.06, -L * 0.59], [W * 0.06, 0], [0, 0]] }, 'steel');
     }
-    bc.cyl([0, -L * 0.12, 0], sp.w * 0.4, L * 0.06, 'darkMetal', { segments: 16 });
-    bc.cyl([0, -L * 0.55, 0], sp.w * 0.38, L * 0.05, 'darkMetal', { segments: 16, detail: 1 });
-    body.cyl([0, -L * 0.55, 0], sp.w * 0.45, L * 0.12, 'darkMetal', { segments: 16 });
+    // clamp rings and the front barrel plate
+    for (const y of [-0.2, -0.45]) bc.shape([0, 0, 0], { t: 'lathe', segs: 18, pts: [[W * 0.1, L * y - L * 0.02], [W * 0.36, L * y - L * 0.02], [W * 0.38, L * y], [W * 0.36, L * y + L * 0.02], [W * 0.1, L * y + L * 0.02]] }, 'darkMetal', { detail: 1 });
+    bc.shape([0, 0, 0], { t: 'lathe', segs: 18, pts: [[0, -L * 0.04], [W * 0.4, -L * 0.04], [W * 0.42, -L * 0.02], [W * 0.42, L * 0.02], [0, L * 0.02]] }, 'darkMetal');
+    // motor drum
+    body.shape([0, 0, 0], { t: 'lathe', segs: 20, pts: [[0, -L * 0.62], [W * 0.44, -L * 0.62], [W * 0.5, -L * 0.58], [W * 0.5, -L * 0.48], [W * 0.42, -L * 0.45], [0, -L * 0.45]] }, 'darkMetal');
     b.mounts.push({ name: `${p}_rotary`, node: spin.name, type: 'weapon', note: 'barrel cluster spins on Y (continuous)' });
   } else {
-    // missile box on the forearm
-    body.box([0, -L * 0.75, 0], [sp.w * 1.3, L * 0.5, sp.d * 1.3], sp.style.armor);
-    const n = 3;
-    for (let i = 0; i < n; i++)
-      for (let j = 0; j < n; j++) body.cyl([(i - 1) * sp.w * 0.38, -L * 1.0, (j - 1) * sp.d * 0.38], sp.w * 0.13, 0.02, 'rubber', { segments: 10, detail: 1, collide: false });
+    // missile box: launch face points forward (-Y in the forearm frame)
+    block(body, [0, -L * 0.78, 0], [W * 1.35, sp.d * 1.35, L * 0.48], sp.style.armor, { r: W * 0.12, segs: 2, rot: [Math.PI / 2, 0, 0], frontPanel: { inset: W * 0.08, depth: W * 0.05 } });
+    for (let i = 0; i < 3; i++)
+      for (let j = 0; j < 3; j++)
+        body.shape([(i - 1) * W * 0.38, 0, (j - 1) * sp.d * 0.38], { t: 'lathe', segs: 10, pts: [[0, -L * 0.98], [W * 0.1, -L * 0.98], [W * 0.14, -L * 0.995], [W * 0.15, -L * 1.0], [W * 0.15, -L * 0.96], [0, -L * 0.96]] }, 'rubber', { detail: 1, collide: false });
   }
   b.mounts.push({ name: `${p}_weapon`, node: muzzle.name, type: 'weapon' });
   return muzzle.name;
@@ -514,9 +536,16 @@ export function cockpit(b: Builder, parent: string, at: Vec3, sp: CockpitSpec): 
     shell.box([0, ih * 0.5, -idp / 2 - t / 2], [iw * 0.9, ih * 0.9, t], 'darkMetal');
   } else {
     shell.box([0, -t / 2, 0], [iw + 2 * t, t, idp + 2 * t], 'darkMetal'); // floor
-    shell.box([0, ih + t / 2, -idp * 0.1], [iw + 2 * t, t, idp * 0.8 + 2 * t], sp.armor); // roof (rear part)
-    for (const sx of [-1, 1]) shell.box([(sx * (iw + t)) / 2, ih / 2, -idp * 0.05], [t, ih, idp * 0.9 + t], sp.armor); // sides
     shell.box([0, ih / 2, -idp / 2 - t / 2], [iw + 2 * t, ih + t, t], 'darkMetal'); // rear bulkhead
+    // arched, lofted hood = walls + roof in one hard-surface shell (hollow, open at the floor)
+    const frontScale = sp.style === 'bubble' ? 0.55 : sp.style === 'canopy' ? 0.72 : 0.9;
+    shell.shape([0, 0, 0], { t: 'loft', sections: hoodSections(iw, ih, t * 1.4, idp, frontScale, Math.min(iw, ih) * 0.35), bevel: t * 0.3 }, sp.armor, { collide: false });
+    // proxies standing in for the hollow hood in collision + interior validation
+    shell.box([0, ih + t / 2, -idp * 0.1], [iw + 2 * t, t, idp * 0.8 + 2 * t], sp.armor, { hidden: true });
+    for (const sx of [-1, 1]) shell.box([(sx * (iw + t)) / 2, ih / 2, -idp * 0.05], [t, ih, idp * 0.9 + t], sp.armor, { hidden: true });
+    // roof rib + side window strip
+    block(shell, [0, ih + t * 1.6, -idp * 0.1], [iw * 0.3, t * 0.6, idp * 0.7], 'darkMetal', { detail: 1, collide: false });
+    for (const sx of [-1, 1]) shell.box([sx * (iw / 2 + t * 1.42), ih * 0.62, idp * 0.12], [0.012, ih * 0.16, idp * 0.4], 'glass', { detail: 1, collide: false });
     const glass = pod.comp('glass');
     const frame = pod.comp('cockpit', 'frame');
     if (sp.style === 'bubble') {
@@ -615,14 +644,14 @@ export function missileRack(b: Builder, parent: string, at: Vec3, id: string, si
   yaw.comp('joint-housing').cyl([0, size * 0.08, 0], size * 0.3, size * 0.16, 'steel', { segments: 16 });
   const pitch = yaw.child(`pod_${id}_pitch`, [0, size * 0.3, 0], { joint: { axis: 'x', min: -45, max: 15, purpose: 'aim', kind: 'pod-pitch' } });
   const box = pitch.comp('weapon');
-  box.chamfer([0, size * 0.25, 0], [size, size * 0.62, size * 0.9], size * 0.08, style.armor);
+  block(box, [0, size * 0.25, 0], [size, size * 0.62, size * 0.9], style.armor, { r: size * 0.08, segs: 2, top: [0.92, 0.95], frontPanel: { inset: size * 0.04, depth: size * 0.03 } });
+  block(box, [0, size * 0.25, -size * 0.52], [size * 0.8, size * 0.5, size * 0.14], 'darkMetal', { r: size * 0.05, detail: 1 });
+  for (const sx of [-1, 1]) hub(box, [sx * size * 0.52, size * 0.25, 0], 'x', { r: size * 0.16, w: size * 0.08, bolts: 0, detail: 1, collide: false });
   const rows = 2;
   const cols = 3;
   for (let i = 0; i < cols; i++)
-    for (let j = 0; j < rows; j++) {
-      box.cylZ([(i - 1) * size * 0.28, size * (0.1 + j * 0.28), size * 0.45], size * 0.1, 0.03, 'rubber', { segments: 10, detail: 1, collide: false });
-      box.cylZ([(i - 1) * size * 0.28, size * (0.1 + j * 0.28), size * 0.455], size * 0.06, 0.02, 'hazard', { segments: 8, detail: 2, collide: false });
-    }
+    for (let j = 0; j < rows; j++)
+      box.shape([(i - 1) * size * 0.28, size * (0.11 + j * 0.28), 0], { t: 'lathe', axis: 'z', segs: 12, pts: [[0, size * 0.41], [size * 0.09, size * 0.41], [size * 0.115, size * 0.43], [size * 0.115, size * 0.46], [size * 0.06, size * 0.455], [0, size * 0.455]] }, j === 1 && i === 1 ? 'hazard' : 'rubber', { detail: 1, collide: false });
   box.bolts([-size * 0.45, size * 0.57, -size * 0.4], [size * 0.45, size * 0.57, -size * 0.4], 5, size * 0.02, 'y');
   b.mounts.push({ name: `pod_${id}`, node: pitch.name, type: 'weapon', note: 'missile pod, aim with yaw/pitch' });
   return pitch.name;

@@ -1,6 +1,8 @@
 import { Builder } from './builder';
 import type { MaterialId, Mech, Vec3 } from './model';
 import { makePalette } from './palette';
+import { bodyHull, torsoHull, TORSO_ARCHES, HullResult } from './hs/hulls';
+import { block, grille, hub } from './hs/kit';
 import { arm, ArmTool, cockpit, ladder, lightPod, missileRack, SegStyle, segmentOut, sprawlLeg, uprightLeg, vents } from './parts';
 import { fitJointLimits, LimitFit } from './validate';
 import { GenCtx, MechRecipe, mechName, ResolvedOption } from './recipe';
@@ -135,6 +137,7 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
   const ta = torso.comp('armor');
   // torso spine / body core (behind the cockpit zone)
   let cockpitAt: Vec3;
+  let hull: HullResult | null = null;
   // exosuit: a harness cage around the pilot's torso; their legs go down into the mech's thighs
   const iw = exo ? 0.62 : Math.max(1.05, H * 0.11);
   const ih = exo ? 0.95 : Math.max(1.32, H * 0.1);
@@ -149,48 +152,32 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
     cockpitAt = [0, 0.02, -td * 0.3 + idp / 2 + 0.03];
   } else {
     const coreZ = -td * 0.18;
-    if (colo) {
-      // hollow core: walls, floor and roof so the machinery deck inside is real space
-      const cw = tw * 0.85;
-      const ch = th * 0.95;
-      const cd = td * 0.7;
-      const t = 0.25;
-      const cy = th * 0.45;
-      tf.box([0, cy - ch / 2 + t / 2, coreZ], [cw, t, cd], 'darkMetal');
-      tf.box([0, cy + ch / 2 - t / 2, coreZ], [cw, t, cd], 'darkMetal');
-      for (const sx of [-1, 1]) tf.box([sx * (cw / 2 - t / 2), cy, coreZ], [t, ch, cd], 'darkMetal');
-      tf.box([0, cy, coreZ - cd / 2 + t / 2], [cw, ch, t], 'darkMetal');
-      tf.box([0, cy, coreZ + cd / 2 - t / 2], [cw, ch, t], 'darkMetal');
-    } else tf.chamfer([0, th * 0.45, coreZ], [tw * 0.85, th * 0.95, td * 0.7], th * 0.1, 'darkMetal');
-    // shoulder yoke
-    tf.chamfer([0, th * 0.85, coreZ], [tw * 1.15, th * 0.22, td * 0.5], th * 0.06, 'darkMetal');
-    // armour shell around the core, top deck + flanks + back
-    ta.taper([0, th * 1.0, coreZ], [tw * 0.95, th * 0.14, td * 0.8], [0.85, 0.85], [0, 0], 'paint');
-    for (const sx of [-1, 1]) {
-      ta.chamfer([sx * tw * 0.47, th * 0.48, coreZ], [tw * 0.12, th * 0.8, td * 0.8], th * 0.05, 'paint', { rot: [0, 0, 0] });
-      ta.bolts([sx * (tw * 0.53 + 0.005), th * 0.8, coreZ - td * 0.3], [sx * (tw * 0.53 + 0.005), th * 0.8, coreZ + td * 0.3], 6, H * 0.003, 'x');
-      if (ctx.rng('torso').chance(0.7)) ta.box([sx * (tw * 0.53 + 0.004), th * 0.4, coreZ], [0.01, th * 0.18, td * 0.3], 'hazard', { detail: 1, collide: false });
-    }
-    ta.taper([0, th * 0.55, coreZ - td * 0.38], [tw * 0.8, th * 0.85, td * 0.1], [0.9, 1], [0, 0], 'paint2');
-    vents(torso, [tw * 0.2, th * 0.55, coreZ - td * 0.44], tw * 0.25, th * 0.4, 'z', -1);
-    vents(torso, [-tw * 0.2, th * 0.55, coreZ - td * 0.44], tw * 0.25, th * 0.4, 'z', -1);
-    // reactor pack / backpack
+    const arch = ctx.choice('torso.arch', 'Torso architecture', 'torso', TORSO_ARCHES, r.role === 'scout' || weight === 'light' ? [0.5, 4, 0.5, 1.5, 0.5] : weight === 'assault' ? [2, 0.3, 3, 1, 1.5] : fighter ? [3, 0.8, 1.5, 1.5, 2] : [3, 1.5, 0.5, 2, 1]);
+    hull = torsoHull(torso, arch, tw, th, td * 0.8, coreZ, 'paint', 'paint2', ctx.rng('torso.hull'), colo);
+    // backpack: reactor / ammo housing hung on the back of the hull
     if (ctx.flag('torso.backpack', 'Reactor backpack', 'torso', 0.6)) {
       const bp = torso.comp('equipment', 'reactor');
-      bp.chamfer([0, th * 0.6, coreZ - td * 0.58], [tw * 0.6, th * 0.7, td * 0.3], th * 0.06, 'paint2');
-      for (const sx of [-1, 1]) bp.cyl([sx * tw * 0.2, th * 1.15, coreZ - td * 0.62], H * 0.018, th * 0.5, 'darkMetal', { segments: 10, detail: 1 });
+      const bz = hull.backZ - td * 0.14;
+      block(bp, [hull.shiftX, th * 0.62, bz], [tw * 0.56, th * 0.62, td * 0.24], 'paint2', { r: th * 0.06, segs: 2, top: [0.9, 0.85], backPanel: { inset: th * 0.05, depth: td * 0.02 } });
+      for (const sx of [-1, 1]) {
+        bp.shape([hull.shiftX + sx * tw * 0.2, th * 0.95, bz - td * 0.04], { t: 'lathe', pts: [[0, 0], [H * 0.02, 0], [H * 0.022, th * 0.05], [H * 0.018, th * 0.42], [H * 0.024, th * 0.46], [H * 0.024, th * 0.5], [0, th * 0.5]], segs: 12 }, 'darkMetal', { detail: 1 });
+        grille(bp, [hull.shiftX + sx * tw * 0.13, th * 0.6, bz - td * 0.12], tw * 0.18, th * 0.4, Math.min(tw, th) * 0.03, 'darkMetal', [0, Math.PI, 0]);
+      }
     }
-    const front = coreZ + td * 0.35;
-    const cx = cockpitPos === 'offset' ? (ctx.rng('cockpit').chance(0.5) ? 1 : -1) * tw * 0.18 : 0;
-    const cy = cockpitPos === 'high' ? th * 0.55 : th * 0.2;
+    if (arch === 'asym') {
+      // side weapon bay balancing the offset hull
+      const bx = hull.shiftX + hull.halfW + tw * 0.12;
+      block(ta, [bx, th * 0.45, coreZ + td * 0.05], [tw * 0.26, th * 0.62, td * 0.62], 'paint2', { r: th * 0.05, top: [0.85, 0.9], frontPanel: { inset: th * 0.05, depth: td * 0.02, slats: 4 } });
+      ta.bolts([bx - tw * 0.1, th * 0.78, coreZ - td * 0.2], [bx - tw * 0.1, th * 0.78, coreZ + td * 0.3], 6, H * 0.003, 'y');
+    }
+    // hull lights
+    const front = hull.frontZ;
+    const cx = cockpitPos === 'offset' || arch === 'asym' ? (arch === 'asym' ? hull.shiftX : (ctx.rng('cockpit').chance(0.5) ? 1 : -1) * tw * 0.18) : 0;
+    const cy = cockpitPos === 'high' ? th * 0.55 : arch === 'hunch' ? th * 0.28 : th * 0.2;
     cockpitAt = [cx, cy, front + idp / 2 + wall * 1.2];
-    if (cockpitPos === 'high') {
-      // neck mount for a high "head" cockpit
-      tf.chamfer([cx, th * 0.75, front], [iw * 0.6, th * 0.3, idp * 0.6], 0.05, 'darkMetal');
-    }
-    // lights
-    lightPod(torso, [tw * 0.38, th * 0.85, front + td * 0.05], H * 0.012);
-    lightPod(torso, [-tw * 0.38, th * 0.85, front + td * 0.05], H * 0.012);
+    if (cockpitPos === 'high') block(tf, [cx, th * 0.62, front - idp * 0.2], [iw * 0.7, th * 0.4, idp * 0.4], 'darkMetal', { r: th * 0.04 });
+    lightPod(torso, [hull.shiftX + hull.halfW * 0.7, hull.topY * 0.86, front - td * 0.02], H * 0.012);
+    lightPod(torso, [hull.shiftX - hull.halfW * 0.7, hull.topY * 0.86, front - td * 0.02], H * 0.012);
   }
 
   cockpit(b, 'torso', cockpitAt, {
@@ -206,7 +193,7 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
   if (!exo) {
     // cockpit armour cheeks merge the pod into the torso
     const ca = b.get('cockpit').comp('armor');
-    for (const sx of [-1, 1]) ca.taper([sx * (iw / 2 + wall * 1.5), ih * 0.45, -idp * 0.05], [wall * 2, ih * 0.9, idp * 0.95], [1, 0.8], [0, -idp * 0.05], 'paint');
+    for (const sx of [-1, 1]) block(ca, [sx * (iw / 2 + wall * 2.2), ih * 0.4, -idp * 0.12], [wall * 1.6, ih * 0.62, idp * 0.7], 'paint2', { r: wall * 0.6, top: [1, 0.8], bevel: wall * 0.4, rot: [0, sx > 0 ? 0 : Math.PI, 0] });
   }
 
   // ── arms
@@ -242,7 +229,7 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
   if (!exo && (fighter || armless)) {
     const pods = armless ? 2 : ctx.int('pods.count', 'Shoulder pods', 'pods', 0, 2);
     const podSize = H * 0.1 * (0.8 + bulk * 0.4);
-    const top = th * 1.07;
+    const top = (hull?.topY ?? th) + th * 0.06;
     if (pods === 1) missileRack(b, 'torso', [ctx.rng('pods').chance(0.5) ? tw * 0.3 : -tw * 0.3, top, -td * 0.25], 'C', podSize, style(ctx, 'pods', plating, false));
     if (pods === 2) for (const [id, sx] of [['L', 1], ['R', -1]] as const) missileRack(b, 'torso', [sx * tw * 0.32, top, -td * 0.25], id, podSize, style(ctx, 'pods', plating, false));
   }
@@ -378,34 +365,16 @@ function quadruped(ctx: GenCtx, b: Builder, colossal: boolean): string {
   for (const l of legsOut) b.leg({ name: `leg_${l.id}`, side: l.id.endsWith('L') ? 'L' : 'R', index: l.id.startsWith('F') ? 0 : 1, style: legKind === 'upright' ? 'mammal' : 'insect', joints: l.joints, footNode: l.foot, contactOffset: l.contact, gaitPhase: phases[l.id] });
 
   // ── hull
-  const fr = body.comp('frame');
-  const ar = body.comp('armor');
   const deckTop = bodyH * 0.5;
-  if (colossal) {
-    // hollow hull so the machinery bay is real space
-    const cw = bodyW * 0.85;
-    const ch = bodyH * 0.8;
-    const cd = bodyL * 0.95;
-    const t = 0.3;
-    fr.box([0, -ch / 2 + t / 2, 0], [cw, t, cd], 'darkMetal');
-    fr.box([0, ch / 2 - t / 2, 0], [cw, t, cd], 'darkMetal');
-    for (const sx of [-1, 1]) fr.box([sx * (cw / 2 - t / 2), 0, 0], [t, ch, cd], 'darkMetal');
-    for (const sz of [-1, 1]) fr.box([0, 0, sz * (cd / 2 - t / 2)], [cw, ch, t], 'darkMetal');
-  } else fr.chamfer([0, 0, 0], [bodyW * 0.85, bodyH * 0.8, bodyL * 0.95], bodyH * 0.12, 'darkMetal');
-  for (const sx of [-1, 1]) {
-    fr.box([sx * bodyW * 0.45, -bodyH * 0.1, 0], [bodyW * 0.1, bodyH * 0.5, bodyL * 0.9], 'steel'); // side rails / leg girders
-    ar.taper([sx * bodyW * 0.47, bodyH * 0.18, 0], [bodyW * 0.08, bodyH * 0.55, bodyL * 0.8], [1, 0.9], [0, 0], 'paint');
-    ar.bolts([sx * (bodyW * 0.52), bodyH * 0.38, -bodyL * 0.35], [sx * (bodyW * 0.52), bodyH * 0.38, bodyL * 0.35], 10, H * 0.003, 'x');
-  }
-  ar.box([0, deckTop - bodyH * 0.06, 0], [bodyW * 0.95, bodyH * 0.12, bodyL * 0.97], 'paint'); // deck plate
-  vents(body, [0, deckTop + 0.02, -bodyL * 0.38], bodyW * 0.4, bodyL * 0.12, 'y');
+  bodyHull(body, 'chassis', bodyW * 0.95, bodyH, bodyL, 'paint', 'paint2', ctx.rng('body.hull'), colossal);
+  grille(body.comp('armor', 'plates'), [0, deckTop + bodyH * 0.07, -bodyL * 0.36], bodyW * 0.4, bodyL * 0.12, bodyH * 0.04, 'darkMetal', [-Math.PI / 2, 0, 0]);
 
   // ── cab
   const cabStyle = ctx.choice('cockpit.style', 'Cockpit', 'cockpit', ['canopy', 'armored', 'bubble'] as const, fighter ? [1, 2, 0.5] : [2, 0.5, 1.5]);
   const iw = Math.max(1.4, H * (colossal ? 0.12 : 0.15));
   const ih = Math.max(1.5, H * (colossal ? 0.1 : 0.14));
   const idp = Math.max(1.4, H * (colossal ? 0.1 : 0.14));
-  cockpit(b, 'body', [0, deckTop, bodyL * 0.5 - idp * 0.45], { style: cabStyle, iw, ih, id: idp, wall: Math.max(0.07, H * 0.008), armor: 'paint', hatch: 'rear', rng: ctx.rng('cockpit') });
+  cockpit(b, 'body', [0, deckTop + bodyH * 0.06, bodyL * 0.5 - idp * 0.45], { style: cabStyle, iw, ih, id: idp, wall: Math.max(0.07, H * 0.008), armor: 'paint', hatch: 'rear', rng: ctx.rng('cockpit') });
   lightPod(body, [bodyW * 0.36, 0, bodyL * 0.48], H * 0.015);
   lightPod(body, [-bodyW * 0.36, 0, bodyL * 0.48], H * 0.015);
   ladder(body, bodyW * 0.51, bodyL * 0.15, -drop + H * 0.05 > -bodyH ? -bodyH * 0.4 : -bodyH * 0.4, deckTop);
@@ -448,7 +417,7 @@ function quadruped(ctx: GenCtx, b: Builder, colossal: boolean): string {
   }
   if (kit === 'decks') {
     // colossal hauler: a walkable deck house on the hull, entered by the side ladder
-    const house = body.child('deck_house', [0, deckTop, -bodyL * 0.15], { role: 'group', system: 'interior' });
+    const house = body.child('deck_house', [0, deckTop + bodyH * 0.06, -bodyL * 0.15], { role: 'group', system: 'interior' });
     const hw = bodyW * 0.7;
     const hh = 2.6;
     const hd = bodyL * 0.45;
@@ -526,7 +495,7 @@ function multiLeg(ctx: GenCtx, b: Builder, n: 6 | 8): string {
   const plating = fighter ? 0.55 + bulk * 0.3 : 0.25 + bulk * 0.35;
   const lattice = ctx.flag('frame.lattice', 'Open lattice frame', 'body', fighter ? 0.1 : 0.35);
   const hydraulics = ctx.flag('frame.hydraulics', 'Exposed hydraulics', 'legs', 0.8);
-  const bodyShape = ctx.choice('body.shape', 'Body shape', 'body', ['pod', 'saucer', 'long'] as const, [2, 1.5, 1]);
+  const bodyShape = ctx.choice('body.shape', 'Body shape', 'body', ['pod', 'saucer', 'long', 'chassis'] as const, [2, 1.5, 1, 1]);
   const bodyW = H * (bodyShape === 'saucer' ? 0.75 : 0.55) * (0.9 + bulk * 0.25);
   const bodyL = H * (bodyShape === 'long' ? 1.15 : bodyShape === 'saucer' ? 0.8 : 0.85) * (0.9 + bulk * 0.2);
   const bodyH = H * 0.24 * (0.9 + bulk * 0.3);
@@ -548,7 +517,7 @@ function multiLeg(ctx: GenCtx, b: Builder, n: 6 | 8): string {
       ['R', -1],
     ] as const) {
       const id = `${sideName}${i}`;
-      const res = sprawlLeg(b, 'body', [side * bodyW * 0.42, -bodyH * 0.15, z], {
+      const res = sprawlLeg(b, 'body', [side * bodyW * 0.47, -bodyH * 0.15, z], {
         id,
         side,
         yaw: side * spread,
@@ -573,25 +542,14 @@ function multiLeg(ctx: GenCtx, b: Builder, n: 6 | 8): string {
   for (const l of legNames) b.leg({ name: l.name, side: l.side, index: l.idx, style: 'insect', joints: l.joints, footNode: l.foot, contactOffset: l.contact, gaitPhase: groupA.includes(l.name) ? 0 : 0.5 });
 
   // body
-  const fr = body.comp('frame');
-  const ar = body.comp('armor');
-  fr.chamfer([0, 0, 0], [bodyW * 0.9, bodyH * 0.7, bodyL * 0.9], bodyH * 0.18, 'darkMetal');
-  if (bodyShape === 'saucer') {
-    ar.cyl([0, bodyH * 0.3, 0], Math.min(bodyW, bodyL) * 0.5, bodyH * 0.2, 'paint', { rTop: Math.min(bodyW, bodyL) * 0.38, segments: 28 });
-  } else {
-    ar.taper([0, bodyH * 0.38, 0], [bodyW * 0.92, bodyH * 0.25, bodyL * 0.88], [0.8, 0.85], [0, -bodyL * 0.02], 'paint');
-  }
-  for (const sx of [-1, 1]) {
-    ar.chamfer([sx * bodyW * 0.44, 0, 0], [bodyW * 0.08, bodyH * 0.45, bodyL * 0.82], bodyH * 0.05, 'paint2');
-    ar.bolts([sx * bodyW * 0.485, bodyH * 0.18, -bodyL * 0.35], [sx * bodyW * 0.485, bodyH * 0.18, bodyL * 0.35], 9, H * 0.004, 'x');
-  }
-  vents(body, [0, bodyH * 0.52, -bodyL * 0.28], bodyW * 0.35, bodyL * 0.15, 'y');
-  fr.cyl([0, -bodyH * 0.42, 0], bodyW * 0.18, bodyH * 0.15, 'steel', { segments: 16, detail: 1 }); // belly hardpoint
+  // no side skirts: the leg roots live there
+  bodyHull(body, bodyShape, bodyW * 0.92, bodyH, bodyL, 'paint', 'paint2', ctx.rng('body.hull'), false, false);
+  hub(body.comp('frame'), [0, -bodyH * 0.5, 0], 'y', { r: bodyW * 0.16, w: bodyH * 0.14, bolts: 8, detail: 1 }); // belly hardpoint
   const cabStyle = ctx.choice('cockpit.style', 'Cockpit', 'cockpit', ['bubble', 'canopy', 'armored'] as const, fighter ? [1, 1, 2] : [2.5, 1.5, 0.5]);
   const iw = Math.max(1.2, H * 0.2);
   const ih = Math.max(1.4, H * 0.18);
   const idp = Math.max(1.35, H * 0.18);
-  cockpit(b, 'body', [0, -bodyH * 0.1, bodyL * 0.45 + idp / 2 + 0.05], { style: cabStyle, iw, ih, id: idp, wall: Math.max(0.06, H * 0.01), armor: 'paint', hatch: 'top', rng: ctx.rng('cockpit') });
+  cockpit(b, 'body', [0, -bodyH * 0.1, bodyL * 0.5 + idp / 2 + 0.06], { style: cabStyle, iw, ih, id: idp, wall: Math.max(0.06, H * 0.01), armor: 'paint', hatch: 'top', rng: ctx.rng('cockpit') });
   for (const sx of [-1, 1]) lightPod(body, [sx * bodyW * 0.32, -bodyH * 0.1, bodyL * 0.46], H * 0.018);
 
   const kit = ctx.choice('deck.kit', 'Top equipment', 'deck', ['sensor', 'turret', 'cargo', 'none'] as const, fighter ? [1, 3, 0.3, 0.5] : [3, 0.4, 1.5, 1]);

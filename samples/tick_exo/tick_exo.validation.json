@@ -3,7 +3,7 @@
     {
       "id": "struct",
       "severity": "ok",
-      "message": "96 nodes, 25 joints, single root, parents precede children, names unique"
+      "message": "106 nodes, 25 joints, single root, parents precede children, names unique"
     },
     {
       "id": "leg.chain",
@@ -23,7 +23,7 @@
     {
       "id": "ground.clearance",
       "severity": "ok",
-      "message": "only feet touch the ground (lowest other part -0.02 m)"
+      "message": "only feet touch the ground (lowest other part 0.01 m)"
     },
     {
       "id": "clearance.sweep",
@@ -33,7 +33,7 @@
     {
       "id": "clearance.random",
       "severity": "info",
-      "message": "21/30 random multi-joint poses are clash-free (combined extremes can still collide; controllers should keep to gait ranges)"
+      "message": "28/30 random multi-joint poses are clash-free (combined extremes can still collide; controllers should keep to gait ranges)"
     },
     {
       "id": "interior.space",

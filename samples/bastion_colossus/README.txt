@@ -2,7 +2,7 @@ BadMech export package: Bastion Colossus
 ==============================================
 
 Units: metres · Up: +Y · Forward (mech faces): +Z · Right-handed (glTF convention)
-Height 15.59 m · colossus · colossal
+Height 16.08 m · colossus · colossal
 
 FILES
   bastion_colossus.glb              Full articulated mech (LOD0). Hierarchy, pivots, PBR materials, skinned

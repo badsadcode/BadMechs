@@ -19,6 +19,7 @@ import type {
 } from './model';
 import { worldMatrices } from './kinematics';
 import { shapeBounds, ShapeSpec } from './hs/shapes';
+import { barrelShape, clevis, rodShape } from './hs/kit';
 import { Rng } from './rng';
 
 export interface JointSpec {
@@ -41,6 +42,7 @@ export interface NodeOpts {
 
 interface PrimOpts {
   rot?: Vec3;
+  hidden?: boolean;
   detail?: 0 | 1 | 2;
   collide?: boolean;
   segments?: number;
@@ -58,12 +60,12 @@ export class NodeRef {
     return this.node.name;
   }
 
-  private add(p: Prim) {
+  private add(p: Prim & { hidden?: boolean }) {
     this.node.prims.push(p);
     return this;
   }
   box(pos: Vec3, size: Vec3, material: MaterialId, o: PrimOpts = {}) {
-    return this.add({ kind: 'box', pos, rot: o.rot ?? [0, 0, 0], size, material, detail: o.detail ?? 0, collide: o.collide ?? true });
+    return this.add({ kind: 'box', pos, rot: o.rot ?? [0, 0, 0], size, material, detail: o.detail ?? 0, collide: o.collide ?? true, ...(o.hidden ? { hidden: true } : {}) });
   }
   /** Box with chamfered long edges (profile in X/Y, extruded along Z) – the armour-plate workhorse. */
   chamfer(pos: Vec3, size: Vec3, c: number, material: MaterialId, o: PrimOpts = {}) {
@@ -318,14 +320,17 @@ export class Builder {
     const base = this.node(`${p.name}_barrel`, p.linkA, p.anchorA, { role: 'actuator', system: p.system, rot: toEuler(qa), component: 'actuator', tags: ['piston-barrel'] });
     const end = this.node(`${p.name}_rod`, p.linkB, p.anchorB, { role: 'actuator', system: p.system, rot: toEuler(qb), component: 'actuator', tags: ['piston-rod'] });
     const r = p.radius;
-    // barrel: clevis eye + body + gland
-    base.cylX([0, 0, 0], r * 0.9, r * 1.6, 'steel', { detail: 1, collide: false });
-    base.cylZ([0, 0, barrel / 2], r, barrel, 'hazard', { collide: false, segments: 14 });
-    base.cylZ([0, 0, barrel - r * 0.2], r * 1.12, r * 0.4, 'darkMetal', { detail: 1, collide: false, segments: 14 });
-    base.cylZ([0, 0, r * 0.15], r * 1.1, r * 0.3, 'darkMetal', { detail: 1, collide: false, segments: 14 });
-    // rod: chrome shaft + eye
-    end.cylX([0, 0, 0], r * 0.75, r * 1.4, 'steel', { detail: 1, collide: false });
-    end.cylZ([0, 0, rod / 2], r * 0.55, rod, 'chrome', { collide: false, segments: 12 });
+    // barrel (lathe-turned: end cap, body, gland nut) and chrome rod with eye, both on the
+    // aim-constrained actuator nodes; clevis brackets live on the LINKS at the anchors
+    base.shape([0, 0, 0], barrelShape(barrel, r), 'hazard', { collide: false });
+    base.cylX([0, 0, 0], r * 0.62, r * 1.5, 'steel', { detail: 1, collide: false, segments: 10 });
+    // hydraulic port on the barrel
+    base.shape([0, r * 1.05, barrel * 0.18], { t: 'lathe', pts: [[0, 0], [r * 0.28, 0], [r * 0.28, r * 0.35], [r * 0.18, r * 0.42], [0, r * 0.42]], segs: 8 }, 'steel', { detail: 2, collide: false });
+    end.shape([0, 0, 0], rodShape(rod, r), 'chrome', { collide: false });
+    end.cylX([0, 0, 0], r * 0.5, r * 1.3, 'steel', { detail: 1, collide: false, segments: 10 });
+    const towards = (v: Vec3): [number, number] => (Math.abs(v[2]) >= Math.abs(v[1]) ? [0, -v[2]] : [-v[1], 0]);
+    clevis(this.get(p.linkA).comp('detail', 'mounts'), p.anchorA, r * 0.85, r * 1.6, towards(p.anchorA));
+    clevis(this.get(p.linkB).comp('detail', 'mounts'), p.anchorB, r * 0.75, r * 1.4, towards(p.anchorB));
 
     mech.actuators.push({
       name: p.name,

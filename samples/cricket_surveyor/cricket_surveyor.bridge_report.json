@@ -18,11 +18,11 @@
       "axisErrDeg": 0.0
     },
     "leg_L0_tibia": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_L0_foot": {
-      "posErr": 0.0,
+      "posErr": 3e-06,
       "axisErrDeg": 0.0
     },
     "leg_R0_coxa": {
@@ -34,11 +34,11 @@
       "axisErrDeg": 0.0
     },
     "leg_R0_tibia": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_R0_foot": {
-      "posErr": 0.0,
+      "posErr": 3e-06,
       "axisErrDeg": 0.0
     },
     "leg_L1_coxa": {
@@ -54,7 +54,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L1_foot": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R1_coxa": {
@@ -70,7 +70,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R1_foot": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L2_coxa": {
@@ -78,7 +78,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L2_femur": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_L2_tibia": {
@@ -86,7 +86,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L2_foot": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R2_coxa": {
@@ -94,7 +94,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R2_femur": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_R2_tibia": {
@@ -102,7 +102,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R2_foot": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "cockpit_hatch": {
@@ -120,10 +120,10 @@
   },
   "boneCount": 29,
   "missingBones": [],
-  "maxPosErrorM": 1.011526568801343e-06,
+  "maxPosErrorM": 2.8367052160002695e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 9396,
+  "triangles": 49948,
   "vertexGroups": 29,
   "blend": "cricket_surveyor.blend",
   "fbx": "cricket_surveyor.fbx"

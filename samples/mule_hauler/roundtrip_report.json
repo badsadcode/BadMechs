@@ -1,37 +1,37 @@
 {
   "mech": "Mule Hauler",
   "family": "quadruped",
-  "heightM": 6.62,
+  "heightM": 6.63,
   "glb": {
     "ok": true,
-    "nodesChecked": 114,
+    "nodesChecked": 129,
     "missing": [],
     "maxPosErrorM": 1.537799835205078e-05,
     "maxAxisErrorDeg": 0.0,
     "materials": "11 imported / 11 used in file",
     "skinnedHoses": 4,
-    "triangles": 10856
+    "triangles": 48482
   },
   "glb_lod1": {
     "ok": true,
-    "nodesChecked": 114,
+    "nodesChecked": 129,
     "maxPosErrorM": 1.537799835205078e-05,
-    "triangles": 5532
+    "triangles": 25870
   },
   "glb_lod2": {
     "ok": true,
-    "nodesChecked": 114,
+    "nodesChecked": 129,
     "maxPosErrorM": 1.537799835205078e-05,
-    "triangles": 2928
+    "triangles": 11504
   },
   "fbx": {
     "ok": true,
     "boneCount": 45,
     "missingBones": [],
-    "maxPosErrorM": 1.897076423506683e-06,
+    "maxPosErrorM": 1.7841612752790171e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 10856,
+    "triangles": 48482,
     "vertexGroups": 45,
     "blend": "mule_hauler.blend",
     "fbx": "mule_hauler.fbx"
@@ -40,17 +40,17 @@
     "ok": true,
     "posedJoint": "leg_FL_tibia",
     "angleRad": -1.1384800000000002,
-    "verticesMoved": 672,
-    "verticesTotal": 13490,
-    "pivotDrift": 1.066240299940009e-06
+    "verticesMoved": 3741,
+    "verticesTotal": 59584,
+    "pivotDrift": 1.5266237824995157e-06
   },
   "usd": {
     "pxr": {
       "ok": true,
       "upAxis": "Y",
       "metersPerUnit": 1.0,
-      "xforms": 115,
-      "meshes": 171,
+      "xforms": 130,
+      "meshes": 213,
       "missing": [],
       "maxPosErrorM": 7.911366511131127e-05,
       "maxAxisErrorDeg": 0.0,
@@ -58,15 +58,15 @@
     },
     "blender": {
       "ok": true,
-      "objects": 262,
-      "meshes": 171
+      "objects": 335,
+      "meshes": 213
     },
     "ok": true
   },
   "obj": {
     "ok": true,
-    "objects": 87,
-    "triangles": 9896,
+    "objects": 102,
+    "triangles": 47522,
     "materials": 11,
     "note": "static only, by design"
   },

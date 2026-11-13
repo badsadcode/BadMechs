@@ -55,7 +55,7 @@ export function calibrateGait(mech: Mech): GaitVerification {
   const tol = Math.max(0.03, mech.stats.height * 0.004);
   let scale = 1;
   let r = simulateGait(mech);
-  for (let i = 0; i < 6 && r.max > tol; i++) {
+  for (let i = 0; i < 10 && r.max > tol; i++) {
     g.strideLength *= 0.85;
     g.stepHeight *= 0.9;
     scale *= 0.85;

@@ -73,7 +73,20 @@ const AXIS: Record<'x' | 'y' | 'z', (p: V3) => V3> = {
   x: (p) => [p[2], p[1], -p[0]],
 };
 
+const CACHE = new Map<string, MeshData>();
+/** Build (memoised: the same spec is measured for bounds and later meshed for each LOD). */
 export function buildShape(s: ShapeSpec, lod = 0): MeshData {
+  const key = lod + JSON.stringify(s);
+  let m = CACHE.get(key);
+  if (!m) {
+    m = buildShapeRaw(s, lod);
+    if (CACHE.size > 4000) CACHE.clear();
+    CACHE.set(key, m);
+  }
+  return m;
+}
+
+function buildShapeRaw(s: ShapeSpec, lod: number): MeshData {
   const l = SHAPE_LOD[lod] ?? SHAPE_LOD[0];
   switch (s.t) {
     case 'loft':

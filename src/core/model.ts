@@ -71,6 +71,8 @@ export interface Prim {
   detail: 0 | 1 | 2;
   /** whether this prim participates in clearance checks + collision proxies */
   collide: boolean;
+  /** proxy-only: used for collision/validation, never rendered or exported as a mesh */
+  hidden?: boolean;
 }
 
 export type JointPurpose = 'locomotion' | 'manipulation' | 'aim' | 'torso' | 'access' | 'suspension' | 'tool';

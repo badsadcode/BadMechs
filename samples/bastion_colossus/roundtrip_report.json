@@ -1,37 +1,37 @@
 {
   "mech": "Bastion Colossus",
   "family": "colossus",
-  "heightM": 15.59,
+  "heightM": 16.08,
   "glb": {
     "ok": true,
-    "nodesChecked": 100,
+    "nodesChecked": 112,
     "missing": [],
     "maxPosErrorM": 2.0915710639439877e-05,
     "maxAxisErrorDeg": 0.0,
     "materials": "11 imported / 11 used in file",
     "skinnedHoses": 4,
-    "triangles": 10944
+    "triangles": 44238
   },
   "glb_lod1": {
     "ok": true,
-    "nodesChecked": 100,
+    "nodesChecked": 112,
     "maxPosErrorM": 2.0915710639439877e-05,
-    "triangles": 5920
+    "triangles": 23982
   },
   "glb_lod2": {
     "ok": true,
-    "nodesChecked": 100,
+    "nodesChecked": 112,
     "maxPosErrorM": 2.0915710639439877e-05,
-    "triangles": 2692
+    "triangles": 10628
   },
   "fbx": {
     "ok": true,
     "boneCount": 36,
     "missingBones": [],
-    "maxPosErrorM": 6.397441799640054e-06,
+    "maxPosErrorM": 5.0067901611328125e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 10944,
+    "triangles": 44238,
     "vertexGroups": 36,
     "blend": "bastion_colossus.blend",
     "fbx": "bastion_colossus.fbx"
@@ -40,8 +40,8 @@
     "ok": true,
     "posedJoint": "leg_FL_tibia",
     "angleRad": -1.1384800000000002,
-    "verticesMoved": 672,
-    "verticesTotal": 13992,
+    "verticesMoved": 3693,
+    "verticesTotal": 54519,
     "pivotDrift": 4.3702847432669066e-06
   },
   "usd": {
@@ -49,8 +49,8 @@
       "ok": true,
       "upAxis": "Y",
       "metersPerUnit": 1.0,
-      "xforms": 101,
-      "meshes": 152,
+      "xforms": 113,
+      "meshes": 191,
       "missing": [],
       "maxPosErrorM": 0.0002260145569289626,
       "maxAxisErrorDeg": 0.0,
@@ -58,15 +58,15 @@
     },
     "blender": {
       "ok": true,
-      "objects": 234,
-      "meshes": 152
+      "objects": 300,
+      "meshes": 191
     },
     "ok": true
   },
   "obj": {
     "ok": true,
-    "objects": 76,
-    "triangles": 9984,
+    "objects": 88,
+    "triangles": 43278,
     "materials": 11,
     "note": "static only, by design"
   },

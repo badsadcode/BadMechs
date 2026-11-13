@@ -2,7 +2,7 @@ BadMech export package: Tick Exo
 ======================================
 
 Units: metres · Up: +Y · Forward (mech faces): +Z · Right-handed (glTF convention)
-Height 2.21 m · exosuit · exosuit
+Height 2.22 m · exosuit · exosuit
 
 FILES
   tick_exo.glb              Full articulated mech (LOD0). Hierarchy, pivots, PBR materials, skinned

@@ -30,7 +30,7 @@
       "axisErrDeg": 0.0
     },
     "leg_FR_femur": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_FR_tibia": {
@@ -54,7 +54,7 @@
       "axisErrDeg": 0.0
     },
     "leg_RL_foot": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_RR_coxa": {
@@ -70,7 +70,7 @@
       "axisErrDeg": 0.0
     },
     "leg_RR_foot": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "cockpit_hatch": {
@@ -82,23 +82,23 @@
       "axisErrDeg": 0.0
     },
     "crane_boom": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "crane_stick": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "crane_wrist": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "crane_jaw0": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "crane_jaw1": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_FL_femur_ram_barrel": {
@@ -110,7 +110,7 @@
       "axisErrDeg": 0.0
     },
     "leg_FL_tibia_ram_barrel": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_FL_tibia_ram_rod": {
@@ -122,7 +122,7 @@
       "axisErrDeg": 0.0
     },
     "leg_FR_femur_ram_rod": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_FR_tibia_ram_barrel": {
@@ -142,7 +142,7 @@
       "axisErrDeg": 0.0
     },
     "leg_RL_tibia_ram_barrel": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_RL_tibia_ram_rod": {
@@ -154,7 +154,7 @@
       "axisErrDeg": 0.0
     },
     "leg_RR_femur_ram_rod": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_RR_tibia_ram_barrel": {
@@ -170,24 +170,24 @@
       "axisErrDeg": 0.0
     },
     "crane_boom_ram_rod": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "crane_stick_ram_barrel": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "crane_stick_ram_rod": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     }
   },
   "boneCount": 45,
   "missingBones": [],
-  "maxPosErrorM": 1.897076423506683e-06,
+  "maxPosErrorM": 1.7841612752790171e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 10856,
+  "triangles": 48482,
   "vertexGroups": 45,
   "blend": "mule_hauler.blend",
   "fbx": "mule_hauler.fbx"

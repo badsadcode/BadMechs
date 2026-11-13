@@ -160,10 +160,10 @@
   },
   "boneCount": 39,
   "missingBones": [],
-  "maxPosErrorM": 3.0561569636550484e-07,
+  "maxPosErrorM": 1.7914726671487749e-07,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 8268,
+  "triangles": 37828,
   "vertexGroups": 39,
   "blend": "tick_exo.blend",
   "fbx": "tick_exo.fbx"

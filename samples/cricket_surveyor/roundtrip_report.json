@@ -6,32 +6,32 @@
     "ok": true,
     "nodesChecked": 109,
     "missing": [],
-    "maxPosErrorM": 7.266879393638692e-06,
+    "maxPosErrorM": 7.128675645697619e-06,
     "maxAxisErrorDeg": 0.0,
     "materials": "9 imported / 9 used in file",
     "skinnedHoses": 6,
-    "triangles": 9396
+    "triangles": 49948
   },
   "glb_lod1": {
     "ok": true,
     "nodesChecked": 109,
-    "maxPosErrorM": 7.266879393638692e-06,
-    "triangles": 4796
+    "maxPosErrorM": 7.128675645697619e-06,
+    "triangles": 24676
   },
   "glb_lod2": {
     "ok": true,
     "nodesChecked": 109,
-    "maxPosErrorM": 7.266879393638692e-06,
-    "triangles": 3356
+    "maxPosErrorM": 7.128675645697619e-06,
+    "triangles": 12442
   },
   "fbx": {
     "ok": true,
     "boneCount": 29,
     "missingBones": [],
-    "maxPosErrorM": 1.011526568801343e-06,
+    "maxPosErrorM": 2.8367052160002695e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 9396,
+    "triangles": 49948,
     "vertexGroups": 29,
     "blend": "cricket_surveyor.blend",
     "fbx": "cricket_surveyor.fbx"
@@ -40,9 +40,9 @@
     "ok": true,
     "posedJoint": "leg_L0_tibia",
     "angleRad": -1.751424,
-    "verticesMoved": 572,
-    "verticesTotal": 11914,
-    "pivotDrift": 8.920806376395086e-07
+    "verticesMoved": 3121,
+    "verticesTotal": 58918,
+    "pivotDrift": 9.830249847454215e-07
   },
   "usd": {
     "pxr": {
@@ -50,7 +50,7 @@
       "upAxis": "Y",
       "metersPerUnit": 1.0,
       "xforms": 110,
-      "meshes": 147,
+      "meshes": 172,
       "missing": [],
       "maxPosErrorM": 6.706009953056127e-05,
       "maxAxisErrorDeg": 0.0,
@@ -58,15 +58,15 @@
     },
     "blender": {
       "ok": true,
-      "objects": 232,
-      "meshes": 147
+      "objects": 280,
+      "meshes": 172
     },
     "ok": true
   },
   "obj": {
     "ok": true,
     "objects": 78,
-    "triangles": 7956,
+    "triangles": 48508,
     "materials": 9,
     "note": "static only, by design"
   },

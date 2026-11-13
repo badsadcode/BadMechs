@@ -51,7 +51,7 @@ export function hub(ref: NodeRef, pos: Vec3, axis: Axis, o: HubOpts) {
     [r * 0.28, h + r * 0.08],
     [0, h + r * 0.08],
   ];
-  ref.shape(pos, { t: 'lathe', pts, segs: 24, axis }, o.housing ?? 'darkMetal', { detail: o.detail ?? 0, collide: o.collide ?? true });
+  ref.shape(pos, { t: 'lathe', pts, segs: 20, axis }, o.housing ?? 'darkMetal', { detail: o.detail ?? 0, collide: o.collide ?? true });
   // centre pin caps
   const pin: P2[] = [
     [0, -h - r * 0.16],
@@ -75,7 +75,7 @@ export function boltCircle(ref: NodeRef, pos: Vec3, axis: Axis, rr: number, n: n
       const v = Math.sin(a) * rr;
       const along = side * (faceOff + br * 0.25);
       const p: Vec3 = axis === 'x' ? [pos[0] + along, pos[1] + u, pos[2] + v] : axis === 'y' ? [pos[0] + u, pos[1] + along, pos[2] + v] : [pos[0] + u, pos[1] + v, pos[2] + along];
-      ref.shape(p, { t: 'loft', sections: [{ p: { k: 'ngon', r: br, n: 6 }, z: -br * 0.25 }, { p: { k: 'ngon', r: br, n: 6 }, z: br * 0.25 }], bevel: br * 0.15, axis, smooth: 20 }, 'steel', { detail: 2, collide: false });
+      ref.shape(p, { t: 'loft', sections: [{ p: { k: 'ngon', r: br, n: 6 }, z: -br * 0.25 }, { p: { k: 'ngon', r: br * 0.8, n: 6 }, z: br * 0.25 }], cap: side > 0 ? 'end' : 'start', axis, smooth: 20 }, 'steel', { detail: 2, collide: false });
     }
   }
 }

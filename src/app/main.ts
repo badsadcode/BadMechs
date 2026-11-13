@@ -761,4 +761,4 @@ resize();
 rebuild(true);
 requestAnimationFrame(loop);
 // for tests / debugging from the console
-Object.assign(window, { badmech: { get recipe() { return recipe; }, get result() { return result; }, setMode, rebuild, select } });
+Object.assign(window, { badmech: { get recipe() { return recipe; }, get result() { return result; }, setMode, rebuild, select, camera, controls, setView(az: number, el = 0.25, dist = 1.6) { const s = result.mech.stats; const d = Math.max(s.height, s.width, s.length) * dist; controls.target.set(0, s.height * 0.5, 0); camera.position.set(Math.sin(az) * d * Math.cos(el), s.height * 0.5 + Math.sin(el) * d, Math.cos(az) * d * Math.cos(el)); controls.update(); } } });

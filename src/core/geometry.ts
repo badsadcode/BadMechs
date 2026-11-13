@@ -41,7 +41,7 @@ function emptyMesh(): MeshData {
 export function buildNodeMeshes(node: MechNode, lod: LodSpec = LODS[0]): NodeMeshes {
   const out: NodeMeshes = new Map();
   for (const p of node.prims) {
-    if (p.detail > lod.maxDetail) continue;
+    if (p.detail > lod.maxDetail || p.hidden) continue;
     let m = out.get(p.material);
     if (!m) out.set(p.material, (m = emptyMesh()));
     appendPrim(m, p, lod);

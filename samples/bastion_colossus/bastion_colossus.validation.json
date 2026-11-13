@@ -3,7 +3,7 @@
     {
       "id": "struct",
       "severity": "ok",
-      "message": "100 nodes, 18 joints, single root, parents precede children, names unique"
+      "message": "112 nodes, 18 joints, single root, parents precede children, names unique"
     },
     {
       "id": "leg.chain",
@@ -33,7 +33,7 @@
     {
       "id": "ground.clearance",
       "severity": "ok",
-      "message": "only feet touch the ground (lowest other part 0.70 m)"
+      "message": "only feet touch the ground (lowest other part 1.16 m)"
     },
     {
       "id": "clearance.sweep",

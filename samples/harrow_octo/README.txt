@@ -2,7 +2,7 @@ BadMech export package: Harrow Octo
 =========================================
 
 Units: metres · Up: +Y · Forward (mech faces): +Z · Right-handed (glTF convention)
-Height 5.57 m · octopod · medium
+Height 5.58 m · octopod · medium
 
 FILES
   harrow_octo.glb              Full articulated mech (LOD0). Hierarchy, pivots, PBR materials, skinned

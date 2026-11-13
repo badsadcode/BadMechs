@@ -3,7 +3,7 @@
     {
       "id": "struct",
       "severity": "ok",
-      "message": "114 nodes, 23 joints, single root, parents precede children, names unique"
+      "message": "129 nodes, 23 joints, single root, parents precede children, names unique"
     },
     {
       "id": "leg.chain",
@@ -33,17 +33,17 @@
     {
       "id": "ground.clearance",
       "severity": "ok",
-      "message": "only feet touch the ground (lowest other part 0.22 m)"
+      "message": "only feet touch the ground (lowest other part 0.36 m)"
     },
     {
       "id": "clearance.sweep",
       "severity": "warn",
-      "message": "7 clashes at single-joint limits, worst 89.2 cm"
+      "message": "10 clashes at single-joint limits, worst 105.4 cm"
     },
     {
       "id": "clearance.random",
       "severity": "info",
-      "message": "23/30 random multi-joint poses are clash-free (combined extremes can still collide; controllers should keep to gait ranges)"
+      "message": "22/30 random multi-joint poses are clash-free (combined extremes can still collide; controllers should keep to gait ranges)"
     },
     {
       "id": "interior.space",
@@ -66,7 +66,7 @@
     {
       "a": "crane_stick",
       "b": "body",
-      "depth": 0.7546875000000002,
+      "depth": 0.9543311652916604,
       "pose": {
         "crane_boom": 0.730420291959627
       }
@@ -74,7 +74,7 @@
     {
       "a": "crane_stick",
       "b": "body",
-      "depth": 0.8923512858062002,
+      "depth": 0.7938750000000001,
       "pose": {
         "crane_boom": 0.730420291959627
       }
@@ -82,7 +82,7 @@
     {
       "a": "crane_stick",
       "b": "body",
-      "depth": 0.20862841117334008,
+      "depth": 0.24322216117334006,
       "pose": {
         "crane_boom": 0.730420291959627
       }
@@ -90,7 +90,7 @@
     {
       "a": "crane_stick",
       "b": "body",
-      "depth": 0.7940625000000001,
+      "depth": 1.0538503641465191,
       "pose": {
         "crane_boom": 0.730420291959627
       }
@@ -98,9 +98,33 @@
     {
       "a": "crane_stick",
       "b": "body",
-      "depth": 0.3629749481591107,
+      "depth": 0.49911296452706655,
       "pose": {
         "crane_boom": 0.730420291959627
+      }
+    },
+    {
+      "a": "crane_stick",
+      "b": "body",
+      "depth": 0.08790015108253124,
+      "pose": {
+        "crane_boom": 0.730420291959627
+      }
+    },
+    {
+      "a": "crane_jaw1",
+      "b": "body",
+      "depth": 0.1033526523704027,
+      "pose": {
+        "crane_boom": 0.730420291959627
+      }
+    },
+    {
+      "a": "crane_jaw0",
+      "b": "body",
+      "depth": 0.02818567597382307,
+      "pose": {
+        "crane_wrist": 1.0471975511965976
       }
     },
     {

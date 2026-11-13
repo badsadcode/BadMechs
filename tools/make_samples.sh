@@ -11,7 +11,7 @@ rm -rf samples && mkdir -p samples
 for d in "$TMP"/*/; do
   n=$(basename "$d")
   mkdir -p "samples/$n"
-  cp "$d/$n.badmech.json" "$d/$n.rig.json" "$d/$n.glb" "$d/$n.fbx" "$d/$n.validation.json" \
+  cp "$d/$n.badmech.json" "$d/$n.rig.json" "$d/$n.validation.json" \
      "$d/$n.bridge_report.json" "$d/roundtrip_report.json" "$d/README.txt" "samples/$n/"
 done
 python3 - <<'PY'
