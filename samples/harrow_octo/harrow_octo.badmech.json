@@ -1,0 +1,13 @@
+{
+  "format": "badmech-recipe",
+  "version": 1,
+  "name": "Harrow Octo",
+  "family": "octopod",
+  "role": "combat",
+  "seed": 88,
+  "scale": 1,
+  "bulk": 0.6,
+  "scheme": "warcamo",
+  "rerolls": {},
+  "overrides": {}
+}

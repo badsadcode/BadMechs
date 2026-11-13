@@ -1,0 +1,130 @@
+{
+  "ok": true,
+  "bones": {
+    "root": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "body": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L0_coxa": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L0_femur": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L0_tibia": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L0_foot": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R0_coxa": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R0_femur": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_R0_tibia": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_R0_foot": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L1_coxa": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L1_femur": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L1_tibia": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L1_foot": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R1_coxa": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R1_femur": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R1_tibia": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_R1_foot": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L2_coxa": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L2_femur": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L2_tibia": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L2_foot": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R2_coxa": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R2_femur": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_R2_tibia": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_R2_foot": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "cockpit_hatch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "sensor_yaw": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "sensor_tilt": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    }
+  },
+  "boneCount": 29,
+  "missingBones": [],
+  "maxPosErrorM": 1.011526568801343e-06,
+  "maxAxisErrorDeg": 0.0,
+  "meshCount": 1,
+  "triangles": 9396,
+  "vertexGroups": 29,
+  "blend": "cricket_surveyor.blend",
+  "fbx": "cricket_surveyor.fbx"
+}

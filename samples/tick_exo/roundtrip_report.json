@@ -1,0 +1,74 @@
+{
+  "mech": "Tick Exo",
+  "family": "exosuit",
+  "heightM": 2.21,
+  "glb": {
+    "ok": true,
+    "nodesChecked": 96,
+    "missing": [],
+    "maxPosErrorM": 6.034510353599962e-06,
+    "maxAxisErrorDeg": 0.0,
+    "materials": "7 imported / 7 used in file",
+    "skinnedHoses": 4,
+    "triangles": 8268
+  },
+  "glb_lod1": {
+    "ok": true,
+    "nodesChecked": 96,
+    "maxPosErrorM": 6.034510353599962e-06,
+    "triangles": 4396
+  },
+  "glb_lod2": {
+    "ok": true,
+    "nodesChecked": 96,
+    "maxPosErrorM": 6.034510353599962e-06,
+    "triangles": 2364
+  },
+  "fbx": {
+    "ok": true,
+    "boneCount": 39,
+    "missingBones": [],
+    "maxPosErrorM": 3.0561569636550484e-07,
+    "maxAxisErrorDeg": 0.0,
+    "meshCount": 1,
+    "triangles": 8268,
+    "vertexGroups": 39,
+    "blend": "tick_exo.blend",
+    "fbx": "tick_exo.fbx"
+  },
+  "fbx_pose": {
+    "ok": true,
+    "posedJoint": "leg_L_shin",
+    "angleRad": 1.214752,
+    "verticesMoved": 916,
+    "verticesTotal": 9904,
+    "pivotDrift": 9.541398640621973e-08
+  },
+  "usd": {
+    "pxr": {
+      "ok": true,
+      "upAxis": "Y",
+      "metersPerUnit": 1.0,
+      "xforms": 97,
+      "meshes": 126,
+      "missing": [],
+      "maxPosErrorM": 4.7015206232900274e-05,
+      "maxAxisErrorDeg": 0.0,
+      "jointLimitsPreserved": "25/25"
+    },
+    "blender": {
+      "ok": true,
+      "objects": 207,
+      "meshes": 126
+    },
+    "ok": true
+  },
+  "obj": {
+    "ok": true,
+    "objects": 65,
+    "triangles": 7308,
+    "materials": 7,
+    "note": "static only, by design"
+  },
+  "ok": true
+}

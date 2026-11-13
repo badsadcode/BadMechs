@@ -1,0 +1,74 @@
+{
+  "mech": "Bastion Colossus",
+  "family": "colossus",
+  "heightM": 15.59,
+  "glb": {
+    "ok": true,
+    "nodesChecked": 100,
+    "missing": [],
+    "maxPosErrorM": 2.0915710639439877e-05,
+    "maxAxisErrorDeg": 0.0,
+    "materials": "11 imported / 11 used in file",
+    "skinnedHoses": 4,
+    "triangles": 10944
+  },
+  "glb_lod1": {
+    "ok": true,
+    "nodesChecked": 100,
+    "maxPosErrorM": 2.0915710639439877e-05,
+    "triangles": 5920
+  },
+  "glb_lod2": {
+    "ok": true,
+    "nodesChecked": 100,
+    "maxPosErrorM": 2.0915710639439877e-05,
+    "triangles": 2692
+  },
+  "fbx": {
+    "ok": true,
+    "boneCount": 36,
+    "missingBones": [],
+    "maxPosErrorM": 6.397441799640054e-06,
+    "maxAxisErrorDeg": 0.0,
+    "meshCount": 1,
+    "triangles": 10944,
+    "vertexGroups": 36,
+    "blend": "bastion_colossus.blend",
+    "fbx": "bastion_colossus.fbx"
+  },
+  "fbx_pose": {
+    "ok": true,
+    "posedJoint": "leg_FL_tibia",
+    "angleRad": -1.1384800000000002,
+    "verticesMoved": 672,
+    "verticesTotal": 13992,
+    "pivotDrift": 4.3702847432669066e-06
+  },
+  "usd": {
+    "pxr": {
+      "ok": true,
+      "upAxis": "Y",
+      "metersPerUnit": 1.0,
+      "xforms": 101,
+      "meshes": 152,
+      "missing": [],
+      "maxPosErrorM": 0.0002260145569289626,
+      "maxAxisErrorDeg": 0.0,
+      "jointLimitsPreserved": "18/18"
+    },
+    "blender": {
+      "ok": true,
+      "objects": 234,
+      "meshes": 152
+    },
+    "ok": true
+  },
+  "obj": {
+    "ok": true,
+    "objects": 76,
+    "triangles": 9984,
+    "materials": 11,
+    "note": "static only, by design"
+  },
+  "ok": true
+}

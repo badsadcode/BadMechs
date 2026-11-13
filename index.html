@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BadMech</title>
+    <meta name="description" content="BadMech: procedural, mechanically coherent, game-ready mech generator by Bad Ideas Works." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='10' fill='%2316181a'/><path d='M18 14h28v18H18z' fill='%23d9a227'/><path d='M22 32l-6 20h8l6-14 6 14h8l-6-20z' fill='%23a9a28c'/><rect x='24' y='19' width='16' height='6' fill='%2316181a'/></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="logo">BADMECH</span>
+          <span class="tag">Bad Ideas Works · machines that can actually walk</span>
+        </div>
+        <div class="actions">
+          <a class="btn" href="./devlog.html" title="Field notes from the garage">📓 Devlog</a>
+          <button id="btn-random" class="btn accent" title="Random family, seed, scale and paint (R)">🎲 Surprise me</button>
+          <button id="btn-save" class="btn" title="Save the editable recipe (.badmech.json)">💾 Save</button>
+          <label class="btn" title="Load a .badmech.json recipe">📂 Load<input id="file-load" type="file" accept=".json" hidden /></label>
+          <div class="dropdown">
+            <button id="btn-export" class="btn accent">📦 Export ▾</button>
+            <div class="menu" id="export-menu">
+              <button data-export="package">Full package (.zip) <small>GLB + LODs + collision + FBX bridge + USD + OBJ + rig</small></button>
+              <button data-export="glb">GLB only <small>articulated, skinned hoses, metadata</small></button>
+              <button data-export="rig">Rig sidecar (.rig.json) <small>joints, legs, pistons, gait</small></button>
+              <button data-export="usda">USD (.usda) <small>articulated Xforms, no hoses</small></button>
+              <button data-export="obj">OBJ + MTL (.zip) <small>static only, no rig</small></button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <aside class="panel left" id="left">
+        <section>
+          <h2>Family</h2>
+          <div class="families" id="families"></div>
+        </section>
+        <section>
+          <h2>Basics</h2>
+          <div class="row"><label>Name</label><input id="in-name" type="text" placeholder="auto" /></div>
+          <div class="row"><label>Role</label><select id="in-role"></select></div>
+          <div class="row"><label>Seed</label><input id="in-seed" type="number" /><button class="mini" id="btn-seed" title="New seed">🎲</button></div>
+          <div class="row"><label>Scale</label><input id="in-scale" type="range" min="0.7" max="1.4" step="0.01" /><output id="out-scale"></output></div>
+          <div class="row"><label>Bulk</label><input id="in-bulk" type="range" min="0" max="1" step="0.01" /><output id="out-bulk"></output></div>
+          <div class="row"><label>Paint</label><div class="swatches" id="swatches"></div></div>
+        </section>
+        <section>
+          <h2>What got built <small>pin a choice to keep it, 🎲 to re-roll just that subsystem</small></h2>
+          <div id="options"></div>
+        </section>
+      </aside>
+
+      <main class="viewport" id="viewport">
+        <canvas id="canvas"></canvas>
+        <div class="hud top">
+          <div class="seg" id="pose-modes">
+            <button data-mode="rest" class="on">Rest</button>
+            <button data-mode="flex">Flex test</button>
+            <button data-mode="walk" title="Loads the EXPORTED .glb + rig.json and walks it with the reference controller">Walk test</button>
+          </div>
+          <div class="seg" id="toggles">
+            <button data-t="armor" class="on" title="Armour plating">Armor</button>
+            <button data-t="xray" title="Hide shells to see interiors">X-ray</button>
+            <button data-t="joints" title="Joint pivots + axes">Joints</button>
+            <button data-t="collision" title="Collision proxies">Collision</button>
+            <button data-t="human" class="on" title="1.8 m human for scale">Human</button>
+            <button data-t="lod" title="Cycle LOD">LOD 0</button>
+          </div>
+        </div>
+        <div class="hud bottom" id="stats"></div>
+        <div class="toast" id="toast"></div>
+      </main>
+
+      <aside class="panel right" id="right">
+        <section class="grow">
+          <h2>Parts <input id="tree-filter" type="search" placeholder="filter…" /></h2>
+          <div class="tree" id="tree"></div>
+        </section>
+        <section>
+          <h2>Inspector</h2>
+          <div id="inspector" class="inspector"><p class="dim">Click a part in the viewport or the list.</p></div>
+        </section>
+        <section>
+          <h2>Validation <span id="val-badge" class="badge"></span></h2>
+          <div id="validation" class="validation"></div>
+        </section>
+      </aside>
+    </div>
+    <script type="module" src="/src/app/main.ts"></script>
+  </body>
+</html>

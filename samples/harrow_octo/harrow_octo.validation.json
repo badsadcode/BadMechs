@@ -1,0 +1,86 @@
+{
+  "checks": [
+    {
+      "id": "struct",
+      "severity": "ok",
+      "message": "167 nodes, 33 joints, single root, parents precede children, names unique"
+    },
+    {
+      "id": "leg.chain",
+      "severity": "ok",
+      "message": "leg_L0: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.80–6.94 m"
+    },
+    {
+      "id": "leg.chain",
+      "severity": "ok",
+      "message": "leg_R0: 4-joint chain, foot on ground (Δy 0.0 mm), reach 3.02–6.87 m"
+    },
+    {
+      "id": "leg.chain",
+      "severity": "ok",
+      "message": "leg_L1: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.71–6.97 m"
+    },
+    {
+      "id": "leg.chain",
+      "severity": "ok",
+      "message": "leg_R1: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.83–6.76 m"
+    },
+    {
+      "id": "leg.chain",
+      "severity": "ok",
+      "message": "leg_L2: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.73–6.85 m"
+    },
+    {
+      "id": "leg.chain",
+      "severity": "ok",
+      "message": "leg_R2: 4-joint chain, foot on ground (Δy 0.0 mm), reach 3.02–6.93 m"
+    },
+    {
+      "id": "leg.chain",
+      "severity": "ok",
+      "message": "leg_L3: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.77–6.91 m"
+    },
+    {
+      "id": "leg.chain",
+      "severity": "ok",
+      "message": "leg_R3: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.98–6.94 m"
+    },
+    {
+      "id": "piston.stroke",
+      "severity": "ok",
+      "message": "16 pistons: barrel/rod lengths cover their full stroke"
+    },
+    {
+      "id": "ground.clearance",
+      "severity": "ok",
+      "message": "only feet touch the ground (lowest other part 0.15 m)"
+    },
+    {
+      "id": "clearance.sweep",
+      "severity": "ok",
+      "message": "every joint reaches both limits without parts interpenetrating (OBB test, 4 mm tolerance)"
+    },
+    {
+      "id": "clearance.random",
+      "severity": "info",
+      "message": "30/30 random multi-joint poses are clash-free (combined extremes can still collide; controllers should keep to gait ranges)"
+    },
+    {
+      "id": "interior.space",
+      "severity": "ok",
+      "message": "cockpit (cockpit): 1.40×1.40×1.35 m"
+    },
+    {
+      "id": "naming",
+      "severity": "ok",
+      "message": "leg chains share 4-joint layouts; names follow leg_<id>_<segment>"
+    }
+  ],
+  "counts": {
+    "ok": 14,
+    "info": 1,
+    "warn": 0,
+    "error": 0
+  },
+  "clashes": []
+}

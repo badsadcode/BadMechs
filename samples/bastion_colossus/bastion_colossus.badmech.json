@@ -1,0 +1,15 @@
+{
+  "format": "badmech-recipe",
+  "version": 1,
+  "name": "Bastion Colossus",
+  "family": "colossus",
+  "role": "hauler",
+  "seed": 9000,
+  "scale": 1,
+  "bulk": 0.6,
+  "scheme": "urban",
+  "rerolls": {},
+  "overrides": {
+    "colossus.frame": "quad"
+  }
+}

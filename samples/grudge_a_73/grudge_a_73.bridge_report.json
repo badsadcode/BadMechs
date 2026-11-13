@@ -1,0 +1,206 @@
+{
+  "ok": true,
+  "bones": {
+    "root": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "pelvis": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_hip_yaw": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_hip_roll": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_thigh": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_shin": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_tarsus": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_ankle": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_foot": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_hip_yaw": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_hip_roll": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_thigh": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_shin": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_tarsus": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_ankle": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_foot": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "torso": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "cockpit_hatch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_shoulder_pitch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_shoulder_roll": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_upper": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_forearm": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_barrels_spin": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_shoulder_pitch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_shoulder_roll": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_upper": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_forearm": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_barrels_spin": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "pod_L_yaw": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "pod_L_pitch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "pod_R_yaw": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "pod_R_pitch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_shin_ram_barrel": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_shin_ram_rod": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_tarsus_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_tarsus_ram_rod": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_hip_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_hip_ram_rod": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_shin_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_shin_ram_rod": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_tarsus_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_tarsus_ram_rod": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_hip_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_hip_ram_rod": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_elbow_ram_barrel": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_elbow_ram_rod": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_elbow_ram_barrel": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_elbow_ram_rod": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    }
+  },
+  "boneCount": 48,
+  "missingBones": [],
+  "maxPosErrorM": 1.0409503696306335e-06,
+  "maxAxisErrorDeg": 0.0,
+  "meshCount": 1,
+  "triangles": 12664,
+  "vertexGroups": 48,
+  "blend": "grudge_a_73.blend",
+  "fbx": "grudge_a_73.fbx"
+}

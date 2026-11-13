@@ -1,0 +1,16 @@
+{
+  "format": "badmech-recipe",
+  "version": 1,
+  "name": "Lynx S1",
+  "family": "biped",
+  "role": "scout",
+  "seed": 1001,
+  "scale": 1,
+  "bulk": 0.2,
+  "scheme": "scout",
+  "rerolls": {},
+  "overrides": {
+    "legs.style": "digitigrade",
+    "body.weight": "light"
+  }
+}

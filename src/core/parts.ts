@@ -467,9 +467,11 @@ export const HUMAN = { sitW: 1.0, sitH: 1.3, sitD: 1.3 };
  * Returns the node name. Registers interior space + entry hatch.
  */
 export function cockpit(b: Builder, parent: string, at: Vec3, sp: CockpitSpec): string {
-  const iw = Math.max(sp.iw, HUMAN.sitW);
-  const ih = Math.max(sp.ih, HUMAN.sitH);
-  const idp = Math.max(sp.id, HUMAN.sitD);
+  // seated cockpits need sitting room; a standing exo harness only needs torso room
+  const cage = sp.style === 'cage';
+  const iw = Math.max(sp.iw, cage ? 0.62 : HUMAN.sitW);
+  const ih = Math.max(sp.ih, cage ? 0.95 : HUMAN.sitH);
+  const idp = Math.max(sp.id, cage ? 0.5 : HUMAN.sitD);
   const t = sp.wall;
   const pod = b.node('cockpit', parent, at, { system: 'cockpit', role: 'group' });
   const shell = pod.comp('cockpit', 'shell');
@@ -479,7 +481,7 @@ export function cockpit(b: Builder, parent: string, at: Vec3, sp: CockpitSpec): 
       for (const sz of [-1, 1]) shell.cyl([(sx * iw) / 2, ih / 2, (sz * idp) / 2], 0.035, ih, 'steel', { segments: 8 });
     for (const sz of [-1, 1]) shell.cylX([0, ih, (sz * idp) / 2], 0.035, iw, 'steel', { segments: 8 });
     for (const sx of [-1, 1]) shell.cylZ([(sx * iw) / 2, ih, 0], 0.035, idp, 'steel', { segments: 8 });
-    shell.box([0, -t / 2, 0], [iw, t, idp], 'floor');
+    shell.box([0, -t / 2, -idp * 0.1], [iw * 0.7, t, idp * 0.6], 'darkMetal');
     shell.box([0, ih * 0.5, -idp / 2 - t / 2], [iw * 0.9, ih * 0.9, t], 'darkMetal');
   } else {
     shell.box([0, -t / 2, 0], [iw + 2 * t, t, idp + 2 * t], 'darkMetal'); // floor
@@ -511,6 +513,17 @@ export function cockpit(b: Builder, parent: string, at: Vec3, sp: CockpitSpec): 
   // interior: seat, console, controls – all at true human scale
   const inn = pod.child('cockpit_interior', [0, 0, 0], { role: 'group', component: 'interior' });
   const int = inn.comp('interior');
+  if (sp.style === 'cage') {
+    // standing harness: back plate, shoulder yokes, hand grips. The pilot's legs go into the mech's.
+    int.box([0, ih * 0.5, -idp * 0.38], [0.42, ih * 0.75, 0.06], 'interior');
+    for (const sx of [-1, 1]) {
+      int.box([sx * 0.18, ih * 0.82, -idp * 0.2], [0.08, 0.05, 0.36], 'rubber', { detail: 1, collide: false });
+      int.cyl([sx * 0.3, ih * 0.38, idp * 0.12], 0.025, 0.14, 'rubber', { detail: 1, collide: false, segments: 6 });
+    }
+    int.box([0, ih * 0.15, -idp * 0.25], [0.3, 0.06, 0.18], 'interior', { detail: 1 });
+    b.interiors.push({ name: 'cockpit', node: 'cockpit', min: [-iw / 2, 0, -idp / 2], max: [iw / 2, ih, idp / 2], walkable: false, kind: 'cockpit' });
+    return pod.name;
+  }
   int.box([0, 0.25, -idp * 0.18], [0.55, 0.12, 0.5], 'interior'); // seat pan
   int.box([0, 0.65, -idp * 0.18 - 0.27], [0.55, 0.75, 0.1], 'interior', { rot: [-0.18, 0, 0] }); // backrest
   int.box([0, 0.12, -idp * 0.18], [0.2, 0.25, 0.2], 'darkMetal'); // seat post
@@ -520,7 +533,7 @@ export function cockpit(b: Builder, parent: string, at: Vec3, sp: CockpitSpec): 
   for (const sx of [-1, 1]) int.box([sx * 0.15, 0.06, idp * 0.25], [0.12, 0.04, 0.2], 'steel', { detail: 2, collide: false }); // pedals
   b.interiors.push({ name: 'cockpit', node: 'cockpit', min: [-iw / 2, 0, -idp / 2], max: [iw / 2, ih, idp / 2], walkable: ih > 1.9, kind: 'cockpit' });
 
-  if (sp.hatch !== 'none' && sp.style !== 'cage') {
+  if (sp.hatch !== 'none') {
     const top = sp.hatch === 'top';
     const hatch = pod.child('cockpit_hatch', top ? [0, ih + t, -idp * 0.5] : [iw * 0.5 + t, 0.1, -idp * 0.45], {
       role: 'hatch',

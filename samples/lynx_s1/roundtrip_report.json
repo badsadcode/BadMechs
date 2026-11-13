@@ -1,0 +1,74 @@
+{
+  "mech": "Lynx S1",
+  "family": "biped",
+  "heightM": 7.07,
+  "glb": {
+    "ok": true,
+    "nodesChecked": 91,
+    "missing": [],
+    "maxPosErrorM": 1.1126768006876024e-05,
+    "maxAxisErrorDeg": 0.0,
+    "materials": "9 imported / 9 used in file",
+    "skinnedHoses": 6,
+    "triangles": 8528
+  },
+  "glb_lod1": {
+    "ok": true,
+    "nodesChecked": 91,
+    "maxPosErrorM": 1.1126768006876024e-05,
+    "triangles": 4376
+  },
+  "glb_lod2": {
+    "ok": true,
+    "nodesChecked": 91,
+    "maxPosErrorM": 1.1126768006876024e-05,
+    "triangles": 3120
+  },
+  "fbx": {
+    "ok": true,
+    "boneCount": 28,
+    "missingBones": [],
+    "maxPosErrorM": 9.906751000043548e-07,
+    "maxAxisErrorDeg": 0.0,
+    "meshCount": 1,
+    "triangles": 8528,
+    "vertexGroups": 28,
+    "blend": "lynx_s1.blend",
+    "fbx": "lynx_s1.fbx"
+  },
+  "fbx_pose": {
+    "ok": true,
+    "posedJoint": "leg_L_shin",
+    "angleRad": -0.976264,
+    "verticesMoved": 1616,
+    "verticesTotal": 11388,
+    "pivotDrift": 8.429369702178807e-08
+  },
+  "usd": {
+    "pxr": {
+      "ok": true,
+      "upAxis": "Y",
+      "metersPerUnit": 1.0,
+      "xforms": 92,
+      "meshes": 117,
+      "missing": [],
+      "maxPosErrorM": 3.412611871292544e-05,
+      "maxAxisErrorDeg": 0.0,
+      "jointLimitsPreserved": "26/26"
+    },
+    "blender": {
+      "ok": true,
+      "objects": 194,
+      "meshes": 117
+    },
+    "ok": true
+  },
+  "obj": {
+    "ok": true,
+    "objects": 59,
+    "triangles": 7248,
+    "materials": 9,
+    "note": "static only, by design"
+  },
+  "ok": true
+}

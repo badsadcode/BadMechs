@@ -3,6 +3,7 @@ import type { Mech } from '../core/model';
 import type { MechRecipe } from '../core/recipe';
 import { validate } from '../core/validate';
 import type { LimitFit } from '../core/validate';
+import { calibrateGait } from '../controller/calibrate';
 import { exportGlb } from './gltf';
 import { rigSidecar } from './rig';
 import { exportObj, exportUsda } from './static';
@@ -53,6 +54,7 @@ export interface PackageFiles {
 
 export function buildPackage(mech: Mech, recipe: MechRecipe, fits: LimitFit[], bridgeSource: string): { files: PackageFiles; base: string } {
   const base = slug(mech.name);
+  calibrateGait(mech); // gait hints in the export are verified by the reference controller
   const files: PackageFiles = {};
   files[`${base}/${base}.glb`] = exportGlb(mech, { lod: 0, recipe });
   files[`${base}/${base}_LOD1.glb`] = exportGlb(mech, { lod: 1, recipe });

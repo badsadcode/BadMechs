@@ -1,0 +1,74 @@
+{
+  "mech": "Harrow Octo",
+  "family": "octopod",
+  "heightM": 5.57,
+  "glb": {
+    "ok": true,
+    "nodesChecked": 167,
+    "missing": [],
+    "maxPosErrorM": 1.0330879518455622e-05,
+    "maxAxisErrorDeg": 0.0,
+    "materials": "10 imported / 10 used in file",
+    "skinnedHoses": 8,
+    "triangles": 17272
+  },
+  "glb_lod1": {
+    "ok": true,
+    "nodesChecked": 167,
+    "maxPosErrorM": 1.0330879518455622e-05,
+    "triangles": 8748
+  },
+  "glb_lod2": {
+    "ok": true,
+    "nodesChecked": 167,
+    "maxPosErrorM": 1.0330879518455622e-05,
+    "triangles": 4928
+  },
+  "fbx": {
+    "ok": true,
+    "boneCount": 67,
+    "missingBones": [],
+    "maxPosErrorM": 2.5005551532987393e-06,
+    "maxAxisErrorDeg": 0.0,
+    "meshCount": 1,
+    "triangles": 17272,
+    "vertexGroups": 67,
+    "blend": "harrow_octo.blend",
+    "fbx": "harrow_octo.fbx"
+  },
+  "fbx_pose": {
+    "ok": true,
+    "posedJoint": "leg_L0_tibia",
+    "angleRad": -0.7940240000000001,
+    "verticesMoved": 672,
+    "verticesTotal": 20932,
+    "pivotDrift": 2.0230487285229133e-06
+  },
+  "usd": {
+    "pxr": {
+      "ok": true,
+      "upAxis": "Y",
+      "metersPerUnit": 1.0,
+      "xforms": 168,
+      "meshes": 259,
+      "missing": [],
+      "maxPosErrorM": 0.00010360667542247504,
+      "maxAxisErrorDeg": 0.0,
+      "jointLimitsPreserved": "33/33"
+    },
+    "blender": {
+      "ok": true,
+      "objects": 395,
+      "meshes": 259
+    },
+    "ok": true
+  },
+  "obj": {
+    "ok": true,
+    "objects": 130,
+    "triangles": 15352,
+    "materials": 10,
+    "note": "static only, by design"
+  },
+  "ok": true
+}

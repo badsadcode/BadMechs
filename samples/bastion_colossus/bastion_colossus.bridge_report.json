@@ -1,0 +1,158 @@
+{
+  "ok": true,
+  "bones": {
+    "root": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "body": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_FL_coxa": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FL_femur": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FL_tibia": {
+      "posErr": 2e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FL_foot": {
+      "posErr": 4e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FR_coxa": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FR_femur": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FR_tibia": {
+      "posErr": 4e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FR_foot": {
+      "posErr": 5e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_coxa": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_femur": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_tibia": {
+      "posErr": 5e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_foot": {
+      "posErr": 4e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_coxa": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_femur": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_tibia": {
+      "posErr": 5e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_foot": {
+      "posErr": 4e-06,
+      "axisErrDeg": 0.0
+    },
+    "cockpit_hatch": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "deck_house_door": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FL_femur_ram_barrel": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FL_femur_ram_rod": {
+      "posErr": 2e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FL_tibia_ram_barrel": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FL_tibia_ram_rod": {
+      "posErr": 3e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FR_femur_ram_barrel": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FR_femur_ram_rod": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FR_tibia_ram_barrel": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FR_tibia_ram_rod": {
+      "posErr": 6e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_femur_ram_barrel": {
+      "posErr": 2e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_femur_ram_rod": {
+      "posErr": 2e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_tibia_ram_barrel": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_tibia_ram_rod": {
+      "posErr": 4e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_femur_ram_barrel": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_femur_ram_rod": {
+      "posErr": 2e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_tibia_ram_barrel": {
+      "posErr": 2e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_tibia_ram_rod": {
+      "posErr": 4e-06,
+      "axisErrDeg": 0.0
+    }
+  },
+  "boneCount": 36,
+  "missingBones": [],
+  "maxPosErrorM": 6.397441799640054e-06,
+  "maxAxisErrorDeg": 0.0,
+  "meshCount": 1,
+  "triangles": 10944,
+  "vertexGroups": 36,
+  "blend": "bastion_colossus.blend",
+  "fbx": "bastion_colossus.fbx"
+}

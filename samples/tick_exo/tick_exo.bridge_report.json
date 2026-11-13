@@ -1,0 +1,170 @@
+{
+  "ok": true,
+  "bones": {
+    "root": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "pelvis": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_hip_yaw": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_hip_roll": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_thigh": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_shin": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_ankle": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_foot": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_hip_yaw": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_hip_roll": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_thigh": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_shin": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_ankle": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_foot": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "torso": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_shoulder_pitch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_shoulder_roll": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_upper": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_forearm": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_wrist": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_drill_spin": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_shoulder_pitch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_shoulder_roll": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_upper": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_forearm": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_wrist": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_drill_spin": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_shin_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_shin_ram_rod": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_hip_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_hip_ram_rod": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_shin_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_shin_ram_rod": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_hip_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_hip_ram_rod": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_elbow_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_elbow_ram_rod": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_elbow_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_elbow_ram_rod": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    }
+  },
+  "boneCount": 39,
+  "missingBones": [],
+  "maxPosErrorM": 3.0561569636550484e-07,
+  "maxAxisErrorDeg": 0.0,
+  "meshCount": 1,
+  "triangles": 8268,
+  "vertexGroups": 39,
+  "blend": "tick_exo.blend",
+  "fbx": "tick_exo.fbx"
+}

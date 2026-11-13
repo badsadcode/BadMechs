@@ -1,0 +1,126 @@
+{
+  "ok": true,
+  "bones": {
+    "root": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "pelvis": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_hip_yaw": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_hip_roll": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_thigh": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_shin": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_tarsus": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_ankle": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L_foot": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_hip_yaw": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_hip_roll": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_thigh": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_shin": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_tarsus": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_ankle": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_R_foot": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "torso": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "cockpit_hatch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_shoulder_pitch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_shoulder_roll": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_upper": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_L_forearm": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_shoulder_pitch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_shoulder_roll": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_upper": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "arm_R_forearm": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "pod_C_yaw": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "pod_C_pitch": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    }
+  },
+  "boneCount": 28,
+  "missingBones": [],
+  "maxPosErrorM": 9.906751000043548e-07,
+  "maxAxisErrorDeg": 0.0,
+  "meshCount": 1,
+  "triangles": 8528,
+  "vertexGroups": 28,
+  "blend": "lynx_s1.blend",
+  "fbx": "lynx_s1.fbx"
+}

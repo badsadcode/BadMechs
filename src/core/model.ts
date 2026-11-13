@@ -187,6 +187,8 @@ export interface GaitHint {
   bodyHeight: number;
   /** legs grouped by simultaneous swing */
   groups: string[][];
+  /** filled in by calibrateGait(): the reference controller tracked this gait within tolerance */
+  verified?: { maxFootErrorM: number; meanFootErrorM: number; strideScaled: number };
 }
 
 export interface Mech {

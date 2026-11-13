@@ -61,13 +61,13 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
     : colo
       ? 'colossal'
       : ctx.choice('body.weight', 'Weight class', 'body', ['light', 'medium', 'heavy', 'assault'] as const, r.role === 'scout' ? [6, 2, 0.5, 0] : fighter ? [1, 3, 3, 2] : [1, 3, 2, 0.5]);
-  const baseH = H0 ?? (exo ? 2.9 : ({ light: 7, medium: 9.5, heavy: 11.5, assault: 13, colossal: 28 } as Record<string, number>)[weight]);
+  const baseH = H0 ?? (exo ? 2.6 : ({ light: 7, medium: 9.5, heavy: 11.5, assault: 13, colossal: 28 } as Record<string, number>)[weight]);
   const H = baseH * r.scale;
   const bulk = Math.min(1, Math.max(0, r.bulk + (weight === 'heavy' ? 0.12 : weight === 'assault' ? 0.25 : weight === 'light' ? -0.15 : 0)));
   const plating = exo ? 0.25 + bulk * 0.3 : fighter ? 0.55 + bulk * 0.45 : 0.3 + bulk * 0.4;
   const lattice = exo || ctx.flag('frame.lattice', 'Open lattice frame', 'body', r.role === 'industrial' || r.role === 'salvage' ? 0.45 : 0.08);
   const hydraulics = ctx.flag('frame.hydraulics', 'Exposed hydraulics', 'legs', exo ? 0.95 : fighter ? 0.55 : 0.9);
-  const legStyle = ctx.choice('legs.style', 'Leg style', 'legs', ['plantigrade', 'digitigrade'] as const, r.role === 'scout' ? [1, 3] : exo ? [3, 1] : [3, 1.4]);
+  const legStyle = exo ? 'plantigrade' : ctx.choice('legs.style', 'Leg style', 'legs', ['plantigrade', 'digitigrade'] as const, r.role === 'scout' ? [1, 3] : [3, 1.4]);
   const foot = ctx.choice('legs.foot', 'Foot', 'legs', ['flat', 'claw', 'hoof'] as const, legStyle === 'digitigrade' ? [1, 3, 0.5] : [4, 1, 1]);
   const legStyleS = style(ctx, 'legs', plating, lattice);
 
@@ -78,7 +78,8 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
   const lw = H * (exo ? 0.085 : 0.075) * (0.85 + bulk * 0.5);
   const ld = lw * 1.12;
   const hipW = H * (exo ? 0.11 : 0.11) * (0.9 + bulk * 0.35);
-  const lens = legStyle === 'digitigrade' ? [H * 0.2, H * 0.24, H * 0.15] : [H * 0.235, H * 0.235];
+    // exosuit legs are sized around a human leg inside them (pilot hip ≈ 1.0–1.1 m)
+  const lens = exo ? [0.5, 0.5] : legStyle === 'digitigrade' ? [H * 0.2, H * 0.24, H * 0.15] : [H * 0.235, H * 0.235];
   const phis = legStyle === 'digitigrade' ? [40, -36, 12] : [16 + bulk * 6, -(16 + bulk * 6)];
   let drop = 0;
   const legs: { id: string; res: ReturnType<typeof uprightLeg> }[] = [];
@@ -135,9 +136,9 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
   // torso spine / body core (behind the cockpit zone)
   let cockpitAt: Vec3;
   // exosuit: a harness cage around the pilot's torso; their legs go down into the mech's thighs
-  const iw = exo ? 0.75 : Math.max(1.05, H * 0.11);
-  const ih = exo ? 1.0 : Math.max(1.32, H * 0.1);
-  const idp = exo ? 0.6 : Math.max(1.3, H * 0.11);
+  const iw = exo ? 0.62 : Math.max(1.05, H * 0.11);
+  const ih = exo ? 0.95 : Math.max(1.32, H * 0.1);
+  const idp = exo ? 0.5 : Math.max(1.3, H * 0.11);
   const wall = exo ? 0.04 : Math.max(0.06, H * 0.009);
   if (exo) {
     // exosuit: the pilot stands in a cage between hips and shoulders; the "torso" is a backpack frame
@@ -211,10 +212,9 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
   // ── arms
   const armless = !exo && !colo && fighter && ctx.flag('arms.none', 'Armless (weapon pods)', 'arms', 0.12);
   const armW = H * (exo ? 0.065 : 0.06) * (0.85 + bulk * 0.5);
-  const fighterTools: ArmTool[] = ['cannon', 'rotary', 'missile', 'gripper', 'shield'];
-  const workTools: ArmTool[] = ['gripper', 'claw', 'drill', 'gripper', 'cannon'];
-  const tools = fighter ? fighterTools : workTools;
-  const weights = fighter ? [3, 3, 2, 1, 0.6] : [3, 2, 1.5, 0, 0.3];
+  // every tool is pickable; the role only changes the odds
+  const tools: ArmTool[] = ['cannon', 'rotary', 'missile', 'gripper', 'claw', 'drill', 'shield'];
+  const weights = fighter ? [3, 3, 2, 1, 0.3, 0, 0.6] : [0.3, 0, 0, 3, 2, 1.5, 0];
   if (!armless) {
     const toolL = ctx.choice('arms.L.tool', 'Left arm tool', 'arms.L', tools, weights);
     const sym = ctx.flag('arms.symmetric', 'Symmetric arms', 'arms', fighter ? 0.35 : 0.6);

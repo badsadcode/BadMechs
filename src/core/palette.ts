@@ -30,7 +30,7 @@ export function makePalette(scheme: string): Record<MaterialId, PaletteEntry> {
     steel: { color: hex('#7d7f80'), metallic: 0.9, roughness: 0.42 },
     chrome: { color: hex('#c9ccce'), metallic: 1.0, roughness: 0.16 },
     rubber: { color: hex('#151515'), metallic: 0.0, roughness: 0.9 },
-    glass: { color: hex('#3b2a12'), metallic: 0.1, roughness: 0.08, alpha: 0.55, emissive: [light[0] * 0.08, light[1] * 0.08, light[2] * 0.08] },
+    glass: { color: hex('#2a1806'), metallic: 0.2, roughness: 0.05, alpha: 0.72, emissive: [light[0] * 0.12, light[1] * 0.07, light[2] * 0.02] },
     hazard: { color: hex(s.hazard), metallic: 0.3, roughness: 0.55 },
     emissive: { color: light, metallic: 0, roughness: 0.4, emissive: light },
     interior: { color: hex('#3c3d3a'), metallic: 0.2, roughness: 0.75 },

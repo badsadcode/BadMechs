@@ -1,0 +1,4536 @@
+{
+ "schema": "badmech-rig/1",
+ "generator": "BadMech",
+ "name": "Bastion Colossus",
+ "family": "colossus",
+ "coordinateSystem": {
+  "units": "metres",
+  "up": "+Y",
+  "forward": "+Z",
+  "right": "-X",
+  "handedness": "right",
+  "note": "glTF convention. Mech faces +Z; its left side is +X."
+ },
+ "rotationConvention": "local = restRotation * axisAngle(axisVector, angle); angle 0 = rest pose; limits in radians relative to rest",
+ "rootNode": "root",
+ "bodyNode": "body",
+ "stats": {
+  "height": 15.59,
+  "width": 32.49,
+  "length": 37.35,
+  "estimatedMassTonnes": 1029.6,
+  "sizeClass": "colossal"
+ },
+ "nodes": [
+  {
+   "name": "root",
+   "parent": null,
+   "role": "root",
+   "system": "root",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    0,
+    0
+   ],
+   "tags": []
+  },
+  {
+   "name": "body",
+   "parent": "root",
+   "role": "link",
+   "system": "body",
+   "component": null,
+   "restTranslation": [
+    0,
+    8.21496,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    8.215,
+    0
+   ],
+   "tags": [
+    "body"
+   ]
+  },
+  {
+   "name": "leg_FL_coxa",
+   "parent": "body",
+   "role": "link",
+   "system": "leg.FL",
+   "component": null,
+   "restTranslation": [
+    5.562,
+    -0.7776,
+    9.0972
+   ],
+   "restRotation": [
+    0,
+    0.411514,
+    0,
+    0.911403
+   ],
+   "restWorldPosition": [
+    5.562,
+    7.4374,
+    9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_coxa__joint-housing",
+   "parent": "leg_FL_coxa",
+   "role": "component",
+   "system": "leg.FL",
+   "component": "joint-housing",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    5.562,
+    7.4374,
+    9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_coxa__frame",
+   "parent": "leg_FL_coxa",
+   "role": "component",
+   "system": "leg.FL",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    5.562,
+    7.4374,
+    9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_coxa__armor",
+   "parent": "leg_FL_coxa",
+   "role": "component",
+   "system": "leg.FL",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    5.562,
+    7.4374,
+    9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_coxa__detail",
+   "parent": "leg_FL_coxa",
+   "role": "component",
+   "system": "leg.FL",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    5.562,
+    7.4374,
+    9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_femur",
+   "parent": "leg_FL_coxa",
+   "role": "link",
+   "system": "leg.FL",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    1.92
+   ],
+   "restRotation": [
+    -0.325568,
+    0,
+    0,
+    0.945519
+   ],
+   "restWorldPosition": [
+    7.0022,
+    7.4374,
+    10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_femur__frame",
+   "parent": "leg_FL_femur",
+   "role": "component",
+   "system": "leg.FL",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    7.0022,
+    7.4374,
+    10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_femur__armor",
+   "parent": "leg_FL_femur",
+   "role": "component",
+   "system": "leg.FL",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    7.0022,
+    7.4374,
+    10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_femur__detail",
+   "parent": "leg_FL_femur",
+   "role": "component",
+   "system": "leg.FL",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    7.0022,
+    7.4374,
+    10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_tibia",
+   "parent": "leg_FL_femur",
+   "role": "link",
+   "system": "leg.FL",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    8.64
+   ],
+   "restRotation": [
+    0.819152,
+    0,
+    0,
+    0.573576
+   ],
+   "restWorldPosition": [
+    12.1093,
+    12.7567,
+    14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_tibia__frame",
+   "parent": "leg_FL_tibia",
+   "role": "component",
+   "system": "leg.FL",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    12.1093,
+    12.7567,
+    14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_tibia__armor",
+   "parent": "leg_FL_tibia",
+   "role": "component",
+   "system": "leg.FL",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    12.1093,
+    12.7567,
+    14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_tibia__detail",
+   "parent": "leg_FL_tibia",
+   "role": "component",
+   "system": "leg.FL",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    12.1093,
+    12.7567,
+    14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_foot",
+   "parent": "leg_FL_tibia",
+   "role": "link",
+   "system": "leg.FL",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    12
+   ],
+   "restRotation": [
+    -0.587785,
+    0,
+    0,
+    0.809017
+   ],
+   "restWorldPosition": [
+    14.8908,
+    1.344,
+    17.3217
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_foot__frame",
+   "parent": "leg_FL_foot",
+   "role": "component",
+   "system": "leg.FL",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    14.8908,
+    1.344,
+    17.3217
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_coxa",
+   "parent": "body",
+   "role": "link",
+   "system": "leg.FR",
+   "component": null,
+   "restTranslation": [
+    -5.562,
+    -0.7776,
+    9.0972
+   ],
+   "restRotation": [
+    0,
+    -0.411514,
+    0,
+    0.911403
+   ],
+   "restWorldPosition": [
+    -5.562,
+    7.4374,
+    9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_coxa__joint-housing",
+   "parent": "leg_FR_coxa",
+   "role": "component",
+   "system": "leg.FR",
+   "component": "joint-housing",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -5.562,
+    7.4374,
+    9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_coxa__frame",
+   "parent": "leg_FR_coxa",
+   "role": "component",
+   "system": "leg.FR",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -5.562,
+    7.4374,
+    9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_coxa__armor",
+   "parent": "leg_FR_coxa",
+   "role": "component",
+   "system": "leg.FR",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -5.562,
+    7.4374,
+    9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_coxa__detail",
+   "parent": "leg_FR_coxa",
+   "role": "component",
+   "system": "leg.FR",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -5.562,
+    7.4374,
+    9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_femur",
+   "parent": "leg_FR_coxa",
+   "role": "link",
+   "system": "leg.FR",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    1.92
+   ],
+   "restRotation": [
+    -0.325568,
+    0,
+    0,
+    0.945519
+   ],
+   "restWorldPosition": [
+    -7.0022,
+    7.4374,
+    10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_femur__frame",
+   "parent": "leg_FR_femur",
+   "role": "component",
+   "system": "leg.FR",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -7.0022,
+    7.4374,
+    10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_femur__armor",
+   "parent": "leg_FR_femur",
+   "role": "component",
+   "system": "leg.FR",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -7.0022,
+    7.4374,
+    10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_femur__detail",
+   "parent": "leg_FR_femur",
+   "role": "component",
+   "system": "leg.FR",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -7.0022,
+    7.4374,
+    10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_tibia",
+   "parent": "leg_FR_femur",
+   "role": "link",
+   "system": "leg.FR",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    8.64
+   ],
+   "restRotation": [
+    0.819152,
+    0,
+    0,
+    0.573576
+   ],
+   "restWorldPosition": [
+    -12.1093,
+    12.7567,
+    14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_tibia__frame",
+   "parent": "leg_FR_tibia",
+   "role": "component",
+   "system": "leg.FR",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -12.1093,
+    12.7567,
+    14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_tibia__armor",
+   "parent": "leg_FR_tibia",
+   "role": "component",
+   "system": "leg.FR",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -12.1093,
+    12.7567,
+    14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_tibia__detail",
+   "parent": "leg_FR_tibia",
+   "role": "component",
+   "system": "leg.FR",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -12.1093,
+    12.7567,
+    14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_foot",
+   "parent": "leg_FR_tibia",
+   "role": "link",
+   "system": "leg.FR",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    12
+   ],
+   "restRotation": [
+    -0.587785,
+    0,
+    0,
+    0.809017
+   ],
+   "restWorldPosition": [
+    -14.8908,
+    1.344,
+    17.3217
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FR_foot__frame",
+   "parent": "leg_FR_foot",
+   "role": "component",
+   "system": "leg.FR",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -14.8908,
+    1.344,
+    17.3217
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_coxa",
+   "parent": "body",
+   "role": "link",
+   "system": "leg.RL",
+   "component": null,
+   "restTranslation": [
+    5.562,
+    -0.7776,
+    -9.0972
+   ],
+   "restRotation": [
+    0,
+    0.911403,
+    0,
+    0.411514
+   ],
+   "restWorldPosition": [
+    5.562,
+    7.4374,
+    -9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_coxa__joint-housing",
+   "parent": "leg_RL_coxa",
+   "role": "component",
+   "system": "leg.RL",
+   "component": "joint-housing",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    5.562,
+    7.4374,
+    -9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_coxa__frame",
+   "parent": "leg_RL_coxa",
+   "role": "component",
+   "system": "leg.RL",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    5.562,
+    7.4374,
+    -9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_coxa__armor",
+   "parent": "leg_RL_coxa",
+   "role": "component",
+   "system": "leg.RL",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    5.562,
+    7.4374,
+    -9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_coxa__detail",
+   "parent": "leg_RL_coxa",
+   "role": "component",
+   "system": "leg.RL",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    5.562,
+    7.4374,
+    -9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_femur",
+   "parent": "leg_RL_coxa",
+   "role": "link",
+   "system": "leg.RL",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    1.92
+   ],
+   "restRotation": [
+    -0.325568,
+    0,
+    0,
+    0.945519
+   ],
+   "restWorldPosition": [
+    7.0022,
+    7.4374,
+    -10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_femur__frame",
+   "parent": "leg_RL_femur",
+   "role": "component",
+   "system": "leg.RL",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    7.0022,
+    7.4374,
+    -10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_femur__armor",
+   "parent": "leg_RL_femur",
+   "role": "component",
+   "system": "leg.RL",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    7.0022,
+    7.4374,
+    -10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_femur__detail",
+   "parent": "leg_RL_femur",
+   "role": "component",
+   "system": "leg.RL",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    7.0022,
+    7.4374,
+    -10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_tibia",
+   "parent": "leg_RL_femur",
+   "role": "link",
+   "system": "leg.RL",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    8.64
+   ],
+   "restRotation": [
+    0.819152,
+    0,
+    0,
+    0.573576
+   ],
+   "restWorldPosition": [
+    12.1093,
+    12.7567,
+    -14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_tibia__frame",
+   "parent": "leg_RL_tibia",
+   "role": "component",
+   "system": "leg.RL",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    12.1093,
+    12.7567,
+    -14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_tibia__armor",
+   "parent": "leg_RL_tibia",
+   "role": "component",
+   "system": "leg.RL",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    12.1093,
+    12.7567,
+    -14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_tibia__detail",
+   "parent": "leg_RL_tibia",
+   "role": "component",
+   "system": "leg.RL",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    12.1093,
+    12.7567,
+    -14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_foot",
+   "parent": "leg_RL_tibia",
+   "role": "link",
+   "system": "leg.RL",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    12
+   ],
+   "restRotation": [
+    -0.587785,
+    0,
+    0,
+    0.809017
+   ],
+   "restWorldPosition": [
+    14.8908,
+    1.344,
+    -17.3217
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RL_foot__frame",
+   "parent": "leg_RL_foot",
+   "role": "component",
+   "system": "leg.RL",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    14.8908,
+    1.344,
+    -17.3217
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_coxa",
+   "parent": "body",
+   "role": "link",
+   "system": "leg.RR",
+   "component": null,
+   "restTranslation": [
+    -5.562,
+    -0.7776,
+    -9.0972
+   ],
+   "restRotation": [
+    0,
+    -0.911403,
+    0,
+    0.411514
+   ],
+   "restWorldPosition": [
+    -5.562,
+    7.4374,
+    -9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_coxa__joint-housing",
+   "parent": "leg_RR_coxa",
+   "role": "component",
+   "system": "leg.RR",
+   "component": "joint-housing",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -5.562,
+    7.4374,
+    -9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_coxa__frame",
+   "parent": "leg_RR_coxa",
+   "role": "component",
+   "system": "leg.RR",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -5.562,
+    7.4374,
+    -9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_coxa__armor",
+   "parent": "leg_RR_coxa",
+   "role": "component",
+   "system": "leg.RR",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -5.562,
+    7.4374,
+    -9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_coxa__detail",
+   "parent": "leg_RR_coxa",
+   "role": "component",
+   "system": "leg.RR",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -5.562,
+    7.4374,
+    -9.0972
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_femur",
+   "parent": "leg_RR_coxa",
+   "role": "link",
+   "system": "leg.RR",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    1.92
+   ],
+   "restRotation": [
+    -0.325568,
+    0,
+    0,
+    0.945519
+   ],
+   "restWorldPosition": [
+    -7.0022,
+    7.4374,
+    -10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_femur__frame",
+   "parent": "leg_RR_femur",
+   "role": "component",
+   "system": "leg.RR",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -7.0022,
+    7.4374,
+    -10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_femur__armor",
+   "parent": "leg_RR_femur",
+   "role": "component",
+   "system": "leg.RR",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -7.0022,
+    7.4374,
+    -10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_femur__detail",
+   "parent": "leg_RR_femur",
+   "role": "component",
+   "system": "leg.RR",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -7.0022,
+    7.4374,
+    -10.3669
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_tibia",
+   "parent": "leg_RR_femur",
+   "role": "link",
+   "system": "leg.RR",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    8.64
+   ],
+   "restRotation": [
+    0.819152,
+    0,
+    0,
+    0.573576
+   ],
+   "restWorldPosition": [
+    -12.1093,
+    12.7567,
+    -14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_tibia__frame",
+   "parent": "leg_RR_tibia",
+   "role": "component",
+   "system": "leg.RR",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -12.1093,
+    12.7567,
+    -14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_tibia__armor",
+   "parent": "leg_RR_tibia",
+   "role": "component",
+   "system": "leg.RR",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -12.1093,
+    12.7567,
+    -14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_tibia__detail",
+   "parent": "leg_RR_tibia",
+   "role": "component",
+   "system": "leg.RR",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -12.1093,
+    12.7567,
+    -14.8694
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_foot",
+   "parent": "leg_RR_tibia",
+   "role": "link",
+   "system": "leg.RR",
+   "component": null,
+   "restTranslation": [
+    0,
+    0,
+    12
+   ],
+   "restRotation": [
+    -0.587785,
+    0,
+    0,
+    0.809017
+   ],
+   "restWorldPosition": [
+    -14.8908,
+    1.344,
+    -17.3217
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_RR_foot__frame",
+   "parent": "leg_RR_foot",
+   "role": "component",
+   "system": "leg.RR",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -14.8908,
+    1.344,
+    -17.3217
+   ],
+   "tags": []
+  },
+  {
+   "name": "body__frame",
+   "parent": "body",
+   "role": "component",
+   "system": "body",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    8.215,
+    0
+   ],
+   "tags": []
+  },
+  {
+   "name": "body__armor",
+   "parent": "body",
+   "role": "component",
+   "system": "body",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    8.215,
+    0
+   ],
+   "tags": []
+  },
+  {
+   "name": "body__detail",
+   "parent": "body",
+   "role": "component",
+   "system": "body",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    8.215,
+    0
+   ],
+   "tags": []
+  },
+  {
+   "name": "cockpit",
+   "parent": "body",
+   "role": "group",
+   "system": "cockpit",
+   "component": null,
+   "restTranslation": [
+    0,
+    3.888,
+    10.89
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    12.103,
+    10.89
+   ],
+   "tags": []
+  },
+  {
+   "name": "cockpit__cockpit_shell",
+   "parent": "cockpit",
+   "role": "component",
+   "system": "cockpit",
+   "component": "cockpit",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    12.103,
+    10.89
+   ],
+   "tags": []
+  },
+  {
+   "name": "cockpit__glass",
+   "parent": "cockpit",
+   "role": "component",
+   "system": "cockpit",
+   "component": "glass",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    12.103,
+    10.89
+   ],
+   "tags": []
+  },
+  {
+   "name": "cockpit__cockpit_frame",
+   "parent": "cockpit",
+   "role": "component",
+   "system": "cockpit",
+   "component": "cockpit",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    12.103,
+    10.89
+   ],
+   "tags": []
+  },
+  {
+   "name": "cockpit__detail",
+   "parent": "cockpit",
+   "role": "component",
+   "system": "cockpit",
+   "component": "detail",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    12.103,
+    10.89
+   ],
+   "tags": []
+  },
+  {
+   "name": "cockpit_interior",
+   "parent": "cockpit",
+   "role": "group",
+   "system": "cockpit",
+   "component": "interior",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    12.103,
+    10.89
+   ],
+   "tags": []
+  },
+  {
+   "name": "cockpit_interior__interior",
+   "parent": "cockpit_interior",
+   "role": "component",
+   "system": "cockpit",
+   "component": "interior",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    12.103,
+    10.89
+   ],
+   "tags": []
+  },
+  {
+   "name": "cockpit_hatch",
+   "parent": "cockpit",
+   "role": "hatch",
+   "system": "cockpit",
+   "component": null,
+   "restTranslation": [
+    1.632,
+    0.1,
+    -1.08
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    1.632,
+    12.203,
+    9.81
+   ],
+   "tags": []
+  },
+  {
+   "name": "cockpit_hatch__armor",
+   "parent": "cockpit_hatch",
+   "role": "component",
+   "system": "cockpit",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    1.632,
+    12.203,
+    9.81
+   ],
+   "tags": []
+  },
+  {
+   "name": "body__light",
+   "parent": "body",
+   "role": "component",
+   "system": "body",
+   "component": "light",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    8.215,
+    0
+   ],
+   "tags": []
+  },
+  {
+   "name": "body__equipment_ladder",
+   "parent": "body",
+   "role": "component",
+   "system": "body",
+   "component": "equipment",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    8.215,
+    0
+   ],
+   "tags": []
+  },
+  {
+   "name": "deck_house",
+   "parent": "body",
+   "role": "group",
+   "system": "interior",
+   "component": null,
+   "restTranslation": [
+    0,
+    3.888,
+    -3.591
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    12.103,
+    -3.591
+   ],
+   "tags": []
+  },
+  {
+   "name": "deck_house__armor",
+   "parent": "deck_house",
+   "role": "component",
+   "system": "interior",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    12.103,
+    -3.591
+   ],
+   "tags": []
+  },
+  {
+   "name": "deck_house__interior",
+   "parent": "deck_house",
+   "role": "component",
+   "system": "interior",
+   "component": "interior",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    12.103,
+    -3.591
+   ],
+   "tags": []
+  },
+  {
+   "name": "deck_house_door",
+   "parent": "deck_house",
+   "role": "hatch",
+   "system": "interior",
+   "component": null,
+   "restTranslation": [
+    -1,
+    0,
+    5.3865
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -1,
+    12.103,
+    1.7955
+   ],
+   "tags": []
+  },
+  {
+   "name": "deck_house_door__armor",
+   "parent": "deck_house_door",
+   "role": "component",
+   "system": "interior",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    -1,
+    12.103,
+    1.7955
+   ],
+   "tags": []
+  },
+  {
+   "name": "hull_machinery_bay",
+   "parent": "body",
+   "role": "group",
+   "system": "interior",
+   "component": "interior",
+   "restTranslation": [
+    0,
+    -1.5552,
+    -2.394
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    6.6598,
+    -2.394
+   ],
+   "tags": []
+  },
+  {
+   "name": "hull_machinery_bay__interior",
+   "parent": "hull_machinery_bay",
+   "role": "component",
+   "system": "interior",
+   "component": "interior",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    6.6598,
+    -2.394
+   ],
+   "tags": []
+  },
+  {
+   "name": "hull_machinery_bay__equipment_ladder",
+   "parent": "hull_machinery_bay",
+   "role": "component",
+   "system": "interior",
+   "component": "equipment",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    6.6598,
+    -2.394
+   ],
+   "tags": []
+  },
+  {
+   "name": "leg_FL_femur_ram_barrel",
+   "parent": "leg_FL_coxa",
+   "role": "actuator",
+   "system": "leg.FL",
+   "component": "actuator",
+   "restTranslation": [
+    0.50227,
+    -1.12226,
+    0.288
+   ],
+   "restRotation": [
+    -0.24024,
+    0,
+    0,
+    0.970713
+   ],
+   "restWorldPosition": [
+    6.1102,
+    6.3151,
+    8.9109
+   ],
+   "tags": [
+    "piston-barrel"
+   ]
+  },
+  {
+   "name": "leg_FL_femur_ram_rod",
+   "parent": "leg_FL_femur",
+   "role": "actuator",
+   "system": "leg.FL",
+   "component": "actuator",
+   "restTranslation": [
+    0.50227,
+    -0.857,
+    3.456
+   ],
+   "restRotation": [
+    -0.996042,
+    0,
+    0,
+    0.088882
+   ],
+   "restWorldPosition": [
+    9.773,
+    8.8898,
+    12.1401
+   ],
+   "tags": [
+    "piston-rod"
+   ]
+  },
+  {
+   "name": "leg_FL_tibia_ram_barrel",
+   "parent": "leg_FL_femur",
+   "role": "actuator",
+   "system": "leg.FL",
+   "component": "actuator",
+   "restTranslation": [
+    -0.47088,
+    1.12226,
+    3.024
+   ],
+   "restRotation": [
+    0.30144,
+    0,
+    0,
+    0.953485
+   ],
+   "restWorldPosition": [
+    7.96,
+    10.1835,
+    11.8391
+   ],
+   "tags": [
+    "piston-barrel"
+   ]
+  },
+  {
+   "name": "leg_FL_tibia_ram_rod",
+   "parent": "leg_FL_tibia",
+   "role": "actuator",
+   "system": "leg.FL",
+   "component": "actuator",
+   "restTranslation": [
+    -0.47088,
+    0.91822,
+    2.64
+   ],
+   "restRotation": [
+    0.793822,
+    0,
+    0,
+    0.60815
+   ],
+   "restWorldPosition": [
+    13.0649,
+    10.5296,
+    16.3396
+   ],
+   "tags": [
+    "piston-rod"
+   ]
+  },
+  {
+   "name": "leg_FR_femur_ram_barrel",
+   "parent": "leg_FR_coxa",
+   "role": "actuator",
+   "system": "leg.FR",
+   "component": "actuator",
+   "restTranslation": [
+    0.50227,
+    -1.12226,
+    0.288
+   ],
+   "restRotation": [
+    -0.24024,
+    0,
+    0,
+    0.970713
+   ],
+   "restWorldPosition": [
+    -5.4459,
+    6.3151,
+    9.6644
+   ],
+   "tags": [
+    "piston-barrel"
+   ]
+  },
+  {
+   "name": "leg_FR_femur_ram_rod",
+   "parent": "leg_FR_femur",
+   "role": "actuator",
+   "system": "leg.FR",
+   "component": "actuator",
+   "restTranslation": [
+    0.50227,
+    -0.857,
+    3.456
+   ],
+   "restRotation": [
+    -0.996042,
+    0,
+    0,
+    0.088882
+   ],
+   "restWorldPosition": [
+    -9.1087,
+    8.8898,
+    12.8936
+   ],
+   "tags": [
+    "piston-rod"
+   ]
+  },
+  {
+   "name": "leg_FR_tibia_ram_barrel",
+   "parent": "leg_FR_femur",
+   "role": "actuator",
+   "system": "leg.FR",
+   "component": "actuator",
+   "restTranslation": [
+    -0.47088,
+    1.12226,
+    3.024
+   ],
+   "restRotation": [
+    0.30144,
+    0,
+    0,
+    0.953485
+   ],
+   "restWorldPosition": [
+    -8.5828,
+    10.1835,
+    11.1327
+   ],
+   "tags": [
+    "piston-barrel"
+   ]
+  },
+  {
+   "name": "leg_FR_tibia_ram_rod",
+   "parent": "leg_FR_tibia",
+   "role": "actuator",
+   "system": "leg.FR",
+   "component": "actuator",
+   "restTranslation": [
+    -0.47088,
+    0.91822,
+    2.64
+   ],
+   "restRotation": [
+    0.793822,
+    0,
+    0,
+    0.60815
+   ],
+   "restWorldPosition": [
+    -13.6877,
+    10.5296,
+    15.6332
+   ],
+   "tags": [
+    "piston-rod"
+   ]
+  },
+  {
+   "name": "leg_RL_femur_ram_barrel",
+   "parent": "leg_RL_coxa",
+   "role": "actuator",
+   "system": "leg.RL",
+   "component": "actuator",
+   "restTranslation": [
+    0.50227,
+    -1.12226,
+    0.288
+   ],
+   "restRotation": [
+    -0.24024,
+    0,
+    0,
+    0.970713
+   ],
+   "restWorldPosition": [
+    5.4459,
+    6.3151,
+    -9.6644
+   ],
+   "tags": [
+    "piston-barrel"
+   ]
+  },
+  {
+   "name": "leg_RL_femur_ram_rod",
+   "parent": "leg_RL_femur",
+   "role": "actuator",
+   "system": "leg.RL",
+   "component": "actuator",
+   "restTranslation": [
+    0.50227,
+    -0.857,
+    3.456
+   ],
+   "restRotation": [
+    -0.996042,
+    0,
+    0,
+    0.088882
+   ],
+   "restWorldPosition": [
+    9.1087,
+    8.8898,
+    -12.8936
+   ],
+   "tags": [
+    "piston-rod"
+   ]
+  },
+  {
+   "name": "leg_RL_tibia_ram_barrel",
+   "parent": "leg_RL_femur",
+   "role": "actuator",
+   "system": "leg.RL",
+   "component": "actuator",
+   "restTranslation": [
+    -0.47088,
+    1.12226,
+    3.024
+   ],
+   "restRotation": [
+    0.30144,
+    0,
+    0,
+    0.953485
+   ],
+   "restWorldPosition": [
+    8.5828,
+    10.1835,
+    -11.1327
+   ],
+   "tags": [
+    "piston-barrel"
+   ]
+  },
+  {
+   "name": "leg_RL_tibia_ram_rod",
+   "parent": "leg_RL_tibia",
+   "role": "actuator",
+   "system": "leg.RL",
+   "component": "actuator",
+   "restTranslation": [
+    -0.47088,
+    0.91822,
+    2.64
+   ],
+   "restRotation": [
+    0.793822,
+    0,
+    0,
+    0.60815
+   ],
+   "restWorldPosition": [
+    13.6877,
+    10.5296,
+    -15.6332
+   ],
+   "tags": [
+    "piston-rod"
+   ]
+  },
+  {
+   "name": "leg_RR_femur_ram_barrel",
+   "parent": "leg_RR_coxa",
+   "role": "actuator",
+   "system": "leg.RR",
+   "component": "actuator",
+   "restTranslation": [
+    0.50227,
+    -1.12226,
+    0.288
+   ],
+   "restRotation": [
+    -0.24024,
+    0,
+    0,
+    0.970713
+   ],
+   "restWorldPosition": [
+    -6.1102,
+    6.3151,
+    -8.9109
+   ],
+   "tags": [
+    "piston-barrel"
+   ]
+  },
+  {
+   "name": "leg_RR_femur_ram_rod",
+   "parent": "leg_RR_femur",
+   "role": "actuator",
+   "system": "leg.RR",
+   "component": "actuator",
+   "restTranslation": [
+    0.50227,
+    -0.857,
+    3.456
+   ],
+   "restRotation": [
+    -0.996042,
+    0,
+    0,
+    0.088882
+   ],
+   "restWorldPosition": [
+    -9.773,
+    8.8898,
+    -12.1401
+   ],
+   "tags": [
+    "piston-rod"
+   ]
+  },
+  {
+   "name": "leg_RR_tibia_ram_barrel",
+   "parent": "leg_RR_femur",
+   "role": "actuator",
+   "system": "leg.RR",
+   "component": "actuator",
+   "restTranslation": [
+    -0.47088,
+    1.12226,
+    3.024
+   ],
+   "restRotation": [
+    0.30144,
+    0,
+    0,
+    0.953485
+   ],
+   "restWorldPosition": [
+    -7.96,
+    10.1835,
+    -11.8391
+   ],
+   "tags": [
+    "piston-barrel"
+   ]
+  },
+  {
+   "name": "leg_RR_tibia_ram_rod",
+   "parent": "leg_RR_tibia",
+   "role": "actuator",
+   "system": "leg.RR",
+   "component": "actuator",
+   "restTranslation": [
+    -0.47088,
+    0.91822,
+    2.64
+   ],
+   "restRotation": [
+    0.793822,
+    0,
+    0,
+    0.60815
+   ],
+   "restWorldPosition": [
+    -13.0649,
+    10.5296,
+    -16.3396
+   ],
+   "tags": [
+    "piston-rod"
+   ]
+  }
+ ],
+ "joints": [
+  {
+   "name": "leg_FL_coxa",
+   "type": "revolute",
+   "axis": "y",
+   "axisVector": [
+    0,
+    1,
+    0
+   ],
+   "restWorldAxis": [
+    0,
+    1,
+    0
+   ],
+   "min": -0.48869,
+   "max": 0.48869,
+   "minDeg": -28,
+   "maxDeg": 28,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "coxa-yaw",
+   "maxSpeed": 2.5,
+   "system": "leg.FL"
+  },
+  {
+   "name": "leg_FL_femur",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    0.6613,
+    0,
+    -0.7501
+   ],
+   "min": -0.87266,
+   "max": 0.61087,
+   "minDeg": -50,
+   "maxDeg": 35,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "femur-pitch",
+   "maxSpeed": 2.5,
+   "system": "leg.FL"
+  },
+  {
+   "name": "leg_FL_tibia",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    0.6613,
+    0,
+    -0.7501
+   ],
+   "min": -1.4231,
+   "max": 0.6528,
+   "minDeg": -81.54,
+   "maxDeg": 37.4,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "tibia-pitch",
+   "maxSpeed": 2.5,
+   "system": "leg.FL"
+  },
+  {
+   "name": "leg_FL_foot",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    0.6613,
+    0,
+    -0.7501
+   ],
+   "min": -0.5236,
+   "max": 0.5236,
+   "minDeg": -30,
+   "maxDeg": 30,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "foot-pitch",
+   "maxSpeed": 2.5,
+   "system": "leg.FL"
+  },
+  {
+   "name": "leg_FR_coxa",
+   "type": "revolute",
+   "axis": "y",
+   "axisVector": [
+    0,
+    1,
+    0
+   ],
+   "restWorldAxis": [
+    0,
+    1,
+    0
+   ],
+   "min": -0.48869,
+   "max": 0.48869,
+   "minDeg": -28,
+   "maxDeg": 28,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "coxa-yaw",
+   "maxSpeed": 2.5,
+   "system": "leg.FR"
+  },
+  {
+   "name": "leg_FR_femur",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    0.6613,
+    0,
+    0.7501
+   ],
+   "min": -0.87266,
+   "max": 0.61087,
+   "minDeg": -50,
+   "maxDeg": 35,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "femur-pitch",
+   "maxSpeed": 2.5,
+   "system": "leg.FR"
+  },
+  {
+   "name": "leg_FR_tibia",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    0.6613,
+    0,
+    0.7501
+   ],
+   "min": -1.4231,
+   "max": 0.6528,
+   "minDeg": -81.54,
+   "maxDeg": 37.4,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "tibia-pitch",
+   "maxSpeed": 2.5,
+   "system": "leg.FR"
+  },
+  {
+   "name": "leg_FR_foot",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    0.6613,
+    0,
+    0.7501
+   ],
+   "min": -0.5236,
+   "max": 0.5236,
+   "minDeg": -30,
+   "maxDeg": 30,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "foot-pitch",
+   "maxSpeed": 2.5,
+   "system": "leg.FR"
+  },
+  {
+   "name": "leg_RL_coxa",
+   "type": "revolute",
+   "axis": "y",
+   "axisVector": [
+    0,
+    1,
+    0
+   ],
+   "restWorldAxis": [
+    0,
+    1,
+    0
+   ],
+   "min": -0.48869,
+   "max": 0.48869,
+   "minDeg": -28,
+   "maxDeg": 28,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "coxa-yaw",
+   "maxSpeed": 2.5,
+   "system": "leg.RL"
+  },
+  {
+   "name": "leg_RL_femur",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    -0.6613,
+    0,
+    -0.7501
+   ],
+   "min": -0.87266,
+   "max": 0.61087,
+   "minDeg": -50,
+   "maxDeg": 35,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "femur-pitch",
+   "maxSpeed": 2.5,
+   "system": "leg.RL"
+  },
+  {
+   "name": "leg_RL_tibia",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    -0.6613,
+    0,
+    -0.7501
+   ],
+   "min": -1.4231,
+   "max": 0.6528,
+   "minDeg": -81.54,
+   "maxDeg": 37.4,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "tibia-pitch",
+   "maxSpeed": 2.5,
+   "system": "leg.RL"
+  },
+  {
+   "name": "leg_RL_foot",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    -0.6613,
+    0,
+    -0.7501
+   ],
+   "min": -0.5236,
+   "max": 0.5236,
+   "minDeg": -30,
+   "maxDeg": 30,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "foot-pitch",
+   "maxSpeed": 2.5,
+   "system": "leg.RL"
+  },
+  {
+   "name": "leg_RR_coxa",
+   "type": "revolute",
+   "axis": "y",
+   "axisVector": [
+    0,
+    1,
+    0
+   ],
+   "restWorldAxis": [
+    0,
+    1,
+    0
+   ],
+   "min": -0.48869,
+   "max": 0.48869,
+   "minDeg": -28,
+   "maxDeg": 28,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "coxa-yaw",
+   "maxSpeed": 2.5,
+   "system": "leg.RR"
+  },
+  {
+   "name": "leg_RR_femur",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    -0.6613,
+    0,
+    0.7501
+   ],
+   "min": -0.87266,
+   "max": 0.61087,
+   "minDeg": -50,
+   "maxDeg": 35,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "femur-pitch",
+   "maxSpeed": 2.5,
+   "system": "leg.RR"
+  },
+  {
+   "name": "leg_RR_tibia",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    -0.6613,
+    0,
+    0.7501
+   ],
+   "min": -1.4231,
+   "max": 0.6528,
+   "minDeg": -81.54,
+   "maxDeg": 37.4,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "tibia-pitch",
+   "maxSpeed": 2.5,
+   "system": "leg.RR"
+  },
+  {
+   "name": "leg_RR_foot",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    -0.6613,
+    0,
+    0.7501
+   ],
+   "min": -0.5236,
+   "max": 0.5236,
+   "minDeg": -30,
+   "maxDeg": 30,
+   "continuous": false,
+   "purpose": "locomotion",
+   "kind": "foot-pitch",
+   "maxSpeed": 2.5,
+   "system": "leg.RR"
+  },
+  {
+   "name": "cockpit_hatch",
+   "type": "revolute",
+   "axis": "y",
+   "axisVector": [
+    0,
+    1,
+    0
+   ],
+   "restWorldAxis": [
+    0,
+    1,
+    0
+   ],
+   "min": 0,
+   "max": 1.74533,
+   "minDeg": 0,
+   "maxDeg": 100,
+   "continuous": false,
+   "purpose": "access",
+   "kind": "door",
+   "maxSpeed": 0.8,
+   "system": "cockpit"
+  },
+  {
+   "name": "deck_house_door",
+   "type": "revolute",
+   "axis": "y",
+   "axisVector": [
+    0,
+    1,
+    0
+   ],
+   "restWorldAxis": [
+    0,
+    1,
+    0
+   ],
+   "min": 0,
+   "max": 1.8326,
+   "minDeg": 0,
+   "maxDeg": 105,
+   "continuous": false,
+   "purpose": "access",
+   "kind": "door",
+   "maxSpeed": 0.8,
+   "system": "interior"
+  }
+ ],
+ "legs": [
+  {
+   "name": "leg_FL",
+   "side": "L",
+   "index": 0,
+   "style": "insect",
+   "joints": [
+    "leg_FL_coxa",
+    "leg_FL_femur",
+    "leg_FL_tibia",
+    "leg_FL_foot"
+   ],
+   "footNode": "leg_FL_foot",
+   "contactOffset": [
+    0,
+    -1.3439999999999999,
+    0
+   ],
+   "restContact": [
+    14.8908,
+    0,
+    17.3217
+   ],
+   "restReach": 14.4908,
+   "minReach": 7.2977,
+   "maxReach": 23.0438,
+   "gaitPhase": 0
+  },
+  {
+   "name": "leg_FR",
+   "side": "R",
+   "index": 0,
+   "style": "insect",
+   "joints": [
+    "leg_FR_coxa",
+    "leg_FR_femur",
+    "leg_FR_tibia",
+    "leg_FR_foot"
+   ],
+   "footNode": "leg_FR_foot",
+   "contactOffset": [
+    0,
+    -1.3439999999999999,
+    0
+   ],
+   "restContact": [
+    -14.8908,
+    0,
+    17.3217
+   ],
+   "restReach": 14.4908,
+   "minReach": 7.3731,
+   "maxReach": 23.0887,
+   "gaitPhase": 0.5
+  },
+  {
+   "name": "leg_RL",
+   "side": "L",
+   "index": 1,
+   "style": "insect",
+   "joints": [
+    "leg_RL_coxa",
+    "leg_RL_femur",
+    "leg_RL_tibia",
+    "leg_RL_foot"
+   ],
+   "footNode": "leg_RL_foot",
+   "contactOffset": [
+    0,
+    -1.3439999999999999,
+    0
+   ],
+   "restContact": [
+    14.8908,
+    0,
+    -17.3217
+   ],
+   "restReach": 14.4908,
+   "minReach": 7.9266,
+   "maxReach": 23.1132,
+   "gaitPhase": 0.5
+  },
+  {
+   "name": "leg_RR",
+   "side": "R",
+   "index": 1,
+   "style": "insect",
+   "joints": [
+    "leg_RR_coxa",
+    "leg_RR_femur",
+    "leg_RR_tibia",
+    "leg_RR_foot"
+   ],
+   "footNode": "leg_RR_foot",
+   "contactOffset": [
+    0,
+    -1.3439999999999999,
+    0
+   ],
+   "restContact": [
+    -14.8908,
+    0,
+    -17.3217
+   ],
+   "restReach": 14.4908,
+   "minReach": 7.8307,
+   "maxReach": 23.1909,
+   "gaitPhase": 0
+  }
+ ],
+ "arms": [],
+ "actuators": [
+  {
+   "name": "leg_FL_femur_ram",
+   "type": "piston",
+   "baseNode": "leg_FL_femur_ram_barrel",
+   "endNode": "leg_FL_femur_ram_rod",
+   "baseLink": "leg_FL_coxa",
+   "endLink": "leg_FL_femur",
+   "drives": "leg_FL_femur",
+   "restLength": 5.5202,
+   "minLength": 5.1476,
+   "maxLength": 5.5402,
+   "barrelLength": 4.8023,
+   "rodLength": 1.4593,
+   "constraint": "mutual-aim",
+   "aimAxis": "+Z",
+   "upHint": "+Y (keep previous local Y)",
+   "note": "Each frame after posing: rotate baseNode so its +Z points at endNode, and endNode so its +Z points at baseNode. Positions never change."
+  },
+  {
+   "name": "leg_FL_tibia_ram",
+   "type": "piston",
+   "baseNode": "leg_FL_tibia_ram_barrel",
+   "endNode": "leg_FL_tibia_ram_rod",
+   "baseLink": "leg_FL_femur",
+   "endLink": "leg_FL_tibia",
+   "drives": "leg_FL_tibia",
+   "restLength": 6.8143,
+   "minLength": 5.1103,
+   "maxLength": 8.521,
+   "barrelLength": 4.834,
+   "rodLength": 4.4121,
+   "constraint": "mutual-aim",
+   "aimAxis": "+Z",
+   "upHint": "+Y (keep previous local Y)",
+   "note": "Each frame after posing: rotate baseNode so its +Z points at endNode, and endNode so its +Z points at baseNode. Positions never change."
+  },
+  {
+   "name": "leg_FR_femur_ram",
+   "type": "piston",
+   "baseNode": "leg_FR_femur_ram_barrel",
+   "endNode": "leg_FR_femur_ram_rod",
+   "baseLink": "leg_FR_coxa",
+   "endLink": "leg_FR_femur",
+   "drives": "leg_FR_femur",
+   "restLength": 5.5202,
+   "minLength": 5.1476,
+   "maxLength": 5.5402,
+   "barrelLength": 4.8023,
+   "rodLength": 1.4593,
+   "constraint": "mutual-aim",
+   "aimAxis": "+Z",
+   "upHint": "+Y (keep previous local Y)",
+   "note": "Each frame after posing: rotate baseNode so its +Z points at endNode, and endNode so its +Z points at baseNode. Positions never change."
+  },
+  {
+   "name": "leg_FR_tibia_ram",
+   "type": "piston",
+   "baseNode": "leg_FR_tibia_ram_barrel",
+   "endNode": "leg_FR_tibia_ram_rod",
+   "baseLink": "leg_FR_femur",
+   "endLink": "leg_FR_tibia",
+   "drives": "leg_FR_tibia",
+   "restLength": 6.8143,
+   "minLength": 5.1103,
+   "maxLength": 8.521,
+   "barrelLength": 4.834,
+   "rodLength": 4.4121,
+   "constraint": "mutual-aim",
+   "aimAxis": "+Z",
+   "upHint": "+Y (keep previous local Y)",
+   "note": "Each frame after posing: rotate baseNode so its +Z points at endNode, and endNode so its +Z points at baseNode. Positions never change."
+  },
+  {
+   "name": "leg_RL_femur_ram",
+   "type": "piston",
+   "baseNode": "leg_RL_femur_ram_barrel",
+   "endNode": "leg_RL_femur_ram_rod",
+   "baseLink": "leg_RL_coxa",
+   "endLink": "leg_RL_femur",
+   "drives": "leg_RL_femur",
+   "restLength": 5.5202,
+   "minLength": 5.1476,
+   "maxLength": 5.5402,
+   "barrelLength": 4.8023,
+   "rodLength": 1.4593,
+   "constraint": "mutual-aim",
+   "aimAxis": "+Z",
+   "upHint": "+Y (keep previous local Y)",
+   "note": "Each frame after posing: rotate baseNode so its +Z points at endNode, and endNode so its +Z points at baseNode. Positions never change."
+  },
+  {
+   "name": "leg_RL_tibia_ram",
+   "type": "piston",
+   "baseNode": "leg_RL_tibia_ram_barrel",
+   "endNode": "leg_RL_tibia_ram_rod",
+   "baseLink": "leg_RL_femur",
+   "endLink": "leg_RL_tibia",
+   "drives": "leg_RL_tibia",
+   "restLength": 6.8143,
+   "minLength": 5.1103,
+   "maxLength": 8.521,
+   "barrelLength": 4.834,
+   "rodLength": 4.4121,
+   "constraint": "mutual-aim",
+   "aimAxis": "+Z",
+   "upHint": "+Y (keep previous local Y)",
+   "note": "Each frame after posing: rotate baseNode so its +Z points at endNode, and endNode so its +Z points at baseNode. Positions never change."
+  },
+  {
+   "name": "leg_RR_femur_ram",
+   "type": "piston",
+   "baseNode": "leg_RR_femur_ram_barrel",
+   "endNode": "leg_RR_femur_ram_rod",
+   "baseLink": "leg_RR_coxa",
+   "endLink": "leg_RR_femur",
+   "drives": "leg_RR_femur",
+   "restLength": 5.5202,
+   "minLength": 5.1476,
+   "maxLength": 5.5402,
+   "barrelLength": 4.8023,
+   "rodLength": 1.4593,
+   "constraint": "mutual-aim",
+   "aimAxis": "+Z",
+   "upHint": "+Y (keep previous local Y)",
+   "note": "Each frame after posing: rotate baseNode so its +Z points at endNode, and endNode so its +Z points at baseNode. Positions never change."
+  },
+  {
+   "name": "leg_RR_tibia_ram",
+   "type": "piston",
+   "baseNode": "leg_RR_tibia_ram_barrel",
+   "endNode": "leg_RR_tibia_ram_rod",
+   "baseLink": "leg_RR_femur",
+   "endLink": "leg_RR_tibia",
+   "drives": "leg_RR_tibia",
+   "restLength": 6.8143,
+   "minLength": 5.1103,
+   "maxLength": 8.521,
+   "barrelLength": 4.834,
+   "rodLength": 4.4121,
+   "constraint": "mutual-aim",
+   "aimAxis": "+Z",
+   "upHint": "+Y (keep previous local Y)",
+   "note": "Each frame after posing: rotate baseNode so its +Z points at endNode, and endNode so its +Z points at baseNode. Positions never change."
+  }
+ ],
+ "cables": [
+  {
+   "name": "leg_FL_tibia_hose",
+   "type": "flex-hose",
+   "fromNode": "leg_FL_femur",
+   "fromOffset": [
+    0.3923999999999999,
+    -0.6121439999999999,
+    6.048
+   ],
+   "toNode": "leg_FL_tibia",
+   "toOffset": [
+    0.3923999999999999,
+    -0.5101199999999999,
+    2.4000000000000004
+   ],
+   "radius": 0.06278399999999999,
+   "slack": 0.735,
+   "meshNode": "leg_FL_tibia_hose_skin",
+   "deformation": "skinned (2 bones: fromNode, toNode) in glTF/FBX/.blend; absent from OBJ/USD"
+  },
+  {
+   "name": "leg_FR_tibia_hose",
+   "type": "flex-hose",
+   "fromNode": "leg_FR_femur",
+   "fromOffset": [
+    0.3923999999999999,
+    -0.6121439999999999,
+    6.048
+   ],
+   "toNode": "leg_FR_tibia",
+   "toOffset": [
+    0.3923999999999999,
+    -0.5101199999999999,
+    2.4000000000000004
+   ],
+   "radius": 0.06278399999999999,
+   "slack": 0.735,
+   "meshNode": "leg_FR_tibia_hose_skin",
+   "deformation": "skinned (2 bones: fromNode, toNode) in glTF/FBX/.blend; absent from OBJ/USD"
+  },
+  {
+   "name": "leg_RL_tibia_hose",
+   "type": "flex-hose",
+   "fromNode": "leg_RL_femur",
+   "fromOffset": [
+    0.3923999999999999,
+    -0.6121439999999999,
+    6.048
+   ],
+   "toNode": "leg_RL_tibia",
+   "toOffset": [
+    0.3923999999999999,
+    -0.5101199999999999,
+    2.4000000000000004
+   ],
+   "radius": 0.06278399999999999,
+   "slack": 0.735,
+   "meshNode": "leg_RL_tibia_hose_skin",
+   "deformation": "skinned (2 bones: fromNode, toNode) in glTF/FBX/.blend; absent from OBJ/USD"
+  },
+  {
+   "name": "leg_RR_tibia_hose",
+   "type": "flex-hose",
+   "fromNode": "leg_RR_femur",
+   "fromOffset": [
+    0.3923999999999999,
+    -0.6121439999999999,
+    6.048
+   ],
+   "toNode": "leg_RR_tibia",
+   "toOffset": [
+    0.3923999999999999,
+    -0.5101199999999999,
+    2.4000000000000004
+   ],
+   "radius": 0.06278399999999999,
+   "slack": 0.735,
+   "meshNode": "leg_RR_tibia_hose_skin",
+   "deformation": "skinned (2 bones: fromNode, toNode) in glTF/FBX/.blend; absent from OBJ/USD"
+  }
+ ],
+ "mounts": [
+  {
+   "name": "cockpit_entry",
+   "node": "cockpit_hatch",
+   "type": "hatch"
+  },
+  {
+   "name": "side_ladder",
+   "node": "body",
+   "type": "ladder"
+  },
+  {
+   "name": "deck_house_door",
+   "node": "deck_house_door",
+   "type": "entry"
+  }
+ ],
+ "interiors": [
+  {
+   "name": "cockpit",
+   "node": "cockpit",
+   "min": [
+    -1.44,
+    0,
+    -1.2000000000000002
+   ],
+   "max": [
+    1.44,
+    2.4000000000000004,
+    1.2000000000000002
+   ],
+   "walkable": true,
+   "kind": "cockpit"
+  },
+  {
+   "name": "deck_house",
+   "node": "deck_house",
+   "min": [
+    -4.175999999999999,
+    0.06,
+    -5.2364999999999995
+   ],
+   "max": [
+    4.175999999999999,
+    2.6,
+    5.2364999999999995
+   ],
+   "walkable": true,
+   "kind": "deck"
+  },
+  {
+   "name": "hull_machinery_bay",
+   "node": "hull_machinery_bay",
+   "min": [
+    -2.472,
+    0,
+    -4.787999999999999
+   ],
+   "max": [
+    2.472,
+    2.2,
+    4.787999999999999
+   ],
+   "walkable": true,
+   "kind": "machinery"
+  }
+ ],
+ "gait": {
+  "type": "quad-walk",
+  "stepHeight": 1.6800000000000002,
+  "strideLength": 6,
+  "cycleSeconds": 2.6,
+  "bodyHeight": 8.214963048728153,
+  "groups": [
+   [
+    "leg_FL",
+    "leg_RR"
+   ],
+   [
+    "leg_FR",
+    "leg_RL"
+   ]
+  ],
+  "verified": {
+   "maxFootErrorM": 0.002,
+   "meanFootErrorM": 0.0015,
+   "strideScaled": 1
+  }
+ },
+ "collision": {
+  "shape": "box",
+  "note": "Boxes are in the local space of `body` (a rigid body = joint node or root/body link).",
+  "boxes": [
+   {
+    "body": "body",
+    "center": [
+     0,
+     3.4214,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     5.871,
+     0.4666,
+     11.6109
+    ]
+   },
+   {
+    "body": "body",
+    "center": [
+     -5.562,
+     -0.7776,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.618,
+     1.944,
+     10.773
+    ]
+   },
+   {
+    "body": "body",
+    "center": [
+     5.562,
+     -0.7776,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.618,
+     1.944,
+     10.773
+    ]
+   },
+   {
+    "body": "body",
+    "center": [
+     -5.8092,
+     1.3997,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.4944,
+     2.1384,
+     9.576
+    ]
+   },
+   {
+    "body": "leg_FL_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     1.2243,
+     1.1223,
+     1.2243
+    ]
+   },
+   {
+    "body": "leg_FL_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.7713,
+     0.8201,
+     0.7713
+    ]
+   },
+   {
+    "body": "leg_FL_coxa",
+    "center": [
+     0,
+     0,
+     0.96
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.518,
+     0.6642,
+     0.9024
+    ]
+   },
+   {
+    "body": "leg_FL_coxa",
+    "center": [
+     0,
+     0.8807,
+     0.96
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.777,
+     0.1522,
+     0.5115
+    ]
+   },
+   {
+    "body": "leg_FL_femur",
+    "center": [
+     0,
+     0,
+     4.32
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.4002,
+     0.5377,
+     4.0608
+    ]
+   },
+   {
+    "body": "leg_FL_femur",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.6244,
+     0.6337,
+     0.6244
+    ]
+   },
+   {
+    "body": "leg_FL_femur",
+    "center": [
+     0,
+     0,
+     8.64
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.6244,
+     0.6337,
+     0.6244
+    ]
+   },
+   {
+    "body": "leg_FL_femur",
+    "center": [
+     0,
+     0.7257,
+     4.32
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.6004,
+     0.136,
+     2.5402
+    ]
+   },
+   {
+    "body": "leg_FL_tibia",
+    "center": [
+     0,
+     0,
+     6
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.3296,
+     0.4428,
+     5.64
+    ]
+   },
+   {
+    "body": "leg_FL_tibia",
+    "center": [
+     0,
+     0.5976,
+     6
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.4944,
+     0.112,
+     3.528
+    ]
+   },
+   {
+    "body": "leg_FL_tibia",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.5142,
+     0.5219,
+     0.5142
+    ]
+   },
+   {
+    "body": "leg_FL_tibia",
+    "center": [
+     0,
+     0,
+     12
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.5142,
+     0.5219,
+     0.5142
+    ]
+   },
+   {
+    "body": "leg_FL_foot",
+    "center": [
+     0,
+     -0.576,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.528,
+     0.576,
+     0.528
+    ]
+   },
+   {
+    "body": "leg_FL_foot",
+    "center": [
+     0,
+     -1.2,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.96,
+     0.144,
+     0.96
+    ]
+   },
+   {
+    "body": "leg_FR_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     1.2243,
+     1.1223,
+     1.2243
+    ]
+   },
+   {
+    "body": "leg_FR_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.7713,
+     0.8201,
+     0.7713
+    ]
+   },
+   {
+    "body": "leg_FR_coxa",
+    "center": [
+     0,
+     0,
+     0.96
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.518,
+     0.6642,
+     0.9024
+    ]
+   },
+   {
+    "body": "leg_FR_coxa",
+    "center": [
+     0,
+     0.8807,
+     0.96
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.777,
+     0.1522,
+     0.5115
+    ]
+   },
+   {
+    "body": "leg_FR_femur",
+    "center": [
+     0,
+     0,
+     4.32
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.4002,
+     0.5377,
+     4.0608
+    ]
+   },
+   {
+    "body": "leg_FR_femur",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.6244,
+     0.6337,
+     0.6244
+    ]
+   },
+   {
+    "body": "leg_FR_femur",
+    "center": [
+     0,
+     0,
+     8.64
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.6244,
+     0.6337,
+     0.6244
+    ]
+   },
+   {
+    "body": "leg_FR_femur",
+    "center": [
+     0,
+     0.7257,
+     4.32
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.6004,
+     0.136,
+     2.5402
+    ]
+   },
+   {
+    "body": "leg_FR_tibia",
+    "center": [
+     0,
+     0,
+     6
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.3296,
+     0.4428,
+     5.64
+    ]
+   },
+   {
+    "body": "leg_FR_tibia",
+    "center": [
+     0,
+     0.5976,
+     6
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.4944,
+     0.112,
+     3.528
+    ]
+   },
+   {
+    "body": "leg_FR_tibia",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.5142,
+     0.5219,
+     0.5142
+    ]
+   },
+   {
+    "body": "leg_FR_tibia",
+    "center": [
+     0,
+     0,
+     12
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.5142,
+     0.5219,
+     0.5142
+    ]
+   },
+   {
+    "body": "leg_FR_foot",
+    "center": [
+     0,
+     -0.576,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.528,
+     0.576,
+     0.528
+    ]
+   },
+   {
+    "body": "leg_FR_foot",
+    "center": [
+     0,
+     -1.2,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.96,
+     0.144,
+     0.96
+    ]
+   },
+   {
+    "body": "leg_RL_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     1.2243,
+     1.1223,
+     1.2243
+    ]
+   },
+   {
+    "body": "leg_RL_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.7713,
+     0.8201,
+     0.7713
+    ]
+   },
+   {
+    "body": "leg_RL_coxa",
+    "center": [
+     0,
+     0,
+     0.96
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.518,
+     0.6642,
+     0.9024
+    ]
+   },
+   {
+    "body": "leg_RL_coxa",
+    "center": [
+     0,
+     0.8807,
+     0.96
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.777,
+     0.1522,
+     0.5115
+    ]
+   },
+   {
+    "body": "leg_RL_femur",
+    "center": [
+     0,
+     0,
+     4.32
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.4002,
+     0.5377,
+     4.0608
+    ]
+   },
+   {
+    "body": "leg_RL_femur",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.6244,
+     0.6337,
+     0.6244
+    ]
+   },
+   {
+    "body": "leg_RL_femur",
+    "center": [
+     0,
+     0,
+     8.64
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.6244,
+     0.6337,
+     0.6244
+    ]
+   },
+   {
+    "body": "leg_RL_femur",
+    "center": [
+     0,
+     0.7257,
+     4.32
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.6004,
+     0.136,
+     2.5402
+    ]
+   },
+   {
+    "body": "leg_RL_tibia",
+    "center": [
+     0,
+     0,
+     6
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.3296,
+     0.4428,
+     5.64
+    ]
+   },
+   {
+    "body": "leg_RL_tibia",
+    "center": [
+     0,
+     0.5976,
+     6
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.4944,
+     0.112,
+     3.528
+    ]
+   },
+   {
+    "body": "leg_RL_tibia",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.5142,
+     0.5219,
+     0.5142
+    ]
+   },
+   {
+    "body": "leg_RL_tibia",
+    "center": [
+     0,
+     0,
+     12
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.5142,
+     0.5219,
+     0.5142
+    ]
+   },
+   {
+    "body": "leg_RL_foot",
+    "center": [
+     0,
+     -0.576,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.528,
+     0.576,
+     0.528
+    ]
+   },
+   {
+    "body": "leg_RL_foot",
+    "center": [
+     0,
+     -1.2,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.96,
+     0.144,
+     0.96
+    ]
+   },
+   {
+    "body": "leg_RR_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     1.2243,
+     1.1223,
+     1.2243
+    ]
+   },
+   {
+    "body": "leg_RR_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.7713,
+     0.8201,
+     0.7713
+    ]
+   },
+   {
+    "body": "leg_RR_coxa",
+    "center": [
+     0,
+     0,
+     0.96
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.518,
+     0.6642,
+     0.9024
+    ]
+   },
+   {
+    "body": "leg_RR_coxa",
+    "center": [
+     0,
+     0.8807,
+     0.96
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.777,
+     0.1522,
+     0.5115
+    ]
+   },
+   {
+    "body": "leg_RR_femur",
+    "center": [
+     0,
+     0,
+     4.32
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.4002,
+     0.5377,
+     4.0608
+    ]
+   },
+   {
+    "body": "leg_RR_femur",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.6244,
+     0.6337,
+     0.6244
+    ]
+   },
+   {
+    "body": "leg_RR_femur",
+    "center": [
+     0,
+     0,
+     8.64
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.6244,
+     0.6337,
+     0.6244
+    ]
+   },
+   {
+    "body": "leg_RR_femur",
+    "center": [
+     0,
+     0.7257,
+     4.32
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.6004,
+     0.136,
+     2.5402
+    ]
+   },
+   {
+    "body": "leg_RR_tibia",
+    "center": [
+     0,
+     0,
+     6
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.3296,
+     0.4428,
+     5.64
+    ]
+   },
+   {
+    "body": "leg_RR_tibia",
+    "center": [
+     0,
+     0.5976,
+     6
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.4944,
+     0.112,
+     3.528
+    ]
+   },
+   {
+    "body": "leg_RR_tibia",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.5142,
+     0.5219,
+     0.5142
+    ]
+   },
+   {
+    "body": "leg_RR_tibia",
+    "center": [
+     0,
+     0,
+     12
+    ],
+    "rotation": [
+     0,
+     0,
+     0.70711,
+     0.70711
+    ],
+    "halfExtents": [
+     0.5142,
+     0.5219,
+     0.5142
+    ]
+   },
+   {
+    "body": "leg_RR_foot",
+    "center": [
+     0,
+     -0.576,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.528,
+     0.576,
+     0.528
+    ]
+   },
+   {
+    "body": "leg_RR_foot",
+    "center": [
+     0,
+     -1.2,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.96,
+     0.144,
+     0.96
+    ]
+   },
+   {
+    "body": "cockpit_hatch",
+    "center": [
+     0.02,
+     1.08,
+     0.72
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.025,
+     1.02,
+     0.66
+    ]
+   },
+   {
+    "body": "deck_house_door",
+    "center": [
+     0.5,
+     1.05,
+     0.03
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.5,
+     1.05,
+     0.03
+    ]
+   }
+  ]
+ },
+ "lods": [
+  {
+   "level": 0,
+   "note": "full detail incl. greebles, interiors"
+  },
+  {
+   "level": 1,
+   "note": "cosmetic greebles removed, radial segments halved"
+  },
+  {
+   "level": 2,
+   "note": "silhouette only, interiors removed"
+  }
+ ],
+ "recipe": {
+  "format": "badmech-recipe",
+  "version": 1,
+  "name": "Bastion Colossus",
+  "family": "colossus",
+  "role": "hauler",
+  "seed": 9000,
+  "scale": 1,
+  "bulk": 0.6,
+  "scheme": "urban",
+  "rerolls": {},
+  "overrides": {
+   "colossus.frame": "quad"
+  }
+ },
+ "limitFits": []
+}

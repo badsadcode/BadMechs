@@ -1,0 +1,76 @@
+{
+  "checks": [
+    {
+      "id": "struct",
+      "severity": "ok",
+      "message": "100 nodes, 18 joints, single root, parents precede children, names unique"
+    },
+    {
+      "id": "leg.chain",
+      "severity": "ok",
+      "message": "leg_FL: 4-joint chain, foot on ground (Δy 0.0 mm), reach 7.30–23.04 m"
+    },
+    {
+      "id": "leg.chain",
+      "severity": "ok",
+      "message": "leg_FR: 4-joint chain, foot on ground (Δy 0.0 mm), reach 7.37–23.09 m"
+    },
+    {
+      "id": "leg.chain",
+      "severity": "ok",
+      "message": "leg_RL: 4-joint chain, foot on ground (Δy 0.0 mm), reach 7.93–23.11 m"
+    },
+    {
+      "id": "leg.chain",
+      "severity": "ok",
+      "message": "leg_RR: 4-joint chain, foot on ground (Δy 0.0 mm), reach 7.83–23.19 m"
+    },
+    {
+      "id": "piston.stroke",
+      "severity": "ok",
+      "message": "8 pistons: barrel/rod lengths cover their full stroke"
+    },
+    {
+      "id": "ground.clearance",
+      "severity": "ok",
+      "message": "only feet touch the ground (lowest other part 0.70 m)"
+    },
+    {
+      "id": "clearance.sweep",
+      "severity": "ok",
+      "message": "every joint reaches both limits without parts interpenetrating (OBB test, 4 mm tolerance)"
+    },
+    {
+      "id": "clearance.random",
+      "severity": "info",
+      "message": "30/30 random multi-joint poses are clash-free (combined extremes can still collide; controllers should keep to gait ranges)"
+    },
+    {
+      "id": "interior.space",
+      "severity": "ok",
+      "message": "cockpit (cockpit): 2.88×2.40×2.40 m, walkable"
+    },
+    {
+      "id": "interior.space",
+      "severity": "ok",
+      "message": "deck_house (deck): 8.35×2.54×10.47 m, walkable"
+    },
+    {
+      "id": "interior.space",
+      "severity": "ok",
+      "message": "hull_machinery_bay (machinery): 4.94×2.20×9.58 m, walkable"
+    },
+    {
+      "id": "naming",
+      "severity": "ok",
+      "message": "leg chains share 4-joint layouts; names follow leg_<id>_<segment>"
+    }
+  ],
+  "counts": {
+    "ok": 12,
+    "info": 1,
+    "warn": 0,
+    "error": 0
+  },
+  "clashes": []
+}
