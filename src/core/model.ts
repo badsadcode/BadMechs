@@ -50,7 +50,7 @@ export type MaterialId =
   | 'floor'
   | 'chrome';
 
-export type PrimKind = 'box' | 'chamfer' | 'taper' | 'cyl' | 'sphere';
+export type PrimKind = 'box' | 'chamfer' | 'taper' | 'cyl' | 'sphere' | 'shape';
 
 export interface Prim {
   kind: PrimKind;
@@ -65,6 +65,8 @@ export interface Prim {
   extra?: number[];
   /** radial segments for cylinders/spheres at LOD0 */
   segments?: number;
+  /** hard-surface shape description (kind 'shape'); size = its bounds, centre = extra[0..2] */
+  shape?: import('./hs/shapes').ShapeSpec;
   /** 0 = silhouette-critical, 1 = secondary, 2 = cosmetic greeble (dropped first in LODs) */
   detail: 0 | 1 | 2;
   /** whether this prim participates in clearance checks + collision proxies */

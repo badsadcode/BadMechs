@@ -18,6 +18,7 @@ import type {
   Vec3,
 } from './model';
 import { worldMatrices } from './kinematics';
+import { shapeBounds, ShapeSpec } from './hs/shapes';
 import { Rng } from './rng';
 
 export interface JointSpec {
@@ -96,6 +97,16 @@ export class NodeRef {
   }
   sphere(pos: Vec3, r: number, material: MaterialId, o: PrimOpts = {}) {
     return this.add({ kind: 'sphere', pos, rot: [0, 0, 0], size: [r, r, r], material, segments: o.segments ?? 14, detail: o.detail ?? 0, collide: o.collide ?? true });
+  }
+  /**
+   * Hard-surface shape (loft / lathe / tube). Bounds are measured once so collision proxies,
+   * clearance checks and stats see the real extents.
+   */
+  shape(pos: Vec3, spec: ShapeSpec, material: MaterialId, o: PrimOpts = {}) {
+    const { min, max } = shapeBounds(spec);
+    const size: Vec3 = [max[0] - min[0], max[1] - min[1], max[2] - min[2]];
+    const centre = [(min[0] + max[0]) / 2, (min[1] + max[1]) / 2, (min[2] + max[2]) / 2];
+    return this.add({ kind: 'shape', pos, rot: o.rot ?? [0, 0, 0], size, extra: centre, shape: spec, material, detail: o.detail ?? 0, collide: o.collide ?? true });
   }
   /** A row of bolt heads / rivets. Pure greeble: never collides, first to go in LODs. */
   bolts(from: Vec3, to: Vec3, n: number, r: number, normal: Axis, material: MaterialId = 'steel') {
@@ -415,9 +426,16 @@ export function round(v: number, d: number) {
   return Math.round(v * k) / k;
 }
 
-/** Local transform of a prim (node-local). */
-export function primMatrix(p: Prim, out = new Matrix4()): Matrix4 {
+/** Placement of a prim's own geometry (node-local): translate(pos) * rotate(rot). */
+export function primBaseMatrix(p: Prim, out = new Matrix4()): Matrix4 {
   return out.compose(new Vector3(...p.pos), new Quaternion().setFromEuler(new Euler(...p.rot, 'XYZ')), new Vector3(1, 1, 1));
+}
+
+/** Transform of a prim's (centred) bounding box, node-local. Shapes may be off-centre. */
+export function primMatrix(p: Prim, out = new Matrix4()): Matrix4 {
+  primBaseMatrix(p, out);
+  if (p.kind === 'shape' && p.extra) out.multiply(new Matrix4().makeTranslation(p.extra[0], p.extra[1], p.extra[2]));
+  return out;
 }
 
 /** Half extents of a prim's local bounding box (before primMatrix). */

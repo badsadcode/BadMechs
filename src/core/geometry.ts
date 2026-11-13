@@ -1,6 +1,7 @@
 import { Matrix3, Matrix4, Vector3 } from 'three';
 import type { MaterialId, MechNode, Prim } from './model';
-import { primMatrix } from './builder';
+import { primBaseMatrix } from './builder';
+import { buildShape } from './hs/shapes';
 
 /**
  * Plain triangle soup per material, engine-agnostic. Hard-surface flat shading on boxes,
@@ -23,12 +24,14 @@ export interface LodSpec {
   segScale: number;
   /** min radial segments */
   minSeg: number;
+  /** hard-surface shape LOD index */
+  shape: 0 | 1 | 2;
 }
 
 export const LODS: LodSpec[] = [
-  { maxDetail: 2, segScale: 1, minSeg: 6 },
-  { maxDetail: 1, segScale: 0.5, minSeg: 6 },
-  { maxDetail: 0, segScale: 0.34, minSeg: 5 },
+  { maxDetail: 2, segScale: 1, minSeg: 6, shape: 0 },
+  { maxDetail: 1, segScale: 0.5, minSeg: 6, shape: 1 },
+  { maxDetail: 0, segScale: 0.34, minSeg: 5, shape: 2 },
 ];
 
 function emptyMesh(): MeshData {
@@ -47,8 +50,22 @@ export function buildNodeMeshes(node: MechNode, lod: LodSpec = LODS[0]): NodeMes
 }
 
 export function appendPrim(m: MeshData, p: Prim, lod: LodSpec = LODS[0]) {
-  const mat = primMatrix(p);
+  const mat = primBaseMatrix(p);
   const nmat = new Matrix3().getNormalMatrix(mat);
+  if (p.kind === 'shape' && p.shape) {
+    const d = buildShape(p.shape, lod.shape);
+    const base = m.positions.length / 3;
+    const v = new Vector3();
+    for (let i = 0; i < d.positions.length; i += 3) {
+      v.set(d.positions[i], d.positions[i + 1], d.positions[i + 2]).applyMatrix4(mat);
+      m.positions.push(v.x, v.y, v.z);
+      v.set(d.normals[i], d.normals[i + 1], d.normals[i + 2]).applyMatrix3(nmat).normalize();
+      m.normals.push(v.x, v.y, v.z);
+    }
+    m.uvs.push(...d.uvs);
+    for (const i of d.indices) m.indices.push(base + i);
+    return;
+  }
   const segs = Math.max(lod.minSeg, Math.round((p.segments ?? 12) * lod.segScale));
   switch (p.kind) {
     case 'box':
