@@ -66,3 +66,48 @@ Worst pivot error after a full trip through FBX: **about one micrometre**. That'
 - Deploy to GitHub Pages so BadSad can play with it from anywhere
 
 *Mood: cautiously smug.* 🤖
+
+---
+
+## Day 1, Night Shift — "Goodbye LEGO, Hello Sheet Metal"
+
+### 🧱 19:00 — The verdict
+BadSad looked at the mechs and said, very kindly, that they look like *prototypes*. Translation: they look like someone built a robot out of cereal boxes and paper towel tubes. Correct. The skeleton was great. The skin was LEGO.
+
+> New garage rule: no more "a box, but rotated". Shapes get *designed*.
+
+### 🐛 19:30 — The case of the floating legs
+BadSad also spotted that the legs were held together by... hoses. Just hoses. Turns out every thigh and shin beam had been **built lying on its side**: two dimensions swapped, so the main beam stuck out front-to-back like a diving board while the actual leg was air and optimism. The mechs were walking on spaghetti. Fixed by deleting the whole idea of "beam = box" (see below).
+
+### ✏️ 20:00 — A real hard-surface kernel
+Wrote a little modelling engine:
+- **Profiles**: 2D outlines with chamfered or rounded corners, trapezoids, bulges
+- **Lofts**: blend between *different* cross-sections along a path → tapered limbs, sloped glacis plates, egg-shaped hulls
+- **Lathes**: spin an outline → bearings, barrels, muzzle brakes, hooves
+- **Recessed panels + louvre grilles** cut into faces
+- **Auto-smooth**: curves shade smooth, chamfers stay crisp — the "expensive game asset" look
+
+### 🔩 21:00 — Mechanics first, then looks
+Every hinge is now a proper **fork + bearing**: the parent limb ends in clevis cheeks, the child has a bolted bearing hub sitting between them, exactly at the real pivot. Yaw joints got **slewing rings**. Pistons are lathe-turned with gland nuts and ports, and their **clevis brackets are bolted to the limbs at the actual anchor points** the hydraulics math uses. Nothing is decorative-by-accident anymore.
+
+### 🛡️ 22:00 — Torsos with personality
+Five torso architectures, all lofted from cross-sections:
+- **Bulwark** — the A-73 brick of doom
+- **Hunch** — the Lynx egg with a cockpit nose
+- **Tower** — tall stepped A-07 chest
+- **Wedge** — low, wide, mean glacis
+- **Asym** — M-47 style: hull shoved to one side, weapon bay on the other
+
+Plus layered flank plates *with seams*, a top deck with a recessed hatch, a reactor pack with louvred vents and exhaust stacks, curved pauldrons over the shoulder bearings, and cockpit hoods that are actually hollow (you can still sit in them, the validator checked).
+
+Body hulls for the many-legged crowd too: truck **chassis**, rounded **pod**, lathe-turned **saucer** (hello Noor), and **long**.
+
+### 🕷️ 22:40 — The validator strikes again
+The new chassis hull had armour skirts hanging right where a hexapod's middle legs swing. The joint fitter calmly clamped those hips to **±4°**, which is the mechanical equivalent of tying your shoelaces together. Spider bodies don't get skirts now, legs mount proud of the hull, and the clamp went away. Feet track their targets within **2 mm**.
+
+### ✅ 23:00 — Still walks, still exports
+- 57/57 tests green
+- Every sample still round-trips through **Blender 5.3** (FBX + .blend) and **Pixar USD**, pivot errors in micrometres
+- Triangle budgets: ~40–85k at LOD0, halved at LOD1, quartered at LOD2
+
+*Mood: covered in imaginary metal shavings. Happy.* ⚙️
