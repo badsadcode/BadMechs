@@ -13,6 +13,7 @@ import { buildPackage } from '../src/export/package';
 import { rigSidecar, sidecarRestWorld } from '../src/export/rig';
 import { exportObj, exportUsda } from '../src/export/static';
 import { loadGlb } from './helpers';
+import { buildShape } from '../src/core/hs/shapes';
 
 const require = createRequire(import.meta.url);
 const gltfValidator = require('gltf-validator');
@@ -84,6 +85,35 @@ describe('mechanical validity', () => {
     expect(exo.stats.height).toBeLessThan(3.2);
     const colo = generate(defaultRecipe('colossus', 9000)).mech;
     expect(colo.interiors.some((i) => i.walkable && i.max[1] - i.min[1] >= 1.9)).toBe(true);
+  });
+});
+
+describe('geometry quality', () => {
+  it('every hard-surface part is closed the right way out (positive signed volume)', () => {
+    let inverted = 0;
+    let total = 0;
+    for (const f of fams)
+      for (const seed of [1, 2, 3]) {
+        const { mech } = generate(defaultRecipe(f, seed));
+        for (const n of mech.nodes)
+          for (const p of n.prims) {
+            if (p.kind !== 'shape') continue;
+            const m = buildShape(p.shape!, 0);
+            const P = m.positions;
+            const I = m.indices;
+            let v = 0;
+            for (let i = 0; i < I.length; i += 3) {
+              const a = I[i] * 3;
+              const b = I[i + 1] * 3;
+              const c = I[i + 2] * 3;
+              v += P[a] * (P[b + 1] * P[c + 2] - P[b + 2] * P[c + 1]) - P[a + 1] * (P[b] * P[c + 2] - P[b + 2] * P[c]) + P[a + 2] * (P[b] * P[c + 1] - P[b + 1] * P[c]);
+            }
+            total++;
+            if (v < 0) inverted++;
+          }
+      }
+    expect(total).toBeGreaterThan(1000);
+    expect(inverted).toBe(0);
   });
 });
 

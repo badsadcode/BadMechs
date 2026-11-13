@@ -8,22 +8,22 @@
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_FL: 4-joint chain, foot on ground (Δy 0.0 mm), reach 7.30–23.04 m"
+      "message": "leg_FL: 4-joint chain, foot on ground (Δy 0.0 mm), reach 6.84–23.33 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_FR: 4-joint chain, foot on ground (Δy 0.0 mm), reach 7.37–23.09 m"
+      "message": "leg_FR: 4-joint chain, foot on ground (Δy 0.0 mm), reach 6.87–23.36 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_RL: 4-joint chain, foot on ground (Δy 0.0 mm), reach 7.93–23.11 m"
+      "message": "leg_RL: 4-joint chain, foot on ground (Δy 0.0 mm), reach 7.47–23.35 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_RR: 4-joint chain, foot on ground (Δy 0.0 mm), reach 7.83–23.19 m"
+      "message": "leg_RR: 4-joint chain, foot on ground (Δy 0.0 mm), reach 7.38–23.42 m"
     },
     {
       "id": "piston.stroke",

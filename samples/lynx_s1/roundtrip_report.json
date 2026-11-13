@@ -40,8 +40,8 @@
     "ok": true,
     "posedJoint": "leg_L_shin",
     "angleRad": -0.976264,
-    "verticesMoved": 8606,
-    "verticesTotal": 48877,
+    "verticesMoved": 8890,
+    "verticesTotal": 49458,
     "pivotDrift": 8.429369702178807e-08
   },
   "usd": {

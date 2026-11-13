@@ -22,7 +22,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L_shin": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_L_tarsus": {
@@ -50,7 +50,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R_shin": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R_tarsus": {
@@ -130,7 +130,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L_shin_ram_barrel": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_L_shin_ram_rod": {
@@ -199,7 +199,7 @@
   "maxPosErrorM": 1.0293672108155812e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 53780,
+  "triangles": 54352,
   "vertexGroups": 48,
   "blend": "grudge_a_73.blend",
   "fbx": "grudge_a_73.fbx"

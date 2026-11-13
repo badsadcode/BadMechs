@@ -14,7 +14,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L0_femur": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L0_tibia": {
@@ -54,7 +54,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L1_foot": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_R1_coxa": {
@@ -70,7 +70,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R1_foot": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_L2_coxa": {
@@ -114,11 +114,11 @@
       "axisErrDeg": 0.0
     },
     "leg_L3_tibia": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_L3_foot": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R3_coxa": {
@@ -170,7 +170,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R0_tibia_ram_rod": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L1_femur_ram_barrel": {
@@ -178,11 +178,11 @@
       "axisErrDeg": 0.0
     },
     "leg_L1_femur_ram_rod": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_L1_tibia_ram_barrel": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L1_tibia_ram_rod": {
@@ -198,7 +198,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R1_tibia_ram_barrel": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R1_tibia_ram_rod": {
@@ -210,7 +210,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L2_femur_ram_rod": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L2_tibia_ram_barrel": {
@@ -218,7 +218,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L2_tibia_ram_rod": {
-      "posErr": 2e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_R2_femur_ram_barrel": {
@@ -238,7 +238,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L3_femur_ram_barrel": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_L3_femur_ram_rod": {
@@ -250,7 +250,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L3_tibia_ram_rod": {
-      "posErr": 2e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_R3_femur_ram_barrel": {
@@ -262,17 +262,17 @@
       "axisErrDeg": 0.0
     },
     "leg_R3_tibia_ram_barrel": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R3_tibia_ram_rod": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     }
   },
   "boneCount": 67,
   "missingBones": [],
-  "maxPosErrorM": 2.2492363767758854e-06,
+  "maxPosErrorM": 1.817941665649414e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
   "triangles": 85298,

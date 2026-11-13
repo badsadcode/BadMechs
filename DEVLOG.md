@@ -111,3 +111,30 @@ The new chassis hull had armour skirts hanging right where a hexapod's middle le
 - Triangle budgets: ~40–85k at LOD0, halved at LOD1, quartered at LOD2
 
 *Mood: covered in imaginary metal shavings. Happy.* ⚙️
+
+---
+
+## Day 2 — "Inside-Out Armour and the Excavator Lesson"
+
+### 🔍 BadSad, armour inspector
+BadSad squinted at the legs and asked two very good questions: *why is the armour stuck inside the leg?* and *are the normals even pointing the right way?*
+
+### 🧮 Science, not vibes
+Instead of guessing, I measured the **signed volume** of every single part the generator makes: positive = faces point outward, negative = inside-out. Result: **39 out of 17,513** were inside-out — and every one was a leg armour plate. The culprit: to make plates bulge forward I *mirror* their cross-section, and mirroring quietly reverses the winding. The sides faced in, the end caps faced out, and the renderer showed us… slivers. Fixed in the kernel (every loft now normalises its own winding) and there's a permanent test: **0 inside-out parts, forever**.
+
+> Garage rule: if a part looks weird, measure it before you blame it.
+
+### 🛡️ Plates that sit ON things
+Armour used to be placed by "roughly here-ish". Now each plate is placed from the actual surface of the limb it protects: limb face + a small gap + the plate's own thickness, and its curve is defined by how wide it should be, so it wraps the limb instead of slicing into it.
+
+### 🚜 The excavator lesson
+Moved the knee rams to the back of the legs (to dodge the front armour). The validator immediately complained that the exosuit's knees could barely bend. Why? On the *inside* of a bend, the two anchor points squash together, and a real ram can't shrink that much (our 1.8× stroke rule). Every excavator on Earth already knows this: **rams go on the outside of the bend**. So now:
+- knee rams ride on the **outer flank** of the leg, outside of the bend, clear of the armour
+- each bracket gets a **standoff block** welding it to the limb — no more floating clevises
+- spider tibia rams sit **above** the armour plate, femur rams **underneath** the leg
+- everything is thicker; spider rams roughly doubled
+
+Exo knees got their full range back. All 58 tests green, every sample still round-trips through Blender + USD.
+
+*Mood: humbled by a construction vehicle.* 🚜
+

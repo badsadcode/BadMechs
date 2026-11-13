@@ -28,7 +28,7 @@
     "ok": true,
     "boneCount": 45,
     "missingBones": [],
-    "maxPosErrorM": 1.7841612752790171e-06,
+    "maxPosErrorM": 1.7192608239479013e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
     "triangles": 48482,
@@ -39,10 +39,10 @@
   "fbx_pose": {
     "ok": true,
     "posedJoint": "leg_FL_tibia",
-    "angleRad": -1.1384800000000002,
-    "verticesMoved": 3741,
-    "verticesTotal": 59584,
-    "pivotDrift": 1.5266237824995157e-06
+    "angleRad": -1.224176,
+    "verticesMoved": 3739,
+    "verticesTotal": 59497,
+    "pivotDrift": 1.7520115919946514e-06
   },
   "usd": {
     "pxr": {

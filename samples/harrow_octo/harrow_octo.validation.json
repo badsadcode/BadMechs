@@ -8,42 +8,42 @@
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_L0: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.80–6.94 m"
+      "message": "leg_L0: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.59–7.20 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_R0: 4-joint chain, foot on ground (Δy 0.0 mm), reach 3.02–6.87 m"
+      "message": "leg_R0: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.84–7.12 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_L1: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.71–6.97 m"
+      "message": "leg_L1: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.50–7.22 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_R1: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.83–6.76 m"
+      "message": "leg_R1: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.61–7.02 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_L2: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.73–6.85 m"
+      "message": "leg_L2: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.51–7.09 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_R2: 4-joint chain, foot on ground (Δy 0.0 mm), reach 3.02–6.93 m"
+      "message": "leg_R2: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.80–7.20 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_L3: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.77–6.91 m"
+      "message": "leg_L3: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.54–7.18 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_R3: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.98–6.94 m"
+      "message": "leg_R3: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.77–7.18 m"
     },
     {
       "id": "piston.stroke",

@@ -19,7 +19,7 @@ import type {
 } from './model';
 import { worldMatrices } from './kinematics';
 import { shapeBounds, ShapeSpec } from './hs/shapes';
-import { barrelShape, clevis, rodShape } from './hs/kit';
+import { barrelShape, block, clevis, rodShape } from './hs/kit';
 import { Rng } from './rng';
 
 export interface JointSpec {
@@ -133,6 +133,9 @@ export class NodeRef {
 
 interface PistonReq {
   name: string;
+  /** x of the member surface the bracket is welded to (side-mounted rams get a standoff) */
+  mountA?: number;
+  mountB?: number;
   linkA: string;
   anchorA: Vec3;
   linkB: string;
@@ -329,8 +332,20 @@ export class Builder {
     end.shape([0, 0, 0], rodShape(rod, r), 'chrome', { collide: false });
     end.cylX([0, 0, 0], r * 0.5, r * 1.3, 'steel', { detail: 1, collide: false, segments: 10 });
     const towards = (v: Vec3): [number, number] => (Math.abs(v[2]) >= Math.abs(v[1]) ? [0, -v[2]] : [-v[1], 0]);
-    clevis(this.get(p.linkA).comp('detail', 'mounts'), p.anchorA, r * 0.85, r * 1.6, towards(p.anchorA));
-    clevis(this.get(p.linkB).comp('detail', 'mounts'), p.anchorB, r * 0.75, r * 1.4, towards(p.anchorB));
+    const mount = (link: string, a: Vec3, rr: number, gap: number, mx?: number) => {
+      const ref = this.get(link).comp('detail', 'mounts');
+      if (mx === undefined) {
+        clevis(ref, a, rr, gap, towards(a));
+        return;
+      }
+      // side mount: short clevis + a filleted standoff block bridging to the member's flank
+      clevis(ref, a, rr, gap, [0, 0]);
+      const inner = a[0] - Math.sign(a[0]) * (gap / 2 + rr * 0.36);
+      const len = Math.abs(inner - mx);
+      if (len > 1e-3) block(ref, [(inner + mx) / 2, a[1], a[2]], [len, rr * 2.1, rr * 2.1], 'darkMetal', { r: rr * 0.4, collide: false, detail: 1 });
+    };
+    mount(p.linkA, p.anchorA, r * 0.85, r * 1.6, p.mountA);
+    mount(p.linkB, p.anchorB, r * 0.75, r * 1.4, p.mountB);
 
     mech.actuators.push({
       name: p.name,

@@ -8,12 +8,12 @@
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_L: 7-joint chain, foot on ground (Δy -0.0 mm), reach 3.79–7.19 m"
+      "message": "leg_L: 7-joint chain, foot on ground (Δy -0.0 mm), reach 3.86–7.17 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_R: 7-joint chain, foot on ground (Δy -0.0 mm), reach 3.84–7.13 m"
+      "message": "leg_R: 7-joint chain, foot on ground (Δy -0.0 mm), reach 3.92–7.10 m"
     },
     {
       "id": "piston.stroke",
@@ -33,7 +33,7 @@
     {
       "id": "clearance.random",
       "severity": "info",
-      "message": "29/30 random multi-joint poses are clash-free (combined extremes can still collide; controllers should keep to gait ranges)"
+      "message": "26/30 random multi-joint poses are clash-free (combined extremes can still collide; controllers should keep to gait ranges)"
     },
     {
       "id": "interior.space",

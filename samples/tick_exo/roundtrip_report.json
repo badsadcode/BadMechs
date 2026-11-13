@@ -6,32 +6,32 @@
     "ok": true,
     "nodesChecked": 106,
     "missing": [],
-    "maxPosErrorM": 6.034510353599962e-06,
+    "maxPosErrorM": 5.750303851712182e-06,
     "maxAxisErrorDeg": 0.0,
     "materials": "7 imported / 7 used in file",
     "skinnedHoses": 4,
-    "triangles": 37828
+    "triangles": 38148
   },
   "glb_lod1": {
     "ok": true,
     "nodesChecked": 106,
-    "maxPosErrorM": 6.034510353599962e-06,
-    "triangles": 20296
+    "maxPosErrorM": 5.750303851712182e-06,
+    "triangles": 20488
   },
   "glb_lod2": {
     "ok": true,
     "nodesChecked": 106,
-    "maxPosErrorM": 6.034510353599962e-06,
+    "maxPosErrorM": 5.750303851712182e-06,
     "triangles": 9088
   },
   "fbx": {
     "ok": true,
     "boneCount": 39,
     "missingBones": [],
-    "maxPosErrorM": 1.7914726671487749e-07,
+    "maxPosErrorM": 1.6858739404357614e-07,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 37828,
+    "triangles": 38148,
     "vertexGroups": 39,
     "blend": "tick_exo.blend",
     "fbx": "tick_exo.fbx"
@@ -39,9 +39,9 @@
   "fbx_pose": {
     "ok": true,
     "posedJoint": "leg_L_shin",
-    "angleRad": 1.214752,
-    "verticesMoved": 6182,
-    "verticesTotal": 47220,
+    "angleRad": 1.12972,
+    "verticesMoved": 6352,
+    "verticesTotal": 47853,
     "pivotDrift": 1.8431718463976653e-07
   },
   "usd": {
@@ -50,7 +50,7 @@
       "upAxis": "Y",
       "metersPerUnit": 1.0,
       "xforms": 107,
-      "meshes": 148,
+      "meshes": 144,
       "missing": [],
       "maxPosErrorM": 4.7015206232900274e-05,
       "maxAxisErrorDeg": 0.0,
@@ -58,15 +58,15 @@
     },
     "blender": {
       "ok": true,
-      "objects": 245,
-      "meshes": 148
+      "objects": 241,
+      "meshes": 144
     },
     "ok": true
   },
   "obj": {
     "ok": true,
     "objects": 75,
-    "triangles": 36868,
+    "triangles": 37188,
     "materials": 7,
     "note": "static only, by design"
   },

@@ -47,29 +47,34 @@ export function segmentDown(link: NodeRef, L: number, w: number, d: number, st: 
     const armor = link.comp('armor');
     const th = d * (0.08 + st.plating * 0.07);
     const len = L * (0.5 + st.plating * 0.3);
-    shellDown(armor, -L * 0.12, [0, 0, d * 0.34 - bow * 0.5], '+z', {
+    // plates sit ON the member: its front face + a small gap + the plate's own thickness
+    const front = d * 0.7 * 0.5 * 1.12;
+    const side = w * 0.68 * 0.5 * 1.12;
+    shellDown(armor, -L * 0.12, [0, 0, front + d * 0.03 + th + bow * 0.55], '+z', {
       len,
-      radius: w * (1.1 + rng.range(0, 0.6)),
-      span: rng.range(1.0, 1.5),
+      width: w * rng.range(0.92, 1.08),
+      span: rng.range(0.9, 1.3),
       thick: th,
       material: st.armor,
       panels: st.plating > 0.62 ? 2 : 1,
       taperStart: 1.05,
       taperEnd: rng.range(0.7, 0.95),
-      belly: d * rng.range(0.03, 0.12),
+      belly: Math.abs(bow) * 0.4 + d * 0.03,
     });
     if (st.plating > 0.45) {
-      for (const sx of [-1, 1]) shellDown(armor, -L * 0.2, [sx * (w * 0.38), 0, -bow * 0.5], sx > 0 ? '+x' : '-x', { len: L * 0.5, radius: d * 1.6, span: 0.7, thick: th * 0.8, material: st.armor, taperEnd: 0.8, belly: d * 0.03 });
+      for (const sx of [-1, 1]) shellDown(armor, -L * 0.2, [sx * (side + w * 0.03 + th * 0.8), 0, bow * 0.5], sx > 0 ? '+x' : '-x', { len: L * 0.5, width: d * 0.72, span: 0.6, thick: th * 0.8, material: st.armor, taperEnd: 0.8, belly: d * 0.02 });
     }
     // bolt row along the shell's upper edge
-    armor.bolts([-w * 0.3, -L * 0.12 - th * 0.6, d * 0.34 + th * 0.6], [w * 0.3, -L * 0.12 - th * 0.6, d * 0.34 + th * 0.6], 4, Math.max(0.01, w * 0.022), 'z');
-    if (rng.chance(0.5)) armor.box([w * 0.22, -L * 0.42, d * 0.34 + th * 1.05], [w * 0.16, L * 0.1, 0.008], st.accent, { detail: 1, collide: false });
+    const fz = front + d * 0.03 + th + bow * 0.55 + 0.004;
+    armor.bolts([-w * 0.28, -L * 0.12 - th * 0.8, fz], [w * 0.28, -L * 0.12 - th * 0.8, fz], 4, Math.max(0.01, w * 0.022), 'z');
+    if (rng.chance(0.5)) armor.box([w * 0.2, -L * 0.42, fz + d * 0.02], [w * 0.16, L * 0.1, 0.008], st.accent, { detail: 1, collide: false });
   }
   // conduit up the back, clamped to the member
   const det = link.comp('detail');
   const cr = Math.max(0.012, w * 0.035);
-  det.shape([0, 0, 0], { t: 'tube', path: [[w * 0.2, -L * 0.1, -d * 0.4], [w * 0.22, -L * 0.5, -d * 0.42 - bow * 0.4], [w * 0.2, -L * 0.88, -d * 0.4]], r: cr, segs: 8 }, 'rubber', { detail: 1, collide: false });
-  for (const t of [0.25, 0.7]) clampBand(det, [w * 0.21, -L * t, -d * 0.41 - bow * 0.3], cr, 'y');
+  const cx = w * 0.68 * 0.5 + cr * 1.2;
+  det.shape([0, 0, 0], { t: 'tube', path: [[cx, -L * 0.1, -d * 0.12], [cx + cr * 0.3, -L * 0.5, -d * 0.12 + bow * 0.8], [cx, -L * 0.88, -d * 0.12]], r: cr, segs: 8 }, 'rubber', { detail: 1, collide: false });
+  for (const t of [0.25, 0.7]) clampBand(det, [cx, -L * t, -d * 0.12 + bow * 0.6], cr, 'y');
   if (L > 1.2 && rng.chance(0.6)) hatchPanel(det, [-w * 0.34, -L * 0.45, -d * 0.2], d * 0.3, L * 0.18, 'darkMetal', [0, -Math.PI / 2, 0]);
 }
 
@@ -91,19 +96,21 @@ export function segmentOut(link: NodeRef, L: number, w: number, h: number, st: S
   if (st.plating > 0.15) {
     const armor = link.comp('armor');
     const th = h * (0.08 + st.plating * 0.06);
-    shellOut(armor, L * 0.1, [0, h * 0.3 + bow * 0.5, 0], '+y', {
+    const top = h * 0.66 * 0.5 * 1.12;
+    shellOut(armor, L * 0.1, [0, top + h * 0.03 + th + bow * 0.55, 0], '+y', {
       len: L * (0.5 + st.plating * 0.3),
-      radius: w * (1.1 + rng.range(0, 0.5)),
-      span: rng.range(1.1, 1.5),
+      width: w * rng.range(0.95, 1.1),
+      span: rng.range(0.9, 1.3),
       thick: th,
       material: st.armor,
       panels: st.plating > 0.6 ? 2 : 1,
       taperStart: 0.95,
       taperEnd: rng.range(0.65, 0.9),
-      belly: h * 0.06,
+      belly: Math.abs(bow) * 0.4 + h * 0.03,
     });
-    armor.bolts([-w * 0.28, h * 0.3 + th * 1.2, L * 0.15], [-w * 0.28, h * 0.3 + th * 1.2, L * 0.55], 4, Math.max(0.01, w * 0.025), 'y');
-    if (rng.chance(0.6)) armor.box([w * 0.18, h * 0.3 + th * 1.25, L * 0.4], [w * 0.2, 0.008, L * 0.12], st.accent, { detail: 1, collide: false });
+    const ty = top + h * 0.03 + th + bow * 0.55 + 0.004;
+    armor.bolts([-w * 0.25, ty, L * 0.15], [-w * 0.25, ty, L * 0.55], 4, Math.max(0.01, w * 0.025), 'y');
+    if (rng.chance(0.6)) armor.box([w * 0.16, ty + 0.002, L * 0.4], [w * 0.2, 0.008, L * 0.12], st.accent, { detail: 1, collide: false });
   }
   const det = link.comp('detail');
   const cr = Math.max(0.012, w * 0.045);
@@ -195,14 +202,23 @@ export function uprightLeg(b: Builder, parent: string, at: Vec3, sp: UprightLegS
     for (let i = 1; i < n; i++) {
       const up = links[i - 1];
       const lo = links[i];
-      const front = (sp.phis[i] - sp.phis[i - 1]) < 0 ? 1 : -1; // put ram on the outside of the bend
+      // rams go on the OUTSIDE of the bend (long stroke, like an excavator) and on the leg's
+      // outer flank, clear of the front armour; a standoff welds each bracket to the member
+      const rr = Math.max(0.035, sp.w * 0.12);
+      const outside = sp.phis[i] - sp.phis[i - 1] < 0 ? 1 : -1;
+      const tA = 1 - (i - 1) * 0.12;
+      const tB = 1 - i * 0.12;
+      const sideA = sp.w * tA * 0.68 * 0.5 * 1.12;
+      const sideB = sp.w * tB * 0.68 * 0.5 * 1.12;
       b.piston({
         name: `${p}_${names[i]}_ram`,
         linkA: up.name,
-        anchorA: [s * sp.w * 0.42, -sp.lens[i - 1] * 0.28, front * sp.d * 0.42],
+        anchorA: [s * (sideA + rr * 1.7), -sp.lens[i - 1] * 0.3, outside * sp.d * tA * 0.18],
         linkB: lo.name,
-        anchorB: [s * sp.w * 0.42, -sp.lens[i] * 0.32, front * sp.d * 0.4],
-        radius: Math.max(0.03, sp.w * 0.09),
+        anchorB: [s * (sideB + rr * 1.7), -sp.lens[i] * 0.3, outside * sp.d * tB * 0.18],
+        mountA: s * sideA * 0.9,
+        mountB: s * sideB * 0.9,
+        radius: rr,
         drives: lo.name,
       });
     }
@@ -212,8 +228,8 @@ export function uprightLeg(b: Builder, parent: string, at: Vec3, sp: UprightLegS
       linkA: roll.name,
       anchorA: [-s * sp.w * 0.1, sp.d * 0.55, -sp.d * 0.55],
       linkB: links[0].name,
-      anchorB: [-s * sp.w * 0.1, -sp.lens[0] * 0.35, -sp.d * 0.42],
-      radius: Math.max(0.03, sp.w * 0.08),
+      anchorB: [-s * sp.w * 0.1, -sp.lens[0] * 0.35, -(sp.d * 0.35 * 1.1 + Math.max(0.035, sp.w * 0.11) * 1.6)],
+      radius: Math.max(0.035, sp.w * 0.11),
       drives: links[0].name,
     });
   }
@@ -275,7 +291,7 @@ function buildFoot(foot: NodeRef, sp: UprightLegSpec): Vec3 {
     case 'hoof': {
       fr.shape([0, 0, 0], { t: 'lathe', pts: [[0, -H], [W * 0.56, -H], [W * 0.58, -H * 0.86], [W * 0.5, -H * 0.8], [W * 0.46, -H * 0.3], [W * 0.3, -H * 0.05], [sp.d * 0.2, 0], [0, 0]], segs: 20 }, 'darkMetal');
       fr.shape([0, 0, 0], { t: 'lathe', pts: [[W * 0.5, -H * 0.99], [W * 0.6, -H * 0.97], [W * 0.6, -H * 0.86], [W * 0.5, -H * 0.84]], segs: 20 }, 'rubber', { detail: 1, collide: false });
-      shellDown(ar, -H * 0.15, [0, 0, W * 0.38], '+z', { len: H * 0.6, radius: W * 0.55, span: 1.8, thick: W * 0.07, material: sp.style.armor, taperEnd: 1.15, belly: W * 0.04 });
+      shellDown(ar, -H * 0.15, [0, 0, W * 0.5 + W * 0.1], '+z', { len: H * 0.6, width: W * 0.8, span: 1.2, thick: W * 0.07, material: sp.style.armor, taperEnd: 1.15, belly: W * 0.04 });
       return [0, -H, 0];
     }
     case 'pad':
@@ -339,9 +355,15 @@ export function sprawlLeg(b: Builder, parent: string, at: Vec3, sp: SprawlLegSpe
   }
   if (sp.hydraulics) {
     // femur lift ram: from coxa (below) to femur underside
-    b.piston({ name: `${p}_femur_ram`, linkA: coxa.name, anchorA: [sp.w * 0.32, -sp.h * 0.55, sp.lens[0] * 0.15], linkB: links[0].name, anchorB: [sp.w * 0.32, -sp.h * 0.42, sp.lens[1] * 0.4], radius: Math.max(0.025, sp.w * 0.1), drives: links[0].name });
+    // femur lift ram: under the leg, from the coxa root to the femur's belly (excavator style)
+    const rf = Math.max(0.04, sp.w * 0.18);
+    const rt = Math.max(0.035, sp.w * 0.15);
+    const hf = sp.h * 0.85 * 0.33 * 1.1;
+    b.piston({ name: `${p}_femur_ram`, linkA: coxa.name, anchorA: [0, -(sp.h * 0.36 + rf * 1.6), sp.lens[0] * 0.2], linkB: links[0].name, anchorB: [0, -(hf + rf * 1.6), sp.lens[1] * 0.42], radius: rf, drives: links[0].name });
     // tibia ram on top of femur
-    if (links[1]) b.piston({ name: `${p}_tibia_ram`, linkA: links[0].name, anchorA: [-sp.w * 0.3, sp.h * 0.55, sp.lens[1] * 0.35], linkB: links[1].name, anchorB: [-sp.w * 0.3, sp.h * 0.45, sp.lens[2] * 0.22], radius: Math.max(0.022, sp.w * 0.08), drives: links[1].name });
+    // tibia ram rides ABOVE the femur's armour plate
+    const plateTop = hf + sp.h * 0.03 + sp.h * 0.85 * (0.08 + sp.style.plating * 0.06) * 1.2;
+    if (links[1]) b.piston({ name: `${p}_tibia_ram`, linkA: links[0].name, anchorA: [0, plateTop + rt * 1.8, sp.lens[1] * 0.3], linkB: links[1].name, anchorB: [0, sp.h * 0.7 * 0.33 * 1.1 + rt * 1.6, sp.lens[2] * 0.2], radius: rt, drives: links[1].name });
   }
   for (let i = 1; i < links.length; i++) b.cable({ name: `${p}_${names[i]}_hose`, from: links[i - 1].name, fromOffset: [sp.w * 0.25, -sp.h * 0.3, sp.lens[i] * 0.7], to: links[i].name, toOffset: [sp.w * 0.25, -sp.h * 0.25, sp.lens[i + 1] * 0.2], radius: Math.max(0.01, sp.w * 0.04) });
 
@@ -400,7 +422,7 @@ export function arm(b: Builder, parent: string, at: Vec3, sp: ArmSpec) {
   const fore = up.child(`${p}_forearm`, [0, -sp.upper, 0], { rot: [elbowRest * D2R, 0, 0], joint: { axis: 'x', min: gun ? -45 : -95, max: gun ? 60 : 30, purpose: 'manipulation', kind: 'elbow' } });
   joints.push(fore.name);
   if (sp.hydraulics) {
-    b.piston({ name: `${p}_elbow_ram`, linkA: up.name, anchorA: [0, -sp.upper * 0.25, -sp.d * 0.45], linkB: fore.name, anchorB: [0, -sp.fore * 0.25, -sp.d * 0.4], radius: Math.max(0.025, sp.w * 0.08), drives: fore.name });
+    b.piston({ name: `${p}_elbow_ram`, linkA: up.name, anchorA: [0, -sp.upper * 0.25, -(sp.d * 0.35 * 1.1 + Math.max(0.03, sp.w * 0.11) * 1.6)], linkB: fore.name, anchorB: [0, -sp.fore * 0.25, -(sp.d * 0.92 * 0.35 * 1.1 + Math.max(0.03, sp.w * 0.11) * 1.6)], radius: Math.max(0.03, sp.w * 0.11), drives: fore.name });
   }
   b.cable({ name: `${p}_elbow_hose`, from: up.name, fromOffset: [-s * sp.w * 0.3, -sp.upper * 0.7, -sp.d * 0.3], to: fore.name, toOffset: [-s * sp.w * 0.3, -sp.fore * 0.3, -sp.d * 0.3], radius: Math.max(0.01, sp.w * 0.03) });
 
@@ -460,7 +482,7 @@ function gunArm(b: Builder, fore: NodeRef, sp: ArmSpec): string {
   // receiver block hangs along the forearm (local -Y, which points forward after the elbow bend)
   block(body, [0, -L * 0.3, 0], [sp.w * 1.15, L * 0.6, sp.d * 1.1], 'darkMetal', { r: sp.w * 0.16, segs: 2, frontPanel: { inset: sp.w * 0.1, depth: sp.d * 0.06 } });
   const ar = fore.comp('armor');
-  shellDown(ar, -L * 0.02, [0, 0, sp.d * 0.5], '+z', { len: L * 0.55, radius: sp.w * 1.1, span: 1.5, thick: sp.d * 0.12, material: sp.style.armor, panels: 2, taperEnd: 0.85, belly: sp.d * 0.05 });
+  shellDown(ar, -L * 0.02, [0, 0, sp.d * 0.55 + sp.d * 0.15], '+z', { len: L * 0.55, width: sp.w * 1.1, span: 1.1, thick: sp.d * 0.12, material: sp.style.armor, panels: 2, taperEnd: 0.85, belly: sp.d * 0.05 });
   ar.bolts([-sp.w * 0.35, -L * 0.04, sp.d * 0.64], [sp.w * 0.35, -L * 0.04, sp.d * 0.64], 4, sp.w * 0.03, 'z');
   // side ammo feed / cooling jacket
   block(body, [sp.side * sp.w * 0.62, -L * 0.3, -sp.d * 0.1], [sp.w * 0.28, L * 0.42, sp.d * 0.7], 'paint2', { r: sp.w * 0.06, detail: 1, frontPanel: { inset: sp.w * 0.04, depth: sp.w * 0.03, slats: 5 }, rot: [Math.PI / 2, 0, 0] });

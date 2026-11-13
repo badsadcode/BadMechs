@@ -18,7 +18,7 @@
   "height": 5.58,
   "width": 11.5,
   "length": 11.43,
-  "estimatedMassTonnes": 45.4,
+  "estimatedMassTonnes": 44.2,
   "sizeClass": "medium"
  },
  "nodes": [
@@ -3295,20 +3295,20 @@
    "system": "leg.L0",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.25506,
-    0.084
+    0,
+    -0.2738,
+    0.112
    ],
    "restRotation": [
-    -0.283208,
+    -0.280159,
     0,
     0,
-    0.959058
+    0.959954
    ],
    "restWorldPosition": [
-    2.0454,
-    2.0372,
-    2.3651
+    1.9658,
+    2.0185,
+    2.4575
    ],
    "tags": [
     "piston-barrel"
@@ -3321,20 +3321,20 @@
    "system": "leg.L0",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.19477,
-    1.176
+    0,
+    -0.24994,
+    1.2348
    ],
    "restRotation": [
-    -0.994933,
+    -0.994609,
     0,
     0,
-    0.100538
+    0.103699
    ],
    "restWorldPosition": [
-    2.8988,
-    2.9767,
-    3.5398
+    2.8502,
+    2.9785,
+    3.6747
    ],
    "tags": [
     "piston-rod"
@@ -3395,20 +3395,20 @@
    "system": "leg.L0",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.25506,
-    1.029
+    0,
+    0.31573,
+    0.882
    ],
    "restRotation": [
-    0.30362,
+    0.277224,
     0,
     0,
-    0.952793
+    0.960805
    ],
    "restWorldPosition": [
-    2.4659,
-    3.1949,
-    3.3352
+    2.4693,
+    3.1353,
+    3.1505
    ],
    "tags": [
     "piston-barrel"
@@ -3421,20 +3421,20 @@
    "system": "leg.L0",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.20869,
-    0.924
+    0,
+    0.20688,
+    0.84
    ],
    "restRotation": [
-    0.742599,
+    0.723843,
     0,
     0,
-    0.669737
+    0.689965
    ],
    "restWorldPosition": [
-    3.6319,
-    3.5124,
-    4.94
+    3.7081,
+    3.5931,
+    4.8556
    ],
    "tags": [
     "piston-rod"
@@ -3471,20 +3471,20 @@
    "system": "leg.R0",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.25506,
-    0.084
+    0,
+    -0.2738,
+    0.112
    ],
    "restRotation": [
-    -0.283208,
+    -0.280159,
     0,
     0,
-    0.959058
+    0.959954
    ],
    "restWorldPosition": [
-    -1.8533,
-    2.0372,
-    2.5046
+    -1.9658,
+    2.0185,
+    2.4575
    ],
    "tags": [
     "piston-barrel"
@@ -3497,20 +3497,20 @@
    "system": "leg.R0",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.19477,
-    1.176
+    0,
+    -0.24994,
+    1.2348
    ],
    "restRotation": [
-    -0.994933,
+    -0.994609,
     0,
     0,
-    0.100538
+    0.103699
    ],
    "restWorldPosition": [
-    -2.7068,
-    2.9767,
-    3.6793
+    -2.8502,
+    2.9785,
+    3.6747
    ],
    "tags": [
     "piston-rod"
@@ -3571,20 +3571,20 @@
    "system": "leg.R0",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.25506,
-    1.029
+    0,
+    0.31573,
+    0.882
    ],
    "restRotation": [
-    0.30362,
+    0.277224,
     0,
     0,
-    0.952793
+    0.960805
    ],
    "restWorldPosition": [
-    -2.646,
-    3.1949,
-    3.2044
+    -2.4693,
+    3.1353,
+    3.1505
    ],
    "tags": [
     "piston-barrel"
@@ -3597,20 +3597,20 @@
    "system": "leg.R0",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.20869,
-    0.924
+    0,
+    0.20688,
+    0.84
    ],
    "restRotation": [
-    0.742599,
+    0.723843,
     0,
     0,
-    0.669737
+    0.689965
    ],
    "restWorldPosition": [
-    -3.812,
-    3.5124,
-    4.8092
+    -3.7081,
+    3.5931,
+    4.8556
    ],
    "tags": [
     "piston-rod"
@@ -3647,20 +3647,20 @@
    "system": "leg.L1",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.25506,
-    0.084
+    0,
+    -0.2738,
+    0.112
    ],
    "restRotation": [
-    -0.283208,
+    -0.280159,
     0,
     0,
-    0.959058
+    0.959954
    ],
    "restWorldPosition": [
-    2.0166,
-    2.0372,
-    0.702
+    2.0065,
+    2.0185,
+    0.8236
    ],
    "tags": [
     "piston-barrel"
@@ -3673,20 +3673,20 @@
    "system": "leg.L1",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.19477,
-    1.176
+    0,
+    -0.24994,
+    1.2348
    ],
    "restRotation": [
-    -0.994933,
+    -0.994609,
     0,
     0,
-    0.100538
+    0.103699
    ],
    "restWorldPosition": [
-    3.3975,
-    2.9767,
-    1.1507
+    3.4374,
+    2.9785,
+    1.2885
    ],
    "tags": [
     "piston-rod"
@@ -3747,20 +3747,20 @@
    "system": "leg.L1",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.25506,
-    1.029
+    0,
+    0.31573,
+    0.882
    ],
    "restRotation": [
-    0.30362,
+    0.277224,
     0,
     0,
-    0.952793
+    0.960805
    ],
    "restWorldPosition": [
-    2.927,
-    3.1949,
-    1.2397
+    2.8212,
+    3.1353,
+    1.0883
    ],
    "tags": [
     "piston-barrel"
@@ -3773,20 +3773,20 @@
    "system": "leg.L1",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.20869,
-    0.924
+    0,
+    0.20688,
+    0.84
    ],
    "restRotation": [
-    0.742599,
+    0.723843,
     0,
     0,
-    0.669737
+    0.689965
    ],
    "restWorldPosition": [
-    4.8136,
-    3.5124,
-    1.8527
+    4.8256,
+    3.5931,
+    1.7396
    ],
    "tags": [
     "piston-rod"
@@ -3823,20 +3823,20 @@
    "system": "leg.R1",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.25506,
-    0.084
+    0,
+    -0.2738,
+    0.112
    ],
    "restRotation": [
-    -0.283208,
+    -0.280159,
     0,
     0,
-    0.959058
+    0.959954
    ],
    "restWorldPosition": [
-    -1.9432,
-    2.0372,
-    0.9278
+    -2.0065,
+    2.0185,
+    0.8236
    ],
    "tags": [
     "piston-barrel"
@@ -3849,20 +3849,20 @@
    "system": "leg.R1",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.19477,
-    1.176
+    0,
+    -0.24994,
+    1.2348
    ],
    "restRotation": [
-    -0.994933,
+    -0.994609,
     0,
     0,
-    0.100538
+    0.103699
    ],
    "restWorldPosition": [
-    -3.3241,
-    2.9767,
-    1.3765
+    -3.4374,
+    2.9785,
+    1.2885
    ],
    "tags": [
     "piston-rod"
@@ -3923,20 +3923,20 @@
    "system": "leg.R1",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.25506,
-    1.029
+    0,
+    0.31573,
+    0.882
    ],
    "restRotation": [
-    0.30362,
+    0.277224,
     0,
     0,
-    0.952793
+    0.960805
    ],
    "restWorldPosition": [
-    -2.9958,
-    3.1949,
-    1.028
+    -2.8212,
+    3.1353,
+    1.0883
    ],
    "tags": [
     "piston-barrel"
@@ -3949,20 +3949,20 @@
    "system": "leg.R1",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.20869,
-    0.924
+    0,
+    0.20688,
+    0.84
    ],
    "restRotation": [
-    0.742599,
+    0.723843,
     0,
     0,
-    0.669737
+    0.689965
    ],
    "restWorldPosition": [
-    -4.8824,
-    3.5124,
-    1.641
+    -4.8256,
+    3.5931,
+    1.7396
    ],
    "tags": [
     "piston-rod"
@@ -3999,20 +3999,20 @@
    "system": "leg.L2",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.25506,
-    0.084
+    0,
+    -0.2738,
+    0.112
    ],
    "restRotation": [
-    -0.283208,
+    -0.280159,
     0,
     0,
-    0.959058
+    0.959954
    ],
    "restWorldPosition": [
-    1.9432,
-    2.0372,
-    -0.9278
+    2.0065,
+    2.0185,
+    -0.8236
    ],
    "tags": [
     "piston-barrel"
@@ -4025,20 +4025,20 @@
    "system": "leg.L2",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.19477,
-    1.176
+    0,
+    -0.24994,
+    1.2348
    ],
    "restRotation": [
-    -0.994933,
+    -0.994609,
     0,
     0,
-    0.100538
+    0.103699
    ],
    "restWorldPosition": [
-    3.3241,
-    2.9767,
-    -1.3765
+    3.4374,
+    2.9785,
+    -1.2885
    ],
    "tags": [
     "piston-rod"
@@ -4099,20 +4099,20 @@
    "system": "leg.L2",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.25506,
-    1.029
+    0,
+    0.31573,
+    0.882
    ],
    "restRotation": [
-    0.30362,
+    0.277224,
     0,
     0,
-    0.952793
+    0.960805
    ],
    "restWorldPosition": [
-    2.9958,
-    3.1949,
-    -1.028
+    2.8212,
+    3.1353,
+    -1.0883
    ],
    "tags": [
     "piston-barrel"
@@ -4125,20 +4125,20 @@
    "system": "leg.L2",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.20869,
-    0.924
+    0,
+    0.20688,
+    0.84
    ],
    "restRotation": [
-    0.742599,
+    0.723843,
     0,
     0,
-    0.669737
+    0.689965
    ],
    "restWorldPosition": [
-    4.8824,
-    3.5124,
-    -1.641
+    4.8256,
+    3.5931,
+    -1.7396
    ],
    "tags": [
     "piston-rod"
@@ -4175,20 +4175,20 @@
    "system": "leg.R2",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.25506,
-    0.084
+    0,
+    -0.2738,
+    0.112
    ],
    "restRotation": [
-    -0.283208,
+    -0.280159,
     0,
     0,
-    0.959058
+    0.959954
    ],
    "restWorldPosition": [
-    -2.0166,
-    2.0372,
-    -0.702
+    -2.0065,
+    2.0185,
+    -0.8236
    ],
    "tags": [
     "piston-barrel"
@@ -4201,20 +4201,20 @@
    "system": "leg.R2",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.19477,
-    1.176
+    0,
+    -0.24994,
+    1.2348
    ],
    "restRotation": [
-    -0.994933,
+    -0.994609,
     0,
     0,
-    0.100538
+    0.103699
    ],
    "restWorldPosition": [
-    -3.3975,
-    2.9767,
-    -1.1507
+    -3.4374,
+    2.9785,
+    -1.2885
    ],
    "tags": [
     "piston-rod"
@@ -4275,20 +4275,20 @@
    "system": "leg.R2",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.25506,
-    1.029
+    0,
+    0.31573,
+    0.882
    ],
    "restRotation": [
-    0.30362,
+    0.277224,
     0,
     0,
-    0.952793
+    0.960805
    ],
    "restWorldPosition": [
-    -2.927,
-    3.1949,
-    -1.2397
+    -2.8212,
+    3.1353,
+    -1.0883
    ],
    "tags": [
     "piston-barrel"
@@ -4301,20 +4301,20 @@
    "system": "leg.R2",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.20869,
-    0.924
+    0,
+    0.20688,
+    0.84
    ],
    "restRotation": [
-    0.742599,
+    0.723843,
     0,
     0,
-    0.669737
+    0.689965
    ],
    "restWorldPosition": [
-    -4.8136,
-    3.5124,
-    -1.8527
+    -4.8256,
+    3.5931,
+    -1.7396
    ],
    "tags": [
     "piston-rod"
@@ -4351,20 +4351,20 @@
    "system": "leg.L3",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.25506,
-    0.084
+    0,
+    -0.2738,
+    0.112
    ],
    "restRotation": [
-    -0.283208,
+    -0.280159,
     0,
     0,
-    0.959058
+    0.959954
    ],
    "restWorldPosition": [
-    1.8533,
-    2.0372,
-    -2.5046
+    1.9658,
+    2.0185,
+    -2.4575
    ],
    "tags": [
     "piston-barrel"
@@ -4377,20 +4377,20 @@
    "system": "leg.L3",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.19477,
-    1.176
+    0,
+    -0.24994,
+    1.2348
    ],
    "restRotation": [
-    -0.994933,
+    -0.994609,
     0,
     0,
-    0.100538
+    0.103699
    ],
    "restWorldPosition": [
-    2.7068,
-    2.9767,
-    -3.6793
+    2.8502,
+    2.9785,
+    -3.6747
    ],
    "tags": [
     "piston-rod"
@@ -4451,20 +4451,20 @@
    "system": "leg.L3",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.25506,
-    1.029
+    0,
+    0.31573,
+    0.882
    ],
    "restRotation": [
-    0.30362,
+    0.277224,
     0,
     0,
-    0.952793
+    0.960805
    ],
    "restWorldPosition": [
-    2.646,
-    3.1949,
-    -3.2044
+    2.4693,
+    3.1353,
+    -3.1505
    ],
    "tags": [
     "piston-barrel"
@@ -4477,20 +4477,20 @@
    "system": "leg.L3",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.20869,
-    0.924
+    0,
+    0.20688,
+    0.84
    ],
    "restRotation": [
-    0.742599,
+    0.723843,
     0,
     0,
-    0.669737
+    0.689965
    ],
    "restWorldPosition": [
-    3.812,
-    3.5124,
-    -4.8092
+    3.7081,
+    3.5931,
+    -4.8556
    ],
    "tags": [
     "piston-rod"
@@ -4527,20 +4527,20 @@
    "system": "leg.R3",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.25506,
-    0.084
+    0,
+    -0.2738,
+    0.112
    ],
    "restRotation": [
-    -0.283208,
+    -0.280159,
     0,
     0,
-    0.959058
+    0.959954
    ],
    "restWorldPosition": [
-    -2.0454,
-    2.0372,
-    -2.3651
+    -1.9658,
+    2.0185,
+    -2.4575
    ],
    "tags": [
     "piston-barrel"
@@ -4553,20 +4553,20 @@
    "system": "leg.R3",
    "component": "actuator",
    "restTranslation": [
-    0.11872,
-    -0.19477,
-    1.176
+    0,
+    -0.24994,
+    1.2348
    ],
    "restRotation": [
-    -0.994933,
+    -0.994609,
     0,
     0,
-    0.100538
+    0.103699
    ],
    "restWorldPosition": [
-    -2.8988,
-    2.9767,
-    -3.5398
+    -2.8502,
+    2.9785,
+    -3.6747
    ],
    "tags": [
     "piston-rod"
@@ -4627,20 +4627,20 @@
    "system": "leg.R3",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.25506,
-    1.029
+    0,
+    0.31573,
+    0.882
    ],
    "restRotation": [
-    0.30362,
+    0.277224,
     0,
     0,
-    0.952793
+    0.960805
    ],
    "restWorldPosition": [
-    -2.4659,
-    3.1949,
-    -3.3352
+    -2.4693,
+    3.1353,
+    -3.1505
    ],
    "tags": [
     "piston-barrel"
@@ -4653,20 +4653,20 @@
    "system": "leg.R3",
    "component": "actuator",
    "restTranslation": [
-    -0.1113,
-    0.20869,
-    0.924
+    0,
+    0.20688,
+    0.84
    ],
    "restRotation": [
-    0.742599,
+    0.723843,
     0,
     0,
-    0.669737
+    0.689965
    ],
    "restWorldPosition": [
-    -3.6319,
-    3.5124,
-    -4.94
+    -3.7081,
+    3.5931,
+    -4.8556
    ],
    "tags": [
     "piston-rod"
@@ -4760,10 +4760,10 @@
     0,
     -0.5878
    ],
-   "min": -0.99253,
-   "max": 0.42235,
-   "minDeg": -56.87,
-   "maxDeg": 24.2,
+   "min": -1.14756,
+   "max": 0.48833,
+   "minDeg": -65.75,
+   "maxDeg": 27.98,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -4856,10 +4856,10 @@
     0,
     0.5878
    ],
-   "min": -0.99253,
-   "max": 0.42235,
-   "minDeg": -56.87,
-   "maxDeg": 24.2,
+   "min": -1.14756,
+   "max": 0.48833,
+   "minDeg": -65.75,
+   "maxDeg": 27.98,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -4952,10 +4952,10 @@
     0,
     -0.9511
    ],
-   "min": -0.99253,
-   "max": 0.42235,
-   "minDeg": -56.87,
-   "maxDeg": 24.2,
+   "min": -1.14756,
+   "max": 0.48833,
+   "minDeg": -65.75,
+   "maxDeg": 27.98,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -5048,10 +5048,10 @@
     0,
     0.9511
    ],
-   "min": -0.99253,
-   "max": 0.42235,
-   "minDeg": -56.87,
-   "maxDeg": 24.2,
+   "min": -1.14756,
+   "max": 0.48833,
+   "minDeg": -65.75,
+   "maxDeg": 27.98,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -5144,10 +5144,10 @@
     0,
     -0.9511
    ],
-   "min": -0.99253,
-   "max": 0.42235,
-   "minDeg": -56.87,
-   "maxDeg": 24.2,
+   "min": -1.14756,
+   "max": 0.48833,
+   "minDeg": -65.75,
+   "maxDeg": 27.98,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -5240,10 +5240,10 @@
     0,
     0.9511
    ],
-   "min": -0.99253,
-   "max": 0.42235,
-   "minDeg": -56.87,
-   "maxDeg": 24.2,
+   "min": -1.14756,
+   "max": 0.48833,
+   "minDeg": -65.75,
+   "maxDeg": 27.98,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -5336,10 +5336,10 @@
     0,
     -0.5878
    ],
-   "min": -0.99253,
-   "max": 0.42235,
-   "minDeg": -56.87,
-   "maxDeg": 24.2,
+   "min": -1.14756,
+   "max": 0.48833,
+   "minDeg": -65.75,
+   "maxDeg": 27.98,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -5432,10 +5432,10 @@
     0,
     0.5878
    ],
-   "min": -0.99253,
-   "max": 0.42235,
-   "minDeg": -56.87,
-   "maxDeg": 24.2,
+   "min": -1.14756,
+   "max": 0.48833,
+   "minDeg": -65.75,
+   "maxDeg": 27.98,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -5515,8 +5515,8 @@
     5.3975
    ],
    "restReach": 4.3917,
-   "minReach": 2.7993,
-   "maxReach": 6.9394,
+   "minReach": 2.5879,
+   "maxReach": 7.1982,
    "gaitPhase": 0
   },
   {
@@ -5542,8 +5542,8 @@
     5.3975
    ],
    "restReach": 4.3917,
-   "minReach": 3.0165,
-   "maxReach": 6.8656,
+   "minReach": 2.8378,
+   "maxReach": 7.1205,
    "gaitPhase": 0.5
   },
   {
@@ -5569,8 +5569,8 @@
     1.9466
    ],
    "restReach": 4.3917,
-   "minReach": 2.7062,
-   "maxReach": 6.9717,
+   "minReach": 2.4986,
+   "maxReach": 7.2204,
    "gaitPhase": 0.5
   },
   {
@@ -5596,8 +5596,8 @@
     1.9466
    ],
    "restReach": 4.3917,
-   "minReach": 2.8264,
-   "maxReach": 6.7611,
+   "minReach": 2.6076,
+   "maxReach": 7.0216,
    "gaitPhase": 0
   },
   {
@@ -5623,8 +5623,8 @@
     -1.9466
    ],
    "restReach": 4.3917,
-   "minReach": 2.732,
-   "maxReach": 6.8459,
+   "minReach": 2.5073,
+   "maxReach": 7.0903,
    "gaitPhase": 0
   },
   {
@@ -5650,8 +5650,8 @@
     -1.9466
    ],
    "restReach": 4.3917,
-   "minReach": 3.0169,
-   "maxReach": 6.9334,
+   "minReach": 2.8044,
+   "maxReach": 7.1953,
    "gaitPhase": 0.5
   },
   {
@@ -5677,8 +5677,8 @@
     -5.3975
    ],
    "restReach": 4.3917,
-   "minReach": 2.7705,
-   "maxReach": 6.9103,
+   "minReach": 2.5439,
+   "maxReach": 7.1764,
    "gaitPhase": 0.5
   },
   {
@@ -5704,8 +5704,8 @@
     -5.3975
    ],
    "restReach": 4.3917,
-   "minReach": 2.9756,
-   "maxReach": 6.9357,
+   "minReach": 2.7715,
+   "maxReach": 7.1824,
    "gaitPhase": 0
   }
  ],
@@ -5719,11 +5719,11 @@
    "baseLink": "leg_L0_coxa",
    "endLink": "leg_L0_femur",
    "drives": "leg_L0_femur",
-   "restLength": 1.7294,
-   "minLength": 1.5545,
-   "maxLength": 1.7319,
-   "barrelLength": 1.4729,
-   "rodLength": 0.4801,
+   "restLength": 1.7847,
+   "minLength": 1.6386,
+   "maxLength": 1.7847,
+   "barrelLength": 1.4917,
+   "rodLength": 0.5168,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5737,11 +5737,11 @@
    "baseLink": "leg_L0_femur",
    "endLink": "leg_L0_tibia",
    "drives": "leg_L0_tibia",
-   "restLength": 2.0089,
-   "minLength": 1.615,
-   "maxLength": 2.7052,
-   "barrelLength": 1.5497,
-   "rodLength": 1.388,
+   "restLength": 2.1567,
+   "minLength": 1.739,
+   "maxLength": 2.8578,
+   "barrelLength": 1.6166,
+   "rodLength": 1.4837,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5755,11 +5755,11 @@
    "baseLink": "leg_R0_coxa",
    "endLink": "leg_R0_femur",
    "drives": "leg_R0_femur",
-   "restLength": 1.7294,
-   "minLength": 1.5545,
-   "maxLength": 1.7319,
-   "barrelLength": 1.4729,
-   "rodLength": 0.4801,
+   "restLength": 1.7847,
+   "minLength": 1.6386,
+   "maxLength": 1.7847,
+   "barrelLength": 1.4917,
+   "rodLength": 0.5168,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5773,11 +5773,11 @@
    "baseLink": "leg_R0_femur",
    "endLink": "leg_R0_tibia",
    "drives": "leg_R0_tibia",
-   "restLength": 2.0089,
-   "minLength": 1.615,
-   "maxLength": 2.7052,
-   "barrelLength": 1.5497,
-   "rodLength": 1.388,
+   "restLength": 2.1567,
+   "minLength": 1.739,
+   "maxLength": 2.8578,
+   "barrelLength": 1.6166,
+   "rodLength": 1.4837,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5791,11 +5791,11 @@
    "baseLink": "leg_L1_coxa",
    "endLink": "leg_L1_femur",
    "drives": "leg_L1_femur",
-   "restLength": 1.7294,
-   "minLength": 1.5545,
-   "maxLength": 1.7319,
-   "barrelLength": 1.4729,
-   "rodLength": 0.4801,
+   "restLength": 1.7847,
+   "minLength": 1.6386,
+   "maxLength": 1.7847,
+   "barrelLength": 1.4917,
+   "rodLength": 0.5168,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5809,11 +5809,11 @@
    "baseLink": "leg_L1_femur",
    "endLink": "leg_L1_tibia",
    "drives": "leg_L1_tibia",
-   "restLength": 2.0089,
-   "minLength": 1.615,
-   "maxLength": 2.7052,
-   "barrelLength": 1.5497,
-   "rodLength": 1.388,
+   "restLength": 2.1567,
+   "minLength": 1.739,
+   "maxLength": 2.8578,
+   "barrelLength": 1.6166,
+   "rodLength": 1.4837,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5827,11 +5827,11 @@
    "baseLink": "leg_R1_coxa",
    "endLink": "leg_R1_femur",
    "drives": "leg_R1_femur",
-   "restLength": 1.7294,
-   "minLength": 1.5545,
-   "maxLength": 1.7319,
-   "barrelLength": 1.4729,
-   "rodLength": 0.4801,
+   "restLength": 1.7847,
+   "minLength": 1.6386,
+   "maxLength": 1.7847,
+   "barrelLength": 1.4917,
+   "rodLength": 0.5168,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5845,11 +5845,11 @@
    "baseLink": "leg_R1_femur",
    "endLink": "leg_R1_tibia",
    "drives": "leg_R1_tibia",
-   "restLength": 2.0089,
-   "minLength": 1.615,
-   "maxLength": 2.7052,
-   "barrelLength": 1.5497,
-   "rodLength": 1.388,
+   "restLength": 2.1567,
+   "minLength": 1.739,
+   "maxLength": 2.8578,
+   "barrelLength": 1.6166,
+   "rodLength": 1.4837,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5863,11 +5863,11 @@
    "baseLink": "leg_L2_coxa",
    "endLink": "leg_L2_femur",
    "drives": "leg_L2_femur",
-   "restLength": 1.7294,
-   "minLength": 1.5545,
-   "maxLength": 1.7319,
-   "barrelLength": 1.4729,
-   "rodLength": 0.4801,
+   "restLength": 1.7847,
+   "minLength": 1.6386,
+   "maxLength": 1.7847,
+   "barrelLength": 1.4917,
+   "rodLength": 0.5168,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5881,11 +5881,11 @@
    "baseLink": "leg_L2_femur",
    "endLink": "leg_L2_tibia",
    "drives": "leg_L2_tibia",
-   "restLength": 2.0089,
-   "minLength": 1.615,
-   "maxLength": 2.7052,
-   "barrelLength": 1.5497,
-   "rodLength": 1.388,
+   "restLength": 2.1567,
+   "minLength": 1.739,
+   "maxLength": 2.8578,
+   "barrelLength": 1.6166,
+   "rodLength": 1.4837,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5899,11 +5899,11 @@
    "baseLink": "leg_R2_coxa",
    "endLink": "leg_R2_femur",
    "drives": "leg_R2_femur",
-   "restLength": 1.7294,
-   "minLength": 1.5545,
-   "maxLength": 1.7319,
-   "barrelLength": 1.4729,
-   "rodLength": 0.4801,
+   "restLength": 1.7847,
+   "minLength": 1.6386,
+   "maxLength": 1.7847,
+   "barrelLength": 1.4917,
+   "rodLength": 0.5168,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5917,11 +5917,11 @@
    "baseLink": "leg_R2_femur",
    "endLink": "leg_R2_tibia",
    "drives": "leg_R2_tibia",
-   "restLength": 2.0089,
-   "minLength": 1.615,
-   "maxLength": 2.7052,
-   "barrelLength": 1.5497,
-   "rodLength": 1.388,
+   "restLength": 2.1567,
+   "minLength": 1.739,
+   "maxLength": 2.8578,
+   "barrelLength": 1.6166,
+   "rodLength": 1.4837,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5935,11 +5935,11 @@
    "baseLink": "leg_L3_coxa",
    "endLink": "leg_L3_femur",
    "drives": "leg_L3_femur",
-   "restLength": 1.7294,
-   "minLength": 1.5545,
-   "maxLength": 1.7319,
-   "barrelLength": 1.4729,
-   "rodLength": 0.4801,
+   "restLength": 1.7847,
+   "minLength": 1.6386,
+   "maxLength": 1.7847,
+   "barrelLength": 1.4917,
+   "rodLength": 0.5168,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5953,11 +5953,11 @@
    "baseLink": "leg_L3_femur",
    "endLink": "leg_L3_tibia",
    "drives": "leg_L3_tibia",
-   "restLength": 2.0089,
-   "minLength": 1.615,
-   "maxLength": 2.7052,
-   "barrelLength": 1.5497,
-   "rodLength": 1.388,
+   "restLength": 2.1567,
+   "minLength": 1.739,
+   "maxLength": 2.8578,
+   "barrelLength": 1.6166,
+   "rodLength": 1.4837,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5971,11 +5971,11 @@
    "baseLink": "leg_R3_coxa",
    "endLink": "leg_R3_femur",
    "drives": "leg_R3_femur",
-   "restLength": 1.7294,
-   "minLength": 1.5545,
-   "maxLength": 1.7319,
-   "barrelLength": 1.4729,
-   "rodLength": 0.4801,
+   "restLength": 1.7847,
+   "minLength": 1.6386,
+   "maxLength": 1.7847,
+   "barrelLength": 1.4917,
+   "rodLength": 0.5168,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5989,11 +5989,11 @@
    "baseLink": "leg_R3_femur",
    "endLink": "leg_R3_tibia",
    "drives": "leg_R3_tibia",
-   "restLength": 2.0089,
-   "minLength": 1.615,
-   "maxLength": 2.7052,
-   "barrelLength": 1.5497,
-   "rodLength": 1.388,
+   "restLength": 2.1567,
+   "minLength": 1.739,
+   "maxLength": 2.8578,
+   "barrelLength": 1.6166,
+   "rodLength": 1.4837,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -6354,8 +6354,8 @@
     "body": "leg_L0_coxa",
     "center": [
      0,
-     0.0959,
-     0.2328
+     0,
+     0
     ],
     "rotation": [
      0,
@@ -6364,9 +6364,9 @@
      1
     ],
     "halfExtents": [
-     0.2966,
-     0.0912,
-     0.1768
+     0.1365,
+     0.1753,
+     0.1753
     ]
    },
    {
@@ -6392,7 +6392,7 @@
     "body": "leg_L0_femur",
     "center": [
      0,
-     0.0827,
+     0.196,
      0.8164
     ],
     "rotation": [
@@ -6402,8 +6402,8 @@
      1
     ],
     "halfExtents": [
-     0.2578,
-     0.0755,
+     0.1469,
+     0.0532,
      0.5224
     ]
    },
@@ -6411,7 +6411,7 @@
     "body": "leg_L0_femur",
     "center": [
      0,
-     0.0827,
+     0.196,
      1.8855
     ],
     "rotation": [
@@ -6421,8 +6421,8 @@
      1
     ],
     "halfExtents": [
-     0.2496,
-     0.0755,
+     0.1423,
+     0.0532,
      0.5224
     ]
    },
@@ -6468,7 +6468,7 @@
     "body": "leg_L0_tibia",
     "center": [
      0,
-     0.0667,
+     0.1643,
      1.1699
     ],
     "rotation": [
@@ -6478,8 +6478,8 @@
      1
     ],
     "halfExtents": [
-     0.217,
-     0.0661,
+     0.1181,
+     0.0457,
      0.7499
     ]
    },
@@ -6487,7 +6487,7 @@
     "body": "leg_L0_tibia",
     "center": [
      0,
-     0.0667,
+     0.1643,
      2.6899
     ],
     "rotation": [
@@ -6497,168 +6497,1764 @@
      1
     ],
     "halfExtents": [
+     0.1093,
+     0.0457,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_L0_tibia",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0873,
+     0.1169,
+     0.1169
+    ]
+   },
+   {
+    "body": "leg_L0_foot",
+    "center": [
+     0,
+     -0.1575,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2142,
+     0.1365,
+     0.2142
+    ]
+   },
+   {
+    "body": "leg_L0_foot",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1012,
+     0.105,
+     0.105
+    ]
+   },
+   {
+    "body": "leg_R0_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2087,
+     0.2486,
+     0.2087
+    ]
+   },
+   {
+    "body": "leg_R0_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2875,
+     0.1159,
+     0.2875
+    ]
+   },
+   {
+    "body": "leg_R0_coxa",
+    "center": [
+     0,
+     0,
+     0.28
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1683,
+     0.2009,
+     0.28
+    ]
+   },
+   {
+    "body": "leg_R0_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1365,
+     0.1753,
+     0.1753
+    ]
+   },
+   {
+    "body": "leg_R0_femur",
+    "center": [
+     0,
+     0,
+     1.47
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1301,
+     0.1626,
+     1.47
+    ]
+   },
+   {
+    "body": "leg_R0_femur",
+    "center": [
+     0,
+     0.2017,
+     0.8164
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1352,
+     0.05,
+     0.5224
+    ]
+   },
+   {
+    "body": "leg_R0_femur",
+    "center": [
+     0,
+     0.2017,
+     1.8855
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1232,
+     0.05,
+     0.5224
+    ]
+   },
+   {
+    "body": "leg_R0_femur",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.106,
+     0.1419,
+     0.1419
+    ]
+   },
+   {
+    "body": "leg_R0_tibia",
+    "center": [
+     0,
+     0,
+     2.1
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1071,
+     0.1339,
+     2.1
+    ]
+   },
+   {
+    "body": "leg_R0_tibia",
+    "center": [
+     0,
+     0.1461,
+     1.1699
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.111,
+     0.0367,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_R0_tibia",
+    "center": [
+     0,
+     0.1461,
+     2.6899
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1017,
+     0.0367,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_R0_tibia",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0873,
+     0.1169,
+     0.1169
+    ]
+   },
+   {
+    "body": "leg_R0_foot",
+    "center": [
+     0,
+     -0.1575,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2142,
+     0.1365,
+     0.2142
+    ]
+   },
+   {
+    "body": "leg_R0_foot",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1012,
+     0.105,
+     0.105
+    ]
+   },
+   {
+    "body": "leg_L1_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2087,
+     0.2486,
+     0.2087
+    ]
+   },
+   {
+    "body": "leg_L1_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2875,
+     0.1159,
+     0.2875
+    ]
+   },
+   {
+    "body": "leg_L1_coxa",
+    "center": [
+     0,
+     0,
+     0.28
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1683,
+     0.2009,
+     0.28
+    ]
+   },
+   {
+    "body": "leg_L1_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1365,
+     0.1753,
+     0.1753
+    ]
+   },
+   {
+    "body": "leg_L1_femur",
+    "center": [
+     0,
+     0,
+     1.47
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1301,
+     0.1626,
+     1.47
+    ]
+   },
+   {
+    "body": "leg_L1_femur",
+    "center": [
+     0,
+     0.1933,
+     0.8164
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1547,
+     0.05,
+     0.5224
+    ]
+   },
+   {
+    "body": "leg_L1_femur",
+    "center": [
+     0,
+     0.1933,
+     1.8855
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1489,
+     0.05,
+     0.5224
+    ]
+   },
+   {
+    "body": "leg_L1_femur",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.106,
+     0.1419,
+     0.1419
+    ]
+   },
+   {
+    "body": "leg_L1_tibia",
+    "center": [
+     0,
+     0,
+     2.1
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1071,
+     0.1339,
+     2.1
+    ]
+   },
+   {
+    "body": "leg_L1_tibia",
+    "center": [
+     0,
+     0.1597,
+     1.1699
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1145,
+     0.0442,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_L1_tibia",
+    "center": [
+     0,
+     0.1597,
+     2.6899
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1013,
+     0.0442,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_L1_tibia",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0873,
+     0.1169,
+     0.1169
+    ]
+   },
+   {
+    "body": "leg_L1_foot",
+    "center": [
+     0,
+     -0.1575,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2142,
+     0.1365,
+     0.2142
+    ]
+   },
+   {
+    "body": "leg_L1_foot",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1012,
+     0.105,
+     0.105
+    ]
+   },
+   {
+    "body": "leg_R1_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2087,
+     0.2486,
+     0.2087
+    ]
+   },
+   {
+    "body": "leg_R1_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2875,
+     0.1159,
+     0.2875
+    ]
+   },
+   {
+    "body": "leg_R1_coxa",
+    "center": [
+     0,
+     0,
+     0.28
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1683,
+     0.2009,
+     0.28
+    ]
+   },
+   {
+    "body": "leg_R1_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1365,
+     0.1753,
+     0.1753
+    ]
+   },
+   {
+    "body": "leg_R1_femur",
+    "center": [
+     0,
+     0,
+     1.47
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1301,
+     0.1626,
+     1.47
+    ]
+   },
+   {
+    "body": "leg_R1_femur",
+    "center": [
+     0,
+     0.1972,
+     0.8164
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.139,
+     0.0509,
+     0.5224
+    ]
+   },
+   {
+    "body": "leg_R1_femur",
+    "center": [
+     0,
+     0.1972,
+     1.8855
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1241,
+     0.0509,
+     0.5224
+    ]
+   },
+   {
+    "body": "leg_R1_femur",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.106,
+     0.1419,
+     0.1419
+    ]
+   },
+   {
+    "body": "leg_R1_tibia",
+    "center": [
+     0,
+     0,
+     2.1
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1071,
+     0.1339,
+     2.1
+    ]
+   },
+   {
+    "body": "leg_R1_tibia",
+    "center": [
+     0,
+     0.1491,
+     1.1699
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.122,
+     0.0402,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_R1_tibia",
+    "center": [
+     0,
+     0.1491,
+     2.6899
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1097,
+     0.0402,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_R1_tibia",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0873,
+     0.1169,
+     0.1169
+    ]
+   },
+   {
+    "body": "leg_R1_foot",
+    "center": [
+     0,
+     -0.1575,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2142,
+     0.1365,
+     0.2142
+    ]
+   },
+   {
+    "body": "leg_R1_foot",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1012,
+     0.105,
+     0.105
+    ]
+   },
+   {
+    "body": "leg_L2_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2087,
+     0.2486,
+     0.2087
+    ]
+   },
+   {
+    "body": "leg_L2_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2875,
+     0.1159,
+     0.2875
+    ]
+   },
+   {
+    "body": "leg_L2_coxa",
+    "center": [
+     0,
+     0,
+     0.28
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1683,
+     0.2009,
+     0.28
+    ]
+   },
+   {
+    "body": "leg_L2_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1365,
+     0.1753,
+     0.1753
+    ]
+   },
+   {
+    "body": "leg_L2_femur",
+    "center": [
+     0,
+     0,
+     1.47
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1301,
+     0.1626,
+     1.47
+    ]
+   },
+   {
+    "body": "leg_L2_femur",
+    "center": [
+     0,
+     0.2017,
+     0.8164
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.138,
+     0.0514,
+     0.5224
+    ]
+   },
+   {
+    "body": "leg_L2_femur",
+    "center": [
+     0,
+     0.2017,
+     1.8855
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1253,
+     0.0514,
+     0.5224
+    ]
+   },
+   {
+    "body": "leg_L2_femur",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.106,
+     0.1419,
+     0.1419
+    ]
+   },
+   {
+    "body": "leg_L2_tibia",
+    "center": [
+     0,
+     0,
+     2.1
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1071,
+     0.1339,
+     2.1
+    ]
+   },
+   {
+    "body": "leg_L2_tibia",
+    "center": [
+     0,
+     0.1583,
+     1.1699
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1121,
+     0.04,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_L2_tibia",
+    "center": [
+     0,
+     0.1583,
+     2.6899
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1054,
+     0.04,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_L2_tibia",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0873,
+     0.1169,
+     0.1169
+    ]
+   },
+   {
+    "body": "leg_L2_foot",
+    "center": [
+     0,
+     -0.1575,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2142,
+     0.1365,
+     0.2142
+    ]
+   },
+   {
+    "body": "leg_L2_foot",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1012,
+     0.105,
+     0.105
+    ]
+   },
+   {
+    "body": "leg_R2_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2087,
+     0.2486,
+     0.2087
+    ]
+   },
+   {
+    "body": "leg_R2_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2875,
+     0.1159,
+     0.2875
+    ]
+   },
+   {
+    "body": "leg_R2_coxa",
+    "center": [
+     0,
+     0,
+     0.28
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1683,
+     0.2009,
+     0.28
+    ]
+   },
+   {
+    "body": "leg_R2_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1365,
+     0.1753,
+     0.1753
+    ]
+   },
+   {
+    "body": "leg_R2_femur",
+    "center": [
+     0,
+     0,
+     1.47
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1301,
+     0.1626,
+     1.47
+    ]
+   },
+   {
+    "body": "leg_R2_femur",
+    "center": [
+     0,
+     0.1769,
+     0.8164
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1389,
+     0.0471,
+     0.5224
+    ]
+   },
+   {
+    "body": "leg_R2_femur",
+    "center": [
+     0,
+     0.1769,
+     1.8855
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1349,
+     0.0471,
+     0.5224
+    ]
+   },
+   {
+    "body": "leg_R2_femur",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.106,
+     0.1419,
+     0.1419
+    ]
+   },
+   {
+    "body": "leg_R2_tibia",
+    "center": [
+     0,
+     0,
+     2.1
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1071,
+     0.1339,
+     2.1
+    ]
+   },
+   {
+    "body": "leg_R2_tibia",
+    "center": [
+     0,
+     0.1475,
+     1.1699
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1202,
+     0.0386,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_R2_tibia",
+    "center": [
+     0,
+     0.1475,
+     2.6899
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1098,
+     0.0386,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_R2_tibia",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0873,
+     0.1169,
+     0.1169
+    ]
+   },
+   {
+    "body": "leg_R2_foot",
+    "center": [
+     0,
+     -0.1575,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2142,
+     0.1365,
+     0.2142
+    ]
+   },
+   {
+    "body": "leg_R2_foot",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1012,
+     0.105,
+     0.105
+    ]
+   },
+   {
+    "body": "leg_L3_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2087,
+     0.2486,
+     0.2087
+    ]
+   },
+   {
+    "body": "leg_L3_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2875,
+     0.1159,
+     0.2875
+    ]
+   },
+   {
+    "body": "leg_L3_coxa",
+    "center": [
+     0,
+     0,
+     0.28
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1683,
+     0.2009,
+     0.28
+    ]
+   },
+   {
+    "body": "leg_L3_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1365,
+     0.1753,
+     0.1753
+    ]
+   },
+   {
+    "body": "leg_L3_femur",
+    "center": [
+     0,
+     0,
+     1.47
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1301,
+     0.1626,
+     1.47
+    ]
+   },
+   {
+    "body": "leg_L3_femur",
+    "center": [
+     0,
+     0.1936,
+     0.8164
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1426,
+     0.0518,
+     0.5224
+    ]
+   },
+   {
+    "body": "leg_L3_femur",
+    "center": [
+     0,
+     0.1936,
+     1.8855
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1353,
+     0.0518,
+     0.5224
+    ]
+   },
+   {
+    "body": "leg_L3_femur",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.106,
+     0.1419,
+     0.1419
+    ]
+   },
+   {
+    "body": "leg_L3_tibia",
+    "center": [
+     0,
+     0,
+     2.1
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1071,
+     0.1339,
+     2.1
+    ]
+   },
+   {
+    "body": "leg_L3_tibia",
+    "center": [
+     0,
+     0.1626,
+     1.1699
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1254,
+     0.0434,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_L3_tibia",
+    "center": [
+     0,
+     0.1626,
+     2.6899
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1189,
+     0.0434,
+     0.7499
+    ]
+   },
+   {
+    "body": "leg_L3_tibia",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0873,
+     0.1169,
+     0.1169
+    ]
+   },
+   {
+    "body": "leg_L3_foot",
+    "center": [
+     0,
+     -0.1575,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2142,
+     0.1365,
+     0.2142
+    ]
+   },
+   {
+    "body": "leg_L3_foot",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1012,
+     0.105,
+     0.105
+    ]
+   },
+   {
+    "body": "leg_R3_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2087,
+     0.2486,
+     0.2087
+    ]
+   },
+   {
+    "body": "leg_R3_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2875,
+     0.1159,
+     0.2875
+    ]
+   },
+   {
+    "body": "leg_R3_coxa",
+    "center": [
+     0,
+     0,
+     0.28
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1683,
+     0.2009,
+     0.28
+    ]
+   },
+   {
+    "body": "leg_R3_coxa",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1365,
+     0.1753,
+     0.1753
+    ]
+   },
+   {
+    "body": "leg_R3_femur",
+    "center": [
+     0,
+     0,
+     1.47
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1301,
+     0.1626,
+     1.47
+    ]
+   },
+   {
+    "body": "leg_R3_femur",
+    "center": [
+     0,
      0.2008,
-     0.0661,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_L0_tibia",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0873,
-     0.1169,
-     0.1169
-    ]
-   },
-   {
-    "body": "leg_L0_foot",
-    "center": [
-     0,
-     -0.1575,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2142,
-     0.1365,
-     0.2142
-    ]
-   },
-   {
-    "body": "leg_L0_foot",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1012,
-     0.105,
-     0.105
-    ]
-   },
-   {
-    "body": "leg_R0_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2087,
-     0.2486,
-     0.2087
-    ]
-   },
-   {
-    "body": "leg_R0_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2875,
-     0.1159,
-     0.2875
-    ]
-   },
-   {
-    "body": "leg_R0_coxa",
-    "center": [
-     0,
-     0,
-     0.28
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1683,
-     0.2009,
-     0.28
-    ]
-   },
-   {
-    "body": "leg_R0_coxa",
-    "center": [
-     0,
-     0.0965,
-     0.2328
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.3409,
-     0.1007,
-     0.1768
-    ]
-   },
-   {
-    "body": "leg_R0_femur",
-    "center": [
-     0,
-     0,
-     1.47
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1301,
-     0.1626,
-     1.47
-    ]
-   },
-   {
-    "body": "leg_R0_femur",
-    "center": [
-     0,
-     0.1024,
      0.8164
     ],
     "rotation": [
@@ -6668,1604 +8264,8 @@
      1
     ],
     "halfExtents": [
-     0.1758,
-     0.0571,
-     0.5224
-    ]
-   },
-   {
-    "body": "leg_R0_femur",
-    "center": [
-     0,
-     0.1024,
-     1.8855
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1603,
-     0.0571,
-     0.5224
-    ]
-   },
-   {
-    "body": "leg_R0_femur",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.106,
-     0.1419,
-     0.1419
-    ]
-   },
-   {
-    "body": "leg_R0_tibia",
-    "center": [
-     0,
-     0,
-     2.1
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1071,
-     0.1339,
-     2.1
-    ]
-   },
-   {
-    "body": "leg_R0_tibia",
-    "center": [
-     0,
-     0.069,
-     1.1699
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1533,
-     0.0496,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_R0_tibia",
-    "center": [
-     0,
-     0.069,
-     2.6899
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1404,
-     0.0496,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_R0_tibia",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0873,
-     0.1169,
-     0.1169
-    ]
-   },
-   {
-    "body": "leg_R0_foot",
-    "center": [
-     0,
-     -0.1575,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2142,
-     0.1365,
-     0.2142
-    ]
-   },
-   {
-    "body": "leg_R0_foot",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1012,
-     0.105,
-     0.105
-    ]
-   },
-   {
-    "body": "leg_L1_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2087,
-     0.2486,
-     0.2087
-    ]
-   },
-   {
-    "body": "leg_L1_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2875,
-     0.1159,
-     0.2875
-    ]
-   },
-   {
-    "body": "leg_L1_coxa",
-    "center": [
-     0,
-     0,
-     0.28
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1683,
-     0.2009,
-     0.28
-    ]
-   },
-   {
-    "body": "leg_L1_coxa",
-    "center": [
-     0,
-     0.0968,
-     0.2328
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.3194,
-     0.0943,
-     0.1768
-    ]
-   },
-   {
-    "body": "leg_L1_femur",
-    "center": [
-     0,
-     0,
-     1.47
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1301,
-     0.1626,
-     1.47
-    ]
-   },
-   {
-    "body": "leg_L1_femur",
-    "center": [
-     0,
-     0.0874,
-     0.8164
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2469,
-     0.0677,
-     0.5224
-    ]
-   },
-   {
-    "body": "leg_L1_femur",
-    "center": [
-     0,
-     0.0874,
-     1.8855
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2377,
-     0.0677,
-     0.5224
-    ]
-   },
-   {
-    "body": "leg_L1_femur",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.106,
-     0.1419,
-     0.1419
-    ]
-   },
-   {
-    "body": "leg_L1_tibia",
-    "center": [
-     0,
-     0,
-     2.1
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1071,
-     0.1339,
-     2.1
-    ]
-   },
-   {
-    "body": "leg_L1_tibia",
-    "center": [
-     0,
-     0.0655,
-     1.1699
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2038,
-     0.0641,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_L1_tibia",
-    "center": [
-     0,
-     0.0655,
-     2.6899
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1804,
-     0.0641,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_L1_tibia",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0873,
-     0.1169,
-     0.1169
-    ]
-   },
-   {
-    "body": "leg_L1_foot",
-    "center": [
-     0,
-     -0.1575,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2142,
-     0.1365,
-     0.2142
-    ]
-   },
-   {
-    "body": "leg_L1_foot",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1012,
-     0.105,
-     0.105
-    ]
-   },
-   {
-    "body": "leg_R1_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2087,
-     0.2486,
-     0.2087
-    ]
-   },
-   {
-    "body": "leg_R1_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2875,
-     0.1159,
-     0.2875
-    ]
-   },
-   {
-    "body": "leg_R1_coxa",
-    "center": [
-     0,
-     0,
-     0.28
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1683,
-     0.2009,
-     0.28
-    ]
-   },
-   {
-    "body": "leg_R1_coxa",
-    "center": [
-     0,
-     0.0869,
-     0.2328
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.3244,
-     0.0922,
-     0.1768
-    ]
-   },
-   {
-    "body": "leg_R1_femur",
-    "center": [
-     0,
-     0,
-     1.47
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1301,
-     0.1626,
-     1.47
-    ]
-   },
-   {
-    "body": "leg_R1_femur",
-    "center": [
-     0,
-     0.0932,
-     0.8164
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.208,
-     0.0645,
-     0.5224
-    ]
-   },
-   {
-    "body": "leg_R1_femur",
-    "center": [
-     0,
-     0.0932,
-     1.8855
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1857,
-     0.0645,
-     0.5224
-    ]
-   },
-   {
-    "body": "leg_R1_femur",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.106,
-     0.1419,
-     0.1419
-    ]
-   },
-   {
-    "body": "leg_R1_tibia",
-    "center": [
-     0,
-     0,
-     2.1
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1071,
-     0.1339,
-     2.1
-    ]
-   },
-   {
-    "body": "leg_R1_tibia",
-    "center": [
-     0,
-     0.0609,
-     1.1699
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2106,
-     0.061,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_R1_tibia",
-    "center": [
-     0,
-     0.0609,
-     2.6899
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1894,
-     0.061,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_R1_tibia",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0873,
-     0.1169,
-     0.1169
-    ]
-   },
-   {
-    "body": "leg_R1_foot",
-    "center": [
-     0,
-     -0.1575,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2142,
-     0.1365,
-     0.2142
-    ]
-   },
-   {
-    "body": "leg_R1_foot",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1012,
-     0.105,
-     0.105
-    ]
-   },
-   {
-    "body": "leg_L2_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2087,
-     0.2486,
-     0.2087
-    ]
-   },
-   {
-    "body": "leg_L2_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2875,
-     0.1159,
-     0.2875
-    ]
-   },
-   {
-    "body": "leg_L2_coxa",
-    "center": [
-     0,
-     0,
-     0.28
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1683,
-     0.2009,
-     0.28
-    ]
-   },
-   {
-    "body": "leg_L2_coxa",
-    "center": [
-     0,
-     0.1135,
-     0.2328
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2788,
-     0.0868,
-     0.1768
-    ]
-   },
-   {
-    "body": "leg_L2_femur",
-    "center": [
-     0,
-     0,
-     1.47
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1301,
-     0.1626,
-     1.47
-    ]
-   },
-   {
-    "body": "leg_L2_femur",
-    "center": [
-     0,
-     0.0982,
-     0.8164
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1983,
-     0.0621,
-     0.5224
-    ]
-   },
-   {
-    "body": "leg_L2_femur",
-    "center": [
-     0,
-     0.0982,
-     1.8855
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.18,
-     0.0621,
-     0.5224
-    ]
-   },
-   {
-    "body": "leg_L2_femur",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.106,
-     0.1419,
-     0.1419
-    ]
-   },
-   {
-    "body": "leg_L2_tibia",
-    "center": [
-     0,
-     0,
-     2.1
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1071,
-     0.1339,
-     2.1
-    ]
-   },
-   {
-    "body": "leg_L2_tibia",
-    "center": [
-     0,
-     0.0767,
-     1.1699
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1565,
-     0.0499,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_L2_tibia",
-    "center": [
-     0,
-     0.0767,
-     2.6899
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.147,
-     0.0499,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_L2_tibia",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0873,
-     0.1169,
-     0.1169
-    ]
-   },
-   {
-    "body": "leg_L2_foot",
-    "center": [
-     0,
-     -0.1575,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2142,
-     0.1365,
-     0.2142
-    ]
-   },
-   {
-    "body": "leg_L2_foot",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1012,
-     0.105,
-     0.105
-    ]
-   },
-   {
-    "body": "leg_R2_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2087,
-     0.2486,
-     0.2087
-    ]
-   },
-   {
-    "body": "leg_R2_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2875,
-     0.1159,
-     0.2875
-    ]
-   },
-   {
-    "body": "leg_R2_coxa",
-    "center": [
-     0,
-     0,
-     0.28
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1683,
-     0.2009,
-     0.28
-    ]
-   },
-   {
-    "body": "leg_R2_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1365,
-     0.1753,
-     0.1753
-    ]
-   },
-   {
-    "body": "leg_R2_femur",
-    "center": [
-     0,
-     0,
-     1.47
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1301,
-     0.1626,
-     1.47
-    ]
-   },
-   {
-    "body": "leg_R2_femur",
-    "center": [
-     0,
-     0.075,
-     0.8164
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2251,
-     0.07,
-     0.5224
-    ]
-   },
-   {
-    "body": "leg_R2_femur",
-    "center": [
-     0,
-     0.075,
-     1.8855
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2187,
-     0.07,
-     0.5224
-    ]
-   },
-   {
-    "body": "leg_R2_femur",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.106,
-     0.1419,
-     0.1419
-    ]
-   },
-   {
-    "body": "leg_R2_tibia",
-    "center": [
-     0,
-     0,
-     2.1
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1071,
-     0.1339,
-     2.1
-    ]
-   },
-   {
-    "body": "leg_R2_tibia",
-    "center": [
-     0,
-     0.0639,
-     1.1699
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1927,
-     0.0564,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_R2_tibia",
-    "center": [
-     0,
-     0.0639,
-     2.6899
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.176,
-     0.0564,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_R2_tibia",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0873,
-     0.1169,
-     0.1169
-    ]
-   },
-   {
-    "body": "leg_R2_foot",
-    "center": [
-     0,
-     -0.1575,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2142,
-     0.1365,
-     0.2142
-    ]
-   },
-   {
-    "body": "leg_R2_foot",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1012,
-     0.105,
-     0.105
-    ]
-   },
-   {
-    "body": "leg_L3_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2087,
-     0.2486,
-     0.2087
-    ]
-   },
-   {
-    "body": "leg_L3_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2875,
-     0.1159,
-     0.2875
-    ]
-   },
-   {
-    "body": "leg_L3_coxa",
-    "center": [
-     0,
-     0,
-     0.28
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1683,
-     0.2009,
-     0.28
-    ]
-   },
-   {
-    "body": "leg_L3_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1365,
-     0.1753,
-     0.1753
-    ]
-   },
-   {
-    "body": "leg_L3_femur",
-    "center": [
-     0,
-     0,
-     1.47
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1301,
-     0.1626,
-     1.47
-    ]
-   },
-   {
-    "body": "leg_L3_femur",
-    "center": [
-     0,
-     0.0844,
-     0.8164
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2378,
-     0.0718,
-     0.5224
-    ]
-   },
-   {
-    "body": "leg_L3_femur",
-    "center": [
-     0,
-     0.0844,
-     1.8855
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2256,
-     0.0718,
-     0.5224
-    ]
-   },
-   {
-    "body": "leg_L3_femur",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.106,
-     0.1419,
-     0.1419
-    ]
-   },
-   {
-    "body": "leg_L3_tibia",
-    "center": [
-     0,
-     0,
-     2.1
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1071,
-     0.1339,
-     2.1
-    ]
-   },
-   {
-    "body": "leg_L3_tibia",
-    "center": [
-     0,
-     0.0704,
-     1.1699
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2152,
-     0.0603,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_L3_tibia",
-    "center": [
-     0,
-     0.0704,
-     2.6899
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.204,
-     0.0603,
-     0.7499
-    ]
-   },
-   {
-    "body": "leg_L3_tibia",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0873,
-     0.1169,
-     0.1169
-    ]
-   },
-   {
-    "body": "leg_L3_foot",
-    "center": [
-     0,
-     -0.1575,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2142,
-     0.1365,
-     0.2142
-    ]
-   },
-   {
-    "body": "leg_L3_foot",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1012,
-     0.105,
-     0.105
-    ]
-   },
-   {
-    "body": "leg_R3_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2087,
-     0.2486,
-     0.2087
-    ]
-   },
-   {
-    "body": "leg_R3_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2875,
-     0.1159,
-     0.2875
-    ]
-   },
-   {
-    "body": "leg_R3_coxa",
-    "center": [
-     0,
-     0,
-     0.28
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1683,
-     0.2009,
-     0.28
-    ]
-   },
-   {
-    "body": "leg_R3_coxa",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1365,
-     0.1753,
-     0.1753
-    ]
-   },
-   {
-    "body": "leg_R3_femur",
-    "center": [
-     0,
-     0,
-     1.47
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1301,
-     0.1626,
-     1.47
-    ]
-   },
-   {
-    "body": "leg_R3_femur",
-    "center": [
-     0,
-     0.0888,
-     0.8164
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.2457,
-     0.0722,
+     0.1459,
+     0.0536,
      0.5224
     ]
    },
@@ -8273,7 +8273,7 @@
     "body": "leg_R3_femur",
     "center": [
      0,
-     0.0888,
+     0.2008,
      1.8855
     ],
     "rotation": [
@@ -8283,8 +8283,8 @@
      1
     ],
     "halfExtents": [
-     0.2375,
-     0.0722,
+     0.1411,
+     0.0536,
      0.5224
     ]
    },
@@ -8330,7 +8330,7 @@
     "body": "leg_R3_tibia",
     "center": [
      0,
-     0.0686,
+     0.1577,
      1.1699
     ],
     "rotation": [
@@ -8340,8 +8340,8 @@
      1
     ],
     "halfExtents": [
-     0.1838,
-     0.0591,
+     0.1115,
+     0.0426,
      0.7499
     ]
    },
@@ -8349,7 +8349,7 @@
     "body": "leg_R3_tibia",
     "center": [
      0,
-     0.0686,
+     0.1577,
      2.6899
     ],
     "rotation": [
@@ -8359,8 +8359,8 @@
      1
     ],
     "halfExtents": [
-     0.1637,
-     0.0591,
+     0.0993,
+     0.0426,
      0.7499
     ]
    },

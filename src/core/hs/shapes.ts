@@ -8,7 +8,7 @@
  *   lathe   — revolve an (r, y) outline: bearings, hubs, glands, barrels, toes, domes.
  *   tube    — sweep a circle along a polyline: rails, hand-holds, roll cages.
  */
-import { offset, P2, Profile, rect, RectOpts, ngon, triangulate, treatCorners } from './profile';
+import { area, offset, P2, Profile, rect, RectOpts, ngon, triangulate, treatCorners } from './profile';
 import { TriSoup, V3 } from './mesh';
 import type { MeshData } from '../geometry';
 
@@ -107,6 +107,9 @@ function loft(s: Extract<ShapeSpec, { t: 'loft' }>, l: ShapeLod): MeshData {
   });
   const n = rings[0].loop.length;
   for (const r of rings) if (r.loop.length !== n) throw new Error(`loft: section vertex counts differ (${n} vs ${r.loop.length})`);
+  // Mirrored sections (negative sx/sy) reverse the winding. Normalise to CCW so side faces and
+  // caps always agree and normals point outward.
+  if (area(rings[0].loop) < 0) rings = rings.map((r) => ({ ...r, loop: r.loop.slice().reverse() }));
   const cap = s.cap ?? 'both';
   const b = s.bevel ?? 0;
   if (b > 0) {

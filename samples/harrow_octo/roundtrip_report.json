@@ -6,7 +6,7 @@
     "ok": true,
     "nodesChecked": 192,
     "missing": [],
-    "maxPosErrorM": 1.0315564943687409e-05,
+    "maxPosErrorM": 8.81826496548983e-06,
     "maxAxisErrorDeg": 0.0,
     "materials": "9 imported / 9 used in file",
     "skinnedHoses": 8,
@@ -15,20 +15,20 @@
   "glb_lod1": {
     "ok": true,
     "nodesChecked": 192,
-    "maxPosErrorM": 1.0315564943687409e-05,
+    "maxPosErrorM": 8.81826496548983e-06,
     "triangles": 45978
   },
   "glb_lod2": {
     "ok": true,
     "nodesChecked": 192,
-    "maxPosErrorM": 1.0315564943687409e-05,
+    "maxPosErrorM": 8.81826496548983e-06,
     "triangles": 22232
   },
   "fbx": {
     "ok": true,
     "boneCount": 67,
     "missingBones": [],
-    "maxPosErrorM": 2.2492363767758854e-06,
+    "maxPosErrorM": 1.817941665649414e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
     "triangles": 85298,
@@ -39,10 +39,10 @@
   "fbx_pose": {
     "ok": true,
     "posedJoint": "leg_L0_tibia",
-    "angleRad": -0.7940240000000001,
-    "verticesMoved": 3955,
-    "verticesTotal": 103015,
-    "pivotDrift": 2.1851423716334533e-06
+    "angleRad": -0.918048,
+    "verticesMoved": 3954,
+    "verticesTotal": 103004,
+    "pivotDrift": 2.489163043239248e-06
   },
   "usd": {
     "pxr": {

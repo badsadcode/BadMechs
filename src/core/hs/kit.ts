@@ -161,11 +161,11 @@ export function memberOut(ref: NodeRef, L: number, o: MemberOpts) {
 // ──────────────────────────────────────────────────────── armour shells ──
 
 export interface ShellOpts {
-  /** length along the segment and the span of the plate */
+  /** length along the segment */
   len: number;
-  /** arc radius of the plate's curvature (bigger = flatter) */
-  radius: number;
-  /** angular span of the plate (radians) */
+  /** chord width of the plate */
+  width: number;
+  /** curvature: angular span of the arc (radians); 0.6 = flattish, 1.6 = wraps */
   span: number;
   thick: number;
   material: MaterialId;
@@ -214,7 +214,7 @@ export function shellDown(ref: NodeRef, y0: number, at: Vec3, face: '+z' | '-z' 
     const t0 = lerp(o.taperStart ?? 1, o.taperEnd ?? 1, i / n);
     const t1 = lerp(o.taperStart ?? 1, o.taperEnd ?? 1, (i + 1) / n);
     const bel = o.belly ?? 0;
-    const prof = bandProfile(o.radius, o.span, o.thick, segs, o.thick * 0.45);
+    const prof = bandProfile(o.width / (2 * Math.sin(o.span / 2)), o.span, o.thick, segs, o.thick * 0.45);
     // loft along -Y. AXIS 'y' maps profile (x, y) → (x, -z): so profile +y bulges toward -Z;
     // we flip the profile Y via sy = -1 so the plate bulges toward +Z (then rotate to face).
     const mid = (a: number, b: number) => (a + b) / 2;
@@ -237,7 +237,7 @@ export function shellOut(ref: NodeRef, z0: number, at: Vec3, face: '+y' | '-y' |
   const gap = o.gap ?? o.thick * 0.5;
   const plen = (o.len - gap * (n - 1)) / n;
   const rotZ = face === '+y' ? 0 : face === '-y' ? PI : face === '+x' ? -PI / 2 : PI / 2;
-  const prof = bandProfile(o.radius, o.span, o.thick, 8, o.thick * 0.45);
+  const prof = bandProfile(o.width / (2 * Math.sin(o.span / 2)), o.span, o.thick, 8, o.thick * 0.45);
   for (let i = 0; i < n; i++) {
     const zs = z0 + (plen + gap) * i;
     const t0 = lerp(o.taperStart ?? 1, o.taperEnd ?? 1, i / n);
@@ -370,7 +370,8 @@ export function rodShape(L: number, r: number): ShapeSpec {
 export function clevis(ref: NodeRef, pos: Vec3, r: number, gapW: number, toward: [number, number], material: MaterialId = 'darkMetal') {
   const len = Math.hypot(toward[0], toward[1]) || 1;
   const ang = Math.atan2(toward[0], toward[1]); // in YZ plane, from +Z toward +Y
-  const L = Math.max(r * 1.6, Math.min(len, r * 3));
+  // the tab runs all the way into the structure it is welded to
+  const L = Math.max(r * 1.4, len * 0.95);
   // teardrop: circle around the pin + a tapered tab toward the mount surface (profile in XY, x=along tab)
   const pts: P2[] = [];
   const n = 10;
