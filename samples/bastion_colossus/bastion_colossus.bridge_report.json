@@ -22,7 +22,7 @@
       "axisErrDeg": 0.0
     },
     "leg_FL_shin": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_FL_ankle": {
@@ -46,7 +46,7 @@
       "axisErrDeg": 0.0
     },
     "leg_FR_shin": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_FR_ankle": {
@@ -70,7 +70,7 @@
       "axisErrDeg": 0.0
     },
     "leg_RL_shin": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_RL_ankle": {
@@ -78,7 +78,7 @@
       "axisErrDeg": 0.0
     },
     "leg_RL_foot": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_RR_hip_yaw": {
@@ -94,7 +94,7 @@
       "axisErrDeg": 0.0
     },
     "leg_RR_shin": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_RR_ankle": {
@@ -102,7 +102,7 @@
       "axisErrDeg": 0.0
     },
     "leg_RR_foot": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "cockpit_hatch": {
@@ -114,7 +114,7 @@
       "axisErrDeg": 0.0
     },
     "sensor_head_pitch": {
-      "posErr": 0.0,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "deck_house_door": {
@@ -122,7 +122,7 @@
       "axisErrDeg": 0.0
     },
     "leg_FL_shin_ram_barrel": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_FL_shin_ram_rod": {
@@ -138,7 +138,7 @@
       "axisErrDeg": 0.0
     },
     "leg_FR_shin_ram_barrel": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_FR_shin_ram_rod": {
@@ -154,7 +154,7 @@
       "axisErrDeg": 0.0
     },
     "leg_RL_shin_ram_barrel": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_RL_shin_ram_rod": {
@@ -166,11 +166,11 @@
       "axisErrDeg": 0.0
     },
     "leg_RL_hip_ram_rod": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_RR_shin_ram_barrel": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_RR_shin_ram_rod": {
@@ -182,16 +182,16 @@
       "axisErrDeg": 0.0
     },
     "leg_RR_hip_ram_rod": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     }
   },
   "boneCount": 46,
   "missingBones": [],
-  "maxPosErrorM": 2.384185791015625e-06,
+  "maxPosErrorM": 2.1851423716334533e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 49974,
+  "triangles": 50238,
   "vertexGroups": 46,
   "blend": "bastion_colossus.blend",
   "fbx": "bastion_colossus.fbx"

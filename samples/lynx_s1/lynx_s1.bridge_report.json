@@ -86,7 +86,7 @@
       "axisErrDeg": 0.0
     },
     "arm_L_forearm": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "arm_R_shoulder_pitch": {
@@ -102,16 +102,16 @@
       "axisErrDeg": 0.0
     },
     "arm_R_forearm": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     }
   },
   "boneCount": 26,
   "missingBones": [],
-  "maxPosErrorM": 5.703466894926023e-07,
+  "maxPosErrorM": 4.971273934129559e-07,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 35548,
+  "triangles": 35792,
   "vertexGroups": 26,
   "blend": "lynx_s1.blend",
   "fbx": "lynx_s1.fbx"

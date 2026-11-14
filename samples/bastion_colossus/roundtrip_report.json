@@ -1,37 +1,37 @@
 {
   "mech": "Bastion Colossus",
   "family": "colossus",
-  "heightM": 23.5,
+  "heightM": 23.38,
   "glb": {
     "ok": true,
-    "nodesChecked": 125,
+    "nodesChecked": 124,
     "missing": [],
     "maxPosErrorM": 8.148196931188136e-06,
     "maxAxisErrorDeg": 0.0,
     "materials": "11 imported / 11 used in file",
     "skinnedHoses": 4,
-    "triangles": 49974
+    "triangles": 50238
   },
   "glb_lod1": {
     "ok": true,
-    "nodesChecked": 125,
+    "nodesChecked": 124,
     "maxPosErrorM": 8.148196931188136e-06,
-    "triangles": 29640
+    "triangles": 29776
   },
   "glb_lod2": {
     "ok": true,
-    "nodesChecked": 125,
+    "nodesChecked": 124,
     "maxPosErrorM": 8.148196931188136e-06,
-    "triangles": 13568
+    "triangles": 13392
   },
   "fbx": {
     "ok": true,
     "boneCount": 46,
     "missingBones": [],
-    "maxPosErrorM": 2.384185791015625e-06,
+    "maxPosErrorM": 2.1851423716334533e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 49974,
+    "triangles": 50238,
     "vertexGroups": 46,
     "blend": "bastion_colossus.blend",
     "fbx": "bastion_colossus.fbx"
@@ -41,16 +41,16 @@
     "posedJoint": "leg_FL_shin",
     "angleRad": -1.2706,
     "verticesMoved": 7539,
-    "verticesTotal": 69532,
-    "pivotDrift": 1.5078914929239175e-06
+    "verticesTotal": 69958,
+    "pivotDrift": 1.430511474609375e-06
   },
   "usd": {
     "pxr": {
       "ok": true,
       "upAxis": "Y",
       "metersPerUnit": 1.0,
-      "xforms": 126,
-      "meshes": 198,
+      "xforms": 125,
+      "meshes": 196,
       "missing": [],
       "maxPosErrorM": 0.000544265922537943,
       "maxAxisErrorDeg": 0.0,
@@ -58,15 +58,15 @@
     },
     "blender": {
       "ok": true,
-      "objects": 315,
-      "meshes": 198
+      "objects": 312,
+      "meshes": 196
     },
     "ok": true
   },
   "obj": {
     "ok": true,
-    "objects": 91,
-    "triangles": 49014,
+    "objects": 90,
+    "triangles": 49278,
     "materials": 11,
     "note": "static only, by design"
   },

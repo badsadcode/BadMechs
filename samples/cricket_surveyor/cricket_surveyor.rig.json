@@ -2308,7 +2308,7 @@
   {
    "name": "cockpit",
    "parent": "body",
-   "role": "group",
+   "role": "link",
    "system": "cockpit",
    "component": null,
    "restTranslation": [
@@ -2383,30 +2383,6 @@
    "role": "component",
    "system": "cockpit",
    "component": "cockpit",
-   "restTranslation": [
-    0,
-    0,
-    0
-   ],
-   "restRotation": [
-    0,
-    0,
-    0,
-    1
-   ],
-   "restWorldPosition": [
-    0,
-    1.7844,
-    3.2595
-   ],
-   "tags": []
-  },
-  {
-   "name": "cockpit__detail",
-   "parent": "cockpit",
-   "role": "component",
-   "system": "cockpit",
-   "component": "detail",
    "restTranslation": [
     0,
     0,
@@ -3270,6 +3246,30 @@
    "system": "leg.R2"
   },
   {
+   "name": "cockpit",
+   "type": "revolute",
+   "axis": "y",
+   "axisVector": [
+    0,
+    1,
+    0
+   ],
+   "restWorldAxis": [
+    0,
+    1,
+    0
+   ],
+   "min": -0.69813,
+   "max": 0.69813,
+   "minDeg": -40,
+   "maxDeg": 40,
+   "continuous": false,
+   "purpose": "aim",
+   "kind": "head-yaw",
+   "maxSpeed": 1.5,
+   "system": "cockpit"
+  },
+  {
    "name": "cockpit_hatch",
    "type": "revolute",
    "axis": "x",
@@ -3724,44 +3724,6 @@
      1.4386,
      0.7452,
      1.0009
-    ]
-   },
-   {
-    "body": "body",
-    "center": [
-     0,
-     -0.179,
-     3.2595
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.66,
-     0.03,
-     0.735
-    ]
-   },
-   {
-    "body": "body",
-    "center": [
-     0,
-     0.551,
-     2.5545
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.66,
-     0.73,
-     0.03
     ]
    },
    {
@@ -5130,6 +5092,82 @@
      0.0828,
      0.09,
      0.09
+    ]
+   },
+   {
+    "body": "cockpit",
+    "center": [
+     0,
+     -0.03,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.66,
+     0.03,
+     0.735
+    ]
+   },
+   {
+    "body": "cockpit",
+    "center": [
+     0,
+     0.7,
+     -0.705
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.66,
+     0.73,
+     0.03
+    ]
+   },
+   {
+    "body": "cockpit",
+    "center": [
+     -0.63,
+     0.7,
+     -0.0675
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.03,
+     0.7,
+     0.6375
+    ]
+   },
+   {
+    "body": "cockpit",
+    "center": [
+     0.63,
+     0.7,
+     -0.0675
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.03,
+     0.7,
+     0.6375
     ]
    },
    {

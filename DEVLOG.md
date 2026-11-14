@@ -220,3 +220,26 @@ Ostrava loves cranes, which made one turn up in a test that never had one before
 
 *Mood: proud factory owner. Accepting orders.* 📋
 
+---
+
+## Day 3, Afternoon — "Where Do You Sit, Exactly?"
+
+Tom's next order: the **cabins**. Every mech had the same face with three different sunglasses. Noor's mechs have *different heads*: glass greenhouses, excavator cabs, armoured bunkers. So now a cabin is an architectural choice, not a visor:
+
+![Six cabin types](public/cabins.png)
+
+| Cabin | What it is | Inside |
+|---|---|---|
+| **Pod** | faceted multi-pane glass bulb on an armoured tub, chunky frame bars (A-73!) | wraparound consoles |
+| **Greenhouse** | excavator cab: big flat panes, roof overhang, guard bars, a wiper | levers, pedals, big front window |
+| **Bunker** | heavy armoured box, one thin vision slit, periscopes on the roof | no windows — a wall of screens |
+| **Ball head** | faceted ball with an octagonal eye, on a neck — and the **whole cab turns** (new head-yaw joint, exported for engines) | centre seat |
+| **Tandem** | long teardrop canopy, two seats in a row | pilot + gunner |
+| **Hood** | the original, still around | — |
+
+Makers have favourites: Bastion loves pods, Ostrava builds greenhouses, Volkov-Rhee only trusts bunkers, Lynx flies tandems and ball heads — and **Lynx paints its frame bars safety orange**, just like the S1 sheet.
+
+Under the hood (ha): every cabin shares the same floor, bulkhead and invisible collision walls, so the pilot's clear space, collision proxies and validation work identically for all six. The validator also caught a ball head whose side door would have swung into the torso when it turned its head — ball heads now get roof hatches. Old saved designs keep their original hood.
+
+*Mood: interior decorator for very angry robots.* 🛋️
+

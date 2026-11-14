@@ -16,10 +16,10 @@
  "rootNode": "root",
  "bodyNode": "pelvis",
  "stats": {
-  "height": 7.1,
+  "height": 6.57,
   "width": 3.17,
-  "length": 2.51,
-  "estimatedMassTonnes": 8.2,
+  "length": 2.77,
+  "estimatedMassTonnes": 8.1,
   "sizeClass": "light"
  },
  "nodes": [
@@ -1370,30 +1370,6 @@
    "tags": []
   },
   {
-   "name": "cockpit__detail",
-   "parent": "cockpit",
-   "role": "component",
-   "system": "cockpit",
-   "component": "detail",
-   "restTranslation": [
-    0,
-    0,
-    0
-   ],
-   "restRotation": [
-    0,
-    0,
-    0,
-    1
-   ],
-   "restWorldPosition": [
-    0,
-    4.8163,
-    0.9874
-   ],
-   "tags": []
-  },
-  {
    "name": "cockpit_interior",
    "parent": "cockpit",
    "role": "group",
@@ -1486,30 +1462,6 @@
     0,
     6.1993,
     0.3374
-   ],
-   "tags": []
-  },
-  {
-   "name": "cockpit__armor",
-   "parent": "cockpit",
-   "role": "component",
-   "system": "cockpit",
-   "component": "armor",
-   "restTranslation": [
-    0,
-    0,
-    0
-   ],
-   "restRotation": [
-    0,
-    0,
-    0,
-    1
-   ],
-   "restWorldPosition": [
-    0,
-    4.8163,
-    0.9874
    ],
    "tags": []
   },

@@ -179,7 +179,7 @@
   "maxPosErrorM": 1.5497207641601562e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 46512,
+  "triangles": 46656,
   "vertexGroups": 43,
   "blend": "grudge_a_73.blend",
   "fbx": "grudge_a_73.fbx"

@@ -1682,30 +1682,6 @@
    "tags": []
   },
   {
-   "name": "cockpit__detail",
-   "parent": "cockpit",
-   "role": "component",
-   "system": "cockpit",
-   "component": "detail",
-   "restTranslation": [
-    0,
-    0,
-    0
-   ],
-   "restRotation": [
-    0,
-    0,
-    0,
-    1
-   ],
-   "restWorldPosition": [
-    0,
-    3.3934,
-    2.7169
-   ],
-   "tags": []
-  },
-  {
    "name": "cockpit_interior",
    "parent": "cockpit",
    "role": "group",

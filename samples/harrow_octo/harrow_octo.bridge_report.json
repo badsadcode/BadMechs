@@ -283,7 +283,7 @@
   "maxPosErrorM": 2.496467097927745e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 85702,
+  "triangles": 85826,
   "vertexGroups": 69,
   "blend": "harrow_octo.blend",
   "fbx": "harrow_octo.fbx"

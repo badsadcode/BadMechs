@@ -16,9 +16,9 @@
  "rootNode": "root",
  "bodyNode": "body",
  "stats": {
-  "height": 23.5,
+  "height": 23.38,
   "width": 13.39,
-  "length": 24.41,
+  "length": 24.79,
   "estimatedMassTonnes": 660.2,
   "sizeClass": "colossal"
  },
@@ -1855,30 +1855,6 @@
    "role": "component",
    "system": "cockpit",
    "component": "cockpit",
-   "restTranslation": [
-    0,
-    0,
-    0
-   ],
-   "restRotation": [
-    0,
-    0,
-    0,
-    1
-   ],
-   "restWorldPosition": [
-    0,
-    19.9192,
-    10.89
-   ],
-   "tags": []
-  },
-  {
-   "name": "cockpit__detail",
-   "parent": "cockpit",
-   "role": "component",
-   "system": "cockpit",
-   "component": "detail",
    "restTranslation": [
     0,
     0,

@@ -3,6 +3,10 @@ import type { MaterialId, Mech, Vec3 } from './model';
 import { makePalette } from './palette';
 import { makerById, MAKERS } from './makers';
 import { addCoilSprings, applySignature } from './signatures';
+import { CABINS, CabinType } from './cabins';
+
+/** Canopy frame-bar colour: Lynx paints its frames safety orange, everyone else uses gunmetal. */
+const cabinFrame = (maker: string) => (maker === 'lynx' ? 'hazard' : 'darkMetal') as 'hazard' | 'darkMetal';
 import { bodyHull, torsoHull, TORSO_ARCHES, HullResult } from './hs/hulls';
 import { block, grille, hub } from './hs/kit';
 import { arm, ArmTool, cockpit, ladder, lightPod, missileRack, SegStyle, segmentOut, sprawlLeg, uprightLeg, vents } from './parts';
@@ -144,7 +148,11 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
   const cockpitStyle = exo
     ? 'cage'
     : ctx.choice('cockpit.style', 'Cockpit', 'cockpit', ['canopy', 'armored', 'bubble'] as const, r.role === 'scout' ? [2, 0.5, 2] : fighter ? [2, 2, 0.6] : [1.5, 0.6, 2]);
-  const cockpitPos = exo ? 'center' : ctx.choice('cockpit.position', 'Cockpit position', 'cockpit', ['center', 'offset', 'high', 'embedded'] as const, [3, 1, 1.4, 0]);
+  const cockpitPos0 = exo ? 'center' : ctx.choice('cockpit.position', 'Cockpit position', 'cockpit', ['center', 'offset', 'high', 'embedded'] as const, [3, 1, 1.4, 0]);
+  // Mech Factory (v2): the cabin is a real architectural choice; pre-factory designs keep the hood
+  const cabin: CabinType = exo || r.version < 2 ? 'hood' : ctx.choice('cockpit.cabin', 'Cabin', 'cockpit', CABINS, [0.8, 2.5, 1.2, 1.5, 0.8, r.role === 'scout' ? 2 : 0.3]);
+  // a ball cab is a head: it always sits up high on a neck
+  const cockpitPos = cabin === 'ball' ? 'high' : cockpitPos0;
 
   const tf = torso.comp('frame');
   const ta = torso.comp('armor');
@@ -154,7 +162,7 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
   // exosuit: a harness cage around the pilot's torso; their legs go down into the mech's thighs
   const iw = exo ? 0.62 : Math.max(1.05, H * 0.11);
   const ih = exo ? 0.95 : Math.max(1.32, H * 0.1);
-  const idp = exo ? 0.5 : Math.max(1.3, H * 0.11);
+  const idp = exo ? 0.5 : Math.max(1.3, H * 0.11) * (cabin === 'tandem' ? 1.9 : 1);
   const wall = exo ? 0.04 : Math.max(0.06, H * 0.009);
   if (exo) {
     // exosuit: the pilot stands in a cage between hips and shoulders; the "torso" is a backpack frame
@@ -203,9 +211,11 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
     armor: 'paint',
     hatch: exo ? 'none' : ctx.choice('cockpit.hatch', 'Cockpit hatch', 'cockpit', ['top', 'rear'] as const),
     rng: ctx.rng('cockpit'),
+    cabin,
+    frame: cabinFrame(ctx.maker.id),
   });
-  if (!exo) {
-    // cockpit armour cheeks merge the pod into the torso
+  if (!exo && cabin === 'hood') {
+    // cockpit armour cheeks merge the hood into the torso (the other cabins are self-contained)
     const ca = b.get('cockpit').comp('armor');
     for (const sx of [-1, 1]) block(ca, [sx * (iw / 2 + wall * 2.2), ih * 0.4, -idp * 0.12], [wall * 1.6, ih * 0.62, idp * 0.7], 'paint2', { r: wall * 0.6, top: [1, 0.8], bevel: wall * 0.4, rot: [0, sx > 0 ? 0 : Math.PI, 0] });
   }
@@ -276,7 +286,8 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
       shiftX: hull.shiftX,
       H,
       cockpit: { at: cockpitAt, iw, ih, idp, wall },
-      topSpot: [hull.shiftX, hull.topY + th * 0.06, hull.frontZ - td * 0.22],
+      // keep the sensor head clear of a ball cab, which sits up front on its own neck
+      topSpot: [hull.shiftX, hull.topY + th * 0.06, hull.frontZ - td * (cabin === 'ball' || cabin === 'tandem' ? 0.5 : 0.22)],
     });
   }
   b.gait = {
@@ -408,10 +419,11 @@ function quadruped(ctx: GenCtx, b: Builder, colossal: boolean): string {
 
   // ── cab
   const cabStyle = ctx.choice('cockpit.style', 'Cockpit', 'cockpit', ['canopy', 'armored', 'bubble'] as const, fighter ? [1, 2, 0.5] : [2, 0.5, 1.5]);
+  const qcabin: CabinType = r.version < 2 ? 'hood' : ctx.choice('cockpit.cabin', 'Cabin', 'cockpit', CABINS, [0.8, 2, 2, 1.5, 0.6, 0.4]);
   const iw = Math.max(1.4, H * (colossal ? 0.12 : 0.15));
   const ih = Math.max(1.5, H * (colossal ? 0.1 : 0.14));
-  const idp = Math.max(1.4, H * (colossal ? 0.1 : 0.14));
-  cockpit(b, 'body', [0, deckTop + bodyH * 0.06, bodyL * 0.5 - idp * 0.45], { style: cabStyle, iw, ih, id: idp, wall: Math.max(0.07, H * 0.008), armor: 'paint', hatch: 'rear', rng: ctx.rng('cockpit') });
+  const idp = Math.max(1.4, H * (colossal ? 0.1 : 0.14)) * (qcabin === 'tandem' ? 1.6 : 1);
+  cockpit(b, 'body', [0, deckTop + bodyH * 0.06, bodyL * 0.5 - idp * 0.45], { style: cabStyle, iw, ih, id: idp, wall: Math.max(0.07, H * 0.008), armor: 'paint', hatch: 'rear', rng: ctx.rng('cockpit'), cabin: qcabin, frame: cabinFrame(ctx.maker.id) });
   lightPod(body, [bodyW * 0.36, 0, bodyL * 0.48], H * 0.015);
   lightPod(body, [-bodyW * 0.36, 0, bodyL * 0.48], H * 0.015);
   ladder(body, bodyW * 0.51, bodyL * 0.15, -drop + H * 0.05 > -bodyH ? -bodyH * 0.4 : -bodyH * 0.4, deckTop);
@@ -594,10 +606,11 @@ function multiLeg(ctx: GenCtx, b: Builder, n: 6 | 8): string {
   bodyHull(body, bodyShape, bodyW * 0.92, bodyH, bodyL, 'paint', 'paint2', ctx.rng('body.hull'), false, false);
   hub(body.comp('frame'), [0, -bodyH * 0.5, 0], 'y', { r: bodyW * 0.16, w: bodyH * 0.14, bolts: 8, detail: 1 }); // belly hardpoint
   const cabStyle = ctx.choice('cockpit.style', 'Cockpit', 'cockpit', ['bubble', 'canopy', 'armored'] as const, fighter ? [1, 1, 2] : [2.5, 1.5, 0.5]);
+  const mcabin: CabinType = r.version < 2 ? 'hood' : ctx.choice('cockpit.cabin', 'Cabin', 'cockpit', CABINS, [0.8, 3, 0.8, 1.2, 1, 0.8]);
   const iw = Math.max(1.2, H * 0.2);
   const ih = Math.max(1.4, H * 0.18);
-  const idp = Math.max(1.35, H * 0.18);
-  cockpit(b, 'body', [0, -bodyH * 0.1, bodyL * 0.5 + idp / 2 + 0.06], { style: cabStyle, iw, ih, id: idp, wall: Math.max(0.06, H * 0.01), armor: 'paint', hatch: 'top', rng: ctx.rng('cockpit') });
+  const idp = Math.max(1.35, H * 0.18) * (mcabin === 'tandem' ? 1.6 : 1);
+  cockpit(b, 'body', [0, -bodyH * 0.1, bodyL * 0.5 + idp / 2 + 0.06], { style: cabStyle, iw, ih, id: idp, wall: Math.max(0.06, H * 0.01), armor: 'paint', hatch: 'top', rng: ctx.rng('cockpit'), cabin: mcabin, frame: cabinFrame(ctx.maker.id) });
   for (const sx of [-1, 1]) lightPod(body, [sx * bodyW * 0.32, -bodyH * 0.1, bodyL * 0.46], H * 0.018);
   applySignature(b, ctx.maker.signature, {
     host: 'body',

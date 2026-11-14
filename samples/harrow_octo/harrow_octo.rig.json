@@ -19,7 +19,7 @@
   "height": 5.58,
   "width": 11.5,
   "length": 13.1,
-  "estimatedMassTonnes": 53.8,
+  "estimatedMassTonnes": 53.7,
   "sizeClass": "medium"
  },
  "nodes": [
@@ -3103,30 +3103,6 @@
    "role": "component",
    "system": "cockpit",
    "component": "cockpit",
-   "restTranslation": [
-    0,
-    0,
-    0
-   ],
-   "restRotation": [
-    0,
-    0,
-    0,
-    1
-   ],
-   "restWorldPosition": [
-    0,
-    2.383,
-    4.8405
-   ],
-   "tags": []
-  },
-  {
-   "name": "cockpit__detail",
-   "parent": "cockpit",
-   "role": "component",
-   "system": "cockpit",
-   "component": "detail",
    "restTranslation": [
     0,
     0,

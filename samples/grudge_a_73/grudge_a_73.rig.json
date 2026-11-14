@@ -19,7 +19,7 @@
   "height": 11.02,
   "width": 9.08,
   "length": 5.01,
-  "estimatedMassTonnes": 113.8,
+  "estimatedMassTonnes": 113.6,
   "sizeClass": "heavy"
  },
  "nodes": [
@@ -1202,30 +1202,6 @@
    "tags": []
   },
   {
-   "name": "cockpit__detail",
-   "parent": "cockpit",
-   "role": "component",
-   "system": "cockpit",
-   "component": "detail",
-   "restTranslation": [
-    0,
-    0,
-    0
-   ],
-   "restRotation": [
-    0,
-    0,
-    0,
-    1
-   ],
-   "restWorldPosition": [
-    0,
-    6.5363,
-    1.3761
-   ],
-   "tags": []
-  },
-  {
    "name": "cockpit_interior",
    "parent": "cockpit",
    "role": "group",
@@ -1318,30 +1294,6 @@
     0.736,
     6.6363,
     0.7911
-   ],
-   "tags": []
-  },
-  {
-   "name": "cockpit__armor",
-   "parent": "cockpit",
-   "role": "component",
-   "system": "cockpit",
-   "component": "armor",
-   "restTranslation": [
-    0,
-    0,
-    0
-   ],
-   "restRotation": [
-    0,
-    0,
-    0,
-    1
-   ],
-   "restWorldPosition": [
-    0,
-    6.5363,
-    1.3761
    ],
    "tags": []
   },

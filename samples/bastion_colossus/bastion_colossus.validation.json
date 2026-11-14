@@ -3,7 +3,7 @@
     {
       "id": "struct",
       "severity": "ok",
-      "message": "125 nodes, 28 joints, single root, parents precede children, names unique"
+      "message": "124 nodes, 28 joints, single root, parents precede children, names unique"
     },
     {
       "id": "leg.chain",

@@ -4,25 +4,25 @@
   "heightM": 11.02,
   "glb": {
     "ok": true,
-    "nodesChecked": 120,
+    "nodesChecked": 118,
     "missing": [],
     "maxPosErrorM": 1.3898111022822649e-05,
     "maxAxisErrorDeg": 0.0,
     "materials": "10 imported / 10 used in file",
     "skinnedHoses": 4,
-    "triangles": 46512
+    "triangles": 46656
   },
   "glb_lod1": {
     "ok": true,
-    "nodesChecked": 120,
+    "nodesChecked": 118,
     "maxPosErrorM": 1.3898111022822649e-05,
-    "triangles": 27760
+    "triangles": 27776
   },
   "glb_lod2": {
     "ok": true,
-    "nodesChecked": 120,
+    "nodesChecked": 118,
     "maxPosErrorM": 1.3898111022822649e-05,
-    "triangles": 12898
+    "triangles": 12602
   },
   "fbx": {
     "ok": true,
@@ -31,7 +31,7 @@
     "maxPosErrorM": 1.5497207641601562e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 46512,
+    "triangles": 46656,
     "vertexGroups": 43,
     "blend": "grudge_a_73.blend",
     "fbx": "grudge_a_73.fbx"
@@ -41,7 +41,7 @@
     "posedJoint": "leg_L_shin",
     "angleRad": 1.136,
     "verticesMoved": 7847,
-    "verticesTotal": 63572,
+    "verticesTotal": 63746,
     "pivotDrift": 3.371747880871523e-07
   },
   "usd": {
@@ -49,8 +49,8 @@
       "ok": true,
       "upAxis": "Y",
       "metersPerUnit": 1.0,
-      "xforms": 121,
-      "meshes": 184,
+      "xforms": 119,
+      "meshes": 181,
       "missing": [],
       "maxPosErrorM": 0.00018063383051402184,
       "maxAxisErrorDeg": 0.0,
@@ -58,15 +58,15 @@
     },
     "blender": {
       "ok": true,
-      "objects": 293,
-      "meshes": 184
+      "objects": 289,
+      "meshes": 181
     },
     "ok": true
   },
   "obj": {
     "ok": true,
-    "objects": 84,
-    "triangles": 45552,
+    "objects": 82,
+    "triangles": 45696,
     "materials": 10,
     "note": "static only, by design"
   },

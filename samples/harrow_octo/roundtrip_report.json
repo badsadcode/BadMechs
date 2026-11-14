@@ -4,25 +4,25 @@
   "heightM": 5.58,
   "glb": {
     "ok": true,
-    "nodesChecked": 198,
+    "nodesChecked": 197,
     "missing": [],
     "maxPosErrorM": 1.0210329582864693e-05,
     "maxAxisErrorDeg": 0.0,
     "materials": "10 imported / 10 used in file",
     "skinnedHoses": 8,
-    "triangles": 85702
+    "triangles": 85826
   },
   "glb_lod1": {
     "ok": true,
-    "nodesChecked": 198,
+    "nodesChecked": 197,
     "maxPosErrorM": 1.0210329582864693e-05,
-    "triangles": 46502
+    "triangles": 46642
   },
   "glb_lod2": {
     "ok": true,
-    "nodesChecked": 198,
+    "nodesChecked": 197,
     "maxPosErrorM": 1.0210329582864693e-05,
-    "triangles": 20532
+    "triangles": 20300
   },
   "fbx": {
     "ok": true,
@@ -31,7 +31,7 @@
     "maxPosErrorM": 2.496467097927745e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 85702,
+    "triangles": 85826,
     "vertexGroups": 69,
     "blend": "harrow_octo.blend",
     "fbx": "harrow_octo.fbx"
@@ -41,7 +41,7 @@
     "posedJoint": "leg_L0_tibia",
     "angleRad": -1.6406,
     "verticesMoved": 4287,
-    "verticesTotal": 110677,
+    "verticesTotal": 110943,
     "pivotDrift": 1.1680077279964342e-06
   },
   "usd": {
@@ -49,8 +49,8 @@
       "ok": true,
       "upAxis": "Y",
       "metersPerUnit": 1.0,
-      "xforms": 199,
-      "meshes": 344,
+      "xforms": 198,
+      "meshes": 342,
       "missing": [],
       "maxPosErrorM": 0.00010348135396618299,
       "maxAxisErrorDeg": 0.0,
@@ -58,15 +58,15 @@
     },
     "blender": {
       "ok": true,
-      "objects": 540,
-      "meshes": 344
+      "objects": 537,
+      "meshes": 342
     },
     "ok": true
   },
   "obj": {
     "ok": true,
-    "objects": 159,
-    "triangles": 83782,
+    "objects": 158,
+    "triangles": 83906,
     "materials": 10,
     "note": "static only, by design"
   },

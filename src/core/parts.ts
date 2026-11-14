@@ -8,6 +8,7 @@ import type { Rng } from './rng';
 import { block, clampBand, clevis, hatchPanel, hub, memberDown, memberOut, shellDown, shellOut, slewRing } from './hs/kit';
 import type { Section } from './hs/shapes';
 import { hoodOpening, hoodSections, pauldron } from './hs/hulls';
+import { buildCabin, cabinInterior, CabinType } from './cabins';
 
 const D2R = Math.PI / 180;
 
@@ -567,6 +568,10 @@ export interface CockpitSpec {
   armor: MaterialId;
   hatch: 'top' | 'rear' | 'none';
   rng: Rng;
+  /** cabin architecture (default: the original arched hood) */
+  cabin?: CabinType;
+  /** colour of canopy frame bars */
+  frame?: MaterialId;
 }
 
 export const HUMAN = { sitW: 1.0, sitH: 1.3, sitD: 1.3 };
@@ -582,7 +587,12 @@ export function cockpit(b: Builder, parent: string, at: Vec3, sp: CockpitSpec): 
   const ih = Math.max(sp.ih, cage ? 0.95 : HUMAN.sitH);
   const idp = Math.max(sp.id, cage ? 0.5 : HUMAN.sitD);
   const t = sp.wall;
-  const pod = b.node('cockpit', parent, at, { system: 'cockpit', role: 'group' });
+  const cabin: CabinType = cage ? 'hood' : sp.cabin ?? 'hood';
+  // a ball cab is a head: the whole cabin turns on a yaw joint
+  const pod =
+    cabin === 'ball'
+      ? b.node('cockpit', parent, at, { system: 'cockpit', role: 'link', joint: { axis: 'y', min: -40, max: 40, purpose: 'aim', kind: 'head-yaw' } })
+      : b.node('cockpit', parent, at, { system: 'cockpit', role: 'group' });
   const shell = pod.comp('cockpit', 'shell');
   if (sp.style === 'cage') {
     // open roll cage (exosuits): tubes only, the pilot is visibly inside
@@ -595,12 +605,16 @@ export function cockpit(b: Builder, parent: string, at: Vec3, sp: CockpitSpec): 
   } else {
     shell.box([0, -t / 2, 0], [iw + 2 * t, t, idp + 2 * t], 'darkMetal'); // floor
     shell.box([0, ih / 2, -idp / 2 - t / 2], [iw + 2 * t, ih + t, t], 'darkMetal'); // rear bulkhead
+    // proxies standing in for the (visually hollow) cabin in collision + interior validation
+    shell.box([0, ih + t / 2, -idp * 0.1], [iw + 2 * t, t, idp * 0.8 + 2 * t], sp.armor, { hidden: true });
+    for (const sx of [-1, 1]) shell.box([(sx * (iw + t)) / 2, ih / 2, -idp * 0.05], [t, ih, idp * 0.9 + t], sp.armor, { hidden: true });
+  }
+  if (cabin !== 'hood') {
+    buildCabin(pod, cabin, { iw, ih, idp, t, armor: sp.armor, frame: sp.frame ?? 'darkMetal', rng: sp.rng });
+  } else if (sp.style !== 'cage') {
     // arched, lofted hood = walls + roof in one hard-surface shell (hollow, open at the floor)
     const frontScale = sp.style === 'bubble' ? 0.55 : sp.style === 'canopy' ? 0.72 : 0.9;
     shell.shape([0, 0, 0], { t: 'loft', sections: hoodSections(iw, ih, t * 1.4, idp, frontScale, Math.min(iw, ih) * 0.35), bevel: t * 0.3 }, sp.armor, { collide: false });
-    // proxies standing in for the hollow hood in collision + interior validation
-    shell.box([0, ih + t / 2, -idp * 0.1], [iw + 2 * t, t, idp * 0.8 + 2 * t], sp.armor, { hidden: true });
-    for (const sx of [-1, 1]) shell.box([(sx * (iw + t)) / 2, ih / 2, -idp * 0.05], [t, ih, idp * 0.9 + t], sp.armor, { hidden: true });
     // roof rib + side window strip
     block(shell, [0, ih + t * 1.6, -idp * 0.1], [iw * 0.3, t * 0.6, idp * 0.7], 'darkMetal', { detail: 1, collide: false });
 
@@ -653,6 +667,10 @@ export function cockpit(b: Builder, parent: string, at: Vec3, sp: CockpitSpec): 
     b.interiors.push({ name: 'cockpit', node: 'cockpit', min: [-iw / 2, 0, -idp / 2], max: [iw / 2, ih, idp / 2], walkable: false, kind: 'cockpit' });
     return pod.name;
   }
+  if (cabin !== 'hood') {
+    cabinInterior(int, cabin, iw, ih, idp);
+    b.interiors.push({ name: 'cockpit', node: 'cockpit', min: [-iw / 2, 0, -idp / 2], max: [iw / 2, ih, idp / 2], walkable: ih > 1.9, kind: 'cockpit' });
+  } else {
   int.box([0, 0.25, -idp * 0.18], [0.55, 0.12, 0.5], 'interior'); // seat pan
   int.box([0, 0.65, -idp * 0.18 - 0.27], [0.55, 0.75, 0.1], 'interior', { rot: [-0.18, 0, 0] }); // backrest
   int.box([0, 0.12, -idp * 0.18], [0.2, 0.25, 0.2], 'darkMetal'); // seat post
@@ -661,9 +679,11 @@ export function cockpit(b: Builder, parent: string, at: Vec3, sp: CockpitSpec): 
   for (const sx of [-1, 1]) int.cyl([sx * 0.32, 0.45, -idp * 0.05], 0.025, 0.25, 'rubber', { detail: 1, collide: false, segments: 6 }); // sticks
   for (const sx of [-1, 1]) int.box([sx * 0.15, 0.06, idp * 0.25], [0.12, 0.04, 0.2], 'steel', { detail: 2, collide: false }); // pedals
   b.interiors.push({ name: 'cockpit', node: 'cockpit', min: [-iw / 2, 0, -idp / 2], max: [iw / 2, ih, idp / 2], walkable: ih > 1.9, kind: 'cockpit' });
+  }
 
   if (sp.hatch !== 'none') {
-    const top = sp.hatch === 'top';
+    // ball heads are always entered through the roof (a side door would swing into the torso)
+    const top = sp.hatch === 'top' || cabin === 'ball';
     const hatch = pod.child('cockpit_hatch', top ? [0, ih + t, -idp * 0.5] : [iw * 0.5 + t, 0.1, -idp * 0.45], {
       role: 'hatch',
       system: 'cockpit',
