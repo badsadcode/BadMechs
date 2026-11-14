@@ -50,7 +50,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L1_tibia": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L1_foot": {
@@ -66,7 +66,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R1_tibia": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R1_foot": {
@@ -86,7 +86,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L2_foot": {
-      "posErr": 3e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_R2_coxa": {
@@ -102,7 +102,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R2_foot": {
-      "posErr": 3e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_L3_coxa": {
@@ -110,7 +110,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L3_femur": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_L3_tibia": {
@@ -118,7 +118,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L3_foot": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_R3_coxa": {
@@ -126,7 +126,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R3_femur": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_R3_tibia": {
@@ -134,15 +134,23 @@
       "axisErrDeg": 0.0
     },
     "leg_R3_foot": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "cockpit_hatch": {
       "posErr": 0.0,
       "axisErrDeg": 0.0
     },
-    "leg_L0_femur_ram_barrel": {
+    "pod_C_yaw": {
       "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "pod_C_pitch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_L0_femur_ram_barrel": {
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L0_femur_ram_rod": {
@@ -154,11 +162,11 @@
       "axisErrDeg": 0.0
     },
     "leg_L0_tibia_ram_rod": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_R0_femur_ram_barrel": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R0_femur_ram_rod": {
@@ -170,7 +178,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R0_tibia_ram_rod": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_L1_femur_ram_barrel": {
@@ -178,11 +186,11 @@
       "axisErrDeg": 0.0
     },
     "leg_L1_femur_ram_rod": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L1_tibia_ram_barrel": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L1_tibia_ram_rod": {
@@ -194,11 +202,11 @@
       "axisErrDeg": 0.0
     },
     "leg_R1_femur_ram_rod": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R1_tibia_ram_barrel": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R1_tibia_ram_rod": {
@@ -218,7 +226,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L2_tibia_ram_rod": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_R2_femur_ram_barrel": {
@@ -234,7 +242,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R2_tibia_ram_rod": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_L3_femur_ram_barrel": {
@@ -242,7 +250,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L3_femur_ram_rod": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L3_tibia_ram_barrel": {
@@ -258,7 +266,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R3_femur_ram_rod": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R3_tibia_ram_barrel": {
@@ -270,13 +278,13 @@
       "axisErrDeg": 0.0
     }
   },
-  "boneCount": 67,
+  "boneCount": 69,
   "missingBones": [],
-  "maxPosErrorM": 2.9910903065001834e-06,
+  "maxPosErrorM": 2.496467097927745e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 82802,
-  "vertexGroups": 67,
+  "triangles": 85702,
+  "vertexGroups": 69,
   "blend": "harrow_octo.blend",
   "fbx": "harrow_octo.fbx"
 }

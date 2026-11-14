@@ -1,6 +1,6 @@
 {
   "format": "badmech-recipe",
-  "version": 1,
+  "version": 2,
   "name": "Cricket Surveyor",
   "family": "hexapod",
   "role": "explorer",
@@ -10,6 +10,7 @@
   "scheme": "rust",
   "rerolls": {},
   "overrides": {
+    "maker": "lynx",
     "deck.kit": "sensor"
   }
 }

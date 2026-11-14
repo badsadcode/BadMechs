@@ -408,6 +408,8 @@ export interface ArmSpec {
   tool: ArmTool;
   style: SegStyle;
   hydraulics: boolean;
+  /** maker's shoulder armour: curved hood, octagonal shield plate, or angled slab */
+  pauldron?: 'hood' | 'shield' | 'slab';
 }
 
 export function arm(b: Builder, parent: string, at: Vec3, sp: ArmSpec) {
@@ -419,9 +421,31 @@ export function arm(b: Builder, parent: string, at: Vec3, sp: ArmSpec) {
   const sh = b.node(`${p}_shoulder_pitch`, parent, at, { system: sys, joint: { axis: 'x', min: -110, max: 50, purpose: 'manipulation', kind: 'shoulder-pitch' } });
   const shh = sh.comp('joint-housing');
   hub(shh, [s * sp.w * 0.2, 0, 0], 'x', { r: sp.d * 0.6, w: sp.w * 0.9, bolts: 10 });
-  // pauldron: curved hood over the shoulder bearing
+  // shoulder armour, in the maker's style
+  const pst = sp.pauldron ?? 'hood';
   if (sp.style.plating > 0.2) {
-    pauldron(sh.comp('armor'), [s * sp.w * 0.32, -sp.d * 0.05, 0], s, sp.d * (0.72 + sp.style.plating * 0.2), sp.d * (1.4 + sp.style.plating * 0.4), sp.d * 0.13, sp.style.armor, sp.style.rng);
+    const pa = sh.comp('armor');
+    if (pst === 'shield') {
+      // octagonal shoulder shield standing off the outer face (A-73), smaller hood over the bearing
+      pauldron(pa, [s * sp.w * 0.3, -sp.d * 0.05, 0], s, sp.d * 0.66, sp.d * 1.2, sp.d * 0.12, sp.style.armor, sp.style.rng);
+      const R = sp.d * (1.0 + sp.style.plating * 0.25);
+      const x = s * (sp.w * 0.78 + sp.d * 0.1);
+      const oct = { k: 'ngon' as const, r: R, n: 8, rot: Math.PI / 8 };
+      pa.shape([x, -sp.d * 0.2, 0], { t: 'loft', axis: 'x', sections: [{ p: oct, z: -sp.d * 0.09 }, { p: oct, z: sp.d * 0.09 }], bevel: sp.d * 0.035 }, sp.style.armor);
+      const inl = { k: 'ngon' as const, r: R * 0.62, n: 8, rot: Math.PI / 8 };
+      pa.shape([x + s * sp.d * 0.1, -sp.d * 0.2, 0], { t: 'loft', axis: 'x', sections: [{ p: inl, z: -sp.d * 0.03 }, { p: inl, z: sp.d * 0.03 }], bevel: sp.d * 0.012 }, 'paint2', { detail: 1, collide: false });
+      for (let i = 0; i < 8; i++) {
+        const a = Math.PI / 8 + (i / 8) * Math.PI * 2;
+        pa.cyl([x + s * sp.d * 0.1, -sp.d * 0.2 + Math.cos(a) * R * 0.82, Math.sin(a) * R * 0.82], sp.d * 0.035, sp.d * 0.04, 'steel', { rot: [0, 0, Math.PI / 2], detail: 2, collide: false, segments: 6 });
+      }
+    } else if (pst === 'slab') {
+      // angled armour slab over the shoulder, with a stepped inlay
+      block(pa, [s * sp.w * 0.42, sp.d * 0.42, 0], [sp.w * 1.25, sp.d * 0.32, sp.d * 1.9], sp.style.armor, { r: sp.d * 0.1, top: [0.72, 0.82], shift: [s * sp.w * 0.06, 0], rot: [0, 0, -s * 0.22] });
+      block(pa, [s * sp.w * 0.44, sp.d * 0.6, 0], [sp.w * 0.7, sp.d * 0.08, sp.d * 1.2], 'paint2', { r: sp.d * 0.04, rot: [0, 0, -s * 0.22], detail: 1, collide: false });
+      pa.bolts([s * sp.w * 0.1, sp.d * 0.58, -sp.d * 0.8], [s * sp.w * 0.1, sp.d * 0.58, sp.d * 0.8], 5, sp.w * 0.03, 'y');
+    } else {
+      pauldron(pa, [s * sp.w * 0.32, -sp.d * 0.05, 0], s, sp.d * (0.72 + sp.style.plating * 0.2), sp.d * (1.4 + sp.style.plating * 0.4), sp.d * 0.13, sp.style.armor, sp.style.rng);
+    }
   }
   joints.push(sh.name);
   const roll = sh.child(`${p}_shoulder_roll`, [s * sp.w * 0.55, 0, 0], { joint: { axis: 'z', min: s > 0 ? -10 : -70, max: s > 0 ? 70 : 10, purpose: 'manipulation', kind: 'shoulder-roll' } });

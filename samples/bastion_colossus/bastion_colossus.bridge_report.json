@@ -6,153 +6,193 @@
       "axisErrDeg": 0.0
     },
     "body": {
-      "posErr": 0.0,
-      "axisErrDeg": 0.0
-    },
-    "leg_FL_coxa": {
       "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_FL_femur": {
-      "posErr": 0.0,
+    "leg_FL_hip_yaw": {
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_FL_tibia": {
-      "posErr": 4e-06,
+    "leg_FL_hip_roll": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FL_thigh": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FL_shin": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FL_ankle": {
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_FL_foot": {
-      "posErr": 3e-06,
-      "axisErrDeg": 0.0
-    },
-    "leg_FR_coxa": {
       "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_FR_femur": {
-      "posErr": 0.0,
+    "leg_FR_hip_yaw": {
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_FR_tibia": {
-      "posErr": 4e-06,
+    "leg_FR_hip_roll": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FR_thigh": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FR_shin": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_FR_ankle": {
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_FR_foot": {
-      "posErr": 3e-06,
-      "axisErrDeg": 0.0
-    },
-    "leg_RL_coxa": {
       "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_RL_femur": {
+    "leg_RL_hip_yaw": {
       "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_RL_tibia": {
+    "leg_RL_hip_roll": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_thigh": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_shin": {
+      "posErr": 2e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_ankle": {
       "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_RL_foot": {
-      "posErr": 5e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
-    "leg_RR_coxa": {
+    "leg_RR_hip_yaw": {
       "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_RR_femur": {
+    "leg_RR_hip_roll": {
       "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_RR_tibia": {
+    "leg_RR_thigh": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_shin": {
+      "posErr": 2e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_ankle": {
       "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_RR_foot": {
-      "posErr": 5e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "cockpit_hatch": {
       "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
+    "sensor_head_yaw": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "sensor_head_pitch": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
     "deck_house_door": {
       "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_FL_femur_ram_barrel": {
+    "leg_FL_shin_ram_barrel": {
       "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_FL_femur_ram_rod": {
-      "posErr": 3e-06,
-      "axisErrDeg": 0.0
-    },
-    "leg_FL_tibia_ram_barrel": {
-      "posErr": 3e-06,
-      "axisErrDeg": 0.0
-    },
-    "leg_FL_tibia_ram_rod": {
+    "leg_FL_shin_ram_rod": {
       "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_FR_femur_ram_barrel": {
+    "leg_FL_hip_ram_barrel": {
       "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_FR_femur_ram_rod": {
-      "posErr": 3e-06,
-      "axisErrDeg": 0.0
-    },
-    "leg_FR_tibia_ram_barrel": {
-      "posErr": 3e-06,
-      "axisErrDeg": 0.0
-    },
-    "leg_FR_tibia_ram_rod": {
-      "posErr": 1e-06,
-      "axisErrDeg": 0.0
-    },
-    "leg_RL_femur_ram_barrel": {
-      "posErr": 0.0,
-      "axisErrDeg": 0.0
-    },
-    "leg_RL_femur_ram_rod": {
-      "posErr": 4e-06,
-      "axisErrDeg": 0.0
-    },
-    "leg_RL_tibia_ram_barrel": {
+    "leg_FL_hip_ram_rod": {
       "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
-    "leg_RL_tibia_ram_rod": {
-      "posErr": 4e-06,
+    "leg_FR_shin_ram_barrel": {
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_RR_femur_ram_barrel": {
-      "posErr": 0.0,
+    "leg_FR_shin_ram_rod": {
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_RR_femur_ram_rod": {
-      "posErr": 4e-06,
+    "leg_FR_hip_ram_barrel": {
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "leg_RR_tibia_ram_barrel": {
+    "leg_FR_hip_ram_rod": {
       "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
-    "leg_RR_tibia_ram_rod": {
-      "posErr": 4e-06,
+    "leg_RL_shin_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_shin_ram_rod": {
+      "posErr": 2e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_hip_ram_barrel": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RL_hip_ram_rod": {
+      "posErr": 2e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_shin_ram_barrel": {
+      "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_shin_ram_rod": {
+      "posErr": 2e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_hip_ram_barrel": {
+      "posErr": 1e-06,
+      "axisErrDeg": 0.0
+    },
+    "leg_RR_hip_ram_rod": {
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     }
   },
-  "boneCount": 36,
+  "boneCount": 46,
   "missingBones": [],
-  "maxPosErrorM": 4.915124923727108e-06,
+  "maxPosErrorM": 2.384185791015625e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 41378,
-  "vertexGroups": 36,
+  "triangles": 49974,
+  "vertexGroups": 46,
   "blend": "bastion_colossus.blend",
   "fbx": "bastion_colossus.fbx"
 }

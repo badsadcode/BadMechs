@@ -2,7 +2,7 @@ BadMech export package: Lynx S1
 =====================================
 
 Units: metres · Up: +Y · Forward (mech faces): +Z · Right-handed (glTF convention)
-Height 7.07 m · biped · light
+Height 7.1 m · biped · light
 
 FILES
   lynx_s1.glb              Full articulated mech (LOD0). Hierarchy, pivots, PBR materials, skinned

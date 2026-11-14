@@ -1,38 +1,38 @@
 {
   "mech": "Lynx S1",
   "family": "biped",
-  "heightM": 7.07,
+  "heightM": 7.1,
   "glb": {
     "ok": true,
-    "nodesChecked": 93,
+    "nodesChecked": 90,
     "missing": [],
-    "maxPosErrorM": 1.0395159414573498e-05,
+    "maxPosErrorM": 4.396221378942913e-06,
     "maxAxisErrorDeg": 0.0,
     "materials": "9 imported / 9 used in file",
     "skinnedHoses": 6,
-    "triangles": 37972
+    "triangles": 35548
   },
   "glb_lod1": {
     "ok": true,
-    "nodesChecked": 93,
-    "maxPosErrorM": 1.0395159414573498e-05,
-    "triangles": 22100
+    "nodesChecked": 90,
+    "maxPosErrorM": 4.396221378942913e-06,
+    "triangles": 20740
   },
   "glb_lod2": {
     "ok": true,
-    "nodesChecked": 93,
-    "maxPosErrorM": 1.0395159414573498e-05,
-    "triangles": 12288
+    "nodesChecked": 90,
+    "maxPosErrorM": 4.396221378942913e-06,
+    "triangles": 12148
   },
   "fbx": {
     "ok": true,
-    "boneCount": 28,
+    "boneCount": 26,
     "missingBones": [],
-    "maxPosErrorM": 9.906751000043548e-07,
+    "maxPosErrorM": 5.703466894926023e-07,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 37972,
-    "vertexGroups": 28,
+    "triangles": 35548,
+    "vertexGroups": 26,
     "blend": "lynx_s1.blend",
     "fbx": "lynx_s1.fbx"
   },
@@ -40,33 +40,33 @@
     "ok": true,
     "posedJoint": "leg_L_shin",
     "angleRad": -0.976264,
-    "verticesMoved": 9226,
-    "verticesTotal": 51610,
-    "pivotDrift": 8.429369702178807e-08
+    "verticesMoved": 9272,
+    "verticesTotal": 48968,
+    "pivotDrift": 3.03925246810483e-07
   },
   "usd": {
     "pxr": {
       "ok": true,
       "upAxis": "Y",
       "metersPerUnit": 1.0,
-      "xforms": 94,
-      "meshes": 132,
+      "xforms": 91,
+      "meshes": 123,
       "missing": [],
-      "maxPosErrorM": 3.412611871292544e-05,
+      "maxPosErrorM": 3.2623920480810005e-05,
       "maxAxisErrorDeg": 0.0,
-      "jointLimitsPreserved": "26/26"
+      "jointLimitsPreserved": "24/24"
     },
     "blender": {
       "ok": true,
-      "objects": 216,
-      "meshes": 132
+      "objects": 204,
+      "meshes": 123
     },
     "ok": true
   },
   "obj": {
     "ok": true,
-    "objects": 60,
-    "triangles": 36692,
+    "objects": 59,
+    "triangles": 34268,
     "materials": 9,
     "note": "static only, by design"
   },

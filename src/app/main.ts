@@ -7,6 +7,7 @@ import { strToU8, zipSync } from 'fflate';
 import { generate, GenResult } from '../core/families';
 import type { MechNode, Pose } from '../core/model';
 import { SCHEMES } from '../core/palette';
+import { makerById, MAKERS } from '../core/makers';
 import { defaultRecipe, Family, FAMILIES, MechRecipe, MechRole } from '../core/recipe';
 import { validate } from '../core/validate';
 import { calibrateGait } from '../controller/calibrate';
@@ -403,6 +404,13 @@ function renderUI() {
     };
     fam.appendChild(b);
   }
+  const mk = $<HTMLSelectElement>('in-maker');
+  const pinned = typeof recipe.overrides.maker === 'string' ? (recipe.overrides.maker as string) : '';
+  const maker = makerById(result.mech.maker);
+  if (recipe.version < 2) mk.innerHTML = `<option value="">Unbranded (pre-factory design)</option>`;
+  else mk.innerHTML = `<option value="">🎲 Any maker (${maker.name})</option>` + MAKERS.map((m) => `<option value="${m.id}" ${m.id === pinned ? 'selected' : ''}>${m.name}</option>`).join('');
+  mk.disabled = recipe.version < 2;
+  $('maker-motto').textContent = maker.motto ? `“${maker.motto}”` : '';
   const role = $<HTMLSelectElement>('in-role');
   role.innerHTML = ROLES.map((r) => `<option value="${r}" ${r === recipe.role ? 'selected' : ''}>${r}</option>`).join('');
   $<HTMLInputElement>('in-seed').value = String(recipe.seed);
@@ -415,6 +423,16 @@ function renderUI() {
   nm.placeholder = result.mech.name;
   const sw = $('swatches');
   sw.innerHTML = '';
+  if (recipe.version >= 2) {
+    const a = document.createElement('button');
+    a.className = 'sw auto' + (recipe.scheme === 'auto' ? ' on' : '');
+    a.title = `Maker's house paint (${SCHEMES[maker.scheme]?.label ?? maker.scheme})`;
+    a.onclick = () => {
+      recipe.scheme = 'auto';
+      rebuild();
+    };
+    sw.appendChild(a);
+  }
   for (const [id, s] of Object.entries(SCHEMES)) {
     const b = document.createElement('button');
     b.className = 'sw' + (id === recipe.scheme ? ' on' : '');
@@ -437,6 +455,7 @@ function renderOptions() {
   el.innerHTML = '';
   const bySlot = new Map<string, typeof result.options>();
   for (const o of result.options) {
+    if (o.key === 'maker') continue;
     const slot = o.slot.split('.')[0] === 'arms' && o.slot !== 'arms' ? o.slot : o.slot;
     if (!bySlot.has(slot)) bySlot.set(slot, []);
     bySlot.get(slot)!.push(o);
@@ -608,7 +627,7 @@ function renderStats() {
     if ((o as THREE.Mesh).isMesh && g?.index) tris += g.index.count / 3;
   });
   const joints = m.nodes.filter((n) => n.joint).length;
-  $('stats').innerHTML = `<b>${m.name}</b> · ${m.family} · ${m.stats.sizeClass} · <b>${m.stats.height} m</b> tall · ~${m.stats.estimatedMassTonnes} t · ${m.nodes.length} nodes · <b>${joints}</b> joints · ${m.legs.length} legs · ${m.actuators.length} pistons · ${m.cables.length} hoses · ${Math.round(tris).toLocaleString()} tris (LOD${lod})`;
+  $('stats').innerHTML = `<b>${m.name}</b> · ${makerById(m.maker).name} · ${m.family} · ${m.stats.sizeClass} · <b>${m.stats.height} m</b> tall · ~${m.stats.estimatedMassTonnes} t · ${m.nodes.length} nodes · <b>${joints}</b> joints · ${m.legs.length} legs · ${m.actuators.length} pistons · ${m.cables.length} hoses · ${Math.round(tris).toLocaleString()} tris (LOD${lod})`;
 }
 
 let valTimer = 0;
@@ -632,6 +651,13 @@ function scheduleValidation() {
 }
 
 // basics
+$<HTMLSelectElement>('in-maker').onchange = (e) => {
+  const v = (e.target as HTMLSelectElement).value;
+  if (v) recipe.overrides.maker = v;
+  else delete recipe.overrides.maker;
+  rebuild(true);
+  toast(v ? `${makerById(v).name}: “${makerById(v).motto}”` : 'Maker left to the dice');
+};
 $<HTMLSelectElement>('in-role').onchange = (e) => {
   recipe.role = (e.target as HTMLSelectElement).value as MechRole;
   rebuild();
@@ -675,7 +701,7 @@ function randomize() {
   r.scale = 0.85 + Math.random() * 0.35;
   r.bulk = Math.random();
   const schemes = Object.keys(SCHEMES);
-  r.scheme = schemes[(Math.random() * schemes.length) | 0];
+  r.scheme = Math.random() < 0.7 ? 'auto' : schemes[(Math.random() * schemes.length) | 0];
   recipe = r;
   selected = null;
   rebuild(true);

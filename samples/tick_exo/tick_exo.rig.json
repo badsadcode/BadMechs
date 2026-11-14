@@ -3,6 +3,7 @@
  "generator": "BadMech",
  "name": "Tick Exo",
  "family": "exosuit",
+ "maker": "ostrava",
  "coordinateSystem": {
   "units": "metres",
   "up": "+Y",
@@ -16,7 +17,7 @@
  "bodyNode": "pelvis",
  "stats": {
   "height": 2.22,
-  "width": 1.63,
+  "width": 1.59,
   "length": 0.91,
   "estimatedMassTonnes": 0.4,
   "sizeClass": "exosuit"
@@ -54,7 +55,7 @@
    "component": null,
    "restTranslation": [
     0,
-    1.03652,
+    1.0348,
     0
    ],
    "restRotation": [
@@ -65,7 +66,7 @@
    ],
    "restWorldPosition": [
     0,
-    1.0365,
+    1.0348,
     0
    ],
    "tags": [
@@ -79,7 +80,7 @@
    "system": "leg.L",
    "component": null,
    "restTranslation": [
-    0.30745,
+    0.31246,
     0,
     0
    ],
@@ -90,8 +91,8 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    1.0365,
+    0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -114,8 +115,8 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    1.0365,
+    0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -138,8 +139,8 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    1.0365,
+    0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -162,8 +163,8 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    1.0365,
+    0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -180,14 +181,14 @@
     0
    ],
    "restRotation": [
-    -0.165048,
+    -0.167629,
     0,
     0,
-    0.986286
+    0.98585
    ],
    "restWorldPosition": [
-    0.3075,
-    1.0365,
+    0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -210,8 +211,8 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    1.0365,
+    0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -234,8 +235,8 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    1.0365,
+    0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -258,8 +259,8 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    1.0365,
+    0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -276,15 +277,15 @@
     0
    ],
    "restRotation": [
-    0.325568,
+    0.330514,
     0,
     0,
-    0.945519
+    0.943801
    ],
    "restWorldPosition": [
-    0.3075,
-    0.5638,
-    0.1628
+    0.3125,
+    0.5629,
+    0.1653
    ],
    "tags": []
   },
@@ -306,9 +307,9 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    0.5638,
-    0.1628
+    0.3125,
+    0.5629,
+    0.1653
    ],
    "tags": []
   },
@@ -330,9 +331,9 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    0.5638,
-    0.1628
+    0.3125,
+    0.5629,
+    0.1653
    ],
    "tags": []
   },
@@ -354,9 +355,9 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    0.5638,
-    0.1628
+    0.3125,
+    0.5629,
+    0.1653
    ],
    "tags": []
   },
@@ -372,13 +373,13 @@
     0
    ],
    "restRotation": [
-    -0.165048,
+    -0.167629,
     0,
     0,
-    0.986286
+    0.98585
    ],
    "restWorldPosition": [
-    0.3075,
+    0.3125,
     0.091,
     0
    ],
@@ -402,7 +403,7 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
+    0.3125,
     0.091,
     0
    ],
@@ -426,7 +427,7 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
+    0.3125,
     0.091,
     0
    ],
@@ -450,7 +451,7 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
+    0.3125,
     0.091,
     0
    ],
@@ -474,7 +475,7 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
+    0.3125,
     0.091,
     0
    ],
@@ -487,7 +488,7 @@
    "system": "leg.R",
    "component": null,
    "restTranslation": [
-    -0.30745,
+    -0.31246,
     0,
     0
    ],
@@ -498,8 +499,8 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    1.0365,
+    -0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -522,8 +523,8 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    1.0365,
+    -0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -546,8 +547,8 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    1.0365,
+    -0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -570,8 +571,8 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    1.0365,
+    -0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -588,14 +589,14 @@
     0
    ],
    "restRotation": [
-    -0.165048,
+    -0.167629,
     0,
     0,
-    0.986286
+    0.98585
    ],
    "restWorldPosition": [
-    -0.3074,
-    1.0365,
+    -0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -618,8 +619,8 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    1.0365,
+    -0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -642,8 +643,8 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    1.0365,
+    -0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -666,8 +667,8 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    1.0365,
+    -0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -684,15 +685,15 @@
     0
    ],
    "restRotation": [
-    0.325568,
+    0.330514,
     0,
     0,
-    0.945519
+    0.943801
    ],
    "restWorldPosition": [
-    -0.3074,
-    0.5638,
-    0.1628
+    -0.3125,
+    0.5629,
+    0.1653
    ],
    "tags": []
   },
@@ -714,9 +715,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    0.5638,
-    0.1628
+    -0.3125,
+    0.5629,
+    0.1653
    ],
    "tags": []
   },
@@ -738,9 +739,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    0.5638,
-    0.1628
+    -0.3125,
+    0.5629,
+    0.1653
    ],
    "tags": []
   },
@@ -762,9 +763,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    0.5638,
-    0.1628
+    -0.3125,
+    0.5629,
+    0.1653
    ],
    "tags": []
   },
@@ -780,13 +781,13 @@
     0
    ],
    "restRotation": [
-    -0.165048,
+    -0.167629,
     0,
     0,
-    0.986286
+    0.98585
    ],
    "restWorldPosition": [
-    -0.3074,
+    -0.3125,
     0.091,
     0
    ],
@@ -810,7 +811,7 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
+    -0.3125,
     0.091,
     0
    ],
@@ -834,7 +835,7 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
+    -0.3125,
     0.091,
     0
    ],
@@ -858,7 +859,7 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
+    -0.3125,
     0.091,
     0
    ],
@@ -882,7 +883,7 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
+    -0.3125,
     0.091,
     0
    ],
@@ -907,7 +908,7 @@
    ],
    "restWorldPosition": [
     0,
-    1.0365,
+    1.0348,
     0
    ],
    "tags": []
@@ -931,7 +932,7 @@
    ],
    "restWorldPosition": [
     0,
-    1.0365,
+    1.0348,
     0
    ],
    "tags": []
@@ -955,7 +956,7 @@
    ],
    "restWorldPosition": [
     0,
-    1.1795,
+    1.1778,
     0
    ],
    "tags": []
@@ -979,7 +980,7 @@
    ],
    "restWorldPosition": [
     0,
-    1.1795,
+    1.1778,
     0
    ],
    "tags": []
@@ -1003,7 +1004,7 @@
    ],
    "restWorldPosition": [
     0,
-    1.1795,
+    1.1778,
     0
    ],
    "tags": []
@@ -1027,7 +1028,7 @@
    ],
    "restWorldPosition": [
     0,
-    1.1795,
+    1.1778,
     0
    ],
    "tags": []
@@ -1041,7 +1042,7 @@
    "restTranslation": [
     0,
     0.02,
-    0.18406
+    0.18242
    ],
    "restRotation": [
     0,
@@ -1051,8 +1052,8 @@
    ],
    "restWorldPosition": [
     0,
-    1.1995,
-    0.1841
+    1.1978,
+    0.1824
    ],
    "tags": []
   },
@@ -1075,8 +1076,8 @@
    ],
    "restWorldPosition": [
     0,
-    1.1995,
-    0.1841
+    1.1978,
+    0.1824
    ],
    "tags": []
   },
@@ -1099,8 +1100,8 @@
    ],
    "restWorldPosition": [
     0,
-    1.1995,
-    0.1841
+    1.1978,
+    0.1824
    ],
    "tags": []
   },
@@ -1123,8 +1124,8 @@
    ],
    "restWorldPosition": [
     0,
-    1.1995,
-    0.1841
+    1.1978,
+    0.1824
    ],
    "tags": []
   },
@@ -1135,9 +1136,9 @@
    "system": "arm.L",
    "component": null,
    "restTranslation": [
-    0.57694,
-    0.4757,
-    -0.03198
+    0.58955,
+    0.4815,
+    -0.03253
    ],
    "restRotation": [
     0,
@@ -1146,9 +1147,9 @@
     1
    ],
    "restWorldPosition": [
-    0.5769,
-    1.6552,
-    -0.032
+    0.5896,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1170,9 +1171,9 @@
     1
    ],
    "restWorldPosition": [
-    0.5769,
-    1.6552,
-    -0.032
+    0.5896,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1194,9 +1195,9 @@
     1
    ],
    "restWorldPosition": [
-    0.5769,
-    1.6552,
-    -0.032
+    0.5896,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1207,7 +1208,7 @@
    "system": "arm.L",
    "component": null,
    "restTranslation": [
-    0.10225,
+    0.10457,
     0,
     0
    ],
@@ -1218,9 +1219,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    1.6552,
-    -0.032
+    0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1242,9 +1243,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    1.6552,
-    -0.032
+    0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1266,9 +1267,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    1.6552,
-    -0.032
+    0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1290,9 +1291,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    1.6552,
-    -0.032
+    0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1314,9 +1315,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    1.6552,
-    -0.032
+    0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1338,9 +1339,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    1.6552,
-    -0.032
+    0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1362,9 +1363,9 @@
     0.961262
    ],
    "restWorldPosition": [
-    0.6792,
-    1.1352,
-    -0.032
+    0.6941,
+    1.1393,
+    -0.0325
    ],
    "tags": []
   },
@@ -1386,9 +1387,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    1.1352,
-    -0.032
+    0.6941,
+    1.1393,
+    -0.0325
    ],
    "tags": []
   },
@@ -1410,9 +1411,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    1.1352,
-    -0.032
+    0.6941,
+    1.1393,
+    -0.0325
    ],
    "tags": []
   },
@@ -1434,9 +1435,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    1.1352,
-    -0.032
+    0.6941,
+    1.1393,
+    -0.0325
    ],
    "tags": []
   },
@@ -1458,9 +1459,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    0.7604,
-    0.2022
+    0.6941,
+    0.7645,
+    0.2017
    ],
    "tags": []
   },
@@ -1482,9 +1483,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    0.7604,
-    0.2022
+    0.6941,
+    0.7645,
+    0.2017
    ],
    "tags": []
   },
@@ -1506,9 +1507,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    0.7604,
-    0.2022
+    0.6941,
+    0.7645,
+    0.2017
    ],
    "tags": []
   },
@@ -1520,7 +1521,7 @@
    "component": null,
    "restTranslation": [
     0,
-    -0.29294,
+    -0.29658,
     0
    ],
    "restRotation": [
@@ -1530,9 +1531,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    0.512,
-    0.3575
+    0.6941,
+    0.513,
+    0.3589
    ],
    "tags": []
   },
@@ -1544,7 +1545,7 @@
    "component": null,
    "restTranslation": [
     0,
-    -0.16034,
+    -0.16398,
     0
    ],
    "restRotation": [
@@ -1554,9 +1555,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    0.6244,
-    0.2872
+    0.6941,
+    0.6254,
+    0.2886
    ],
    "tags": [
     "continuous"
@@ -1580,9 +1581,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    0.6244,
-    0.2872
+    0.6941,
+    0.6254,
+    0.2886
    ],
    "tags": []
   },
@@ -1593,9 +1594,9 @@
    "system": "arm.R",
    "component": null,
    "restTranslation": [
-    -0.57694,
-    0.4757,
-    -0.03198
+    -0.58955,
+    0.4815,
+    -0.03253
    ],
    "restRotation": [
     0,
@@ -1604,9 +1605,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.5769,
-    1.6552,
-    -0.032
+    -0.5895,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1628,9 +1629,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.5769,
-    1.6552,
-    -0.032
+    -0.5895,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1652,9 +1653,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.5769,
-    1.6552,
-    -0.032
+    -0.5895,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1665,7 +1666,7 @@
    "system": "arm.R",
    "component": null,
    "restTranslation": [
-    -0.10225,
+    -0.10457,
     0,
     0
    ],
@@ -1676,9 +1677,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.6552,
-    -0.032
+    -0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1700,9 +1701,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.6552,
-    -0.032
+    -0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1724,9 +1725,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.6552,
-    -0.032
+    -0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1748,9 +1749,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.6552,
-    -0.032
+    -0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1772,9 +1773,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.6552,
-    -0.032
+    -0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1796,9 +1797,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.6552,
-    -0.032
+    -0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -1820,9 +1821,9 @@
     0.961262
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.1352,
-    -0.032
+    -0.6941,
+    1.1393,
+    -0.0325
    ],
    "tags": []
   },
@@ -1844,9 +1845,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.1352,
-    -0.032
+    -0.6941,
+    1.1393,
+    -0.0325
    ],
    "tags": []
   },
@@ -1868,9 +1869,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.1352,
-    -0.032
+    -0.6941,
+    1.1393,
+    -0.0325
    ],
    "tags": []
   },
@@ -1892,9 +1893,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.1352,
-    -0.032
+    -0.6941,
+    1.1393,
+    -0.0325
    ],
    "tags": []
   },
@@ -1916,9 +1917,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    0.7604,
-    0.2022
+    -0.6941,
+    0.7645,
+    0.2017
    ],
    "tags": []
   },
@@ -1940,9 +1941,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    0.7604,
-    0.2022
+    -0.6941,
+    0.7645,
+    0.2017
    ],
    "tags": []
   },
@@ -1964,9 +1965,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    0.7604,
-    0.2022
+    -0.6941,
+    0.7645,
+    0.2017
    ],
    "tags": []
   },
@@ -1978,7 +1979,7 @@
    "component": null,
    "restTranslation": [
     0,
-    -0.29294,
+    -0.29658,
     0
    ],
    "restRotation": [
@@ -1988,9 +1989,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    0.512,
-    0.3575
+    -0.6941,
+    0.513,
+    0.3589
    ],
    "tags": []
   },
@@ -2002,7 +2003,7 @@
    "component": null,
    "restTranslation": [
     0,
-    -0.16034,
+    -0.16398,
     0
    ],
    "restRotation": [
@@ -2012,9 +2013,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    0.6244,
-    0.2872
+    -0.6941,
+    0.6254,
+    0.2886
    ],
    "tags": [
     "continuous"
@@ -2038,9 +2039,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    0.6244,
-    0.2872
+    -0.6941,
+    0.6254,
+    0.2886
    ],
    "tags": []
   },
@@ -2051,20 +2052,20 @@
    "system": "leg.L",
    "component": "actuator",
    "restTranslation": [
-    0.17872,
+    0.1808,
     -0.15,
-    0.0576
+    0.05878
    ],
    "restRotation": [
-    0.778906,
-    -0.017118,
+    0.780033,
+    -0.017533,
     0,
-    0.626907
+    0.625493
    ],
    "restWorldPosition": [
-    0.4862,
-    0.9134,
-    0.1033
+    0.4933,
+    0.9127,
+    0.1051
    ],
    "tags": [
     "piston-barrel"
@@ -2077,20 +2078,20 @@
    "system": "leg.L",
    "component": "actuator",
    "restTranslation": [
-    0.16774,
+    0.16957,
     -0.15,
-    0.05132
+    0.05237
    ],
    "restRotation": [
-    -0.846118,
-    0.020149,
+    -0.84792,
+    0.020703,
     0,
-    0.532615
+    0.52972
    ],
    "restWorldPosition": [
-    0.4752,
-    0.4052,
-    0.1625
+    0.482,
+    0.404,
+    0.1651
    ],
    "tags": [
     "piston-rod"
@@ -2114,8 +2115,8 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    1.0365,
+    0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -2138,9 +2139,9 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    0.5638,
-    0.1628
+    0.3125,
+    0.5629,
+    0.1653
    ],
    "tags": []
   },
@@ -2151,20 +2152,20 @@
    "system": "leg.L",
    "component": "actuator",
    "restTranslation": [
-    -0.0602,
-    0.14975,
-    -0.37086
+    -0.06076,
+    0.15315,
+    -0.37426
    ],
    "restRotation": [
-    0.652213,
-    0.003582,
+    0.650681,
+    0.003154,
     0,
-    0.758028
+    0.759345
    ],
    "restWorldPosition": [
-    0.2472,
-    1.1863,
-    -0.3709
+    0.2517,
+    1.188,
+    -0.3743
    ],
    "tags": [
     "piston-barrel"
@@ -2177,20 +2178,20 @@
    "system": "leg.L",
    "component": "actuator",
    "restTranslation": [
-    -0.05779,
+    -0.0586,
     -0.175,
-    -0.38231
+    -0.38465
    ],
    "restRotation": [
-    -0.639976,
-    -0.003533,
+    -0.63952,
+    -0.003116,
     0,
-    0.768387
+    0.768768
    ],
    "restWorldPosition": [
-    0.2497,
-    0.7466,
-    -0.3045
+    0.2539,
+    0.7425,
+    -0.3052
    ],
    "tags": [
     "piston-rod"
@@ -2214,8 +2215,8 @@
     1
    ],
    "restWorldPosition": [
-    0.3075,
-    1.0365,
+    0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -2227,20 +2228,20 @@
    "system": "leg.R",
    "component": "actuator",
    "restTranslation": [
-    -0.17872,
+    -0.1808,
     -0.15,
-    0.0576
+    0.05878
    ],
    "restRotation": [
-    0.778906,
-    0.017118,
+    0.780033,
+    0.017533,
     0,
-    0.626907
+    0.625493
    ],
    "restWorldPosition": [
-    -0.4862,
-    0.9134,
-    0.1033
+    -0.4933,
+    0.9127,
+    0.1051
    ],
    "tags": [
     "piston-barrel"
@@ -2253,20 +2254,20 @@
    "system": "leg.R",
    "component": "actuator",
    "restTranslation": [
-    -0.16774,
+    -0.16957,
     -0.15,
-    0.05132
+    0.05237
    ],
    "restRotation": [
-    -0.846118,
-    -0.020149,
+    -0.84792,
+    -0.020703,
     0,
-    0.532615
+    0.52972
    ],
    "restWorldPosition": [
-    -0.4752,
-    0.4052,
-    0.1625
+    -0.482,
+    0.404,
+    0.1651
    ],
    "tags": [
     "piston-rod"
@@ -2290,8 +2291,8 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    1.0365,
+    -0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -2314,9 +2315,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    0.5638,
-    0.1628
+    -0.3125,
+    0.5629,
+    0.1653
    ],
    "tags": []
   },
@@ -2327,20 +2328,20 @@
    "system": "leg.R",
    "component": "actuator",
    "restTranslation": [
-    0.0602,
-    0.14975,
-    -0.37086
+    0.06076,
+    0.15315,
+    -0.37426
    ],
    "restRotation": [
-    0.652213,
-    -0.003582,
+    0.650681,
+    -0.003154,
     0,
-    0.758028
+    0.759345
    ],
    "restWorldPosition": [
-    -0.2472,
-    1.1863,
-    -0.3709
+    -0.2517,
+    1.188,
+    -0.3743
    ],
    "tags": [
     "piston-barrel"
@@ -2353,20 +2354,20 @@
    "system": "leg.R",
    "component": "actuator",
    "restTranslation": [
-    0.05779,
+    0.0586,
     -0.175,
-    -0.38231
+    -0.38465
    ],
    "restRotation": [
-    -0.639976,
-    0.003533,
+    -0.63952,
+    0.003116,
     0,
-    0.768387
+    0.768768
    ],
    "restWorldPosition": [
-    -0.2497,
-    0.7466,
-    -0.3045
+    -0.2539,
+    0.7425,
+    -0.3052
    ],
    "tags": [
     "piston-rod"
@@ -2390,8 +2391,8 @@
     1
    ],
    "restWorldPosition": [
-    -0.3074,
-    1.0365,
+    -0.3125,
+    1.0348,
     0
    ],
    "tags": []
@@ -2405,18 +2406,18 @@
    "restTranslation": [
     0,
     -0.13,
-    -0.37031
+    -0.37218
    ],
    "restRotation": [
-    0.642166,
+    0.642029,
     0,
     0,
-    0.766566
+    0.76668
    ],
    "restWorldPosition": [
-    0.6792,
-    1.5252,
-    -0.4023
+    0.6941,
+    1.5293,
+    -0.4047
    ],
    "tags": [
     "piston-barrel"
@@ -2431,18 +2432,18 @@
    "restTranslation": [
     0,
     -0.1105,
-    -0.36372
+    -0.36544
    ],
    "restRotation": [
-    -0.559865,
+    -0.560013,
     0,
     0,
-    0.828584
+    0.828484
    ],
    "restWorldPosition": [
-    0.6792,
-    0.8488,
-    -0.2819
+    0.6941,
+    0.8519,
+    -0.2839
    ],
    "tags": [
     "piston-rod"
@@ -2466,9 +2467,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    1.6552,
-    -0.032
+    0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -2490,9 +2491,9 @@
     1
    ],
    "restWorldPosition": [
-    0.6792,
-    1.1352,
-    -0.032
+    0.6941,
+    1.1393,
+    -0.0325
    ],
    "tags": []
   },
@@ -2505,18 +2506,18 @@
    "restTranslation": [
     0,
     -0.13,
-    -0.37031
+    -0.37218
    ],
    "restRotation": [
-    0.642166,
+    0.642029,
     0,
     0,
-    0.766566
+    0.76668
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.5252,
-    -0.4023
+    -0.6941,
+    1.5293,
+    -0.4047
    ],
    "tags": [
     "piston-barrel"
@@ -2531,18 +2532,18 @@
    "restTranslation": [
     0,
     -0.1105,
-    -0.36372
+    -0.36544
    ],
    "restRotation": [
-    -0.559865,
+    -0.560013,
     0,
     0,
-    0.828584
+    0.828484
    ],
    "restWorldPosition": [
-    -0.6792,
-    0.8488,
-    -0.2819
+    -0.6941,
+    0.8519,
+    -0.2839
    ],
    "tags": [
     "piston-rod"
@@ -2566,9 +2567,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.6552,
-    -0.032
+    -0.6941,
+    1.6593,
+    -0.0325
    ],
    "tags": []
   },
@@ -2590,9 +2591,9 @@
     1
    ],
    "restWorldPosition": [
-    -0.6792,
-    1.1352,
-    -0.032
+    -0.6941,
+    1.1393,
+    -0.0325
    ],
    "tags": []
   }
@@ -2612,9 +2613,9 @@
     1,
     0
    ],
-   "min": -0.43633,
+   "min": -0.24544,
    "max": 0.43633,
-   "minDeg": -25,
+   "minDeg": -14.06,
    "maxDeg": 25,
    "continuous": false,
    "purpose": "locomotion",
@@ -2636,9 +2637,9 @@
     0,
     1
    ],
-   "min": -0.10908,
+   "min": -0.07745,
    "max": 0.38397,
-   "minDeg": -6.25,
+   "minDeg": -4.44,
    "maxDeg": 22,
    "continuous": false,
    "purpose": "locomotion",
@@ -2661,9 +2662,9 @@
     0
    ],
    "min": -0.25998,
-   "max": 0.11325,
+   "max": 0.0842,
    "minDeg": -14.9,
-   "maxDeg": 6.49,
+   "maxDeg": 4.82,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "hip-pitch",
@@ -2684,10 +2685,10 @@
     0,
     0
    ],
-   "min": -0.61017,
-   "max": 1.51844,
-   "minDeg": -34.96,
-   "maxDeg": 87,
+   "min": -0.6198,
+   "max": 1.50796,
+   "minDeg": -35.51,
+   "maxDeg": 86.4,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "knee",
@@ -2757,9 +2758,9 @@
     0
    ],
    "min": -0.43633,
-   "max": 0.43633,
+   "max": 0.24544,
    "minDeg": -25,
-   "maxDeg": 25,
+   "maxDeg": 14.06,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "hip-yaw",
@@ -2781,9 +2782,9 @@
     1
    ],
    "min": -0.38397,
-   "max": 0.10908,
+   "max": 0.07745,
    "minDeg": -22,
-   "maxDeg": 6.25,
+   "maxDeg": 4.44,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "hip-roll",
@@ -2805,9 +2806,9 @@
     0
    ],
    "min": -0.25998,
-   "max": 0.11325,
+   "max": 0.0842,
    "minDeg": -14.9,
-   "maxDeg": 6.49,
+   "maxDeg": 4.82,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "hip-pitch",
@@ -2828,10 +2829,10 @@
     0,
     0
    ],
-   "min": -0.61017,
-   "max": 1.51844,
-   "minDeg": -34.96,
-   "maxDeg": 87,
+   "min": -0.6198,
+   "max": 1.50796,
+   "minDeg": -35.51,
+   "maxDeg": 86.4,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "knee",
@@ -2900,10 +2901,10 @@
     1,
     0
    ],
-   "min": -0.09613,
-   "max": 0.09613,
-   "minDeg": -5.51,
-   "maxDeg": 5.51,
+   "min": -0.06954,
+   "max": 0.06954,
+   "minDeg": -3.98,
+   "maxDeg": 3.98,
    "continuous": false,
    "purpose": "torso",
    "kind": "torso-twist",
@@ -2948,9 +2949,9 @@
     0,
     1
    ],
-   "min": -0.15726,
+   "min": -0.16181,
    "max": 1.22173,
-   "minDeg": -9.01,
+   "minDeg": -9.27,
    "maxDeg": 70,
    "continuous": false,
    "purpose": "manipulation",
@@ -2972,9 +2973,9 @@
     1,
     0
    ],
-   "min": -0.50905,
+   "min": -0.51451,
    "max": 0.69813,
-   "minDeg": -29.17,
+   "minDeg": -29.48,
    "maxDeg": 40,
    "continuous": false,
    "purpose": "manipulation",
@@ -2996,10 +2997,10 @@
     0,
     0
    ],
-   "min": -1.15349,
-   "max": 0.36426,
-   "minDeg": -66.09,
-   "maxDeg": 20.87,
+   "min": -1.07275,
+   "max": 0.33876,
+   "minDeg": -61.46,
+   "maxDeg": 19.41,
    "continuous": false,
    "purpose": "manipulation",
    "kind": "elbow",
@@ -3093,9 +3094,9 @@
     1
    ],
    "min": -1.22173,
-   "max": 0.15726,
+   "max": 0.16181,
    "minDeg": -70,
-   "maxDeg": 9.01,
+   "maxDeg": 9.27,
    "continuous": false,
    "purpose": "manipulation",
    "kind": "shoulder-roll",
@@ -3117,9 +3118,9 @@
     0
    ],
    "min": -0.69813,
-   "max": 0.50905,
+   "max": 0.51451,
    "minDeg": -40,
-   "maxDeg": 29.17,
+   "maxDeg": 29.48,
    "continuous": false,
    "purpose": "manipulation",
    "kind": "upper-arm-twist",
@@ -3140,10 +3141,10 @@
     0,
     0
    ],
-   "min": -1.15349,
-   "max": 0.36426,
-   "minDeg": -66.09,
-   "maxDeg": 20.87,
+   "min": -1.07275,
+   "max": 0.33876,
+   "minDeg": -61.46,
+   "maxDeg": 19.41,
    "continuous": false,
    "purpose": "manipulation",
    "kind": "elbow",
@@ -3217,16 +3218,16 @@
    "contactOffset": [
     0,
     -0.09100000000000001,
-    0
+    0.05191875000000001
    ],
    "restContact": [
-    0.3075,
+    0.3125,
     0,
-    0
+    0.0519
    ],
-   "restReach": 1.0365,
-   "minReach": 0.5153,
-   "maxReach": 1.0871,
+   "restReach": 1.0361,
+   "minReach": 0.556,
+   "maxReach": 1.0955,
    "gaitPhase": 0
   },
   {
@@ -3246,16 +3247,16 @@
    "contactOffset": [
     0,
     -0.09100000000000001,
-    0
+    0.05191875000000001
    ],
    "restContact": [
-    -0.3074,
+    -0.3125,
     0,
-    0
+    0.0519
    ],
-   "restReach": 1.0365,
-   "minReach": 0.5422,
-   "maxReach": 1.0866,
+   "restReach": 1.0361,
+   "minReach": 0.5657,
+   "maxReach": 1.0956,
    "gaitPhase": 0.5
   }
  ],
@@ -3296,11 +3297,11 @@
    "baseLink": "leg_L_thigh",
    "endLink": "leg_L_shin",
    "drives": "leg_L_shin",
-   "restLength": 0.5118,
-   "minLength": 0.3712,
-   "maxLength": 0.5133,
-   "barrelLength": 0.2942,
-   "rodLength": 0.2633,
+   "restLength": 0.5123,
+   "minLength": 0.373,
+   "maxLength": 0.5138,
+   "barrelLength": 0.296,
+   "rodLength": 0.2623,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -3314,11 +3315,11 @@
    "baseLink": "leg_L_hip_roll",
    "endLink": "leg_L_thigh",
    "drives": "leg_L_thigh",
-   "restLength": 0.4447,
-   "minLength": 0.405,
-   "maxLength": 0.5302,
-   "barrelLength": 0.3007,
-   "rodLength": 0.2746,
+   "restLength": 0.4508,
+   "minLength": 0.4212,
+   "maxLength": 0.5368,
+   "barrelLength": 0.3064,
+   "rodLength": 0.2764,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -3332,11 +3333,11 @@
    "baseLink": "leg_R_thigh",
    "endLink": "leg_R_shin",
    "drives": "leg_R_shin",
-   "restLength": 0.5118,
-   "minLength": 0.3712,
-   "maxLength": 0.5133,
-   "barrelLength": 0.2942,
-   "rodLength": 0.2633,
+   "restLength": 0.5123,
+   "minLength": 0.373,
+   "maxLength": 0.5138,
+   "barrelLength": 0.296,
+   "rodLength": 0.2623,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -3350,11 +3351,11 @@
    "baseLink": "leg_R_hip_roll",
    "endLink": "leg_R_thigh",
    "drives": "leg_R_thigh",
-   "restLength": 0.4447,
-   "minLength": 0.405,
-   "maxLength": 0.5302,
-   "barrelLength": 0.3007,
-   "rodLength": 0.2746,
+   "restLength": 0.4508,
+   "minLength": 0.4212,
+   "maxLength": 0.5368,
+   "barrelLength": 0.3064,
+   "rodLength": 0.2764,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -3368,11 +3369,11 @@
    "baseLink": "arm_L_upper",
    "endLink": "arm_L_forearm",
    "drives": "arm_L_forearm",
-   "restLength": 0.6871,
-   "minLength": 0.5697,
-   "maxLength": 0.9063,
-   "barrelLength": 0.5037,
-   "rodLength": 0.4782,
+   "restLength": 0.6881,
+   "minLength": 0.5789,
+   "maxLength": 0.9023,
+   "barrelLength": 0.5129,
+   "rodLength": 0.4664,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -3386,11 +3387,11 @@
    "baseLink": "arm_R_upper",
    "endLink": "arm_R_forearm",
    "drives": "arm_R_forearm",
-   "restLength": 0.6871,
-   "minLength": 0.5697,
-   "maxLength": 0.9063,
-   "barrelLength": 0.5037,
-   "rodLength": 0.4782,
+   "restLength": 0.6881,
+   "minLength": 0.5789,
+   "maxLength": 0.9023,
+   "barrelLength": 0.5129,
+   "rodLength": 0.4664,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -3403,18 +3404,18 @@
    "type": "flex-hose",
    "fromNode": "leg_L_thigh",
    "fromOffset": [
-    -0.07779200000000003,
+    -0.07956000000000002,
     -0.36,
-    -0.10346336000000005
+    -0.10581480000000004
    ],
    "toNode": "leg_L_shin",
    "toOffset": [
-    -0.07779200000000003,
+    -0.07956000000000002,
     -0.125,
-    -0.09801792000000004
+    -0.10024560000000003
    ],
    "radius": 0.012,
-   "slack": 0.115,
+   "slack": 0.114,
    "meshNode": "leg_L_shin_hose_skin",
    "deformation": "skinned (2 bones: fromNode, toNode) in glTF/FBX/.blend; absent from OBJ/USD"
   },
@@ -3423,18 +3424,18 @@
    "type": "flex-hose",
    "fromNode": "leg_R_thigh",
    "fromOffset": [
-    0.07779200000000003,
+    0.07956000000000002,
     -0.36,
-    -0.10346336000000005
+    -0.10581480000000004
    ],
    "toNode": "leg_R_shin",
    "toOffset": [
-    0.07779200000000003,
+    0.07956000000000002,
     -0.125,
-    -0.09801792000000004
+    -0.10024560000000003
    ],
    "radius": 0.012,
-   "slack": 0.115,
+   "slack": 0.114,
    "meshNode": "leg_R_shin_hose_skin",
    "deformation": "skinned (2 bones: fromNode, toNode) in glTF/FBX/.blend; absent from OBJ/USD"
   },
@@ -3443,18 +3444,18 @@
    "type": "flex-hose",
    "fromNode": "arm_L_upper",
    "fromOffset": [
-    -0.05577000000000001,
+    -0.057037500000000005,
     -0.364,
-    -0.06413550000000001
+    -0.065593125
    ],
    "toNode": "arm_L_forearm",
    "toOffset": [
-    -0.05577000000000001,
+    -0.057037500000000005,
     -0.13260000000000002,
-    -0.06413550000000001
+    -0.065593125
    ],
    "radius": 0.01,
-   "slack": 0.159,
+   "slack": 0.16,
    "meshNode": "arm_L_elbow_hose_skin",
    "deformation": "skinned (2 bones: fromNode, toNode) in glTF/FBX/.blend; absent from OBJ/USD"
   },
@@ -3463,18 +3464,18 @@
    "type": "flex-hose",
    "fromNode": "arm_R_upper",
    "fromOffset": [
-    0.05577000000000001,
+    0.057037500000000005,
     -0.364,
-    -0.06413550000000001
+    -0.065593125
    ],
    "toNode": "arm_R_forearm",
    "toOffset": [
-    0.05577000000000001,
+    0.057037500000000005,
     -0.13260000000000002,
-    -0.06413550000000001
+    -0.065593125
    ],
    "radius": 0.01,
-   "slack": 0.159,
+   "slack": 0.16,
    "meshNode": "arm_R_elbow_hose_skin",
    "deformation": "skinned (2 bones: fromNode, toNode) in glTF/FBX/.blend; absent from OBJ/USD"
   }
@@ -3514,7 +3515,7 @@
   "stepHeight": 0.09211644000000001,
   "strideLength": 0.25379943875,
   "cycleSeconds": 1.256,
-  "bodyHeight": 1.036518575599317,
+  "bodyHeight": 1.0348009515832295,
   "groups": [
    [
     "leg_L"
@@ -3524,8 +3525,8 @@
    ]
   ],
   "verified": {
-   "maxFootErrorM": 0.019,
-   "meanFootErrorM": 0.003,
+   "maxFootErrorM": 0.029,
+   "meanFootErrorM": 0.0042,
    "strideScaled": 0.444
   }
  },
@@ -3547,9 +3548,9 @@
      1
     ],
     "halfExtents": [
-     0.2588,
+     0.2627,
      0.078,
-     0.177
+     0.181
     ]
    },
    {
@@ -3572,29 +3573,10 @@
     ]
    },
    {
-    "body": "pelvis",
-    "center": [
-     0,
-     -0.052,
-     0.2042
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1691,
-     0.117,
-     0.0325
-    ]
-   },
-   {
     "body": "leg_L_hip_yaw",
     "center": [
      0,
-     0.0408,
+     0.0418,
      0
     ],
     "rotation": [
@@ -3604,9 +3586,9 @@
      1
     ],
     "halfExtents": [
-     0.1579,
-     0.0354,
-     0.1579
+     0.1615,
+     0.0362,
+     0.1615
     ]
    },
    {
@@ -3623,15 +3605,15 @@
      1
     ],
     "halfExtents": [
-     0.1144,
-     0.1144,
-     0.1249
+     0.117,
+     0.117,
+     0.1277
     ]
    },
    {
     "body": "leg_L_thigh",
     "center": [
-     -0.0875,
+     -0.0895,
      -0.25,
      0
     ],
@@ -3642,15 +3624,15 @@
      1
     ],
     "halfExtents": [
-     0.0316,
+     0.0323,
      0.25,
-     0.1097
+     0.1122
     ]
    },
    {
     "body": "leg_L_thigh",
     "center": [
-     0.0875,
+     0.0895,
      -0.25,
      0
     ],
@@ -3661,9 +3643,9 @@
      1
     ],
     "halfExtents": [
-     0.0316,
+     0.0323,
      0.25,
-     0.1097
+     0.1122
     ]
    },
    {
@@ -3680,17 +3662,17 @@
      1
     ],
     "halfExtents": [
-     0.0832,
-     0.098,
-     0.098
+     0.0851,
+     0.1002,
+     0.1002
     ]
    },
    {
     "body": "leg_L_thigh",
     "center": [
      0,
-     -0.215,
-     0.1366
+     -0.2071,
+     0.1385
     ],
     "rotation": [
      0,
@@ -3699,15 +3681,15 @@
      1
     ],
     "halfExtents": [
-     0.1084,
-     0.155,
+     0.111,
+     0.1471,
      0.0314
     ]
    },
    {
     "body": "leg_L_shin",
     "center": [
-     -0.077,
+     -0.0788,
      -0.25,
      0
     ],
@@ -3718,15 +3700,15 @@
      1
     ],
     "halfExtents": [
-     0.0278,
+     0.0284,
      0.25,
-     0.0966
+     0.0988
     ]
    },
    {
     "body": "leg_L_shin",
     "center": [
-     0.077,
+     0.0788,
      -0.25,
      0
     ],
@@ -3737,9 +3719,9 @@
      1
     ],
     "halfExtents": [
-     0.0278,
+     0.0284,
      0.25,
-     0.0966
+     0.0988
     ]
    },
    {
@@ -3756,17 +3738,17 @@
      1
     ],
     "halfExtents": [
-     0.0732,
-     0.0863,
-     0.0863
+     0.0749,
+     0.0882,
+     0.0882
     ]
    },
    {
     "body": "leg_L_shin",
     "center": [
      0,
-     -0.215,
-     0.1186
+     -0.2071,
+     0.1201
     ],
     "rotation": [
      0,
@@ -3775,8 +3757,8 @@
      1
     ],
     "halfExtents": [
-     0.0984,
-     0.155,
+     0.1009,
+     0.1471,
      0.0284
     ]
    },
@@ -3794,16 +3776,54 @@
      1
     ],
     "halfExtents": [
-     0.0819,
-     0.0817,
-     0.0817
+     0.0838,
+     0.0835,
+     0.0835
     ]
    },
    {
     "body": "leg_L_foot",
     "center": [
      0,
-     -0.0455,
+     -0.076,
+     0.0467
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2098,
+     0.015,
+     0.2648
+    ]
+   },
+   {
+    "body": "leg_L_foot",
+    "center": [
+     0,
+     -0.0382,
+     -0.0675
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1797,
+     0.0255,
+     0.1298
+    ]
+   },
+   {
+    "body": "leg_L_foot",
+    "center": [
+     0,
+     0,
      0
     ],
     "rotation": [
@@ -3813,17 +3833,17 @@
      1
     ],
     "halfExtents": [
-     0.1551,
-     0.0455,
-     0.1551
+     0.0668,
+     0.0668,
+     0.0819
     ]
    },
    {
     "body": "leg_L_foot",
     "center": [
-     0,
-     0,
-     0
+     -0.1049,
+     -0.0587,
+     0.1817
     ],
     "rotation": [
      0,
@@ -3832,35 +3852,16 @@
      1
     ],
     "halfExtents": [
-     0.0653,
-     0.0653,
-     0.0801
-    ]
-   },
-   {
-    "body": "leg_L_foot",
-    "center": [
-     0,
-     -0.0409,
-     0.141
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1137,
-     0.0273,
-     0.0264
+     0.0861,
+     0.0223,
+     0.1298
     ]
    },
    {
     "body": "leg_R_hip_yaw",
     "center": [
      0,
-     0.0408,
+     0.0418,
      0
     ],
     "rotation": [
@@ -3870,9 +3871,9 @@
      1
     ],
     "halfExtents": [
-     0.1579,
-     0.0354,
-     0.1579
+     0.1615,
+     0.0362,
+     0.1615
     ]
    },
    {
@@ -3889,15 +3890,15 @@
      1
     ],
     "halfExtents": [
-     0.1144,
-     0.1144,
-     0.1249
+     0.117,
+     0.117,
+     0.1277
     ]
    },
    {
     "body": "leg_R_thigh",
     "center": [
-     -0.0875,
+     -0.0895,
      -0.25,
      0
     ],
@@ -3908,15 +3909,15 @@
      1
     ],
     "halfExtents": [
-     0.0316,
+     0.0323,
      0.25,
-     0.1097
+     0.1122
     ]
    },
    {
     "body": "leg_R_thigh",
     "center": [
-     0.0875,
+     0.0895,
      -0.25,
      0
     ],
@@ -3927,9 +3928,9 @@
      1
     ],
     "halfExtents": [
-     0.0316,
+     0.0323,
      0.25,
-     0.1097
+     0.1122
     ]
    },
    {
@@ -3946,17 +3947,17 @@
      1
     ],
     "halfExtents": [
-     0.0832,
-     0.098,
-     0.098
+     0.0851,
+     0.1002,
+     0.1002
     ]
    },
    {
     "body": "leg_R_thigh",
     "center": [
      0,
-     -0.215,
-     0.1332
+     -0.2071,
+     0.1349
     ],
     "rotation": [
      0,
@@ -3965,15 +3966,15 @@
      1
     ],
     "halfExtents": [
-     0.1166,
-     0.155,
-     0.0362
+     0.1194,
+     0.1471,
+     0.0364
     ]
    },
    {
     "body": "leg_R_shin",
     "center": [
-     -0.077,
+     -0.0788,
      -0.25,
      0
     ],
@@ -3984,15 +3985,15 @@
      1
     ],
     "halfExtents": [
-     0.0278,
+     0.0284,
      0.25,
-     0.0966
+     0.0988
     ]
    },
    {
     "body": "leg_R_shin",
     "center": [
-     0.077,
+     0.0788,
      -0.25,
      0
     ],
@@ -4003,9 +4004,9 @@
      1
     ],
     "halfExtents": [
-     0.0278,
+     0.0284,
      0.25,
-     0.0966
+     0.0988
     ]
    },
    {
@@ -4022,17 +4023,17 @@
      1
     ],
     "halfExtents": [
-     0.0732,
-     0.0863,
-     0.0863
+     0.0749,
+     0.0882,
+     0.0882
     ]
    },
    {
     "body": "leg_R_shin",
     "center": [
      0,
-     -0.215,
-     0.1023
+     -0.2071,
+     0.1036
     ],
     "rotation": [
      0,
@@ -4041,9 +4042,9 @@
      1
     ],
     "halfExtents": [
-     0.1057,
-     0.155,
-     0.0274
+     0.1081,
+     0.1471,
+     0.0273
     ]
    },
    {
@@ -4060,16 +4061,54 @@
      1
     ],
     "halfExtents": [
-     0.0819,
-     0.0817,
-     0.0817
+     0.0838,
+     0.0835,
+     0.0835
     ]
    },
    {
     "body": "leg_R_foot",
     "center": [
      0,
-     -0.0455,
+     -0.076,
+     0.0467
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.2098,
+     0.015,
+     0.2648
+    ]
+   },
+   {
+    "body": "leg_R_foot",
+    "center": [
+     0,
+     -0.0382,
+     -0.0675
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.1797,
+     0.0255,
+     0.1298
+    ]
+   },
+   {
+    "body": "leg_R_foot",
+    "center": [
+     0,
+     0,
      0
     ],
     "rotation": [
@@ -4079,17 +4118,17 @@
      1
     ],
     "halfExtents": [
-     0.1551,
-     0.0455,
-     0.1551
+     0.0668,
+     0.0668,
+     0.0819
     ]
    },
    {
     "body": "leg_R_foot",
     "center": [
-     0,
-     0,
-     0
+     -0.1049,
+     -0.0587,
+     0.1817
     ],
     "rotation": [
      0,
@@ -4098,36 +4137,17 @@
      1
     ],
     "halfExtents": [
-     0.0653,
-     0.0653,
-     0.0801
-    ]
-   },
-   {
-    "body": "leg_R_foot",
-    "center": [
-     0,
-     -0.0409,
-     0.141
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.1137,
-     0.0273,
-     0.0264
+     0.0861,
+     0.0223,
+     0.1298
     ]
    },
    {
     "body": "torso",
     "center": [
      0,
-     0.2265,
-     -0.1759
+     0.2293,
+     -0.1789
     ],
     "rotation": [
      0,
@@ -4136,9 +4156,9 @@
      1
     ],
     "halfExtents": [
-     0.2516,
-     0.2945,
-     0.0799
+     0.2568,
+     0.2981,
+     0.0813
     ]
    },
    {
@@ -4146,7 +4166,7 @@
     "center": [
      0,
      0.495,
-     -0.0859
+     -0.0876
     ],
     "rotation": [
      0,
@@ -4164,8 +4184,8 @@
     "body": "torso",
     "center": [
      0,
-     0.521,
-     -0.1599
+     0.5274,
+     -0.1626
     ],
     "rotation": [
      0,
@@ -4174,9 +4194,9 @@
      1
     ],
     "halfExtents": [
-     0.3354,
-     0.0317,
-     0.0959
+     0.3424,
+     0.0321,
+     0.0976
     ]
    },
    {
@@ -4184,7 +4204,7 @@
     "center": [
      0,
      0,
-     0.1341
+     0.1324
     ],
     "rotation": [
      0,
@@ -4201,8 +4221,8 @@
    {
     "body": "arm_L_shoulder_pitch",
     "center": [
-     0.126,
-     0.0324,
+     0.038,
+     0,
      0
     ],
     "rotation": [
@@ -4212,28 +4232,28 @@
      1
     ],
     "halfExtents": [
-     0.11,
-     0.1306,
-     0.1668
+     0.0961,
+     0.1312,
+     0.1312
     ]
    },
    {
     "body": "arm_L_shoulder_pitch",
     "center": [
-     0.0372,
-     0,
+     0.086,
+     0.0905,
      0
     ],
     "rotation": [
      0,
      0,
-     0,
-     1
+     -0.10978,
+     0.99396
     ],
     "halfExtents": [
-     0.0939,
-     0.1283,
-     0.1283
+     0.1037,
+     0.035,
+     0.2077
     ]
    },
    {
@@ -4250,15 +4270,15 @@
      0.70711
     ],
     "halfExtents": [
-     0.0595,
-     0.0748,
-     0.0595
+     0.0608,
+     0.0765,
+     0.0608
     ]
    },
    {
     "body": "arm_L_upper",
     "center": [
-     -0.0669,
+     -0.0684,
      -0.26,
      0
     ],
@@ -4269,180 +4289,180 @@
      1
     ],
     "halfExtents": [
-     0.0242,
+     0.0247,
      0.26,
-     0.0862
+     0.0881
     ]
    },
    {
     "body": "arm_L_upper",
     "center": [
-     0.0669,
-     -0.26,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0242,
-     0.26,
-     0.0862
-    ]
-   },
-   {
-    "body": "arm_L_upper",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0638,
-     0.077,
-     0.077
-    ]
-   },
-   {
-    "body": "arm_L_upper",
-    "center": [
-     0,
-     -0.2236,
-     0.1004
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0891,
-     0.1612,
-     0.0255
-    ]
-   },
-   {
-    "body": "arm_L_forearm",
-    "center": [
-     -0.0616,
-     -0.221,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0222,
-     0.221,
-     0.0793
-    ]
-   },
-   {
-    "body": "arm_L_forearm",
-    "center": [
-     0.0616,
-     -0.221,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0222,
-     0.221,
-     0.0793
-    ]
-   },
-   {
-    "body": "arm_L_forearm",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0587,
-     0.0708,
-     0.0708
-    ]
-   },
-   {
-    "body": "arm_L_forearm",
-    "center": [
-     0,
-     -0.1901,
-     0.0912
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0828,
-     0.137,
-     0.0234
-    ]
-   },
-   {
-    "body": "arm_L_wrist",
-    "center": [
-     0,
-     -0.1069,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0883,
-     0.0534,
-     0.0909
-    ]
-   },
-   {
-    "body": "arm_L_wrist",
-    "center": [
-     0,
-     -0.0257,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
      0.0684,
-     0.0321,
-     0.0684
+     -0.26,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0247,
+     0.26,
+     0.0881
+    ]
+   },
+   {
+    "body": "arm_L_upper",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0652,
+     0.0787,
+     0.0787
+    ]
+   },
+   {
+    "body": "arm_L_upper",
+    "center": [
+     0,
+     -0.2154,
+     0.103
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0901,
+     0.153,
+     0.0258
+    ]
+   },
+   {
+    "body": "arm_L_forearm",
+    "center": [
+     -0.063,
+     -0.221,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0227,
+     0.221,
+     0.0811
+    ]
+   },
+   {
+    "body": "arm_L_forearm",
+    "center": [
+     0.063,
+     -0.221,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0227,
+     0.221,
+     0.0811
+    ]
+   },
+   {
+    "body": "arm_L_forearm",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.06,
+     0.0724,
+     0.0724
+    ]
+   },
+   {
+    "body": "arm_L_forearm",
+    "center": [
+     0,
+     -0.1831,
+     0.0856
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0806,
+     0.1301,
+     0.022
+    ]
+   },
+   {
+    "body": "arm_L_wrist",
+    "center": [
+     0,
+     -0.1093,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0903,
+     0.0547,
+     0.0929
+    ]
+   },
+   {
+    "body": "arm_L_wrist",
+    "center": [
+     0,
+     -0.0262,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.07,
+     0.0328,
+     0.07
     ]
    },
    {
@@ -4459,34 +4479,15 @@
      1
     ],
     "halfExtents": [
-     0.0744,
+     0.0761,
      0.1105,
-     0.0744
+     0.0761
     ]
    },
    {
     "body": "arm_R_shoulder_pitch",
     "center": [
-     -0.1351,
-     0.0345,
-     0
-    ],
-    "rotation": [
-     0,
-     1,
-     0,
-     0
-    ],
-    "halfExtents": [
-     0.1059,
-     0.1346,
-     0.1668
-    ]
-   },
-   {
-    "body": "arm_R_shoulder_pitch",
-    "center": [
-     -0.0372,
+     -0.038,
      0,
      0
     ],
@@ -4497,9 +4498,28 @@
      1
     ],
     "halfExtents": [
-     0.0939,
-     0.1283,
-     0.1283
+     0.0961,
+     0.1312,
+     0.1312
+    ]
+   },
+   {
+    "body": "arm_R_shoulder_pitch",
+    "center": [
+     -0.086,
+     0.0905,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0.10978,
+     0.99396
+    ],
+    "halfExtents": [
+     0.1037,
+     0.035,
+     0.2077
     ]
    },
    {
@@ -4516,15 +4536,15 @@
      0.70711
     ],
     "halfExtents": [
-     0.0595,
-     0.0748,
-     0.0595
+     0.0608,
+     0.0765,
+     0.0608
     ]
    },
    {
     "body": "arm_R_upper",
     "center": [
-     -0.0669,
+     -0.0684,
      -0.26,
      0
     ],
@@ -4535,180 +4555,180 @@
      1
     ],
     "halfExtents": [
-     0.0242,
+     0.0247,
      0.26,
-     0.0862
+     0.0881
     ]
    },
    {
     "body": "arm_R_upper",
     "center": [
-     0.0669,
-     -0.26,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0242,
-     0.26,
-     0.0862
-    ]
-   },
-   {
-    "body": "arm_R_upper",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0638,
-     0.077,
-     0.077
-    ]
-   },
-   {
-    "body": "arm_R_upper",
-    "center": [
-     0,
-     -0.2236,
-     0.0973
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0897,
-     0.1612,
-     0.0229
-    ]
-   },
-   {
-    "body": "arm_R_forearm",
-    "center": [
-     -0.0616,
-     -0.221,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0222,
-     0.221,
-     0.0793
-    ]
-   },
-   {
-    "body": "arm_R_forearm",
-    "center": [
-     0.0616,
-     -0.221,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0222,
-     0.221,
-     0.0793
-    ]
-   },
-   {
-    "body": "arm_R_forearm",
-    "center": [
-     0,
-     0,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0587,
-     0.0708,
-     0.0708
-    ]
-   },
-   {
-    "body": "arm_R_forearm",
-    "center": [
-     0,
-     -0.1901,
-     0.0973
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0793,
-     0.137,
-     0.0251
-    ]
-   },
-   {
-    "body": "arm_R_wrist",
-    "center": [
-     0,
-     -0.1069,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.0883,
-     0.0534,
-     0.0909
-    ]
-   },
-   {
-    "body": "arm_R_wrist",
-    "center": [
-     0,
-     -0.0257,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
      0.0684,
-     0.0321,
-     0.0684
+     -0.26,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0247,
+     0.26,
+     0.0881
+    ]
+   },
+   {
+    "body": "arm_R_upper",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0652,
+     0.0787,
+     0.0787
+    ]
+   },
+   {
+    "body": "arm_R_upper",
+    "center": [
+     0,
+     -0.2154,
+     0.096
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0928,
+     0.153,
+     0.0235
+    ]
+   },
+   {
+    "body": "arm_R_forearm",
+    "center": [
+     -0.063,
+     -0.221,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0227,
+     0.221,
+     0.0811
+    ]
+   },
+   {
+    "body": "arm_R_forearm",
+    "center": [
+     0.063,
+     -0.221,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0227,
+     0.221,
+     0.0811
+    ]
+   },
+   {
+    "body": "arm_R_forearm",
+    "center": [
+     0,
+     0,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.06,
+     0.0724,
+     0.0724
+    ]
+   },
+   {
+    "body": "arm_R_forearm",
+    "center": [
+     0,
+     -0.1831,
+     0.101
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.081,
+     0.1301,
+     0.026
+    ]
+   },
+   {
+    "body": "arm_R_wrist",
+    "center": [
+     0,
+     -0.1093,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.0903,
+     0.0547,
+     0.0929
+    ]
+   },
+   {
+    "body": "arm_R_wrist",
+    "center": [
+     0,
+     -0.0262,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.07,
+     0.0328,
+     0.07
     ]
    },
    {
@@ -4725,9 +4745,9 @@
      1
     ],
     "halfExtents": [
-     0.0744,
+     0.0761,
      0.1105,
-     0.0744
+     0.0761
     ]
    }
   ]
@@ -4748,7 +4768,7 @@
  ],
  "recipe": {
   "format": "badmech-recipe",
-  "version": 1,
+  "version": 2,
   "name": "Tick Exo",
   "family": "exosuit",
   "role": "industrial",
@@ -4757,9 +4777,23 @@
   "bulk": 0.5,
   "scheme": "industrial",
   "rerolls": {},
-  "overrides": {}
+  "overrides": {
+   "maker": "ostrava"
+  }
  },
  "limitFits": [
+  {
+   "joint": "leg_L_hip_yaw",
+   "before": [
+    -0.4363323129985824,
+    0.4363323129985824
+   ],
+   "after": [
+    -0.2454369260617026,
+    0.4363323129985824
+   ],
+   "blockedBy": "leg_L_thigh ↔ torso"
+  },
   {
    "joint": "leg_L_hip_roll",
    "before": [
@@ -4767,7 +4801,7 @@
     0.3839724354387525
    ],
    "after": [
-    -0.10908307824964558,
+    -0.07744898555724837,
     0.3839724354387525
    ],
    "blockedBy": "leg_L_thigh ↔ torso"
@@ -4780,9 +4814,21 @@
    ],
    "after": [
     -0.2599759243688741,
-    0.11324708826674439
+    0.08419674823310125
    ],
    "blockedBy": "leg_L_thigh ↔ torso"
+  },
+  {
+   "joint": "leg_R_hip_yaw",
+   "before": [
+    -0.4363323129985824,
+    0.4363323129985824
+   ],
+   "after": [
+    -0.4363323129985824,
+    0.2454369260617026
+   ],
+   "blockedBy": "leg_R_thigh ↔ torso"
   },
   {
    "joint": "leg_R_hip_roll",
@@ -4792,7 +4838,7 @@
    ],
    "after": [
     -0.3839724354387525,
-    0.10908307824964558
+    0.07744898555724837
    ],
    "blockedBy": "leg_R_thigh ↔ torso"
   },
@@ -4804,7 +4850,7 @@
    ],
    "after": [
     -0.2599759243688741,
-    0.11324708826674439
+    0.08419674823310125
    ],
    "blockedBy": "leg_R_thigh ↔ torso"
   },
@@ -4815,8 +4861,8 @@
     0.7853981633974483
    ],
    "after": [
-    -0.09612946270750018,
-    0.09612946270750018
+    -0.06954046238414907,
+    0.06954046238414907
    ],
    "blockedBy": "torso ↔ leg_R_thigh"
   },
@@ -4827,7 +4873,7 @@
     1.2217304763960306
    ],
    "after": [
-    -0.15726143780990573,
+    -0.16180656607030763,
     1.2217304763960306
    ],
    "blockedBy": "arm_L_wrist ↔ leg_L_thigh"
@@ -4839,7 +4885,7 @@
     0.6981317007977318
    ],
    "after": [
-    -0.5090543651650128,
+    -0.514508519077495,
     0.6981317007977318
    ],
    "blockedBy": "arm_L_wrist ↔ leg_L_thigh"
@@ -4852,7 +4898,7 @@
    ],
    "after": [
     -1.2217304763960306,
-    0.15726143780990573
+    0.16180656607030763
    ],
    "blockedBy": "arm_R_wrist ↔ leg_R_thigh"
   },
@@ -4864,7 +4910,7 @@
    ],
    "after": [
     -0.6981317007977318,
-    0.5090543651650128
+    0.514508519077495
    ],
    "blockedBy": "arm_R_wrist ↔ leg_R_thigh"
   }

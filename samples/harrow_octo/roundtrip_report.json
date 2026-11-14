@@ -4,35 +4,35 @@
   "heightM": 5.58,
   "glb": {
     "ok": true,
-    "nodesChecked": 192,
+    "nodesChecked": 198,
     "missing": [],
-    "maxPosErrorM": 1.0095555953855576e-05,
+    "maxPosErrorM": 1.0210329582864693e-05,
     "maxAxisErrorDeg": 0.0,
     "materials": "10 imported / 10 used in file",
     "skinnedHoses": 8,
-    "triangles": 82802
+    "triangles": 85702
   },
   "glb_lod1": {
     "ok": true,
-    "nodesChecked": 192,
-    "maxPosErrorM": 1.0095555953855576e-05,
-    "triangles": 45002
+    "nodesChecked": 198,
+    "maxPosErrorM": 1.0210329582864693e-05,
+    "triangles": 46502
   },
   "glb_lod2": {
     "ok": true,
-    "nodesChecked": 192,
-    "maxPosErrorM": 1.0095555953855576e-05,
-    "triangles": 20096
+    "nodesChecked": 198,
+    "maxPosErrorM": 1.0210329582864693e-05,
+    "triangles": 20532
   },
   "fbx": {
     "ok": true,
-    "boneCount": 67,
+    "boneCount": 69,
     "missingBones": [],
-    "maxPosErrorM": 2.9910903065001834e-06,
+    "maxPosErrorM": 2.496467097927745e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 82802,
-    "vertexGroups": 67,
+    "triangles": 85702,
+    "vertexGroups": 69,
     "blend": "harrow_octo.blend",
     "fbx": "harrow_octo.fbx"
   },
@@ -41,32 +41,32 @@
     "posedJoint": "leg_L0_tibia",
     "angleRad": -1.6406,
     "verticesMoved": 4287,
-    "verticesTotal": 107493,
-    "pivotDrift": 2.1851423716334533e-06
+    "verticesTotal": 110677,
+    "pivotDrift": 1.1680077279964342e-06
   },
   "usd": {
     "pxr": {
       "ok": true,
       "upAxis": "Y",
       "metersPerUnit": 1.0,
-      "xforms": 193,
-      "meshes": 333,
+      "xforms": 199,
+      "meshes": 344,
       "missing": [],
       "maxPosErrorM": 0.00010348135396618299,
       "maxAxisErrorDeg": 0.0,
-      "jointLimitsPreserved": "33/33"
+      "jointLimitsPreserved": "35/35"
     },
     "blender": {
       "ok": true,
-      "objects": 524,
-      "meshes": 333
+      "objects": 540,
+      "meshes": 344
     },
     "ok": true
   },
   "obj": {
     "ok": true,
-    "objects": 155,
-    "triangles": 80882,
+    "objects": 159,
+    "triangles": 83782,
     "materials": 10,
     "note": "static only, by design"
   },

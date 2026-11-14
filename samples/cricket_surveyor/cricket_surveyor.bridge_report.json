@@ -14,15 +14,15 @@
       "axisErrDeg": 0.0
     },
     "leg_L0_femur": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_L0_tibia": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L0_foot": {
-      "posErr": 3e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_R0_coxa": {
@@ -30,15 +30,15 @@
       "axisErrDeg": 0.0
     },
     "leg_R0_femur": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_R0_tibia": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R0_foot": {
-      "posErr": 3e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_L1_coxa": {
@@ -120,10 +120,10 @@
   },
   "boneCount": 29,
   "missingBones": [],
-  "maxPosErrorM": 2.8367052160002695e-06,
+  "maxPosErrorM": 1.7691638564653194e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 46612,
+  "triangles": 46294,
   "vertexGroups": 29,
   "blend": "cricket_surveyor.blend",
   "fbx": "cricket_surveyor.fbx"

@@ -79,6 +79,8 @@ h2 input { flex: 1; min-width: 0; background: var(--panel2); border: 1px solid v
 .mini { background: var(--panel2); border: 1px solid var(--line); border-radius: 4px; padding: 2px 7px; cursor: pointer; font-size: 13px; }
 .mini:hover { border-color: var(--accent); }
 .mini.pinned { border-color: var(--accent); color: var(--accent); }
+.maker-motto { margin: -2px 0 6px 62px; color: var(--dim); font: italic 500 12.5px var(--ui); }
+.sw.auto { background: conic-gradient(var(--accent) 0 25%, #5d6047 0 50%, #d9d6cc 0 75%, #77797a 0) !important; position: relative; }
 .swatches { display: flex; flex-wrap: wrap; gap: 5px; }
 .sw { width: 26px; height: 26px; border-radius: 50%; border: 2px solid var(--line); cursor: pointer; padding: 0; }
 .sw.on { border-color: var(--text); transform: scale(1.1); }

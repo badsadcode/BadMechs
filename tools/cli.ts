@@ -15,13 +15,13 @@ const here = dirname(fileURLToPath(import.meta.url));
 const BRIDGE = readFileSync(join(here, 'blender_bridge.py'), 'utf8');
 
 export const SAMPLE_RECIPES: MechRecipe[] = [
-  { ...defaultRecipe('biped', 7301), name: 'Grudge A-73', role: 'combat', scheme: 'olive', bulk: 0.7, overrides: { 'body.weight': 'heavy', 'arms.L.tool': 'rotary', 'arms.R.tool': 'missile', 'pods.count': 2 } },
-  { ...defaultRecipe('biped', 1001), name: 'Lynx S1', role: 'scout', scheme: 'scout', bulk: 0.2, overrides: { 'legs.style': 'digitigrade', 'body.weight': 'light' } },
-  { ...defaultRecipe('quadruped', 404), name: 'Mule Hauler', role: 'hauler', scheme: 'industrial', bulk: 0.6, overrides: { 'deck.kit': 'crane', 'legs.kind': 'sprawl' } },
-  { ...defaultRecipe('hexapod', 66), name: 'Cricket Surveyor', role: 'explorer', scheme: 'rust', bulk: 0.45, overrides: { 'deck.kit': 'sensor' } },
-  { ...defaultRecipe('octopod', 88), name: 'Harrow Octo', role: 'combat', scheme: 'warcamo', bulk: 0.6 },
-  { ...defaultRecipe('exosuit', 3), name: 'Tick Exo', role: 'industrial', scheme: 'industrial', bulk: 0.5 },
-  { ...defaultRecipe('colossus', 9000), name: 'Bastion Colossus', role: 'hauler', scheme: 'urban', bulk: 0.6, overrides: { 'colossus.frame': 'quad' } },
+  { ...defaultRecipe('biped', 7301), name: 'Grudge A-73', role: 'combat', scheme: 'olive', bulk: 0.7, overrides: { maker: 'bastion', 'body.weight': 'heavy', 'arms.L.tool': 'rotary', 'arms.R.tool': 'missile', 'pods.count': 2 } },
+  { ...defaultRecipe('biped', 1001), name: 'Lynx S1', role: 'scout', scheme: 'scout', bulk: 0.2, overrides: { maker: 'lynx', 'legs.style': 'digitigrade', 'body.weight': 'light' } },
+  { ...defaultRecipe('quadruped', 404), name: 'Mule Hauler', role: 'hauler', scheme: 'industrial', bulk: 0.6, overrides: { maker: 'ostrava', 'deck.kit': 'crane', 'legs.kind': 'sprawl' } },
+  { ...defaultRecipe('hexapod', 66), name: 'Cricket Surveyor', role: 'explorer', scheme: 'rust', bulk: 0.45, overrides: { maker: 'lynx', 'deck.kit': 'sensor' } },
+  { ...defaultRecipe('octopod', 88), name: 'Harrow Octo', role: 'combat', scheme: 'warcamo', bulk: 0.6, overrides: { maker: 'volkov' } },
+  { ...defaultRecipe('exosuit', 3), name: 'Tick Exo', role: 'industrial', scheme: 'industrial', bulk: 0.5, overrides: { maker: 'ostrava' } },
+  { ...defaultRecipe('colossus', 9000), name: 'Bastion Colossus', role: 'hauler', scheme: 'urban', bulk: 0.6, overrides: { maker: 'bastion', 'colossus.frame': 'quad' } },
 ];
 
 function writePackage(recipe: MechRecipe, outDir: string) {

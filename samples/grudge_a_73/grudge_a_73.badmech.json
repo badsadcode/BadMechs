@@ -1,6 +1,6 @@
 {
   "format": "badmech-recipe",
-  "version": 1,
+  "version": 2,
   "name": "Grudge A-73",
   "family": "biped",
   "role": "combat",
@@ -10,6 +10,7 @@
   "scheme": "olive",
   "rerolls": {},
   "overrides": {
+    "maker": "bastion",
     "body.weight": "heavy",
     "arms.L.tool": "rotary",
     "arms.R.tool": "missile",

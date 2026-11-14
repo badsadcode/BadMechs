@@ -83,6 +83,7 @@ export function rigSidecar(mech: Mech, recipe?: MechRecipe, extra: Record<string
     generator: 'BadMech',
     name: mech.name,
     family: mech.family,
+    maker: mech.maker,
     coordinateSystem: {
       units: 'metres',
       up: '+Y',

@@ -4,34 +4,34 @@
   "heightM": 4.48,
   "glb": {
     "ok": true,
-    "nodesChecked": 109,
+    "nodesChecked": 111,
     "missing": [],
-    "maxPosErrorM": 7.128675645697619e-06,
+    "maxPosErrorM": 7.266879393638692e-06,
     "maxAxisErrorDeg": 0.0,
     "materials": "9 imported / 9 used in file",
     "skinnedHoses": 6,
-    "triangles": 46612
+    "triangles": 46294
   },
   "glb_lod1": {
     "ok": true,
-    "nodesChecked": 109,
-    "maxPosErrorM": 7.128675645697619e-06,
-    "triangles": 22668
+    "nodesChecked": 111,
+    "maxPosErrorM": 7.266879393638692e-06,
+    "triangles": 22134
   },
   "glb_lod2": {
     "ok": true,
-    "nodesChecked": 109,
-    "maxPosErrorM": 7.128675645697619e-06,
-    "triangles": 11466
+    "nodesChecked": 111,
+    "maxPosErrorM": 7.266879393638692e-06,
+    "triangles": 11492
   },
   "fbx": {
     "ok": true,
     "boneCount": 29,
     "missingBones": [],
-    "maxPosErrorM": 2.8367052160002695e-06,
+    "maxPosErrorM": 1.7691638564653194e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 46612,
+    "triangles": 46294,
     "vertexGroups": 29,
     "blend": "cricket_surveyor.blend",
     "fbx": "cricket_surveyor.fbx"
@@ -41,32 +41,32 @@
     "posedJoint": "leg_L0_tibia",
     "angleRad": -1.751424,
     "verticesMoved": 3115,
-    "verticesTotal": 58189,
-    "pivotDrift": 9.830249847454215e-07
+    "verticesTotal": 58048,
+    "pivotDrift": 2.384185791015625e-07
   },
   "usd": {
     "pxr": {
       "ok": true,
       "upAxis": "Y",
       "metersPerUnit": 1.0,
-      "xforms": 110,
-      "meshes": 171,
+      "xforms": 112,
+      "meshes": 174,
       "missing": [],
-      "maxPosErrorM": 6.706009953056127e-05,
+      "maxPosErrorM": 6.726111486592879e-05,
       "maxAxisErrorDeg": 0.0,
       "jointLimitsPreserved": "27/27"
     },
     "blender": {
       "ok": true,
-      "objects": 278,
-      "meshes": 171
+      "objects": 282,
+      "meshes": 174
     },
     "ok": true
   },
   "obj": {
     "ok": true,
-    "objects": 78,
-    "triangles": 45172,
+    "objects": 80,
+    "triangles": 44854,
     "materials": 9,
     "note": "static only, by design"
   },

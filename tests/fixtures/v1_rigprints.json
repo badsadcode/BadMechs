@@ -1,0 +1,20 @@
+{
+ "biped:1": "444dbb0c242765d9f48e5ff41bb627ac13561c05",
+ "biped:2": "9dc60ce8c01c1442f39fb1631eb5a5ff88b3083e",
+ "biped:3": "d472df0644393395f06bf949944dd67fecfffdbe",
+ "quadruped:1": "6085db728e09df991dcee8035de6d9222a4c6d00",
+ "quadruped:2": "6085db728e09df991dcee8035de6d9222a4c6d00",
+ "quadruped:3": "fb6f66219bd2772b61400fb2ab27151913bcf8a0",
+ "hexapod:1": "dce8ed9df0a7b44ae805dafefa42f636200eb589",
+ "hexapod:2": "8cde464899b3275dc2334297e44a5e9619aa55b4",
+ "hexapod:3": "2344eee65e97219d79ca894c536a4fce3c8845b6",
+ "octopod:1": "52e6d901c3fc2885021cf7224834d247787f68ca",
+ "octopod:2": "c4a2b50ebf9cf49c9f0e4085d62a917a63b27892",
+ "octopod:3": "f9fc96065b2c8b93819f94fb0f28b34c17fb8890",
+ "exosuit:1": "7a4dd5e5ff080d74e4cb6944af9b5a2c9de482b1",
+ "exosuit:2": "75f6c09550e8333ddd0fed13b591d2b41852758c",
+ "exosuit:3": "d51a490283c0f3e633fc6e8eb6235db4584683e3",
+ "colossus:1": "bcd9e400347e51f219ebaeb4f5014d9cbf163f3b",
+ "colossus:2": "379a80b823289ddd6218196f05bab3ed04d7284c",
+ "colossus:3": "379a80b823289ddd6218196f05bab3ed04d7284c"
+}

@@ -192,3 +192,31 @@ Side by side with the A-73 it's much closer in *material* — but the cockpit st
 
 *Mood: sharpening every corner in the building.* 🔪
 
+---
+
+## Day 3 — "Welcome to the Mech Factory" 🏭
+
+Tom looked at BadShip (our spaceship generator cousin) and pointed at its best trick: **who built it** and **who paints it** are different things. Shipyards own the architecture; operators own the paint. So Bad Ideas Works now runs a mech factory, with four manufacturers on the books:
+
+![The factory lineup](public/factory_lineup.png)
+
+| Maker | Motto | House style | Signature |
+|---|---|---|---|
+| **Bastion Works** | *Bolted, braced, and bigger than yours.* | Broad slab-faceted heavies, wide stance, big toe-block feet, cockpit set up into the chest | **Octagonal shoulder shields** + an articulated **sensor head** (it has its own yaw & pitch joints!) |
+| **Lynx Dynamics** | *Gone before the dust settles.* | Lean, hunched, chicken-legged scouts with nose canopies | **Yellow coil-over shock absorbers** on the leg rams + twin whip antennas |
+| **Ostrava Heavy Industries** | *Built to lift. Painted so you see it coming.* | Site-yellow workers, open frames, grippers, drills and cranes | **Safety handrails**, a **cab light bar** and grab rails |
+| **Volkov-Rhee Ordnance** | *Angles deflect. Arguments too.* | Wedges and offset gun-decks, slit cockpits, cannons | A sloped **armour brow** over the cockpit + low **side skirts** |
+
+### 🔧 How it works
+- Each maker is a **design language**: it nudges the generator's choices (torso shape, cockpit, legs, feet, weapons, hydraulics…), shifts proportions (stance, feet, torso), and bolts on its signature. Your pinned choices still beat the maker every time.
+- Paint follows the maker by default (*house paint*), or the operator picks a scheme.
+- Model names come from the maker too: Bastion builds **A-xx**, Lynx names cats, Ostrava does **OHI-### Mule**, Volkov-Rhee likes **VR-xx Grudge**.
+
+### 🛡️ Old designs are safe
+Before touching a single family I took a **fingerprint of every pre-factory design's skeleton** (names, pivots, joint limits). A test now checks old saved recipes still rebuild the identical rig. They're labelled *Unbranded (pre-factory design)* in the app.
+
+### 🐛 Bonus bug
+Ostrava loves cranes, which made one turn up in a test that never had one before — revealing the joint-limit fitter had always **skipped tool joints**. Crane booms now get clash-free limits like everything else.
+
+*Mood: proud factory owner. Accepting orders.* 📋
+

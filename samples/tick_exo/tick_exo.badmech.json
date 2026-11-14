@@ -1,6 +1,6 @@
 {
   "format": "badmech-recipe",
-  "version": 1,
+  "version": 2,
   "name": "Tick Exo",
   "family": "exosuit",
   "role": "industrial",
@@ -9,5 +9,7 @@
   "bulk": 0.5,
   "scheme": "industrial",
   "rerolls": {},
-  "overrides": {}
+  "overrides": {
+    "maker": "ostrava"
+  }
 }

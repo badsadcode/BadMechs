@@ -202,7 +202,7 @@ export function fitJointLimits(mech: Mech): LimitFit[] {
   const restPairs = restContactPairs(mech, bodies);
   const fits: LimitFit[] = [];
   for (const n of mech.nodes) {
-    if (!n.joint || n.joint.purpose === 'tool' || n.tags.includes('continuous')) continue;
+    if (!n.joint || n.tags.includes('continuous')) continue;
     const moving = bodySubtree(bodies, n.name);
     const still = stillBodies(mech, bodies, moving, n);
     const before: [number, number] = [n.joint.min, n.joint.max];

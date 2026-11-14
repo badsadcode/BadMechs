@@ -1,6 +1,8 @@
 import { Builder } from './builder';
 import type { MaterialId, Mech, Vec3 } from './model';
 import { makePalette } from './palette';
+import { makerById, MAKERS } from './makers';
+import { addCoilSprings, applySignature } from './signatures';
 import { bodyHull, torsoHull, TORSO_ARCHES, HullResult } from './hs/hulls';
 import { block, grille, hub } from './hs/kit';
 import { arm, ArmTool, cockpit, ladder, lightPod, missileRack, SegStyle, segmentOut, sprawlLeg, uprightLeg, vents } from './parts';
@@ -16,7 +18,16 @@ export interface GenResult {
 
 export function generate(recipe: MechRecipe): GenResult {
   const ctx = new GenCtx(recipe);
-  const b = new Builder(mechName(recipe), recipe.family, makePalette(recipe.scheme));
+  // Mech Factory: pick the manufacturer first (own random stream), so its design language can
+  // bias everything that follows. Pre-factory (v1) recipes stay unbranded and unchanged.
+  if (recipe.version >= 2) {
+    const ids = MAKERS.map((m) => m.id);
+    const w = MAKERS.map((m) => m.families[recipe.family] ?? 0.3);
+    ctx.maker = makerById(ctx.choice('maker', 'Manufacturer', 'maker', ids, w));
+  }
+  const scheme = recipe.scheme === 'auto' ? ctx.maker.scheme : recipe.scheme;
+  const b = new Builder(mechName(recipe, ctx.maker), recipe.family, makePalette(scheme));
+  b.maker = ctx.maker.id;
   let sizeClass: string;
   switch (recipe.family) {
     case 'biped':
@@ -41,6 +52,7 @@ export function generate(recipe: MechRecipe): GenResult {
       throw new Error(`unknown family ${recipe.family}`);
   }
   const mech = b.finalize(sizeClass);
+  if (ctx.maker.signature === 'springs') addCoilSprings(b, mech);
   const fits = fitJointLimits(mech);
   return { mech, options: ctx.options, fits };
 }
@@ -65,8 +77,9 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
       : ctx.choice('body.weight', 'Weight class', 'body', ['light', 'medium', 'heavy', 'assault'] as const, r.role === 'scout' ? [6, 2, 0.5, 0] : fighter ? [1, 3, 3, 2] : [1, 3, 2, 0.5]);
   const baseH = H0 ?? (exo ? 2.6 : ({ light: 7, medium: 9.5, heavy: 11.5, assault: 13, colossal: 28 } as Record<string, number>)[weight]);
   const H = baseH * r.scale;
-  const bulk = Math.min(1, Math.max(0, r.bulk + (weight === 'heavy' ? 0.12 : weight === 'assault' ? 0.25 : weight === 'light' ? -0.15 : 0)));
-  const plating = exo ? 0.25 + bulk * 0.3 : fighter ? 0.55 + bulk * 0.45 : 0.3 + bulk * 0.4;
+  const ms = ctx.maker.shape;
+  const bulk = Math.min(1, Math.max(0, r.bulk + ms.bulk + (weight === 'heavy' ? 0.12 : weight === 'assault' ? 0.25 : weight === 'light' ? -0.15 : 0)));
+  const plating = Math.min(1, Math.max(0, (exo ? 0.25 + bulk * 0.3 : fighter ? 0.55 + bulk * 0.45 : 0.3 + bulk * 0.4) + ms.plating));
   const lattice = exo || ctx.flag('frame.lattice', 'Open lattice frame', 'body', r.role === 'industrial' || r.role === 'salvage' ? 0.45 : 0.08);
   const hydraulics = ctx.flag('frame.hydraulics', 'Exposed hydraulics', 'legs', exo ? 0.95 : fighter ? 0.55 : 0.9);
   const legStyle = exo ? 'plantigrade' : ctx.choice('legs.style', 'Leg style', 'legs', ['plantigrade', 'digitigrade'] as const, r.role === 'scout' ? [1, 3] : [3, 1.4]);
@@ -79,7 +92,7 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
   // ── legs
   const lw = H * (exo ? 0.085 : 0.075) * (0.85 + bulk * 0.5);
   const ld = lw * 1.12;
-  const hipW = H * (exo ? 0.11 : 0.11) * (0.9 + bulk * 0.35);
+  const hipW = H * (exo ? 0.11 : 0.11) * (0.9 + bulk * 0.35) * (exo ? 1 : ms.stance);
     // exosuit legs are sized around a human leg inside them (pilot hip ≈ 1.0–1.1 m)
   const lens = exo ? [0.5, 0.5] : legStyle === 'digitigrade' ? [H * 0.2, H * 0.24, H * 0.15] : [H * 0.235, H * 0.235];
   const phis = legStyle === 'digitigrade' ? [40, -36, 12] : [16 + bulk * 6, -(16 + bulk * 6)];
@@ -97,8 +110,8 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
       w: lw,
       d: ld,
       foot,
-      footLen: H * (foot === 'claw' ? 0.17 : 0.15) * (0.9 + bulk * 0.3),
-      footW: lw * (foot === 'hoof' ? 1.1 : 1.35),
+      footLen: H * (foot === 'claw' ? 0.17 : 0.15) * (0.9 + bulk * 0.3) * ms.foot,
+      footW: lw * (foot === 'hoof' ? 1.1 : 1.35) * ms.foot,
       footH: H * 0.035,
       style: legStyleS,
       hydraulics,
@@ -125,13 +138,13 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
   // ── torso
   const twist = fighter ? 75 : 45;
   const torso = pelvis.child('torso', [0, H * 0.055, 0], { system: 'torso', joint: { axis: 'y', min: -twist, max: twist, purpose: 'torso', kind: 'torso-twist' } });
-  const tw = H * (exo ? 0.2 : 0.3) * (0.85 + bulk * 0.45);
-  const th = H * (exo ? 0.17 : 0.2) * (0.9 + bulk * 0.25);
+  const tw = H * (exo ? 0.2 : 0.3) * (0.85 + bulk * 0.45) * (exo ? 1 : ms.torsoW);
+  const th = H * (exo ? 0.17 : 0.2) * (0.9 + bulk * 0.25) * (exo ? 1 : ms.torsoH);
   const td = H * (exo ? 0.12 : 0.2) * (0.85 + bulk * 0.35);
   const cockpitStyle = exo
     ? 'cage'
     : ctx.choice('cockpit.style', 'Cockpit', 'cockpit', ['canopy', 'armored', 'bubble'] as const, r.role === 'scout' ? [2, 0.5, 2] : fighter ? [2, 2, 0.6] : [1.5, 0.6, 2]);
-  const cockpitPos = exo ? 'center' : ctx.choice('cockpit.position', 'Cockpit position', 'cockpit', ['center', 'offset', 'high'] as const, [3, 1, 1.4]);
+  const cockpitPos = exo ? 'center' : ctx.choice('cockpit.position', 'Cockpit position', 'cockpit', ['center', 'offset', 'high', 'embedded'] as const, [3, 1, 1.4, 0]);
 
   const tf = torso.comp('frame');
   const ta = torso.comp('armor');
@@ -173,7 +186,8 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
     // hull lights
     const front = hull.frontZ;
     const cx = cockpitPos === 'offset' || arch === 'asym' ? (arch === 'asym' ? hull.shiftX : (ctx.rng('cockpit').chance(0.5) ? 1 : -1) * tw * 0.18) : 0;
-    const cy = cockpitPos === 'high' ? th * 0.55 : arch === 'hunch' ? th * 0.28 : th * 0.2;
+    // 'embedded': the cockpit sits up in the chest, framed by the hull (A-73 style)
+    const cy = cockpitPos === 'high' ? th * 0.55 : cockpitPos === 'embedded' ? Math.min(th * 0.45, hull.topY - ih - wall * 3) : arch === 'hunch' ? th * 0.28 : th * 0.2;
     cockpitAt = [cx, cy, front + idp / 2 + wall * 1.2];
     if (cockpitPos === 'high') block(tf, [cx, th * 0.62, front - idp * 0.2], [iw * 0.7, th * 0.4, idp * 0.4], 'darkMetal', { r: th * 0.04 });
     lightPod(torso, [hull.shiftX + hull.halfW * 0.7, hull.topY * 0.86, front - td * 0.02], H * 0.012);
@@ -194,6 +208,15 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
     // cockpit armour cheeks merge the pod into the torso
     const ca = b.get('cockpit').comp('armor');
     for (const sx of [-1, 1]) block(ca, [sx * (iw / 2 + wall * 2.2), ih * 0.4, -idp * 0.12], [wall * 1.6, ih * 0.62, idp * 0.7], 'paint2', { r: wall * 0.6, top: [1, 0.8], bevel: wall * 0.4, rot: [0, sx > 0 ? 0 : Math.PI, 0] });
+  }
+
+  if (!exo && hull && cockpitPos === 'embedded') {
+    // frame the embedded cockpit: armour cheeks reaching from the hull face to the canopy
+    const cz0 = hull.frontZ;
+    const cz1 = cockpitAt[2] + idp * 0.25;
+    for (const sx of [-1, 1])
+      block(ta, [cockpitAt[0] + sx * (iw / 2 + wall * 3.2), cockpitAt[1] + ih * 0.42, (cz0 + cz1) / 2], [wall * 3, ih * 1.0, cz1 - cz0], 'paint', { r: wall, top: [0.8, 0.85], collide: false });
+    block(ta, [cockpitAt[0], cockpitAt[1] + ih + wall * 2.4, (cz0 + cockpitAt[2]) / 2], [iw + wall * 6, wall * 2.2, cockpitAt[2] - cz0 + idp * 0.1], 'paint', { r: wall, top: [0.9, 0.85], collide: false });
   }
 
   // ── arms
@@ -221,6 +244,7 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
         d: armW * 1.15,
         tool,
         style: style(ctx, `arms.${id}`, plating, lattice),
+        pauldron: ms.pauldron,
         hydraulics,
       });
     }
@@ -242,6 +266,19 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
     b.mounts.push({ name: 'boarding_ladder', node: 'torso', type: 'ladder', note: 'kneel pose brings the ladder base within reach' });
   }
 
+  if (!exo && hull) {
+    applySignature(b, ctx.maker.signature, {
+      host: 'torso',
+      topY: hull.topY,
+      frontZ: hull.frontZ,
+      backZ: hull.backZ,
+      halfW: hull.halfW,
+      shiftX: hull.shiftX,
+      H,
+      cockpit: { at: cockpitAt, iw, ih, idp, wall },
+      topSpot: [hull.shiftX, hull.topY + th * 0.06, hull.frontZ - td * 0.22],
+    });
+  }
   b.gait = {
     type: 'biped-walk',
     stepHeight: H * 0.06,
@@ -379,6 +416,17 @@ function quadruped(ctx: GenCtx, b: Builder, colossal: boolean): string {
   lightPod(body, [-bodyW * 0.36, 0, bodyL * 0.48], H * 0.015);
   ladder(body, bodyW * 0.51, bodyL * 0.15, -drop + H * 0.05 > -bodyH ? -bodyH * 0.4 : -bodyH * 0.4, deckTop);
   b.mounts.push({ name: 'side_ladder', node: 'body', type: 'ladder' });
+  applySignature(b, ctx.maker.signature, {
+    host: 'body',
+    topY: deckTop,
+    frontZ: bodyL * 0.5,
+    backZ: -bodyL * 0.5,
+    halfW: bodyW * 0.47,
+    shiftX: 0,
+    H,
+    cockpit: { at: [0, deckTop + bodyH * 0.06, bodyL * 0.5 - idp * 0.45], iw, ih, idp, wall: Math.max(0.07, H * 0.008) },
+    topSpot: [0, deckTop + bodyH * 0.04, bodyL * 0.5 - idp * 1.4],
+  });
 
   // ── mission kit on the deck
   const kit = colossal ? 'decks' : ctx.choice('deck.kit', 'Deck equipment', 'deck', ['cargo', 'crane', 'turret', 'sensor'] as const, fighter ? [0.3, 0.2, 3, 1] : [2.5, 2.5, 0.3, 1]);
@@ -551,6 +599,17 @@ function multiLeg(ctx: GenCtx, b: Builder, n: 6 | 8): string {
   const idp = Math.max(1.35, H * 0.18);
   cockpit(b, 'body', [0, -bodyH * 0.1, bodyL * 0.5 + idp / 2 + 0.06], { style: cabStyle, iw, ih, id: idp, wall: Math.max(0.06, H * 0.01), armor: 'paint', hatch: 'top', rng: ctx.rng('cockpit') });
   for (const sx of [-1, 1]) lightPod(body, [sx * bodyW * 0.32, -bodyH * 0.1, bodyL * 0.46], H * 0.018);
+  applySignature(b, ctx.maker.signature, {
+    host: 'body',
+    topY: bodyH * 0.5,
+    frontZ: bodyL * 0.5,
+    backZ: -bodyL * 0.5,
+    halfW: bodyW * 0.42,
+    shiftX: 0,
+    H,
+    cockpit: { at: [0, -bodyH * 0.1, bodyL * 0.5 + idp / 2 + 0.06], iw, ih, idp, wall: Math.max(0.06, H * 0.01) },
+    topSpot: [0, bodyH * 0.5, bodyL * 0.22],
+  });
 
   const kit = ctx.choice('deck.kit', 'Top equipment', 'deck', ['sensor', 'turret', 'cargo', 'none'] as const, fighter ? [1, 3, 0.3, 0.5] : [3, 0.4, 1.5, 1]);
   const top = bodyH * 0.5;

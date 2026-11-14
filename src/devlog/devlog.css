@@ -43,3 +43,5 @@ th { background: color-mix(in srgb, var(--accent) 22%, transparent); font-weight
 .mood { font: 600 24px 'Caveat', cursive; color: var(--rust); text-align: right; margin-top: 18px; }
 footer { text-align: center; color: var(--dim); padding: 0 16px 40px; font-size: 15px; }
 @media (max-width: 600px) { .day { padding: 6px 16px 14px; } .hero { padding: 30px 16px 18px; } }
+
+main img { display: block; max-width: 100%; border-radius: 8px; border: 1px solid var(--line); margin: 12px 0; }

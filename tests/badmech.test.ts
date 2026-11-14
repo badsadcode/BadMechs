@@ -15,6 +15,9 @@ import { rigSidecar, sidecarRestWorld } from '../src/export/rig';
 import { exportObj, exportUsda } from '../src/export/static';
 import { loadGlb } from './helpers';
 import { buildShape } from '../src/core/hs/shapes';
+import { rigPrint } from './rigprint';
+import V1_PRINTS from './fixtures/v1_rigprints.json';
+import { MAKERS } from '../src/core/makers';
 
 const require = createRequire(import.meta.url);
 const gltfValidator = require('gltf-validator');
@@ -86,6 +89,36 @@ describe('mechanical validity', () => {
     expect(exo.stats.height).toBeLessThan(3.2);
     const colo = generate(defaultRecipe('colossus', 9000)).mech;
     expect(colo.interiors.some((i) => i.walkable && i.max[1] - i.min[1] >= 1.9)).toBe(true);
+  });
+});
+
+describe('Mech Factory', () => {
+  it('pre-factory (v1) recipes still rebuild the exact same skeleton', () => {
+    for (const [k, print] of Object.entries(V1_PRINTS as Record<string, string>)) {
+      const [f, seed] = k.split(':');
+      const r = { ...defaultRecipe(f as Family, Number(seed)), version: 1 as const, scheme: 'olive' };
+      expect(rigPrint(generate(r).mech), k).toBe(print);
+    }
+  });
+
+  it.each(MAKERS.map((m) => m.id))('maker %s builds valid mechs in every family it makes', (id) => {
+    const maker = MAKERS.find((m) => m.id === id)!;
+    for (const f of Object.keys(maker.families) as Family[])
+      for (const seed of [1, 2]) {
+        const r = { ...defaultRecipe(f, seed), overrides: { maker: id } };
+        const { mech } = generate(r);
+        expect(mech.maker).toBe(id);
+        const errors = validate(mech).checks.filter((c) => c.severity === 'error');
+        expect(errors, `${id} ${f}#${seed}: ${JSON.stringify(errors)}`).toHaveLength(0);
+      }
+  });
+
+  it('makers produce recognisably different machines from the same seed', () => {
+    const sig = (id: string) => {
+      const { mech, options } = generate({ ...defaultRecipe('biped', 11), overrides: { maker: id } });
+      return `${options.find((o) => o.key === 'torso.arch')?.value}|${mech.legs[0].style}|${mech.nodes.length}`;
+    };
+    expect(new Set(MAKERS.map((m) => sig(m.id))).size).toBeGreaterThanOrEqual(3);
   });
 });
 

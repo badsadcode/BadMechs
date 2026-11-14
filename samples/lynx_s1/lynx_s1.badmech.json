@@ -1,6 +1,6 @@
 {
   "format": "badmech-recipe",
-  "version": 1,
+  "version": 2,
   "name": "Lynx S1",
   "family": "biped",
   "role": "scout",
@@ -10,6 +10,7 @@
   "scheme": "scout",
   "rerolls": {},
   "overrides": {
+    "maker": "lynx",
     "legs.style": "digitigrade",
     "body.weight": "light"
   }

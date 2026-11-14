@@ -1,72 +1,72 @@
 {
   "mech": "Bastion Colossus",
   "family": "colossus",
-  "heightM": 16.08,
+  "heightM": 23.5,
   "glb": {
     "ok": true,
-    "nodesChecked": 112,
+    "nodesChecked": 125,
     "missing": [],
-    "maxPosErrorM": 2.0915710639439877e-05,
+    "maxPosErrorM": 8.148196931188136e-06,
     "maxAxisErrorDeg": 0.0,
     "materials": "11 imported / 11 used in file",
     "skinnedHoses": 4,
-    "triangles": 41378
+    "triangles": 49974
   },
   "glb_lod1": {
     "ok": true,
-    "nodesChecked": 112,
-    "maxPosErrorM": 2.0915710639439877e-05,
-    "triangles": 22530
+    "nodesChecked": 125,
+    "maxPosErrorM": 8.148196931188136e-06,
+    "triangles": 29640
   },
   "glb_lod2": {
     "ok": true,
-    "nodesChecked": 112,
-    "maxPosErrorM": 2.0915710639439877e-05,
-    "triangles": 9944
+    "nodesChecked": 125,
+    "maxPosErrorM": 8.148196931188136e-06,
+    "triangles": 13568
   },
   "fbx": {
     "ok": true,
-    "boneCount": 36,
+    "boneCount": 46,
     "missingBones": [],
-    "maxPosErrorM": 4.915124923727108e-06,
+    "maxPosErrorM": 2.384185791015625e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 41378,
-    "vertexGroups": 36,
+    "triangles": 49974,
+    "vertexGroups": 46,
     "blend": "bastion_colossus.blend",
     "fbx": "bastion_colossus.fbx"
   },
   "fbx_pose": {
     "ok": true,
-    "posedJoint": "leg_FL_tibia",
-    "angleRad": -1.521928,
-    "verticesMoved": 3686,
-    "verticesTotal": 53591,
-    "pivotDrift": 3.3036247397782844e-06
+    "posedJoint": "leg_FL_shin",
+    "angleRad": -1.2706,
+    "verticesMoved": 7539,
+    "verticesTotal": 69532,
+    "pivotDrift": 1.5078914929239175e-06
   },
   "usd": {
     "pxr": {
       "ok": true,
       "upAxis": "Y",
       "metersPerUnit": 1.0,
-      "xforms": 113,
-      "meshes": 190,
+      "xforms": 126,
+      "meshes": 198,
       "missing": [],
-      "maxPosErrorM": 0.0002260145569289626,
+      "maxPosErrorM": 0.000544265922537943,
       "maxAxisErrorDeg": 0.0,
-      "jointLimitsPreserved": "18/18"
+      "jointLimitsPreserved": "28/28"
     },
     "blender": {
       "ok": true,
-      "objects": 299,
-      "meshes": 190
+      "objects": 315,
+      "meshes": 198
     },
     "ok": true
   },
   "obj": {
     "ok": true,
-    "objects": 88,
-    "triangles": 40418,
+    "objects": 91,
+    "triangles": 49014,
     "materials": 11,
     "note": "static only, by design"
   },

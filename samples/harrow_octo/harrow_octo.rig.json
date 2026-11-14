@@ -3,6 +3,7 @@
  "generator": "BadMech",
  "name": "Harrow Octo",
  "family": "octopod",
+ "maker": "volkov",
  "coordinateSystem": {
   "units": "metres",
   "up": "+Y",
@@ -17,8 +18,8 @@
  "stats": {
   "height": 5.58,
   "width": 11.5,
-  "length": 11.43,
-  "estimatedMassTonnes": 44.1,
+  "length": 13.1,
+  "estimatedMassTonnes": 53.8,
   "sizeClass": "medium"
  },
  "nodes": [
@@ -81,7 +82,7 @@
    "restTranslation": [
     1.89998,
     -0.27216,
-    2.36691
+    3.20229
    ],
    "restRotation": [
     0,
@@ -92,7 +93,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    2.3669
+    3.2023
    ],
    "tags": []
   },
@@ -116,7 +117,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    2.3669
+    3.2023
    ],
    "tags": []
   },
@@ -140,7 +141,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    2.3669
+    3.2023
    ],
    "tags": []
   },
@@ -164,7 +165,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    2.3669
+    3.2023
    ],
    "tags": []
   },
@@ -188,7 +189,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    2.3669
+    3.2023
    ],
    "tags": []
   },
@@ -212,7 +213,7 @@
    "restWorldPosition": [
     2.2291,
     2.2923,
-    2.82
+    3.6553
    ],
    "tags": []
   },
@@ -236,7 +237,7 @@
    "restWorldPosition": [
     2.2291,
     2.2923,
-    2.82
+    3.6553
    ],
    "tags": []
   },
@@ -260,7 +261,7 @@
    "restWorldPosition": [
     2.2291,
     2.2923,
-    2.82
+    3.6553
    ],
    "tags": []
   },
@@ -284,7 +285,7 @@
    "restWorldPosition": [
     2.2291,
     2.2923,
-    2.82
+    3.6553
    ],
    "tags": []
   },
@@ -308,7 +309,7 @@
    "restWorldPosition": [
     3.4629,
     4.3509,
-    4.5181
+    5.3534
    ],
    "tags": []
   },
@@ -332,7 +333,7 @@
    "restWorldPosition": [
     3.4629,
     4.3509,
-    4.5181
+    5.3534
    ],
    "tags": []
   },
@@ -356,7 +357,7 @@
    "restWorldPosition": [
     3.4629,
     4.3509,
-    4.5181
+    5.3534
    ],
    "tags": []
   },
@@ -380,7 +381,7 @@
    "restWorldPosition": [
     3.4629,
     4.3509,
-    4.5181
+    5.3534
    ],
    "tags": []
   },
@@ -404,7 +405,7 @@
    "restWorldPosition": [
     4.1018,
     0.294,
-    5.3975
+    6.2329
    ],
    "tags": []
   },
@@ -428,7 +429,7 @@
    "restWorldPosition": [
     4.1018,
     0.294,
-    5.3975
+    6.2329
    ],
    "tags": []
   },
@@ -441,7 +442,7 @@
    "restTranslation": [
     -1.89998,
     -0.27216,
-    2.36691
+    3.20229
    ],
    "restRotation": [
     0,
@@ -452,7 +453,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    2.3669
+    3.2023
    ],
    "tags": []
   },
@@ -476,7 +477,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    2.3669
+    3.2023
    ],
    "tags": []
   },
@@ -500,7 +501,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    2.3669
+    3.2023
    ],
    "tags": []
   },
@@ -524,7 +525,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    2.3669
+    3.2023
    ],
    "tags": []
   },
@@ -548,7 +549,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    2.3669
+    3.2023
    ],
    "tags": []
   },
@@ -572,7 +573,7 @@
    "restWorldPosition": [
     -2.2291,
     2.2923,
-    2.82
+    3.6553
    ],
    "tags": []
   },
@@ -596,7 +597,7 @@
    "restWorldPosition": [
     -2.2291,
     2.2923,
-    2.82
+    3.6553
    ],
    "tags": []
   },
@@ -620,7 +621,7 @@
    "restWorldPosition": [
     -2.2291,
     2.2923,
-    2.82
+    3.6553
    ],
    "tags": []
   },
@@ -644,7 +645,7 @@
    "restWorldPosition": [
     -2.2291,
     2.2923,
-    2.82
+    3.6553
    ],
    "tags": []
   },
@@ -668,7 +669,7 @@
    "restWorldPosition": [
     -3.4629,
     4.3509,
-    4.5181
+    5.3534
    ],
    "tags": []
   },
@@ -692,7 +693,7 @@
    "restWorldPosition": [
     -3.4629,
     4.3509,
-    4.5181
+    5.3534
    ],
    "tags": []
   },
@@ -716,7 +717,7 @@
    "restWorldPosition": [
     -3.4629,
     4.3509,
-    4.5181
+    5.3534
    ],
    "tags": []
   },
@@ -740,7 +741,7 @@
    "restWorldPosition": [
     -3.4629,
     4.3509,
-    4.5181
+    5.3534
    ],
    "tags": []
   },
@@ -764,7 +765,7 @@
    "restWorldPosition": [
     -4.1018,
     0.294,
-    5.3975
+    6.2329
    ],
    "tags": []
   },
@@ -788,7 +789,7 @@
    "restWorldPosition": [
     -4.1018,
     0.294,
-    5.3975
+    6.2329
    ],
    "tags": []
   },
@@ -801,7 +802,7 @@
    "restTranslation": [
     1.89998,
     -0.27216,
-    0.78897
+    1.06743
    ],
    "restRotation": [
     0,
@@ -812,7 +813,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    0.789
+    1.0674
    ],
    "tags": []
   },
@@ -836,7 +837,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    0.789
+    1.0674
    ],
    "tags": []
   },
@@ -860,7 +861,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    0.789
+    1.0674
    ],
    "tags": []
   },
@@ -884,7 +885,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    0.789
+    1.0674
    ],
    "tags": []
   },
@@ -908,7 +909,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    0.789
+    1.0674
    ],
    "tags": []
   },
@@ -932,7 +933,7 @@
    "restWorldPosition": [
     2.4326,
     2.2923,
-    0.962
+    1.2405
    ],
    "tags": []
   },
@@ -956,7 +957,7 @@
    "restWorldPosition": [
     2.4326,
     2.2923,
-    0.962
+    1.2405
    ],
    "tags": []
   },
@@ -980,7 +981,7 @@
    "restWorldPosition": [
     2.4326,
     2.2923,
-    0.962
+    1.2405
    ],
    "tags": []
   },
@@ -1004,7 +1005,7 @@
    "restWorldPosition": [
     2.4326,
     2.2923,
-    0.962
+    1.2405
    ],
    "tags": []
   },
@@ -1028,7 +1029,7 @@
    "restWorldPosition": [
     4.4288,
     4.3509,
-    1.6106
+    1.8891
    ],
    "tags": []
   },
@@ -1052,7 +1053,7 @@
    "restWorldPosition": [
     4.4288,
     4.3509,
-    1.6106
+    1.8891
    ],
    "tags": []
   },
@@ -1076,7 +1077,7 @@
    "restWorldPosition": [
     4.4288,
     4.3509,
-    1.6106
+    1.8891
    ],
    "tags": []
   },
@@ -1100,7 +1101,7 @@
    "restWorldPosition": [
     4.4288,
     4.3509,
-    1.6106
+    1.8891
    ],
    "tags": []
   },
@@ -1124,7 +1125,7 @@
    "restWorldPosition": [
     5.4626,
     0.294,
-    1.9466
+    2.225
    ],
    "tags": []
   },
@@ -1148,7 +1149,7 @@
    "restWorldPosition": [
     5.4626,
     0.294,
-    1.9466
+    2.225
    ],
    "tags": []
   },
@@ -1161,7 +1162,7 @@
    "restTranslation": [
     -1.89998,
     -0.27216,
-    0.78897
+    1.06743
    ],
    "restRotation": [
     0,
@@ -1172,7 +1173,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    0.789
+    1.0674
    ],
    "tags": []
   },
@@ -1196,7 +1197,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    0.789
+    1.0674
    ],
    "tags": []
   },
@@ -1220,7 +1221,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    0.789
+    1.0674
    ],
    "tags": []
   },
@@ -1244,7 +1245,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    0.789
+    1.0674
    ],
    "tags": []
   },
@@ -1268,7 +1269,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    0.789
+    1.0674
    ],
    "tags": []
   },
@@ -1292,7 +1293,7 @@
    "restWorldPosition": [
     -2.4326,
     2.2923,
-    0.962
+    1.2405
    ],
    "tags": []
   },
@@ -1316,7 +1317,7 @@
    "restWorldPosition": [
     -2.4326,
     2.2923,
-    0.962
+    1.2405
    ],
    "tags": []
   },
@@ -1340,7 +1341,7 @@
    "restWorldPosition": [
     -2.4326,
     2.2923,
-    0.962
+    1.2405
    ],
    "tags": []
   },
@@ -1364,7 +1365,7 @@
    "restWorldPosition": [
     -2.4326,
     2.2923,
-    0.962
+    1.2405
    ],
    "tags": []
   },
@@ -1388,7 +1389,7 @@
    "restWorldPosition": [
     -4.4288,
     4.3509,
-    1.6106
+    1.8891
    ],
    "tags": []
   },
@@ -1412,7 +1413,7 @@
    "restWorldPosition": [
     -4.4288,
     4.3509,
-    1.6106
+    1.8891
    ],
    "tags": []
   },
@@ -1436,7 +1437,7 @@
    "restWorldPosition": [
     -4.4288,
     4.3509,
-    1.6106
+    1.8891
    ],
    "tags": []
   },
@@ -1460,7 +1461,7 @@
    "restWorldPosition": [
     -4.4288,
     4.3509,
-    1.6106
+    1.8891
    ],
    "tags": []
   },
@@ -1484,7 +1485,7 @@
    "restWorldPosition": [
     -5.4626,
     0.294,
-    1.9466
+    2.225
    ],
    "tags": []
   },
@@ -1508,7 +1509,7 @@
    "restWorldPosition": [
     -5.4626,
     0.294,
-    1.9466
+    2.225
    ],
    "tags": []
   },
@@ -1521,7 +1522,7 @@
    "restTranslation": [
     1.89998,
     -0.27216,
-    -0.78897
+    -1.06743
    ],
    "restRotation": [
     0,
@@ -1532,7 +1533,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    -0.789
+    -1.0674
    ],
    "tags": []
   },
@@ -1556,7 +1557,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    -0.789
+    -1.0674
    ],
    "tags": []
   },
@@ -1580,7 +1581,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    -0.789
+    -1.0674
    ],
    "tags": []
   },
@@ -1604,7 +1605,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    -0.789
+    -1.0674
    ],
    "tags": []
   },
@@ -1628,7 +1629,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    -0.789
+    -1.0674
    ],
    "tags": []
   },
@@ -1652,7 +1653,7 @@
    "restWorldPosition": [
     2.4326,
     2.2923,
-    -0.962
+    -1.2405
    ],
    "tags": []
   },
@@ -1676,7 +1677,7 @@
    "restWorldPosition": [
     2.4326,
     2.2923,
-    -0.962
+    -1.2405
    ],
    "tags": []
   },
@@ -1700,7 +1701,7 @@
    "restWorldPosition": [
     2.4326,
     2.2923,
-    -0.962
+    -1.2405
    ],
    "tags": []
   },
@@ -1724,7 +1725,7 @@
    "restWorldPosition": [
     2.4326,
     2.2923,
-    -0.962
+    -1.2405
    ],
    "tags": []
   },
@@ -1748,7 +1749,7 @@
    "restWorldPosition": [
     4.4288,
     4.3509,
-    -1.6106
+    -1.8891
    ],
    "tags": []
   },
@@ -1772,7 +1773,7 @@
    "restWorldPosition": [
     4.4288,
     4.3509,
-    -1.6106
+    -1.8891
    ],
    "tags": []
   },
@@ -1796,7 +1797,7 @@
    "restWorldPosition": [
     4.4288,
     4.3509,
-    -1.6106
+    -1.8891
    ],
    "tags": []
   },
@@ -1820,7 +1821,7 @@
    "restWorldPosition": [
     4.4288,
     4.3509,
-    -1.6106
+    -1.8891
    ],
    "tags": []
   },
@@ -1844,7 +1845,7 @@
    "restWorldPosition": [
     5.4626,
     0.294,
-    -1.9466
+    -2.225
    ],
    "tags": []
   },
@@ -1868,7 +1869,7 @@
    "restWorldPosition": [
     5.4626,
     0.294,
-    -1.9466
+    -2.225
    ],
    "tags": []
   },
@@ -1881,7 +1882,7 @@
    "restTranslation": [
     -1.89998,
     -0.27216,
-    -0.78897
+    -1.06743
    ],
    "restRotation": [
     0,
@@ -1892,7 +1893,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    -0.789
+    -1.0674
    ],
    "tags": []
   },
@@ -1916,7 +1917,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    -0.789
+    -1.0674
    ],
    "tags": []
   },
@@ -1940,7 +1941,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    -0.789
+    -1.0674
    ],
    "tags": []
   },
@@ -1964,7 +1965,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    -0.789
+    -1.0674
    ],
    "tags": []
   },
@@ -1988,7 +1989,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    -0.789
+    -1.0674
    ],
    "tags": []
   },
@@ -2012,7 +2013,7 @@
    "restWorldPosition": [
     -2.4326,
     2.2923,
-    -0.962
+    -1.2405
    ],
    "tags": []
   },
@@ -2036,7 +2037,7 @@
    "restWorldPosition": [
     -2.4326,
     2.2923,
-    -0.962
+    -1.2405
    ],
    "tags": []
   },
@@ -2060,7 +2061,7 @@
    "restWorldPosition": [
     -2.4326,
     2.2923,
-    -0.962
+    -1.2405
    ],
    "tags": []
   },
@@ -2084,7 +2085,7 @@
    "restWorldPosition": [
     -2.4326,
     2.2923,
-    -0.962
+    -1.2405
    ],
    "tags": []
   },
@@ -2108,7 +2109,7 @@
    "restWorldPosition": [
     -4.4288,
     4.3509,
-    -1.6106
+    -1.8891
    ],
    "tags": []
   },
@@ -2132,7 +2133,7 @@
    "restWorldPosition": [
     -4.4288,
     4.3509,
-    -1.6106
+    -1.8891
    ],
    "tags": []
   },
@@ -2156,7 +2157,7 @@
    "restWorldPosition": [
     -4.4288,
     4.3509,
-    -1.6106
+    -1.8891
    ],
    "tags": []
   },
@@ -2180,7 +2181,7 @@
    "restWorldPosition": [
     -4.4288,
     4.3509,
-    -1.6106
+    -1.8891
    ],
    "tags": []
   },
@@ -2204,7 +2205,7 @@
    "restWorldPosition": [
     -5.4626,
     0.294,
-    -1.9466
+    -2.225
    ],
    "tags": []
   },
@@ -2228,7 +2229,7 @@
    "restWorldPosition": [
     -5.4626,
     0.294,
-    -1.9466
+    -2.225
    ],
    "tags": []
   },
@@ -2241,7 +2242,7 @@
    "restTranslation": [
     1.89998,
     -0.27216,
-    -2.36691
+    -3.20229
    ],
    "restRotation": [
     0,
@@ -2252,7 +2253,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    -2.3669
+    -3.2023
    ],
    "tags": []
   },
@@ -2276,7 +2277,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    -2.3669
+    -3.2023
    ],
    "tags": []
   },
@@ -2300,7 +2301,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    -2.3669
+    -3.2023
    ],
    "tags": []
   },
@@ -2324,7 +2325,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    -2.3669
+    -3.2023
    ],
    "tags": []
   },
@@ -2348,7 +2349,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    -2.3669
+    -3.2023
    ],
    "tags": []
   },
@@ -2372,7 +2373,7 @@
    "restWorldPosition": [
     2.2291,
     2.2923,
-    -2.82
+    -3.6553
    ],
    "tags": []
   },
@@ -2396,7 +2397,7 @@
    "restWorldPosition": [
     2.2291,
     2.2923,
-    -2.82
+    -3.6553
    ],
    "tags": []
   },
@@ -2420,7 +2421,7 @@
    "restWorldPosition": [
     2.2291,
     2.2923,
-    -2.82
+    -3.6553
    ],
    "tags": []
   },
@@ -2444,7 +2445,7 @@
    "restWorldPosition": [
     2.2291,
     2.2923,
-    -2.82
+    -3.6553
    ],
    "tags": []
   },
@@ -2468,7 +2469,7 @@
    "restWorldPosition": [
     3.4629,
     4.3509,
-    -4.5181
+    -5.3534
    ],
    "tags": []
   },
@@ -2492,7 +2493,7 @@
    "restWorldPosition": [
     3.4629,
     4.3509,
-    -4.5181
+    -5.3534
    ],
    "tags": []
   },
@@ -2516,7 +2517,7 @@
    "restWorldPosition": [
     3.4629,
     4.3509,
-    -4.5181
+    -5.3534
    ],
    "tags": []
   },
@@ -2540,7 +2541,7 @@
    "restWorldPosition": [
     3.4629,
     4.3509,
-    -4.5181
+    -5.3534
    ],
    "tags": []
   },
@@ -2564,7 +2565,7 @@
    "restWorldPosition": [
     4.1018,
     0.294,
-    -5.3975
+    -6.2329
    ],
    "tags": []
   },
@@ -2588,7 +2589,7 @@
    "restWorldPosition": [
     4.1018,
     0.294,
-    -5.3975
+    -6.2329
    ],
    "tags": []
   },
@@ -2601,7 +2602,7 @@
    "restTranslation": [
     -1.89998,
     -0.27216,
-    -2.36691
+    -3.20229
    ],
    "restRotation": [
     0,
@@ -2612,7 +2613,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    -2.3669
+    -3.2023
    ],
    "tags": []
   },
@@ -2636,7 +2637,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    -2.3669
+    -3.2023
    ],
    "tags": []
   },
@@ -2660,7 +2661,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    -2.3669
+    -3.2023
    ],
    "tags": []
   },
@@ -2684,7 +2685,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    -2.3669
+    -3.2023
    ],
    "tags": []
   },
@@ -2708,7 +2709,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    -2.3669
+    -3.2023
    ],
    "tags": []
   },
@@ -2732,7 +2733,7 @@
    "restWorldPosition": [
     -2.2291,
     2.2923,
-    -2.82
+    -3.6553
    ],
    "tags": []
   },
@@ -2756,7 +2757,7 @@
    "restWorldPosition": [
     -2.2291,
     2.2923,
-    -2.82
+    -3.6553
    ],
    "tags": []
   },
@@ -2780,7 +2781,7 @@
    "restWorldPosition": [
     -2.2291,
     2.2923,
-    -2.82
+    -3.6553
    ],
    "tags": []
   },
@@ -2804,7 +2805,7 @@
    "restWorldPosition": [
     -2.2291,
     2.2923,
-    -2.82
+    -3.6553
    ],
    "tags": []
   },
@@ -2828,7 +2829,7 @@
    "restWorldPosition": [
     -3.4629,
     4.3509,
-    -4.5181
+    -5.3534
    ],
    "tags": []
   },
@@ -2852,7 +2853,7 @@
    "restWorldPosition": [
     -3.4629,
     4.3509,
-    -4.5181
+    -5.3534
    ],
    "tags": []
   },
@@ -2876,7 +2877,7 @@
    "restWorldPosition": [
     -3.4629,
     4.3509,
-    -4.5181
+    -5.3534
    ],
    "tags": []
   },
@@ -2900,7 +2901,7 @@
    "restWorldPosition": [
     -3.4629,
     4.3509,
-    -4.5181
+    -5.3534
    ],
    "tags": []
   },
@@ -2924,7 +2925,7 @@
    "restWorldPosition": [
     -4.1018,
     0.294,
-    -5.3975
+    -6.2329
    ],
    "tags": []
   },
@@ -2948,7 +2949,7 @@
    "restWorldPosition": [
     -4.1018,
     0.294,
-    -5.3975
+    -6.2329
    ],
    "tags": []
   },
@@ -3033,7 +3034,7 @@
    "restTranslation": [
     0,
     -0.18144,
-    3.7695
+    4.8405
    ],
    "restRotation": [
     0,
@@ -3044,7 +3045,7 @@
    "restWorldPosition": [
     0,
     2.383,
-    3.7695
+    4.8405
    ],
    "tags": []
   },
@@ -3068,7 +3069,7 @@
    "restWorldPosition": [
     0,
     2.383,
-    3.7695
+    4.8405
    ],
    "tags": []
   },
@@ -3092,7 +3093,7 @@
    "restWorldPosition": [
     0,
     2.383,
-    3.7695
+    4.8405
    ],
    "tags": []
   },
@@ -3116,7 +3117,7 @@
    "restWorldPosition": [
     0,
     2.383,
-    3.7695
+    4.8405
    ],
    "tags": []
   },
@@ -3140,7 +3141,7 @@
    "restWorldPosition": [
     0,
     2.383,
-    3.7695
+    4.8405
    ],
    "tags": []
   },
@@ -3164,7 +3165,7 @@
    "restWorldPosition": [
     0,
     2.383,
-    3.7695
+    4.8405
    ],
    "tags": []
   },
@@ -3188,7 +3189,7 @@
    "restWorldPosition": [
     0,
     2.383,
-    3.7695
+    4.8405
    ],
    "tags": []
   },
@@ -3212,7 +3213,7 @@
    "restWorldPosition": [
     0,
     3.853,
-    3.0945
+    4.1655
    ],
    "tags": []
   },
@@ -3236,7 +3237,7 @@
    "restWorldPosition": [
     0,
     3.853,
-    3.0945
+    4.1655
    ],
    "tags": []
   },
@@ -3261,6 +3262,150 @@
     0,
     2.5644,
     0
+   ],
+   "tags": []
+  },
+  {
+   "name": "cockpit__armor_brow",
+   "parent": "cockpit",
+   "role": "component",
+   "system": "cockpit",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    2.383,
+    4.8405
+   ],
+   "tags": []
+  },
+  {
+   "name": "body__armor_skirts",
+   "parent": "body",
+   "role": "component",
+   "system": "body",
+   "component": "armor",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    2.5644,
+    0
+   ],
+   "tags": []
+  },
+  {
+   "name": "pod_C_yaw",
+   "parent": "body",
+   "role": "link",
+   "system": "pod.C",
+   "component": null,
+   "restTranslation": [
+    0,
+    0.9072,
+    -1.23165
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    3.4716,
+    -1.2316
+   ],
+   "tags": []
+  },
+  {
+   "name": "pod_C_yaw__joint-housing",
+   "parent": "pod_C_yaw",
+   "role": "component",
+   "system": "pod.C",
+   "component": "joint-housing",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    3.4716,
+    -1.2316
+   ],
+   "tags": []
+  },
+  {
+   "name": "pod_C_pitch",
+   "parent": "pod_C_yaw",
+   "role": "link",
+   "system": "pod.C",
+   "component": null,
+   "restTranslation": [
+    0,
+    0.294,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    3.7656,
+    -1.2316
+   ],
+   "tags": []
+  },
+  {
+   "name": "pod_C_pitch__weapon",
+   "parent": "pod_C_pitch",
+   "role": "component",
+   "system": "pod.C",
+   "component": "weapon",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    3.7656,
+    -1.2316
    ],
    "tags": []
   },
@@ -3308,7 +3453,7 @@
    "restWorldPosition": [
     1.9658,
     1.4842,
-    2.4575
+    3.2929
    ],
    "tags": [
     "piston-barrel"
@@ -3334,7 +3479,7 @@
    "restWorldPosition": [
     3.0701,
     2.597,
-    3.9774
+    4.8128
    ],
    "tags": [
     "piston-rod"
@@ -3360,7 +3505,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    2.3669
+    3.2023
    ],
    "tags": []
   },
@@ -3384,7 +3529,7 @@
    "restWorldPosition": [
     2.2291,
     2.2923,
-    2.82
+    3.6553
    ],
    "tags": []
   },
@@ -3408,7 +3553,7 @@
    "restWorldPosition": [
     2.2861,
     3.4531,
-    2.8983
+    3.7337
    ],
    "tags": [
     "piston-barrel"
@@ -3434,7 +3579,7 @@
    "restWorldPosition": [
     3.9609,
     3.7083,
-    5.2035
+    6.0389
    ],
    "tags": [
     "piston-rod"
@@ -3460,7 +3605,7 @@
    "restWorldPosition": [
     3.4629,
     4.3509,
-    4.5181
+    5.3534
    ],
    "tags": []
   },
@@ -3484,7 +3629,7 @@
    "restWorldPosition": [
     -1.9658,
     1.4842,
-    2.4575
+    3.2929
    ],
    "tags": [
     "piston-barrel"
@@ -3510,7 +3655,7 @@
    "restWorldPosition": [
     -3.0701,
     2.597,
-    3.9774
+    4.8128
    ],
    "tags": [
     "piston-rod"
@@ -3536,7 +3681,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    2.3669
+    3.2023
    ],
    "tags": []
   },
@@ -3560,7 +3705,7 @@
    "restWorldPosition": [
     -2.2291,
     2.2923,
-    2.82
+    3.6553
    ],
    "tags": []
   },
@@ -3584,7 +3729,7 @@
    "restWorldPosition": [
     -2.2861,
     3.4531,
-    2.8983
+    3.7337
    ],
    "tags": [
     "piston-barrel"
@@ -3610,7 +3755,7 @@
    "restWorldPosition": [
     -3.9609,
     3.7083,
-    5.2035
+    6.0389
    ],
    "tags": [
     "piston-rod"
@@ -3636,7 +3781,7 @@
    "restWorldPosition": [
     -3.4629,
     4.3509,
-    4.5181
+    5.3534
    ],
    "tags": []
   },
@@ -3660,7 +3805,7 @@
    "restWorldPosition": [
     2.0065,
     1.4842,
-    0.8236
+    1.102
    ],
    "tags": [
     "piston-barrel"
@@ -3686,7 +3831,7 @@
    "restWorldPosition": [
     3.7932,
     2.597,
-    1.4041
+    1.6826
    ],
    "tags": [
     "piston-rod"
@@ -3712,7 +3857,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    0.789
+    1.0674
    ],
    "tags": []
   },
@@ -3736,7 +3881,7 @@
    "restWorldPosition": [
     2.4326,
     2.2923,
-    0.962
+    1.2405
    ],
    "tags": []
   },
@@ -3760,7 +3905,7 @@
    "restWorldPosition": [
     2.5247,
     3.4531,
-    0.992
+    1.2704
    ],
    "tags": [
     "piston-barrel"
@@ -3786,7 +3931,7 @@
    "restWorldPosition": [
     5.2346,
     3.7083,
-    1.8725
+    2.1509
    ],
    "tags": [
     "piston-rod"
@@ -3812,7 +3957,7 @@
    "restWorldPosition": [
     4.4288,
     4.3509,
-    1.6106
+    1.8891
    ],
    "tags": []
   },
@@ -3836,7 +3981,7 @@
    "restWorldPosition": [
     -2.0065,
     1.4842,
-    0.8236
+    1.102
    ],
    "tags": [
     "piston-barrel"
@@ -3862,7 +4007,7 @@
    "restWorldPosition": [
     -3.7932,
     2.597,
-    1.4041
+    1.6826
    ],
    "tags": [
     "piston-rod"
@@ -3888,7 +4033,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    0.789
+    1.0674
    ],
    "tags": []
   },
@@ -3912,7 +4057,7 @@
    "restWorldPosition": [
     -2.4326,
     2.2923,
-    0.962
+    1.2405
    ],
    "tags": []
   },
@@ -3936,7 +4081,7 @@
    "restWorldPosition": [
     -2.5247,
     3.4531,
-    0.992
+    1.2704
    ],
    "tags": [
     "piston-barrel"
@@ -3962,7 +4107,7 @@
    "restWorldPosition": [
     -5.2346,
     3.7083,
-    1.8725
+    2.1509
    ],
    "tags": [
     "piston-rod"
@@ -3988,7 +4133,7 @@
    "restWorldPosition": [
     -4.4288,
     4.3509,
-    1.6106
+    1.8891
    ],
    "tags": []
   },
@@ -4012,7 +4157,7 @@
    "restWorldPosition": [
     2.0065,
     1.4842,
-    -0.8236
+    -1.102
    ],
    "tags": [
     "piston-barrel"
@@ -4038,7 +4183,7 @@
    "restWorldPosition": [
     3.7932,
     2.597,
-    -1.4041
+    -1.6826
    ],
    "tags": [
     "piston-rod"
@@ -4064,7 +4209,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    -0.789
+    -1.0674
    ],
    "tags": []
   },
@@ -4088,7 +4233,7 @@
    "restWorldPosition": [
     2.4326,
     2.2923,
-    -0.962
+    -1.2405
    ],
    "tags": []
   },
@@ -4112,7 +4257,7 @@
    "restWorldPosition": [
     2.5247,
     3.4531,
-    -0.992
+    -1.2704
    ],
    "tags": [
     "piston-barrel"
@@ -4138,7 +4283,7 @@
    "restWorldPosition": [
     5.2346,
     3.7083,
-    -1.8725
+    -2.1509
    ],
    "tags": [
     "piston-rod"
@@ -4164,7 +4309,7 @@
    "restWorldPosition": [
     4.4288,
     4.3509,
-    -1.6106
+    -1.8891
    ],
    "tags": []
   },
@@ -4188,7 +4333,7 @@
    "restWorldPosition": [
     -2.0065,
     1.4842,
-    -0.8236
+    -1.102
    ],
    "tags": [
     "piston-barrel"
@@ -4214,7 +4359,7 @@
    "restWorldPosition": [
     -3.7932,
     2.597,
-    -1.4041
+    -1.6826
    ],
    "tags": [
     "piston-rod"
@@ -4240,7 +4385,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    -0.789
+    -1.0674
    ],
    "tags": []
   },
@@ -4264,7 +4409,7 @@
    "restWorldPosition": [
     -2.4326,
     2.2923,
-    -0.962
+    -1.2405
    ],
    "tags": []
   },
@@ -4288,7 +4433,7 @@
    "restWorldPosition": [
     -2.5247,
     3.4531,
-    -0.992
+    -1.2704
    ],
    "tags": [
     "piston-barrel"
@@ -4314,7 +4459,7 @@
    "restWorldPosition": [
     -5.2346,
     3.7083,
-    -1.8725
+    -2.1509
    ],
    "tags": [
     "piston-rod"
@@ -4340,7 +4485,7 @@
    "restWorldPosition": [
     -4.4288,
     4.3509,
-    -1.6106
+    -1.8891
    ],
    "tags": []
   },
@@ -4364,7 +4509,7 @@
    "restWorldPosition": [
     1.9658,
     1.4842,
-    -2.4575
+    -3.2929
    ],
    "tags": [
     "piston-barrel"
@@ -4390,7 +4535,7 @@
    "restWorldPosition": [
     3.0701,
     2.597,
-    -3.9774
+    -4.8128
    ],
    "tags": [
     "piston-rod"
@@ -4416,7 +4561,7 @@
    "restWorldPosition": [
     1.9,
     2.2923,
-    -2.3669
+    -3.2023
    ],
    "tags": []
   },
@@ -4440,7 +4585,7 @@
    "restWorldPosition": [
     2.2291,
     2.2923,
-    -2.82
+    -3.6553
    ],
    "tags": []
   },
@@ -4464,7 +4609,7 @@
    "restWorldPosition": [
     2.2861,
     3.4531,
-    -2.8983
+    -3.7337
    ],
    "tags": [
     "piston-barrel"
@@ -4490,7 +4635,7 @@
    "restWorldPosition": [
     3.9609,
     3.7083,
-    -5.2035
+    -6.0389
    ],
    "tags": [
     "piston-rod"
@@ -4516,7 +4661,7 @@
    "restWorldPosition": [
     3.4629,
     4.3509,
-    -4.5181
+    -5.3534
    ],
    "tags": []
   },
@@ -4540,7 +4685,7 @@
    "restWorldPosition": [
     -1.9658,
     1.4842,
-    -2.4575
+    -3.2929
    ],
    "tags": [
     "piston-barrel"
@@ -4566,7 +4711,7 @@
    "restWorldPosition": [
     -3.0701,
     2.597,
-    -3.9774
+    -4.8128
    ],
    "tags": [
     "piston-rod"
@@ -4592,7 +4737,7 @@
    "restWorldPosition": [
     -1.9,
     2.2923,
-    -2.3669
+    -3.2023
    ],
    "tags": []
   },
@@ -4616,7 +4761,7 @@
    "restWorldPosition": [
     -2.2291,
     2.2923,
-    -2.82
+    -3.6553
    ],
    "tags": []
   },
@@ -4640,7 +4785,7 @@
    "restWorldPosition": [
     -2.2861,
     3.4531,
-    -2.8983
+    -3.7337
    ],
    "tags": [
     "piston-barrel"
@@ -4666,7 +4811,7 @@
    "restWorldPosition": [
     -3.9609,
     3.7083,
-    -5.2035
+    -6.0389
    ],
    "tags": [
     "piston-rod"
@@ -4692,7 +4837,7 @@
    "restWorldPosition": [
     -3.4629,
     4.3509,
-    -4.5181
+    -5.3534
    ],
    "tags": []
   }
@@ -5489,6 +5634,54 @@
    "kind": "hatch",
    "maxSpeed": 0.8,
    "system": "cockpit"
+  },
+  {
+   "name": "pod_C_yaw",
+   "type": "revolute",
+   "axis": "y",
+   "axisVector": [
+    0,
+    1,
+    0
+   ],
+   "restWorldAxis": [
+    0,
+    1,
+    0
+   ],
+   "min": -0.5236,
+   "max": 0.5236,
+   "minDeg": -30,
+   "maxDeg": 30,
+   "continuous": false,
+   "purpose": "aim",
+   "kind": "pod-yaw",
+   "maxSpeed": 1.5,
+   "system": "pod.C"
+  },
+  {
+   "name": "pod_C_pitch",
+   "type": "revolute",
+   "axis": "x",
+   "axisVector": [
+    1,
+    0,
+    0
+   ],
+   "restWorldAxis": [
+    1,
+    0,
+    0
+   ],
+   "min": -0.7854,
+   "max": 0.2618,
+   "minDeg": -45,
+   "maxDeg": 15,
+   "continuous": false,
+   "purpose": "aim",
+   "kind": "pod-pitch",
+   "maxSpeed": 1.5,
+   "system": "pod.C"
   }
  ],
  "legs": [
@@ -5512,7 +5705,7 @@
    "restContact": [
     4.1018,
     0,
-    5.3975
+    6.2329
    ],
    "restReach": 4.3917,
    "minReach": 1.421,
@@ -5539,7 +5732,7 @@
    "restContact": [
     -4.1018,
     0,
-    5.3975
+    6.2329
    ],
    "restReach": 4.3917,
    "minReach": 1.7097,
@@ -5566,7 +5759,7 @@
    "restContact": [
     5.4626,
     0,
-    1.9466
+    2.225
    ],
    "restReach": 4.3917,
    "minReach": 1.3578,
@@ -5593,7 +5786,7 @@
    "restContact": [
     -5.4626,
     0,
-    1.9466
+    2.225
    ],
    "restReach": 4.3917,
    "minReach": 1.3771,
@@ -5620,7 +5813,7 @@
    "restContact": [
     5.4626,
     0,
-    -1.9466
+    -2.225
    ],
    "restReach": 4.3917,
    "minReach": 1.2984,
@@ -5647,7 +5840,7 @@
    "restContact": [
     -5.4626,
     0,
-    -1.9466
+    -2.225
    ],
    "restReach": 4.3917,
    "minReach": 1.6289,
@@ -5674,7 +5867,7 @@
    "restContact": [
     4.1018,
     0,
-    -5.3975
+    -6.2329
    ],
    "restReach": 4.3917,
    "minReach": 1.328,
@@ -5701,7 +5894,7 @@
    "restContact": [
     -4.1018,
     0,
-    -5.3975
+    -6.2329
    ],
    "restReach": 4.3917,
    "minReach": 1.6279,
@@ -6167,6 +6360,12 @@
    "name": "cockpit_entry",
    "node": "cockpit_hatch",
    "type": "hatch"
+  },
+  {
+   "name": "pod_C",
+   "node": "pod_C_pitch",
+   "type": "weapon",
+   "note": "missile pod, aim with yaw/pitch"
   }
  ],
  "interiors": [
@@ -6222,7 +6421,7 @@
     "center": [
      0,
      0,
-     -1.2247
+     1.9815
     ],
     "rotation": [
      0,
@@ -6231,9 +6430,9 @@
      1
     ],
     "halfExtents": [
-     1.7406,
+     1.7555,
      0.9072,
-     1.8098
+     2.124
     ]
    },
    {
@@ -6241,7 +6440,7 @@
     "center": [
      0,
      0,
-     1.8316
+     -2.1457
     ],
     "rotation": [
      0,
@@ -6250,9 +6449,9 @@
      1
     ],
     "halfExtents": [
-     1.7406,
-     0.9072,
-     1.2029
+     1.6148,
+     0.8165,
+     1.9598
     ]
    },
    {
@@ -6260,7 +6459,7 @@
     "center": [
      0,
      -0.2164,
-     3.7695
+     4.8405
     ],
     "rotation": [
      0,
@@ -6279,7 +6478,7 @@
     "center": [
      0,
      0.5186,
-     3.0595
+     4.1305
     ],
     "rotation": [
      0,
@@ -8439,6 +8638,44 @@
      0.021,
      0.405
     ]
+   },
+   {
+    "body": "pod_C_yaw",
+    "center": [
+     0,
+     0.0784,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.294,
+     0.0784,
+     0.294
+    ]
+   },
+   {
+    "body": "pod_C_pitch",
+    "center": [
+     0,
+     0.245,
+     0
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.4846,
+     0.3038,
+     0.441
+    ]
    }
   ]
  },
@@ -8458,7 +8695,7 @@
  ],
  "recipe": {
   "format": "badmech-recipe",
-  "version": 1,
+  "version": 2,
   "name": "Harrow Octo",
   "family": "octopod",
   "role": "combat",
@@ -8467,7 +8704,9 @@
   "bulk": 0.6,
   "scheme": "warcamo",
   "rerolls": {},
-  "overrides": {}
+  "overrides": {
+   "maker": "volkov"
+  }
  },
  "limitFits": []
 }

@@ -1,6 +1,6 @@
 {
   "format": "badmech-recipe",
-  "version": 1,
+  "version": 2,
   "name": "Harrow Octo",
   "family": "octopod",
   "role": "combat",
@@ -9,5 +9,7 @@
   "bulk": 0.6,
   "scheme": "warcamo",
   "rerolls": {},
-  "overrides": {}
+  "overrides": {
+    "maker": "volkov"
+  }
 }

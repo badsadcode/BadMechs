@@ -3,6 +3,7 @@
  "generator": "BadMech",
  "name": "Mule Hauler",
  "family": "quadruped",
+ "maker": "ostrava",
  "coordinateSystem": {
   "units": "metres",
   "up": "+Y",
@@ -1849,6 +1850,54 @@
    "tags": []
   },
   {
+   "name": "body__equipment_rails",
+   "parent": "body",
+   "role": "component",
+   "system": "body",
+   "component": "equipment",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    2.4862,
+    0
+   ],
+   "tags": []
+  },
+  {
+   "name": "cockpit__light_bar",
+   "parent": "cockpit",
+   "role": "component",
+   "system": "cockpit",
+   "component": "light",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    3.3934,
+    2.7169
+   ],
+   "tags": []
+  },
+  {
    "name": "body__equipment_cargo",
    "parent": "body",
    "role": "component",
@@ -3609,9 +3658,9 @@
     0
    ],
    "min": -0.69813,
-   "max": 0.7854,
+   "max": 0.11249,
    "minDeg": -40,
-   "maxDeg": 45,
+   "maxDeg": 6.45,
    "continuous": false,
    "purpose": "tool",
    "kind": "boom-pitch",
@@ -3657,9 +3706,9 @@
     0
    ],
    "min": -1.0472,
-   "max": 1.0472,
+   "max": 1.00084,
    "minDeg": -60,
-   "maxDeg": 60,
+   "maxDeg": 57.34,
    "continuous": false,
    "purpose": "tool",
    "kind": "grab-pitch",
@@ -3680,9 +3729,9 @@
     0,
     0
    ],
-   "min": -0.43633,
+   "min": -0.11249,
    "max": 0.5236,
-   "minDeg": -25,
+   "minDeg": -6.45,
    "maxDeg": 30,
    "continuous": false,
    "purpose": "tool",
@@ -3704,9 +3753,9 @@
     0,
     0
    ],
-   "min": -0.43633,
+   "min": -0.11249,
    "max": 0.5236,
-   "minDeg": -25,
+   "minDeg": -6.45,
    "maxDeg": 30,
    "continuous": false,
    "purpose": "tool",
@@ -3993,8 +4042,8 @@
    "endLink": "crane_boom",
    "drives": "crane_boom",
    "restLength": 1.1484,
-   "minLength": 1.1063,
-   "maxLength": 1.4378,
+   "minLength": 1.1058,
+   "maxLength": 1.1767,
    "barrelLength": 0.9738,
    "rodLength": 0.6101,
    "constraint": "mutual-aim",
@@ -5403,7 +5452,7 @@
  ],
  "recipe": {
   "format": "badmech-recipe",
-  "version": 1,
+  "version": 2,
   "name": "Mule Hauler",
   "family": "quadruped",
   "role": "hauler",
@@ -5413,6 +5462,7 @@
   "scheme": "industrial",
   "rerolls": {},
   "overrides": {
+   "maker": "ostrava",
    "deck.kit": "crane",
    "legs.kind": "sprawl"
   }
@@ -5465,6 +5515,54 @@
     0.4886921905584123
    ],
    "blockedBy": "leg_RR_femur ↔ body"
+  },
+  {
+   "joint": "crane_boom",
+   "before": [
+    -0.6981317007977318,
+    0.7853981633974483
+   ],
+   "after": [
+    -0.6981317007977318,
+    0.11249192444494702
+   ],
+   "blockedBy": "crane_wrist ↔ body"
+  },
+  {
+   "joint": "crane_wrist",
+   "before": [
+    -1.0471975511965976,
+    1.0471975511965976
+   ],
+   "after": [
+    -1.0471975511965976,
+    1.0008372429404984
+   ],
+   "blockedBy": "crane_jaw0 ↔ body"
+  },
+  {
+   "joint": "crane_jaw0",
+   "before": [
+    -0.4363323129985824,
+    0.5235987755982988
+   ],
+   "after": [
+    -0.11249192444494702,
+    0.5235987755982988
+   ],
+   "blockedBy": "crane_jaw0 ↔ crane_jaw1"
+  },
+  {
+   "joint": "crane_jaw1",
+   "before": [
+    -0.4363323129985824,
+    0.5235987755982988
+   ],
+   "after": [
+    -0.11249192444494702,
+    0.5235987755982988
+   ],
+   "blockedBy": "crane_jaw1 ↔ crane_jaw0"
   }
  ]
 }

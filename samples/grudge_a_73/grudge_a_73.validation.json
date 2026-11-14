@@ -3,27 +3,27 @@
     {
       "id": "struct",
       "severity": "ok",
-      "message": "130 nodes, 30 joints, single root, parents precede children, names unique"
+      "message": "120 nodes, 29 joints, single root, parents precede children, names unique"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_L: 7-joint chain, foot on ground (Δy -0.0 mm), reach 3.79–7.19 m"
+      "message": "leg_L: 6-joint chain, foot on ground (Δy -0.0 mm), reach 2.96–5.85 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_R: 7-joint chain, foot on ground (Δy -0.0 mm), reach 3.84–7.13 m"
+      "message": "leg_R: 6-joint chain, foot on ground (Δy -0.0 mm), reach 2.99–5.86 m"
     },
     {
       "id": "piston.stroke",
       "severity": "ok",
-      "message": "8 pistons: barrel/rod lengths cover their full stroke"
+      "message": "6 pistons: barrel/rod lengths cover their full stroke"
     },
     {
       "id": "ground.clearance",
       "severity": "ok",
-      "message": "only feet touch the ground (lowest other part 0.04 m)"
+      "message": "only feet touch the ground (lowest other part 0.02 m)"
     },
     {
       "id": "clearance.sweep",
@@ -33,7 +33,7 @@
     {
       "id": "clearance.random",
       "severity": "info",
-      "message": "24/30 random multi-joint poses are clash-free (combined extremes can still collide; controllers should keep to gait ranges)"
+      "message": "29/30 random multi-joint poses are clash-free (combined extremes can still collide; controllers should keep to gait ranges)"
     },
     {
       "id": "interior.space",
@@ -43,7 +43,7 @@
     {
       "id": "naming",
       "severity": "ok",
-      "message": "leg chains share 7-joint layouts; names follow leg_<id>_<segment>"
+      "message": "leg chains share 6-joint layouts; names follow leg_<id>_<segment>"
     }
   ],
   "counts": {

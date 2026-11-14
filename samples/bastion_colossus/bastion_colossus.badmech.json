@@ -1,6 +1,6 @@
 {
   "format": "badmech-recipe",
-  "version": 1,
+  "version": 2,
   "name": "Bastion Colossus",
   "family": "colossus",
   "role": "hauler",
@@ -10,6 +10,7 @@
   "scheme": "urban",
   "rerolls": {},
   "overrides": {
+    "maker": "bastion",
     "colossus.frame": "quad"
   }
 }

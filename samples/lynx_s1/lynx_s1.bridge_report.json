@@ -22,11 +22,11 @@
       "axisErrDeg": 0.0
     },
     "leg_L_shin": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_L_tarsus": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_L_ankle": {
@@ -50,11 +50,11 @@
       "axisErrDeg": 0.0
     },
     "leg_R_shin": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_R_tarsus": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_R_ankle": {
@@ -86,7 +86,7 @@
       "axisErrDeg": 0.0
     },
     "arm_L_forearm": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "arm_R_shoulder_pitch": {
@@ -102,25 +102,17 @@
       "axisErrDeg": 0.0
     },
     "arm_R_forearm": {
-      "posErr": 0.0,
-      "axisErrDeg": 0.0
-    },
-    "pod_C_yaw": {
-      "posErr": 0.0,
-      "axisErrDeg": 0.0
-    },
-    "pod_C_pitch": {
       "posErr": 1e-06,
       "axisErrDeg": 0.0
     }
   },
-  "boneCount": 28,
+  "boneCount": 26,
   "missingBones": [],
-  "maxPosErrorM": 9.906751000043548e-07,
+  "maxPosErrorM": 5.703466894926023e-07,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 37972,
-  "vertexGroups": 28,
+  "triangles": 35548,
+  "vertexGroups": 26,
   "blend": "lynx_s1.blend",
   "fbx": "lynx_s1.fbx"
 }

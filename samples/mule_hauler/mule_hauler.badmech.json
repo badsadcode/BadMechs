@@ -1,6 +1,6 @@
 {
   "format": "badmech-recipe",
-  "version": 1,
+  "version": 2,
   "name": "Mule Hauler",
   "family": "quadruped",
   "role": "hauler",
@@ -10,6 +10,7 @@
   "scheme": "industrial",
   "rerolls": {},
   "overrides": {
+    "maker": "ostrava",
     "deck.kit": "crane",
     "legs.kind": "sprawl"
   }

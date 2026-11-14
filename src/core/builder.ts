@@ -177,6 +177,7 @@ export class Builder {
   arms: ArmChain[] = [];
   mounts: Mount[] = [];
   interiors: InteriorSpace[] = [];
+  maker = 'generic';
   gait: GaitHint = { type: 'biped-walk', stepHeight: 0.3, strideLength: 1, cycleSeconds: 1.6, bodyHeight: 0, groups: [] };
 
   constructor(
@@ -236,6 +237,7 @@ export class Builder {
     const mech: Mech = {
       name: this.name,
       family: this.family,
+      maker: this.maker,
       nodes: this.nodes,
       actuators: [],
       cables: [],

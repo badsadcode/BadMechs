@@ -1,72 +1,72 @@
 {
   "mech": "Grudge A-73",
   "family": "biped",
-  "heightM": 10.59,
+  "heightM": 11.02,
   "glb": {
     "ok": true,
-    "nodesChecked": 130,
+    "nodesChecked": 120,
     "missing": [],
-    "maxPosErrorM": 1.1708188559342655e-05,
+    "maxPosErrorM": 1.3898111022822649e-05,
     "maxAxisErrorDeg": 0.0,
     "materials": "10 imported / 10 used in file",
-    "skinnedHoses": 6,
-    "triangles": 51840
+    "skinnedHoses": 4,
+    "triangles": 46512
   },
   "glb_lod1": {
     "ok": true,
-    "nodesChecked": 130,
-    "maxPosErrorM": 1.1708188559342655e-05,
-    "triangles": 31556
+    "nodesChecked": 120,
+    "maxPosErrorM": 1.3898111022822649e-05,
+    "triangles": 27760
   },
   "glb_lod2": {
     "ok": true,
-    "nodesChecked": 130,
-    "maxPosErrorM": 1.1708188559342655e-05,
-    "triangles": 15056
+    "nodesChecked": 120,
+    "maxPosErrorM": 1.3898111022822649e-05,
+    "triangles": 12898
   },
   "fbx": {
     "ok": true,
-    "boneCount": 48,
+    "boneCount": 43,
     "missingBones": [],
-    "maxPosErrorM": 1.0293672108155812e-06,
+    "maxPosErrorM": 1.5497207641601562e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 51840,
-    "vertexGroups": 48,
+    "triangles": 46512,
+    "vertexGroups": 43,
     "blend": "grudge_a_73.blend",
     "fbx": "grudge_a_73.fbx"
   },
   "fbx_pose": {
     "ok": true,
     "posedJoint": "leg_L_shin",
-    "angleRad": -0.976264,
-    "verticesMoved": 12840,
-    "verticesTotal": 70879,
-    "pivotDrift": 5.331201499700045e-07
+    "angleRad": 1.136,
+    "verticesMoved": 7847,
+    "verticesTotal": 63572,
+    "pivotDrift": 3.371747880871523e-07
   },
   "usd": {
     "pxr": {
       "ok": true,
       "upAxis": "Y",
       "metersPerUnit": 1.0,
-      "xforms": 131,
-      "meshes": 202,
+      "xforms": 121,
+      "meshes": 184,
       "missing": [],
-      "maxPosErrorM": 5.453119996173653e-05,
+      "maxPosErrorM": 0.00018063383051402184,
       "maxAxisErrorDeg": 0.0,
-      "jointLimitsPreserved": "30/30"
+      "jointLimitsPreserved": "29/29"
     },
     "blender": {
       "ok": true,
-      "objects": 323,
-      "meshes": 202
+      "objects": 293,
+      "meshes": 184
     },
     "ok": true
   },
   "obj": {
     "ok": true,
-    "objects": 94,
-    "triangles": 50560,
+    "objects": 84,
+    "triangles": 45552,
     "materials": 10,
     "note": "static only, by design"
   },

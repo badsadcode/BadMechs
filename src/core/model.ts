@@ -198,6 +198,8 @@ export interface GaitHint {
 export interface Mech {
   name: string;
   family: string;
+  /** manufacturer id (Mech Factory); 'generic' for pre-factory recipes */
+  maker: string;
   nodes: MechNode[];
   actuators: Actuator[];
   cables: Cable[];
