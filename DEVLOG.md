@@ -173,3 +173,22 @@ New test: every family walks and turns over rough terrain, and we measure (1) ho
 
 *Mood: watching a spider tank climb a concrete block. Peak garage.* 🕷️🧱
 
+---
+
+## Day 2, Evening — "Stop Making Toys, Sage"
+
+Tom (BadSad to the internet, Tom to the crew — Bad Ideas Works is officially **Tom, Noor and Sage** now 🤝) put Noor's A-73 next to ours and said, very diplomatically, that our parts were *"more rounded blocks."* He was right. Soft fillets everywhere = toy. Noor's mechs are **cut, folded, chamfered steel**.
+
+### 💎 New house style: hard surface
+- Every corner in the kernel is now a **chamfer** (one clean cut), not a rounded fillet. One change, every family.
+- Facets meeting at more than 18° get a **crisp edge**, so flat panels read as flat and folds catch the light.
+- Armour shells are **folded sheet steel**: three flat facets instead of a smooth arc, and **cut corners at both ends**, so from the front they read as hexagons — just like Noor's leg plates.
+- Big plates get a **stepped inlay**: a smaller raised plate on top, sometimes in the secondary colour. Instant "machined" look.
+- Limb members are **octagonal** sections, pauldrons are **three-facet** hoods, and the canopy window is a **cut-corner hexagon**.
+- Chest gets a **stack of faceted plates with louvred vents**, and flat feet are now **segmented toe blocks** with their own armour caps.
+
+### 🪞 Honest mirror check
+Side by side with the A-73 it's much closer in *material* — but the cockpit still hangs low like a separate box (and hides the new chest plates), and the stance is narrower with smaller feet than Noor's tanks-with-legs. Those are next.
+
+*Mood: sharpening every corner in the building.* 🔪
+

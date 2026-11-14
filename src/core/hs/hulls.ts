@@ -147,6 +147,27 @@ export function torsoHull(ref: NodeRef, arch: TorsoArch, w: number, h: number, d
   const rh = h * bs.h * 0.7;
   block(pl, [shiftX, h * (bs.y0 + bs.h * 0.45), cz - d * 0.5 - d * 0.06], [w * bs.w * 0.82, rh, d * 0.14], 'darkMetal', { r: rh * 0.12, backPanel: { inset: rh * 0.08, depth: d * 0.02 } });
   for (const sx of [-1, 1]) grille(pl, [shiftX + sx * w * bs.w * 0.2, h * (bs.y0 + bs.h * 0.45), cz - d * 0.5 - d * 0.13], w * bs.w * 0.3, rh * 0.62, Math.min(w, h) * 0.03, 'darkMetal', [0, Math.PI, 0]);
+  // chest: a stack of faceted plates on the glacis below the cockpit, outer ones louvred
+  const fz = cz + fs.z * d;
+  const chestW = w * fs.w * 0.9;
+  const rows = arch === 'tower' ? 3 : 2;
+  for (let r = 0; r < rows; r++) {
+    const y = h * (fs.y0 + 0.08 + r * 0.17);
+    const ph = h * 0.15;
+    const cols = r === 0 ? 3 : 2;
+    for (let c = 0; c < cols; c++) {
+      const cw = chestW / cols - gap * 2;
+      const x = shiftX + (c - (cols - 1) / 2) * (chestW / cols);
+      const vent = cols === 3 && c !== 1;
+      block(pl, [x, y, fz + plateT * 0.4 - r * plateT * 0.6], [cw, ph, plateT * 1.4], c === 1 && cols === 3 ? armor2 : armor, {
+        r: Math.min(cw, ph) * 0.22,
+        top: [0.86, 1],
+        bevel: plateT * 0.35,
+        frontPanel: vent ? { inset: Math.min(cw, ph) * 0.14, depth: plateT * 0.6, slats: 4 } : { inset: Math.min(cw, ph) * 0.16, depth: plateT * 0.25 },
+        collide: false,
+      });
+    }
+  }
   // under-hull: twist bearing skirt
   block(frame, [0, h * 0.02, cz - d * 0.05], [w * 0.5, h * 0.06, d * 0.5], 'darkMetal', { r: h * 0.02, collide: false, detail: 1 });
 
@@ -168,7 +189,7 @@ function hollowSkin(ref: NodeRef, w: number, h: number, d: number, cz: number, m
 export function pauldron(ref: NodeRef, pos: Vec3, side: 1 | -1, R: number, len: number, t: number, material: MaterialId, rng: Rng) {
   const a0 = -0.55;
   const a1 = Math.PI / 2 + rng.range(0.05, 0.35); // wraps a little past the top towards the body
-  const n = 8;
+  const n = 3; // three folded facets
   const outer: P2[] = [];
   const inner: P2[] = [];
   for (let i = 0; i <= n; i++) {
@@ -182,7 +203,7 @@ export function pauldron(ref: NodeRef, pos: Vec3, side: 1 | -1, R: number, len: 
   // loft along Z (front/back), the profile lives in the XY plane around the pivot
   const sec = (z: number, s: number, oy = 0): Section => ({ p: { k: 'pts', pts, r: radii, segs: 1 }, z, sx: s, sy: s, oy });
   const flare = rng.range(1.0, 1.15);
-  ref.shape(pos, { t: 'loft', sections: [sec(-len / 2, 0.84, -R * 0.04), sec(-len * 0.15, flare), sec(len * 0.25, flare), sec(len / 2, 0.8, -R * 0.06)], bevel: t * 0.35, smooth: 30 }, material, { rot: side > 0 ? [0, 0, 0] : [0, Math.PI, 0] });
+  ref.shape(pos, { t: 'loft', sections: [sec(-len / 2, 0.72, -R * 0.06), sec(-len * 0.3, flare), sec(len * 0.3, flare), sec(len / 2, 0.7, -R * 0.08)], bevel: t * 0.35 }, material, { rot: side > 0 ? [0, 0, 0] : [0, Math.PI, 0] });
   // trim strip + bolts along the lower edge
   const ex = Math.cos(a0) * (R - t / 2) * side;
   const ey = Math.sin(a0) * (R - t / 2);
@@ -198,7 +219,7 @@ export function hoodSections(iw: number, ih: number, t: number, idp: number, fro
     // outer: bottom-right → up → arc over top → down → bottom-left; inner offset by t
     const o: P2[] = [];
     const inn: P2[] = [];
-    const arc = (cx: number, cy: number, rr: number, a0: number, a1: number, out: P2[], n = 5) => {
+    const arc = (cx: number, cy: number, rr: number, a0: number, a1: number, out: P2[], n = 2) => {
       for (let i = 0; i <= n; i++) {
         const a = a0 + ((a1 - a0) * i) / n;
         out.push([cx + Math.cos(a) * rr, cy + Math.sin(a) * rr]);
@@ -287,7 +308,7 @@ export function hoodOpening(iw: number, ih: number, t: number, frontScale: numbe
   const top = (ih + t) * frontScale - t - inset;
   const r = Math.max(0.01, Math.min(rTop - t, W * 0.9, (top - sill) * 0.9));
   const pts: P2[] = [[W, sill]];
-  const n = 6;
+  const n = 2; // faceted (hexagonal-ish) window, like the A-73's canopy
   for (let i = 0; i <= n; i++) {
     const a = (i / n) * (Math.PI / 2);
     pts.push([W - r + Math.cos(a) * r, top - r + Math.sin(a) * r]);

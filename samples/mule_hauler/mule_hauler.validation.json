@@ -38,7 +38,7 @@
     {
       "id": "clearance.sweep",
       "severity": "warn",
-      "message": "8 clashes at single-joint limits, worst 96.5 cm"
+      "message": "8 clashes at single-joint limits, worst 96.3 cm"
     },
     {
       "id": "clearance.random",
@@ -90,7 +90,7 @@
     {
       "a": "crane_stick",
       "b": "body",
-      "depth": 0.9649099205177111,
+      "depth": 0.9632754067096566,
       "pose": {
         "crane_boom": 0.7853981633974483
       }
@@ -98,7 +98,7 @@
     {
       "a": "crane_stick",
       "b": "body",
-      "depth": 0.278415987050161,
+      "depth": 0.27668971254845054,
       "pose": {
         "crane_boom": 0.7853981633974483
       }

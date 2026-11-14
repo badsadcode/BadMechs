@@ -124,8 +124,8 @@ export interface MemberOpts {
 export function memberDown(ref: NodeRef, L: number, o: MemberOpts) {
   const ft = o.flareTop ?? 1.15;
   const fb = o.flareBottom ?? 1.05;
-  const rr = (o.round ?? 0.28) * Math.min(o.w, o.d);
-  const sec = (z: number, s: number, dz = 0): Section => ({ p: { k: 'rect', w: o.w * s, h: o.d * s, r: rr * s, segs: 3 }, z, oy: -dz });
+  const rr = (o.round ?? 0.3) * Math.min(o.w, o.d);
+  const sec = (z: number, s: number, dz = 0): Section => ({ p: { k: 'rect', w: o.w * s, h: o.d * s, r: rr * s, segs: 1 }, z, oy: -dz });
   const bow = o.bow ?? 0;
   const spec: ShapeSpec = {
     t: 'loft',
@@ -180,6 +180,9 @@ export interface ShellOpts {
   bevel?: number;
   detail?: 0 | 1 | 2;
   collide?: boolean;
+  /** add a smaller stepped plate on top */
+  inlay?: boolean;
+  inlayMaterial?: MaterialId;
 }
 
 /** Curved band profile: outer arc + inner arc, chamfered at the band ends. CCW. */
@@ -206,7 +209,7 @@ function bandProfile(R: number, span: number, t: number, segs: number, c: number
 export function shellDown(ref: NodeRef, y0: number, at: Vec3, face: '+z' | '-z' | '+x' | '-x', o: ShellOpts) {
   const n = o.panels ?? 1;
   const gap = o.gap ?? o.thick * 0.5;
-  const segs = 8;
+  const segs = 3; // folded sheet: three flat facets, not a smooth arc
   const plen = (o.len - gap * (n - 1)) / n;
   const rotY = face === '+z' ? 0 : face === '-z' ? PI : face === '+x' ? PI / 2 : -PI / 2;
   for (let i = 0; i < n; i++) {
@@ -222,12 +225,22 @@ export function shellDown(ref: NodeRef, y0: number, at: Vec3, face: '+z' | '-z' 
     const u0 = i / n;
     const u1 = (i + 1) / n;
     const um = mid(u0, u1);
+    // cut corners at both ends → the plate reads as a hexagon from the front
+    const cut = Math.min(0.22, (o.width * 0.18) / Math.max(plen, 1e-3));
     const sections: Section[] = [
-      { p: prof, z: zs, sx: t0, sy: -1, oy: -bulgeAt(u0) },
+      { p: prof, z: zs, sx: t0 * 0.66, sy: -1, oy: -bulgeAt(u0) },
+      { p: prof, z: zs - plen * cut, sx: lerp(t0, t1, cut), sy: -1, oy: -bulgeAt(lerp(u0, u1, cut)) },
       { p: prof, z: zs - plen / 2, sx: mid(t0, t1), sy: -1, oy: -bulgeAt(um) },
-      { p: prof, z: zs - plen, sx: t1, sy: -1, oy: -bulgeAt(u1) },
+      { p: prof, z: zs - plen * (1 - cut), sx: lerp(t0, t1, 1 - cut), sy: -1, oy: -bulgeAt(lerp(u0, u1, 1 - cut)) },
+      { p: prof, z: zs - plen, sx: t1 * 0.72, sy: -1, oy: -bulgeAt(u1) },
     ];
-    ref.shape([at[0], at[1] + y0, at[2]], { t: 'loft', axis: 'y', sections, bevel: o.bevel ?? o.thick * 0.35, smooth: 28 }, o.material, { rot: [0, rotY, 0], detail: o.detail ?? 0, collide: o.collide ?? true });
+    ref.shape([at[0], at[1] + y0, at[2]], { t: 'loft', axis: 'y', sections, bevel: o.bevel ?? o.thick * 0.35 }, o.material, { rot: [0, rotY, 0], detail: o.detail ?? 0, collide: o.collide ?? true });
+  }
+  // stepped inlay: a smaller, thinner raised plate on the main one (machined, layered look)
+  if (o.inlay) {
+    const out = face === '+z' ? [0, 0, 1] : face === '-z' ? [0, 0, -1] : face === '+x' ? [1, 0, 0] : [-1, 0, 0];
+    const k = o.thick * 0.55;
+    shellDown(ref, y0 - o.len * 0.14, [at[0] + out[0] * k, at[1], at[2] + out[2] * k], face, { ...o, inlay: false, len: o.len * 0.5, width: o.width * 0.58, thick: o.thick * 0.5, panels: 1, material: o.inlayMaterial ?? o.material, detail: 1, collide: false });
   }
 }
 
@@ -237,19 +250,27 @@ export function shellOut(ref: NodeRef, z0: number, at: Vec3, face: '+y' | '-y' |
   const gap = o.gap ?? o.thick * 0.5;
   const plen = (o.len - gap * (n - 1)) / n;
   const rotZ = face === '+y' ? 0 : face === '-y' ? PI : face === '+x' ? -PI / 2 : PI / 2;
-  const prof = bandProfile(o.width / (2 * Math.sin(o.span / 2)), o.span, o.thick, 8, o.thick * 0.45);
+  const prof = bandProfile(o.width / (2 * Math.sin(o.span / 2)), o.span, o.thick, 3, o.thick * 0.45);
   for (let i = 0; i < n; i++) {
     const zs = z0 + (plen + gap) * i;
     const t0 = lerp(o.taperStart ?? 1, o.taperEnd ?? 1, i / n);
     const t1 = lerp(o.taperStart ?? 1, o.taperEnd ?? 1, (i + 1) / n);
     const bel = o.belly ?? 0;
     const b = (u: number) => bel * Math.sin(PI * u);
+    const cut = Math.min(0.22, (o.width * 0.18) / Math.max(plen, 1e-3));
     const sections: Section[] = [
-      { p: prof, z: zs, sx: t0, oy: b(i / n) },
+      { p: prof, z: zs, sx: t0 * 0.66, oy: b(i / n) },
+      { p: prof, z: zs + plen * cut, sx: lerp(t0, t1, cut), oy: b((i + cut) / n) },
       { p: prof, z: zs + plen / 2, sx: (t0 + t1) / 2, oy: b((i + 0.5) / n) },
-      { p: prof, z: zs + plen, sx: t1, oy: b((i + 1) / n) },
+      { p: prof, z: zs + plen * (1 - cut), sx: lerp(t0, t1, 1 - cut), oy: b((i + 1 - cut) / n) },
+      { p: prof, z: zs + plen, sx: t1 * 0.72, oy: b((i + 1) / n) },
     ];
-    ref.shape(at, { t: 'loft', sections, bevel: o.bevel ?? o.thick * 0.35, smooth: 28 }, o.material, { rot: [0, 0, rotZ], detail: o.detail ?? 0, collide: o.collide ?? true });
+    ref.shape(at, { t: 'loft', sections, bevel: o.bevel ?? o.thick * 0.35 }, o.material, { rot: [0, 0, rotZ], detail: o.detail ?? 0, collide: o.collide ?? true });
+  }
+  if (o.inlay) {
+    const out = face === '+y' ? [0, 1, 0] : face === '-y' ? [0, -1, 0] : face === '+x' ? [1, 0, 0] : [-1, 0, 0];
+    const k = o.thick * 0.55;
+    shellOut(ref, z0 + o.len * 0.14, [at[0] + out[0] * k, at[1] + out[1] * k, at[2]], face, { ...o, inlay: false, len: o.len * 0.5, width: o.width * 0.58, thick: o.thick * 0.5, panels: 1, material: o.inlayMaterial ?? o.material, detail: 1, collide: false });
   }
 }
 

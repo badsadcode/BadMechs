@@ -10,19 +10,19 @@
     "maxAxisErrorDeg": 0.0,
     "materials": "9 imported / 9 used in file",
     "skinnedHoses": 6,
-    "triangles": 40944
+    "triangles": 37972
   },
   "glb_lod1": {
     "ok": true,
     "nodesChecked": 93,
     "maxPosErrorM": 1.0395159414573498e-05,
-    "triangles": 22760
+    "triangles": 22100
   },
   "glb_lod2": {
     "ok": true,
     "nodesChecked": 93,
     "maxPosErrorM": 1.0395159414573498e-05,
-    "triangles": 13836
+    "triangles": 12288
   },
   "fbx": {
     "ok": true,
@@ -31,7 +31,7 @@
     "maxPosErrorM": 9.906751000043548e-07,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 40944,
+    "triangles": 37972,
     "vertexGroups": 28,
     "blend": "lynx_s1.blend",
     "fbx": "lynx_s1.fbx"
@@ -40,8 +40,8 @@
     "ok": true,
     "posedJoint": "leg_L_shin",
     "angleRad": -0.976264,
-    "verticesMoved": 8890,
-    "verticesTotal": 49634,
+    "verticesMoved": 9226,
+    "verticesTotal": 51610,
     "pivotDrift": 8.429369702178807e-08
   },
   "usd": {
@@ -50,7 +50,7 @@
       "upAxis": "Y",
       "metersPerUnit": 1.0,
       "xforms": 94,
-      "meshes": 128,
+      "meshes": 132,
       "missing": [],
       "maxPosErrorM": 3.412611871292544e-05,
       "maxAxisErrorDeg": 0.0,
@@ -58,15 +58,15 @@
     },
     "blender": {
       "ok": true,
-      "objects": 212,
-      "meshes": 128
+      "objects": 216,
+      "meshes": 132
     },
     "ok": true
   },
   "obj": {
     "ok": true,
     "objects": 60,
-    "triangles": 39664,
+    "triangles": 36692,
     "materials": 9,
     "note": "static only, by design"
   },

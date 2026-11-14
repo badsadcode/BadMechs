@@ -10,19 +10,19 @@
     "maxAxisErrorDeg": 0.0,
     "materials": "11 imported / 11 used in file",
     "skinnedHoses": 4,
-    "triangles": 48622
+    "triangles": 45446
   },
   "glb_lod1": {
     "ok": true,
     "nodesChecked": 129,
     "maxPosErrorM": 1.537799835205078e-05,
-    "triangles": 25978
+    "triangles": 24162
   },
   "glb_lod2": {
     "ok": true,
     "nodesChecked": 129,
     "maxPosErrorM": 1.537799835205078e-05,
-    "triangles": 11648
+    "triangles": 10736
   },
   "fbx": {
     "ok": true,
@@ -31,7 +31,7 @@
     "maxPosErrorM": 2.5678466830894965e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 48622,
+    "triangles": 45446,
     "vertexGroups": 45,
     "blend": "mule_hauler.blend",
     "fbx": "mule_hauler.fbx"
@@ -40,8 +40,8 @@
     "ok": true,
     "posedJoint": "leg_FL_tibia",
     "angleRad": -1.521928,
-    "verticesMoved": 3739,
-    "verticesTotal": 59583,
+    "verticesMoved": 3734,
+    "verticesTotal": 58792,
     "pivotDrift": 1.5078914929239175e-06
   },
   "usd": {
@@ -50,7 +50,7 @@
       "upAxis": "Y",
       "metersPerUnit": 1.0,
       "xforms": 130,
-      "meshes": 211,
+      "meshes": 209,
       "missing": [],
       "maxPosErrorM": 7.911366511131127e-05,
       "maxAxisErrorDeg": 0.0,
@@ -58,15 +58,15 @@
     },
     "blender": {
       "ok": true,
-      "objects": 332,
-      "meshes": 211
+      "objects": 330,
+      "meshes": 209
     },
     "ok": true
   },
   "obj": {
     "ok": true,
     "objects": 102,
-    "triangles": 47662,
+    "triangles": 44486,
     "materials": 11,
     "note": "static only, by design"
   },

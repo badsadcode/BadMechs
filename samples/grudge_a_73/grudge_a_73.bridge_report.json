@@ -34,7 +34,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L_foot": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R_hip_yaw": {
@@ -58,11 +58,11 @@
       "axisErrDeg": 0.0
     },
     "leg_R_ankle": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_R_foot": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "torso": {
@@ -199,7 +199,7 @@
   "maxPosErrorM": 1.0293672108155812e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 54512,
+  "triangles": 51840,
   "vertexGroups": 48,
   "blend": "grudge_a_73.blend",
   "fbx": "grudge_a_73.fbx"

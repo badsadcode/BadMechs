@@ -36,7 +36,7 @@ export interface Recess {
 }
 
 export type ShapeSpec =
-  | { t: 'loft'; sections: Section[]; bevel?: number; cap?: 'both' | 'start' | 'end' | 'none'; axis?: 'x' | 'y' | 'z'; recess?: Recess[]; smooth?: number }
+  | { t: 'loft'; sections: Section[]; bevel?: number; cap?: 'both' | 'start' | 'end' | 'none'; axis?: 'x' | 'y' | 'z'; recess?: Recess[]; smooth?: number; soft?: boolean }
   | { t: 'lathe'; pts: P2[]; segs: number; axis?: 'x' | 'y' | 'z'; smooth?: number; arc?: number }
   | { t: 'tube'; path: V3[]; r: number; segs: number };
 
@@ -56,16 +56,25 @@ function lodSegs(s: number | undefined, l: ShapeLod, min = 1) {
   return Math.max(min, Math.round((s ?? 1) * l.segScale));
 }
 
+/**
+ * BadMech's shape language is hard-surface: every corner treatment is a CHAMFER (one cut), not a
+ * fillet. Soft, rounded blocks read as toys; chamfered facets read as machined, folded steel.
+ * Set `soft: true` on a profile to opt out (rare: glass, rubber).
+ */
 export function buildProfile(p: ProfileSpec, l: ShapeLod): Profile {
+  const soft = (p as { soft?: boolean }).soft;
   switch (p.k) {
     case 'rect':
-      return rect(p.w, p.h, { ...p, segs: lodSegs(p.segs, l), edgeSegs: p.edgeSegs ? lodSegs(p.edgeSegs, l, 2) : 0 });
+      return rect(p.w, p.h, { ...p, segs: soft ? lodSegs(p.segs, l) : 1, edgeSegs: p.edgeSegs ? lodSegs(p.edgeSegs, l, 2) : 0 });
     case 'ngon':
       return ngon(p.r, p.n, p.rot ?? 0);
     case 'pts':
-      return p.r ? treatCorners(p.pts, p.r, lodSegs(p.segs, l)) : p.pts.map((q) => [q[0], q[1]] as P2);
+      return p.r ? treatCorners(p.pts, p.r, soft ? lodSegs(p.segs, l) : 1) : p.pts.map((q) => [q[0], q[1]] as P2);
   }
 }
+
+/** Facets meeting at more than this angle get a crisp edge (hard-surface default). */
+export const HARD_SMOOTH_DEG = 18;
 
 const AXIS: Record<'x' | 'y' | 'z', (p: V3) => V3> = {
   z: (p) => p,
@@ -206,7 +215,7 @@ function loft(s: Extract<ShapeSpec, { t: 'loft' }>, l: ShapeLod): MeshData {
   if (cap === 'both' || cap === 'start') capRing(rings[0], -dir, recStart);
   if (cap === 'both' || cap === 'end') capRing(rings[rings.length - 1], dir, recEnd);
   const ax = AXIS[s.axis ?? 'z'];
-  return soup.build(s.smooth ?? 35, ax, ax);
+  return soup.build(Math.min(s.smooth ?? HARD_SMOOTH_DEG, (s as { soft?: boolean }).soft ? 60 : HARD_SMOOTH_DEG), ax, ax);
 }
 
 function lathe(s: Extract<ShapeSpec, { t: 'lathe' }>, l: ShapeLod): MeshData {

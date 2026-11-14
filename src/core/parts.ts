@@ -60,6 +60,8 @@ export function segmentDown(link: NodeRef, L: number, w: number, d: number, st: 
       taperStart: 1.05,
       taperEnd: rng.range(0.7, 0.95),
       belly: Math.abs(bow) * 0.4 + d * 0.03,
+      inlay: st.plating > 0.5,
+      inlayMaterial: rng.chance(0.35) ? 'paint2' : st.armor,
     });
     if (st.plating > 0.45) {
       for (const sx of [-1, 1]) shellDown(armor, -L * 0.2, [sx * (side + w * 0.03 + th * 0.8), 0, bow * 0.5], sx > 0 ? '+x' : '-x', { len: L * 0.5, width: d * 0.72, span: 0.6, thick: th * 0.8, material: st.armor, taperEnd: 0.8, belly: d * 0.02 });
@@ -107,6 +109,8 @@ export function segmentOut(link: NodeRef, L: number, w: number, h: number, st: S
       taperStart: 0.95,
       taperEnd: rng.range(0.65, 0.9),
       belly: Math.abs(bow) * 0.4 + h * 0.03,
+      inlay: st.plating > 0.5,
+      inlayMaterial: rng.chance(0.35) ? 'paint2' : st.armor,
     });
     const ty = top + h * 0.03 + th + bow * 0.55 + 0.004;
     armor.bolts([-w * 0.25, ty, L * 0.15], [-w * 0.25, ty, L * 0.55], 4, Math.max(0.01, w * 0.025), 'y');
@@ -263,10 +267,18 @@ function buildFoot(foot: NodeRef, sp: UprightLegSpec): Vec3 {
       // rubber-tread sole: heel → ball → toe, toe slightly raised
       const sole = (z: number, w: number, h: number, oy: number): Section => ({ p: rr(W * w, H * h, H * 0.08), z, oy });
       fr.shape([0, 0, 0], { t: 'loft', sections: [sole(-L * 0.42, 0.78, 0.3, -H * 0.85), sole(-L * 0.2, 0.95, 0.32, -H * 0.84), sole(L * 0.3, 1, 0.32, -H * 0.84), sole(L * 0.6, 0.86, 0.26, -H * 0.8)], bevel: H * 0.04 }, 'rubber');
-      // armoured upper: tall at the heel, sloping down to a chamfered toe cap (2 panels)
-      const up = (z: number, w: number, h: number, oy: number): Section => ({ p: rr(W * w, H * h, W * 0.12, { topScale: 0.78 }), z, oy });
-      ar.shape([0, 0, 0], { t: 'loft', sections: [up(-L * 0.38, 0.88, 0.5, -H * 0.45), up(-L * 0.05, 0.96, 0.52, -H * 0.42), up(L * 0.12, 0.96, 0.5, -H * 0.44)], bevel: W * 0.03 }, sp.style.armor);
-      ar.shape([0, 0, 0], { t: 'loft', sections: [up(L * 0.16, 0.94, 0.48, -H * 0.46), up(L * 0.4, 0.9, 0.34, -H * 0.55), up(L * 0.58, 0.8, 0.14, -H * 0.64)], bevel: W * 0.025 }, sp.style.armor);
+      // armoured instep, then segmented toe blocks (like the A-73's): faceted, each with a
+      // sloped nose and its own armour cap
+      const up = (z: number, w: number, h: number, oy: number, x = 0): Section => ({ p: rr(W * w, H * h, W * 0.12, { topScale: 0.78 }), z, oy, ox: x });
+      ar.shape([0, 0, 0], { t: 'loft', sections: [up(-L * 0.38, 0.88, 0.5, -H * 0.45), up(-L * 0.05, 0.96, 0.56, -H * 0.42), up(L * 0.12, 0.94, 0.5, -H * 0.44)], bevel: W * 0.03 }, sp.style.armor);
+      const toes = W > 0.6 ? 3 : 2;
+      const tw = W / toes;
+      for (let i = 0; i < toes; i++) {
+        const x = (i - (toes - 1) / 2) * tw;
+        const len = L * (i === (toes - 1) / 2 || toes === 2 ? 0.5 : 0.44);
+        fr.shape([0, 0, 0], { t: 'loft', sections: [up(L * 0.1, (tw * 0.9) / W, 0.44, -H * 0.62, x), up(L * 0.1 + len * 0.7, (tw * 0.92) / W, 0.4, -H * 0.66, x), up(L * 0.1 + len, (tw * 0.7) / W, 0.18, -H * 0.8, x)], bevel: W * 0.02 }, 'darkMetal');
+        ar.shape([0, 0, 0], { t: 'loft', sections: [up(L * 0.14, (tw * 0.78) / W, 0.16, -H * 0.34, x), up(L * 0.1 + len * 0.62, (tw * 0.78) / W, 0.14, -H * 0.4, x), up(L * 0.1 + len * 0.85, (tw * 0.6) / W, 0.08, -H * 0.55, x)], bevel: W * 0.012 }, sp.style.armor, { detail: 1 });
+      }
       fr.shape([0, 0, 0], { t: 'loft', sections: [up(-L * 0.5, 0.5, 0.3, -H * 0.6), up(-L * 0.38, 0.62, 0.46, -H * 0.55)], bevel: W * 0.02 }, 'darkMetal'); // heel spur
       ar.bolts([-W * 0.3, -H * 0.2, L * 0.13], [W * 0.3, -H * 0.2, L * 0.13], 4, Math.max(0.01, W * 0.02), 'y');
       return [0, -H, L * 0.1];
@@ -585,7 +597,7 @@ export function cockpit(b: Builder, parent: string, at: Vec3, sp: CockpitSpec): 
         { p: open(frontScale, 0.004), z: front + idp * 0.12, sx: 0.96, sy: 0.97 },
         { p: open(frontScale, 0.004), z: front + idp * 0.24, sx: 0.78, sy: 0.82, oy: sill * 0.4 },
         { p: open(frontScale, 0.004), z: front + idp * 0.3, sx: 0.45, sy: 0.55, oy: sill * 1.2 },
-      ], smooth: 50 }, 'glass', { collide: false });
+      ] }, 'glass', { collide: false });
     } else if (sp.style === 'canopy') {
       // single pane, recessed into the opening, one centre post
       glass.shape([0, 0, 0], { t: 'loft', sections: [{ p: open(frontScale, 0.004), z: front - t * 0.9 }, { p: open(frontScale, 0.004), z: front - t * 0.5 }] }, 'glass', { collide: false });

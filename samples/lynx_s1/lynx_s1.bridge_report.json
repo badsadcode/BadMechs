@@ -119,7 +119,7 @@
   "maxPosErrorM": 9.906751000043548e-07,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 40944,
+  "triangles": 37972,
   "vertexGroups": 28,
   "blend": "lynx_s1.blend",
   "fbx": "lynx_s1.fbx"

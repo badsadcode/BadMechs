@@ -123,7 +123,7 @@
   "maxPosErrorM": 2.8367052160002695e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 50088,
+  "triangles": 46612,
   "vertexGroups": 29,
   "blend": "cricket_surveyor.blend",
   "fbx": "cricket_surveyor.fbx"
