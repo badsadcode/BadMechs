@@ -8,22 +8,22 @@
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_FL: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.32–7.32 m"
+      "message": "leg_FL: 4-joint chain, foot on ground (Δy 0.0 mm), reach 1.82–7.46 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_FR: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.11–7.26 m"
+      "message": "leg_FR: 4-joint chain, foot on ground (Δy 0.0 mm), reach 1.59–7.42 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_RL: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.44–7.30 m"
+      "message": "leg_RL: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.00–7.44 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_RR: 4-joint chain, foot on ground (Δy 0.0 mm), reach 2.30–7.32 m"
+      "message": "leg_RR: 4-joint chain, foot on ground (Δy 0.0 mm), reach 1.82–7.47 m"
     },
     {
       "id": "piston.stroke",
@@ -38,12 +38,12 @@
     {
       "id": "clearance.sweep",
       "severity": "warn",
-      "message": "9 clashes at single-joint limits, worst 96.5 cm"
+      "message": "8 clashes at single-joint limits, worst 96.5 cm"
     },
     {
       "id": "clearance.random",
       "severity": "info",
-      "message": "23/30 random multi-joint poses are clash-free (combined extremes can still collide; controllers should keep to gait ranges)"
+      "message": "22/30 random multi-joint poses are clash-free (combined extremes can still collide; controllers should keep to gait ranges)"
     },
     {
       "id": "interior.space",
@@ -66,49 +66,41 @@
     {
       "a": "crane_stick",
       "b": "body",
-      "depth": 0.9543311652916604,
+      "depth": 0.9543311652916601,
       "pose": {
-        "crane_boom": 0.730420291959627
+        "crane_boom": 0.7853981633974483
       }
     },
     {
       "a": "crane_stick",
       "b": "body",
-      "depth": 0.7938750000000001,
+      "depth": 0.6181583971167735,
       "pose": {
-        "crane_boom": 0.730420291959627
+        "crane_boom": 0.7853981633974483
       }
     },
     {
       "a": "crane_stick",
       "b": "body",
-      "depth": 0.24322216117334006,
+      "depth": 0.21921041380619832,
       "pose": {
-        "crane_boom": 0.730420291959627
+        "crane_boom": 0.7853981633974483
       }
     },
     {
       "a": "crane_stick",
       "b": "body",
-      "depth": 0.9649099205177112,
+      "depth": 0.9649099205177111,
       "pose": {
-        "crane_boom": 0.730420291959627
+        "crane_boom": 0.7853981633974483
       }
     },
     {
       "a": "crane_stick",
       "b": "body",
-      "depth": 0.465690059419932,
+      "depth": 0.278415987050161,
       "pose": {
-        "crane_boom": 0.730420291959627
-      }
-    },
-    {
-      "a": "crane_jaw1",
-      "b": "body",
-      "depth": 0.1033526523704027,
-      "pose": {
-        "crane_boom": 0.730420291959627
+        "crane_boom": 0.7853981633974483
       }
     },
     {

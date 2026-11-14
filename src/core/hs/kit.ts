@@ -368,7 +368,7 @@ export function rodShape(L: number, r: number): ShapeSpec {
 
 /** Clevis eye lug around a pin along X, plate in the YZ plane, tab pointing to `toward` (YZ). */
 export function clevis(ref: NodeRef, pos: Vec3, r: number, gapW: number, toward: [number, number], material: MaterialId = 'darkMetal') {
-  const len = Math.hypot(toward[0], toward[1]) || 1;
+  const len = Math.hypot(toward[0], toward[1]);
   const ang = Math.atan2(toward[0], toward[1]); // in YZ plane, from +Z toward +Y
   // the tab runs all the way into the structure it is welded to
   const L = Math.max(r * 1.4, len * 0.95);

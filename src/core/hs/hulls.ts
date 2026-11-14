@@ -277,3 +277,25 @@ export function bodyHull(ref: NodeRef, arch: BodyArch, w: number, h: number, L: 
   }
   if (hollow) hollowSkin(frame, w * 0.9, h * 0.86, L * 0.9, 0, 'darkMetal', -h * 0.43);
 }
+
+/**
+ * The hood's inner front opening (arch top, flat sill), as a closed CCW profile — so glass,
+ * frames and armour plates fit the hood exactly instead of being sized by guesswork.
+ */
+export function hoodOpening(iw: number, ih: number, t: number, frontScale: number, rTop: number, sill: number, inset = 0): P2[] {
+  const W = iw / 2 - inset;
+  const top = (ih + t) * frontScale - t - inset;
+  const r = Math.max(0.01, Math.min(rTop - t, W * 0.9, (top - sill) * 0.9));
+  const pts: P2[] = [[W, sill]];
+  const n = 6;
+  for (let i = 0; i <= n; i++) {
+    const a = (i / n) * (Math.PI / 2);
+    pts.push([W - r + Math.cos(a) * r, top - r + Math.sin(a) * r]);
+  }
+  for (let i = 0; i <= n; i++) {
+    const a = Math.PI / 2 + (i / n) * (Math.PI / 2);
+    pts.push([-W + r + Math.cos(a) * r, top - r + Math.sin(a) * r]);
+  }
+  pts.push([-W, sill]);
+  return pts;
+}

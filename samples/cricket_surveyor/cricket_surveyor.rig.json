@@ -18,7 +18,7 @@
   "height": 4.48,
   "width": 10.51,
   "length": 8.97,
-  "estimatedMassTonnes": 29.3,
+  "estimatedMassTonnes": 28.8,
   "sizeClass": "medium"
  },
  "nodes": [
@@ -3662,25 +3662,6 @@
     "body": "body",
     "center": [
      0,
-     0.719,
-     3.678
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.63,
-     0.525,
-     0.2025
-    ]
-   },
-   {
-    "body": "body",
-    "center": [
-     0,
      -0.179,
      3.111
     ],
@@ -3713,6 +3694,25 @@
      0.66,
      0.73,
      0.03
+    ]
+   },
+   {
+    "body": "body",
+    "center": [
+     -0.63,
+     0.551,
+     3.0435
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.03,
+     0.7,
+     0.6375
     ]
    },
    {

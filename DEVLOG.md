@@ -138,3 +138,14 @@ Exo knees got their full range back. All 58 tests green, every sample still roun
 
 *Mood: humbled by a construction vehicle.* 🚜
 
+### 🦯 Later that day — "Why does the exosuit have chopsticks?"
+BadSad sent a screenshot of the exosuit holding what looked like four giant chopsticks. Measured every part bigger than a third of the mech: the culprits were **98 cm long bracket plates** on a 2.2 m machine. A side-mounted piston bracket was given a zero-length "point here" direction, a fallback turned zero into *one metre*, and the bracket plates obediently grew to match. Fallback removed; brackets are now the size of brackets.
+
+### 🛤️ Rams that don't phase through steel
+A spider leg's ram was passing straight through the leg it was supposed to push. Instead of nudging numbers, the builder now **checks every ram's line against the solid parts of both limbs at rest and at both joint limits**, and pushes the mounts outward until it clears — *before* sizing the barrel and rod (the tests caught me doing it in the wrong order first: rods would have popped out of their barrels. Thanks, tests).
+
+### 🪟 Glass that fits the window
+The cockpit glass was still sized for the old box cockpit, so it poked through the new curved hood. Now everything at the front is cut from the hood's **actual front opening**: canopy = recessed pane + centre post, bubble = a real glass dome growing out of the arch, armoured = a fitted plate with vision slits and bolts.
+
+*Mood: brackets are the size of brackets. Life is good.* 🔩
+

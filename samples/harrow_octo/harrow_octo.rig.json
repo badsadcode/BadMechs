@@ -3296,18 +3296,18 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.2738,
+    -0.80804,
     0.112
    ],
    "restRotation": [
-    -0.280159,
+    -0.264209,
     0,
     0,
-    0.959954
+    0.964465
    ],
    "restWorldPosition": [
     1.9658,
-    2.0185,
+    1.4842,
     2.4575
    ],
    "tags": [
@@ -3322,19 +3322,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.24994,
+    -0.78418,
     1.2348
    ],
    "restRotation": [
-    -0.994609,
+    -0.992753,
     0,
     0,
-    0.103699
+    0.120171
    ],
    "restWorldPosition": [
-    2.8502,
-    2.9785,
-    3.6747
+    3.0701,
+    2.597,
+    3.9774
    ],
    "tags": [
     "piston-rod"
@@ -3396,19 +3396,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.31573,
+    0.76093,
     0.882
    ],
    "restRotation": [
-    0.277224,
+    0.336492,
     0,
     0,
-    0.960805
+    0.941686
    ],
    "restWorldPosition": [
-    2.4693,
-    3.1353,
-    3.1505
+    2.2861,
+    3.4531,
+    2.8983
    ],
    "tags": [
     "piston-barrel"
@@ -3422,19 +3422,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.20688,
+    0.65208,
     0.84
    ],
    "restRotation": [
-    0.723843,
+    0.765386,
     0,
     0,
-    0.689965
+    0.643571
    ],
    "restWorldPosition": [
-    3.7081,
-    3.5931,
-    4.8556
+    3.9609,
+    3.7083,
+    5.2035
    ],
    "tags": [
     "piston-rod"
@@ -3472,18 +3472,18 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.2738,
+    -0.80804,
     0.112
    ],
    "restRotation": [
-    -0.280159,
+    -0.264209,
     0,
     0,
-    0.959954
+    0.964465
    ],
    "restWorldPosition": [
     -1.9658,
-    2.0185,
+    1.4842,
     2.4575
    ],
    "tags": [
@@ -3498,19 +3498,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.24994,
+    -0.78418,
     1.2348
    ],
    "restRotation": [
-    -0.994609,
+    -0.992753,
     0,
     0,
-    0.103699
+    0.120171
    ],
    "restWorldPosition": [
-    -2.8502,
-    2.9785,
-    3.6747
+    -3.0701,
+    2.597,
+    3.9774
    ],
    "tags": [
     "piston-rod"
@@ -3572,19 +3572,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.31573,
+    0.76093,
     0.882
    ],
    "restRotation": [
-    0.277224,
+    0.336492,
     0,
     0,
-    0.960805
+    0.941686
    ],
    "restWorldPosition": [
-    -2.4693,
-    3.1353,
-    3.1505
+    -2.2861,
+    3.4531,
+    2.8983
    ],
    "tags": [
     "piston-barrel"
@@ -3598,19 +3598,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.20688,
+    0.65208,
     0.84
    ],
    "restRotation": [
-    0.723843,
+    0.765386,
     0,
     0,
-    0.689965
+    0.643571
    ],
    "restWorldPosition": [
-    -3.7081,
-    3.5931,
-    4.8556
+    -3.9609,
+    3.7083,
+    5.2035
    ],
    "tags": [
     "piston-rod"
@@ -3648,18 +3648,18 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.2738,
+    -0.80804,
     0.112
    ],
    "restRotation": [
-    -0.280159,
+    -0.264209,
     0,
     0,
-    0.959954
+    0.964465
    ],
    "restWorldPosition": [
     2.0065,
-    2.0185,
+    1.4842,
     0.8236
    ],
    "tags": [
@@ -3674,19 +3674,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.24994,
+    -0.78418,
     1.2348
    ],
    "restRotation": [
-    -0.994609,
+    -0.992753,
     0,
     0,
-    0.103699
+    0.120171
    ],
    "restWorldPosition": [
-    3.4374,
-    2.9785,
-    1.2885
+    3.7932,
+    2.597,
+    1.4041
    ],
    "tags": [
     "piston-rod"
@@ -3748,19 +3748,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.31573,
+    0.76093,
     0.882
    ],
    "restRotation": [
-    0.277224,
+    0.336492,
     0,
     0,
-    0.960805
+    0.941686
    ],
    "restWorldPosition": [
-    2.8212,
-    3.1353,
-    1.0883
+    2.5247,
+    3.4531,
+    0.992
    ],
    "tags": [
     "piston-barrel"
@@ -3774,19 +3774,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.20688,
+    0.65208,
     0.84
    ],
    "restRotation": [
-    0.723843,
+    0.765386,
     0,
     0,
-    0.689965
+    0.643571
    ],
    "restWorldPosition": [
-    4.8256,
-    3.5931,
-    1.7396
+    5.2346,
+    3.7083,
+    1.8725
    ],
    "tags": [
     "piston-rod"
@@ -3824,18 +3824,18 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.2738,
+    -0.80804,
     0.112
    ],
    "restRotation": [
-    -0.280159,
+    -0.264209,
     0,
     0,
-    0.959954
+    0.964465
    ],
    "restWorldPosition": [
     -2.0065,
-    2.0185,
+    1.4842,
     0.8236
    ],
    "tags": [
@@ -3850,19 +3850,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.24994,
+    -0.78418,
     1.2348
    ],
    "restRotation": [
-    -0.994609,
+    -0.992753,
     0,
     0,
-    0.103699
+    0.120171
    ],
    "restWorldPosition": [
-    -3.4374,
-    2.9785,
-    1.2885
+    -3.7932,
+    2.597,
+    1.4041
    ],
    "tags": [
     "piston-rod"
@@ -3924,19 +3924,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.31573,
+    0.76093,
     0.882
    ],
    "restRotation": [
-    0.277224,
+    0.336492,
     0,
     0,
-    0.960805
+    0.941686
    ],
    "restWorldPosition": [
-    -2.8212,
-    3.1353,
-    1.0883
+    -2.5247,
+    3.4531,
+    0.992
    ],
    "tags": [
     "piston-barrel"
@@ -3950,19 +3950,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.20688,
+    0.65208,
     0.84
    ],
    "restRotation": [
-    0.723843,
+    0.765386,
     0,
     0,
-    0.689965
+    0.643571
    ],
    "restWorldPosition": [
-    -4.8256,
-    3.5931,
-    1.7396
+    -5.2346,
+    3.7083,
+    1.8725
    ],
    "tags": [
     "piston-rod"
@@ -4000,18 +4000,18 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.2738,
+    -0.80804,
     0.112
    ],
    "restRotation": [
-    -0.280159,
+    -0.264209,
     0,
     0,
-    0.959954
+    0.964465
    ],
    "restWorldPosition": [
     2.0065,
-    2.0185,
+    1.4842,
     -0.8236
    ],
    "tags": [
@@ -4026,19 +4026,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.24994,
+    -0.78418,
     1.2348
    ],
    "restRotation": [
-    -0.994609,
+    -0.992753,
     0,
     0,
-    0.103699
+    0.120171
    ],
    "restWorldPosition": [
-    3.4374,
-    2.9785,
-    -1.2885
+    3.7932,
+    2.597,
+    -1.4041
    ],
    "tags": [
     "piston-rod"
@@ -4100,19 +4100,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.31573,
+    0.76093,
     0.882
    ],
    "restRotation": [
-    0.277224,
+    0.336492,
     0,
     0,
-    0.960805
+    0.941686
    ],
    "restWorldPosition": [
-    2.8212,
-    3.1353,
-    -1.0883
+    2.5247,
+    3.4531,
+    -0.992
    ],
    "tags": [
     "piston-barrel"
@@ -4126,19 +4126,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.20688,
+    0.65208,
     0.84
    ],
    "restRotation": [
-    0.723843,
+    0.765386,
     0,
     0,
-    0.689965
+    0.643571
    ],
    "restWorldPosition": [
-    4.8256,
-    3.5931,
-    -1.7396
+    5.2346,
+    3.7083,
+    -1.8725
    ],
    "tags": [
     "piston-rod"
@@ -4176,18 +4176,18 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.2738,
+    -0.80804,
     0.112
    ],
    "restRotation": [
-    -0.280159,
+    -0.264209,
     0,
     0,
-    0.959954
+    0.964465
    ],
    "restWorldPosition": [
     -2.0065,
-    2.0185,
+    1.4842,
     -0.8236
    ],
    "tags": [
@@ -4202,19 +4202,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.24994,
+    -0.78418,
     1.2348
    ],
    "restRotation": [
-    -0.994609,
+    -0.992753,
     0,
     0,
-    0.103699
+    0.120171
    ],
    "restWorldPosition": [
-    -3.4374,
-    2.9785,
-    -1.2885
+    -3.7932,
+    2.597,
+    -1.4041
    ],
    "tags": [
     "piston-rod"
@@ -4276,19 +4276,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.31573,
+    0.76093,
     0.882
    ],
    "restRotation": [
-    0.277224,
+    0.336492,
     0,
     0,
-    0.960805
+    0.941686
    ],
    "restWorldPosition": [
-    -2.8212,
-    3.1353,
-    -1.0883
+    -2.5247,
+    3.4531,
+    -0.992
    ],
    "tags": [
     "piston-barrel"
@@ -4302,19 +4302,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.20688,
+    0.65208,
     0.84
    ],
    "restRotation": [
-    0.723843,
+    0.765386,
     0,
     0,
-    0.689965
+    0.643571
    ],
    "restWorldPosition": [
-    -4.8256,
-    3.5931,
-    -1.7396
+    -5.2346,
+    3.7083,
+    -1.8725
    ],
    "tags": [
     "piston-rod"
@@ -4352,18 +4352,18 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.2738,
+    -0.80804,
     0.112
    ],
    "restRotation": [
-    -0.280159,
+    -0.264209,
     0,
     0,
-    0.959954
+    0.964465
    ],
    "restWorldPosition": [
     1.9658,
-    2.0185,
+    1.4842,
     -2.4575
    ],
    "tags": [
@@ -4378,19 +4378,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.24994,
+    -0.78418,
     1.2348
    ],
    "restRotation": [
-    -0.994609,
+    -0.992753,
     0,
     0,
-    0.103699
+    0.120171
    ],
    "restWorldPosition": [
-    2.8502,
-    2.9785,
-    -3.6747
+    3.0701,
+    2.597,
+    -3.9774
    ],
    "tags": [
     "piston-rod"
@@ -4452,19 +4452,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.31573,
+    0.76093,
     0.882
    ],
    "restRotation": [
-    0.277224,
+    0.336492,
     0,
     0,
-    0.960805
+    0.941686
    ],
    "restWorldPosition": [
-    2.4693,
-    3.1353,
-    -3.1505
+    2.2861,
+    3.4531,
+    -2.8983
    ],
    "tags": [
     "piston-barrel"
@@ -4478,19 +4478,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.20688,
+    0.65208,
     0.84
    ],
    "restRotation": [
-    0.723843,
+    0.765386,
     0,
     0,
-    0.689965
+    0.643571
    ],
    "restWorldPosition": [
-    3.7081,
-    3.5931,
-    -4.8556
+    3.9609,
+    3.7083,
+    -5.2035
    ],
    "tags": [
     "piston-rod"
@@ -4528,18 +4528,18 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.2738,
+    -0.80804,
     0.112
    ],
    "restRotation": [
-    -0.280159,
+    -0.264209,
     0,
     0,
-    0.959954
+    0.964465
    ],
    "restWorldPosition": [
     -1.9658,
-    2.0185,
+    1.4842,
     -2.4575
    ],
    "tags": [
@@ -4554,19 +4554,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    -0.24994,
+    -0.78418,
     1.2348
    ],
    "restRotation": [
-    -0.994609,
+    -0.992753,
     0,
     0,
-    0.103699
+    0.120171
    ],
    "restWorldPosition": [
-    -2.8502,
-    2.9785,
-    -3.6747
+    -3.0701,
+    2.597,
+    -3.9774
    ],
    "tags": [
     "piston-rod"
@@ -4628,19 +4628,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.31573,
+    0.76093,
     0.882
    ],
    "restRotation": [
-    0.277224,
+    0.336492,
     0,
     0,
-    0.960805
+    0.941686
    ],
    "restWorldPosition": [
-    -2.4693,
-    3.1353,
-    -3.1505
+    -2.2861,
+    3.4531,
+    -2.8983
    ],
    "tags": [
     "piston-barrel"
@@ -4654,19 +4654,19 @@
    "component": "actuator",
    "restTranslation": [
     0,
-    0.20688,
+    0.65208,
     0.84
    ],
    "restRotation": [
-    0.723843,
+    0.765386,
     0,
     0,
-    0.689965
+    0.643571
    ],
    "restWorldPosition": [
-    -3.7081,
-    3.5931,
-    -4.8556
+    -3.9609,
+    3.7083,
+    -5.2035
    ],
    "tags": [
     "piston-rod"
@@ -4760,10 +4760,10 @@
     0,
     -0.5878
    ],
-   "min": -1.14756,
-   "max": 0.48833,
-   "minDeg": -65.75,
-   "maxDeg": 27.98,
+   "min": -2.05075,
+   "max": 0.87266,
+   "minDeg": -117.5,
+   "maxDeg": 50,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -4856,10 +4856,10 @@
     0,
     0.5878
    ],
-   "min": -1.14756,
-   "max": 0.48833,
-   "minDeg": -65.75,
-   "maxDeg": 27.98,
+   "min": -2.05075,
+   "max": 0.87266,
+   "minDeg": -117.5,
+   "maxDeg": 50,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -4952,10 +4952,10 @@
     0,
     -0.9511
    ],
-   "min": -1.14756,
-   "max": 0.48833,
-   "minDeg": -65.75,
-   "maxDeg": 27.98,
+   "min": -2.05075,
+   "max": 0.87266,
+   "minDeg": -117.5,
+   "maxDeg": 50,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -5048,10 +5048,10 @@
     0,
     0.9511
    ],
-   "min": -1.14756,
-   "max": 0.48833,
-   "minDeg": -65.75,
-   "maxDeg": 27.98,
+   "min": -2.05075,
+   "max": 0.87266,
+   "minDeg": -117.5,
+   "maxDeg": 50,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -5144,10 +5144,10 @@
     0,
     -0.9511
    ],
-   "min": -1.14756,
-   "max": 0.48833,
-   "minDeg": -65.75,
-   "maxDeg": 27.98,
+   "min": -2.05075,
+   "max": 0.87266,
+   "minDeg": -117.5,
+   "maxDeg": 50,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -5240,10 +5240,10 @@
     0,
     0.9511
    ],
-   "min": -1.14756,
-   "max": 0.48833,
-   "minDeg": -65.75,
-   "maxDeg": 27.98,
+   "min": -2.05075,
+   "max": 0.87266,
+   "minDeg": -117.5,
+   "maxDeg": 50,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -5336,10 +5336,10 @@
     0,
     -0.5878
    ],
-   "min": -1.14756,
-   "max": 0.48833,
-   "minDeg": -65.75,
-   "maxDeg": 27.98,
+   "min": -2.05075,
+   "max": 0.87266,
+   "minDeg": -117.5,
+   "maxDeg": 50,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -5432,10 +5432,10 @@
     0,
     0.5878
    ],
-   "min": -1.14756,
-   "max": 0.48833,
-   "minDeg": -65.75,
-   "maxDeg": 27.98,
+   "min": -2.05075,
+   "max": 0.87266,
+   "minDeg": -117.5,
+   "maxDeg": 50,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "tibia-pitch",
@@ -5515,8 +5515,8 @@
     5.3975
    ],
    "restReach": 4.3917,
-   "minReach": 2.5879,
-   "maxReach": 7.1982,
+   "minReach": 1.421,
+   "maxReach": 7.9836,
    "gaitPhase": 0
   },
   {
@@ -5542,8 +5542,8 @@
     5.3975
    ],
    "restReach": 4.3917,
-   "minReach": 2.8378,
-   "maxReach": 7.1205,
+   "minReach": 1.7097,
+   "maxReach": 7.9197,
    "gaitPhase": 0.5
   },
   {
@@ -5569,8 +5569,8 @@
     1.9466
    ],
    "restReach": 4.3917,
-   "minReach": 2.4986,
-   "maxReach": 7.2204,
+   "minReach": 1.3578,
+   "maxReach": 7.9381,
    "gaitPhase": 0.5
   },
   {
@@ -5596,8 +5596,8 @@
     1.9466
    ],
    "restReach": 4.3917,
-   "minReach": 2.6076,
-   "maxReach": 7.0216,
+   "minReach": 1.3771,
+   "maxReach": 7.8737,
    "gaitPhase": 0
   },
   {
@@ -5623,8 +5623,8 @@
     -1.9466
    ],
    "restReach": 4.3917,
-   "minReach": 2.5073,
-   "maxReach": 7.0903,
+   "minReach": 1.2984,
+   "maxReach": 7.906,
    "gaitPhase": 0
   },
   {
@@ -5650,8 +5650,8 @@
     -1.9466
    ],
    "restReach": 4.3917,
-   "minReach": 2.8044,
-   "maxReach": 7.1953,
+   "minReach": 1.6289,
+   "maxReach": 7.9456,
    "gaitPhase": 0.5
   },
   {
@@ -5677,8 +5677,8 @@
     -5.3975
    ],
    "restReach": 4.3917,
-   "minReach": 2.5439,
-   "maxReach": 7.1764,
+   "minReach": 1.328,
+   "maxReach": 7.9728,
    "gaitPhase": 0.5
   },
   {
@@ -5704,8 +5704,8 @@
     -5.3975
    ],
    "restReach": 4.3917,
-   "minReach": 2.7715,
-   "maxReach": 7.1824,
+   "minReach": 1.6279,
+   "maxReach": 7.9455,
    "gaitPhase": 0
   }
  ],
@@ -5719,11 +5719,11 @@
    "baseLink": "leg_L0_coxa",
    "endLink": "leg_L0_femur",
    "drives": "leg_L0_femur",
-   "restLength": 1.7847,
-   "minLength": 1.6386,
-   "maxLength": 1.7847,
-   "barrelLength": 1.4917,
-   "rodLength": 0.5168,
+   "restLength": 2.1835,
+   "minLength": 1.8103,
+   "maxLength": 2.3866,
+   "barrelLength": 1.6634,
+   "rodLength": 0.9727,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5737,11 +5737,11 @@
    "baseLink": "leg_L0_femur",
    "endLink": "leg_L0_tibia",
    "drives": "leg_L0_tibia",
-   "restLength": 2.1567,
-   "minLength": 1.739,
-   "maxLength": 2.8578,
-   "barrelLength": 1.6166,
-   "rodLength": 1.4837,
+   "restLength": 2.8608,
+   "minLength": 2.061,
+   "maxLength": 3.256,
+   "barrelLength": 1.9386,
+   "rodLength": 1.6098,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5755,11 +5755,11 @@
    "baseLink": "leg_R0_coxa",
    "endLink": "leg_R0_femur",
    "drives": "leg_R0_femur",
-   "restLength": 1.7847,
-   "minLength": 1.6386,
-   "maxLength": 1.7847,
-   "barrelLength": 1.4917,
-   "rodLength": 0.5168,
+   "restLength": 2.1835,
+   "minLength": 1.8103,
+   "maxLength": 2.3866,
+   "barrelLength": 1.6634,
+   "rodLength": 0.9727,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5773,11 +5773,11 @@
    "baseLink": "leg_R0_femur",
    "endLink": "leg_R0_tibia",
    "drives": "leg_R0_tibia",
-   "restLength": 2.1567,
-   "minLength": 1.739,
-   "maxLength": 2.8578,
-   "barrelLength": 1.6166,
-   "rodLength": 1.4837,
+   "restLength": 2.8608,
+   "minLength": 2.061,
+   "maxLength": 3.256,
+   "barrelLength": 1.9386,
+   "rodLength": 1.6098,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5791,11 +5791,11 @@
    "baseLink": "leg_L1_coxa",
    "endLink": "leg_L1_femur",
    "drives": "leg_L1_femur",
-   "restLength": 1.7847,
-   "minLength": 1.6386,
-   "maxLength": 1.7847,
-   "barrelLength": 1.4917,
-   "rodLength": 0.5168,
+   "restLength": 2.1835,
+   "minLength": 1.8103,
+   "maxLength": 2.3866,
+   "barrelLength": 1.6634,
+   "rodLength": 0.9727,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5809,11 +5809,11 @@
    "baseLink": "leg_L1_femur",
    "endLink": "leg_L1_tibia",
    "drives": "leg_L1_tibia",
-   "restLength": 2.1567,
-   "minLength": 1.739,
-   "maxLength": 2.8578,
-   "barrelLength": 1.6166,
-   "rodLength": 1.4837,
+   "restLength": 2.8608,
+   "minLength": 2.061,
+   "maxLength": 3.256,
+   "barrelLength": 1.9386,
+   "rodLength": 1.6098,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5827,11 +5827,11 @@
    "baseLink": "leg_R1_coxa",
    "endLink": "leg_R1_femur",
    "drives": "leg_R1_femur",
-   "restLength": 1.7847,
-   "minLength": 1.6386,
-   "maxLength": 1.7847,
-   "barrelLength": 1.4917,
-   "rodLength": 0.5168,
+   "restLength": 2.1835,
+   "minLength": 1.8103,
+   "maxLength": 2.3866,
+   "barrelLength": 1.6634,
+   "rodLength": 0.9727,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5845,11 +5845,11 @@
    "baseLink": "leg_R1_femur",
    "endLink": "leg_R1_tibia",
    "drives": "leg_R1_tibia",
-   "restLength": 2.1567,
-   "minLength": 1.739,
-   "maxLength": 2.8578,
-   "barrelLength": 1.6166,
-   "rodLength": 1.4837,
+   "restLength": 2.8608,
+   "minLength": 2.061,
+   "maxLength": 3.256,
+   "barrelLength": 1.9386,
+   "rodLength": 1.6098,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5863,11 +5863,11 @@
    "baseLink": "leg_L2_coxa",
    "endLink": "leg_L2_femur",
    "drives": "leg_L2_femur",
-   "restLength": 1.7847,
-   "minLength": 1.6386,
-   "maxLength": 1.7847,
-   "barrelLength": 1.4917,
-   "rodLength": 0.5168,
+   "restLength": 2.1835,
+   "minLength": 1.8103,
+   "maxLength": 2.3866,
+   "barrelLength": 1.6634,
+   "rodLength": 0.9727,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5881,11 +5881,11 @@
    "baseLink": "leg_L2_femur",
    "endLink": "leg_L2_tibia",
    "drives": "leg_L2_tibia",
-   "restLength": 2.1567,
-   "minLength": 1.739,
-   "maxLength": 2.8578,
-   "barrelLength": 1.6166,
-   "rodLength": 1.4837,
+   "restLength": 2.8608,
+   "minLength": 2.061,
+   "maxLength": 3.256,
+   "barrelLength": 1.9386,
+   "rodLength": 1.6098,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5899,11 +5899,11 @@
    "baseLink": "leg_R2_coxa",
    "endLink": "leg_R2_femur",
    "drives": "leg_R2_femur",
-   "restLength": 1.7847,
-   "minLength": 1.6386,
-   "maxLength": 1.7847,
-   "barrelLength": 1.4917,
-   "rodLength": 0.5168,
+   "restLength": 2.1835,
+   "minLength": 1.8103,
+   "maxLength": 2.3866,
+   "barrelLength": 1.6634,
+   "rodLength": 0.9727,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5917,11 +5917,11 @@
    "baseLink": "leg_R2_femur",
    "endLink": "leg_R2_tibia",
    "drives": "leg_R2_tibia",
-   "restLength": 2.1567,
-   "minLength": 1.739,
-   "maxLength": 2.8578,
-   "barrelLength": 1.6166,
-   "rodLength": 1.4837,
+   "restLength": 2.8608,
+   "minLength": 2.061,
+   "maxLength": 3.256,
+   "barrelLength": 1.9386,
+   "rodLength": 1.6098,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5935,11 +5935,11 @@
    "baseLink": "leg_L3_coxa",
    "endLink": "leg_L3_femur",
    "drives": "leg_L3_femur",
-   "restLength": 1.7847,
-   "minLength": 1.6386,
-   "maxLength": 1.7847,
-   "barrelLength": 1.4917,
-   "rodLength": 0.5168,
+   "restLength": 2.1835,
+   "minLength": 1.8103,
+   "maxLength": 2.3866,
+   "barrelLength": 1.6634,
+   "rodLength": 0.9727,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5953,11 +5953,11 @@
    "baseLink": "leg_L3_femur",
    "endLink": "leg_L3_tibia",
    "drives": "leg_L3_tibia",
-   "restLength": 2.1567,
-   "minLength": 1.739,
-   "maxLength": 2.8578,
-   "barrelLength": 1.6166,
-   "rodLength": 1.4837,
+   "restLength": 2.8608,
+   "minLength": 2.061,
+   "maxLength": 3.256,
+   "barrelLength": 1.9386,
+   "rodLength": 1.6098,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5971,11 +5971,11 @@
    "baseLink": "leg_R3_coxa",
    "endLink": "leg_R3_femur",
    "drives": "leg_R3_femur",
-   "restLength": 1.7847,
-   "minLength": 1.6386,
-   "maxLength": 1.7847,
-   "barrelLength": 1.4917,
-   "rodLength": 0.5168,
+   "restLength": 2.1835,
+   "minLength": 1.8103,
+   "maxLength": 2.3866,
+   "barrelLength": 1.6634,
+   "rodLength": 0.9727,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",
@@ -5989,11 +5989,11 @@
    "baseLink": "leg_R3_femur",
    "endLink": "leg_R3_tibia",
    "drives": "leg_R3_tibia",
-   "restLength": 2.1567,
-   "minLength": 1.739,
-   "maxLength": 2.8578,
-   "barrelLength": 1.6166,
-   "rodLength": 1.4837,
+   "restLength": 2.8608,
+   "minLength": 2.061,
+   "maxLength": 3.256,
+   "barrelLength": 1.9386,
+   "rodLength": 1.6098,
    "constraint": "mutual-aim",
    "aimAxis": "+Z",
    "upHint": "+Y (keep previous local Y)",

@@ -7,7 +7,7 @@ import type { MaterialId, Vec3 } from './model';
 import type { Rng } from './rng';
 import { block, clampBand, clevis, hatchPanel, hub, memberDown, memberOut, shellDown, shellOut, slewRing } from './hs/kit';
 import type { Section } from './hs/shapes';
-import { hoodSections, pauldron } from './hs/hulls';
+import { hoodOpening, hoodSections, pauldron } from './hs/hulls';
 
 const D2R = Math.PI / 180;
 
@@ -359,11 +359,11 @@ export function sprawlLeg(b: Builder, parent: string, at: Vec3, sp: SprawlLegSpe
     const rf = Math.max(0.04, sp.w * 0.18);
     const rt = Math.max(0.035, sp.w * 0.15);
     const hf = sp.h * 0.85 * 0.33 * 1.1;
-    b.piston({ name: `${p}_femur_ram`, linkA: coxa.name, anchorA: [0, -(sp.h * 0.36 + rf * 1.6), sp.lens[0] * 0.2], linkB: links[0].name, anchorB: [0, -(hf + rf * 1.6), sp.lens[1] * 0.42], radius: rf, drives: links[0].name });
+    b.piston({ name: `${p}_femur_ram`, along: 'z', linkA: coxa.name, anchorA: [0, -(sp.h * 0.36 + rf * 1.6), sp.lens[0] * 0.2], linkB: links[0].name, anchorB: [0, -(hf + rf * 1.6), sp.lens[1] * 0.42], radius: rf, drives: links[0].name });
     // tibia ram on top of femur
     // tibia ram rides ABOVE the femur's armour plate
     const plateTop = hf + sp.h * 0.03 + sp.h * 0.85 * (0.08 + sp.style.plating * 0.06) * 1.2;
-    if (links[1]) b.piston({ name: `${p}_tibia_ram`, linkA: links[0].name, anchorA: [0, plateTop + rt * 1.8, sp.lens[1] * 0.3], linkB: links[1].name, anchorB: [0, sp.h * 0.7 * 0.33 * 1.1 + rt * 1.6, sp.lens[2] * 0.2], radius: rt, drives: links[1].name });
+    if (links[1]) b.piston({ name: `${p}_tibia_ram`, along: 'z', linkA: links[0].name, anchorA: [0, plateTop + rt * 1.8, sp.lens[1] * 0.3], linkB: links[1].name, anchorB: [0, sp.h * 0.7 * 0.33 * 1.1 + rt * 1.6, sp.lens[2] * 0.2], radius: rt, drives: links[1].name });
   }
   for (let i = 1; i < links.length; i++) b.cable({ name: `${p}_${names[i]}_hose`, from: links[i - 1].name, fromOffset: [sp.w * 0.25, -sp.h * 0.3, sp.lens[i] * 0.7], to: links[i].name, toOffset: [sp.w * 0.25, -sp.h * 0.25, sp.lens[i + 1] * 0.2], radius: Math.max(0.01, sp.w * 0.04) });
 
@@ -567,23 +567,36 @@ export function cockpit(b: Builder, parent: string, at: Vec3, sp: CockpitSpec): 
     for (const sx of [-1, 1]) shell.box([(sx * (iw + t)) / 2, ih / 2, -idp * 0.05], [t, ih, idp * 0.9 + t], sp.armor, { hidden: true });
     // roof rib + side window strip
     block(shell, [0, ih + t * 1.6, -idp * 0.1], [iw * 0.3, t * 0.6, idp * 0.7], 'darkMetal', { detail: 1, collide: false });
-    for (const sx of [-1, 1]) shell.box([sx * (iw / 2 + t * 1.42), ih * 0.62, idp * 0.12], [0.012, ih * 0.16, idp * 0.4], 'glass', { detail: 1, collide: false });
+
     const glass = pod.comp('glass');
     const frame = pod.comp('cockpit', 'frame');
+    // everything at the front is cut from the hood's real front opening
+    const ht = t * 1.4;
+    const rTop = Math.min(iw, ih) * 0.35;
+    const sill = ih * 0.18;
+    const front = idp / 2;
+    const open = (s: number, inset = 0, y0 = sill) => ({ k: 'pts' as const, pts: hoodOpening(iw, ih, ht, s, rTop, y0, inset) });
+    // sill / dashboard plate closing the bottom of the opening
+    block(frame, [0, sill / 2, front + t * 0.4], [iw, sill, t * 0.8], sp.armor, { r: t * 0.3, collide: false });
     if (sp.style === 'bubble') {
-      glass.chamfer([0, ih * 0.62, idp * 0.42], [iw + t, ih * 0.75, idp * 0.3], 0.25 * iw, 'glass', { rot: [0, 0, 0] });
-      frame.box([0, ih * 0.24, idp * 0.45], [iw + 2 * t, t, idp * 0.32], sp.armor, { collide: false });
-      frame.box([0, ih * 1.0, idp * 0.42], [t * 0.6, t * 0.6, idp * 0.3], 'darkMetal', { detail: 1 });
+      // domed glass growing out of the opening
+      glass.shape([0, 0, 0], { t: 'loft', sections: [
+        { p: open(frontScale, 0.004), z: front - t },
+        { p: open(frontScale, 0.004), z: front + idp * 0.12, sx: 0.96, sy: 0.97 },
+        { p: open(frontScale, 0.004), z: front + idp * 0.24, sx: 0.78, sy: 0.82, oy: sill * 0.4 },
+        { p: open(frontScale, 0.004), z: front + idp * 0.3, sx: 0.45, sy: 0.55, oy: sill * 1.2 },
+      ], smooth: 50 }, 'glass', { collide: false });
     } else if (sp.style === 'canopy') {
-      // sloped glass front + frame mullions
-      glass.taper([0, ih * 0.55, idp * 0.43], [iw, ih * 0.9, t * 0.5], [1, 1], [0, -idp * 0.18], 'glass', { rot: [0, 0, 0] });
-      for (const sx of [-1, 0, 1]) frame.box([sx * iw * 0.33, ih * 0.55, idp * 0.43 - idp * 0.09], [t * 0.5, ih * 0.92, t * 0.6], 'darkMetal', { rot: [0.33, 0, 0], detail: 1, collide: false });
-      frame.box([0, ih * 0.08, idp / 2 + t / 2], [iw + 2 * t, ih * 0.16, t], sp.armor);
+      // single pane, recessed into the opening, one centre post
+      glass.shape([0, 0, 0], { t: 'loft', sections: [{ p: open(frontScale, 0.004), z: front - t * 0.9 }, { p: open(frontScale, 0.004), z: front - t * 0.5 }] }, 'glass', { collide: false });
+      const top = (ih + ht) * frontScale - ht;
+      block(frame, [0, (sill + top) / 2, front - t * 0.45], [t * 0.5, top - sill, t * 0.5], 'darkMetal', { r: t * 0.15, detail: 1, collide: false });
     } else {
-      // armoured: front plate with narrow vision slits
-      frame.chamfer([0, ih * 0.5, idp / 2 + t / 2], [iw + 2 * t, ih + t, t], t, sp.armor, { rot: [0, 0, 0] });
-      for (const y of [0.62, 0.78]) glass.box([0, ih * y, idp / 2 + t + 0.004], [iw * 0.75, ih * 0.06, 0.02], 'glass', { collide: false });
-      frame.bolts([-iw * 0.45, ih * 0.95, idp / 2 + t + 0.01], [iw * 0.45, ih * 0.95, idp / 2 + t + 0.01], 7, 0.025, 'z');
+      // armoured: plate fills the opening, vision slits cut across it
+      frame.shape([0, 0, 0], { t: 'loft', sections: [{ p: open(frontScale, -0.002, 0), z: front }, { p: open(frontScale, -0.002, 0), z: front + t }], bevel: t * 0.25 }, sp.armor);
+      const top = (ih + ht) * frontScale - ht;
+      for (const y of [0.55, 0.72]) glass.box([0, top * y, front + t + 0.006], [iw * 0.62, ih * 0.05, 0.012], 'glass', { collide: false });
+      frame.bolts([-iw * 0.38, top * 0.88, front + t + 0.012], [iw * 0.38, top * 0.88, front + t + 0.012], 6, 0.022, 'z');
     }
     // roof light + antenna
     const det = pod.comp('detail');

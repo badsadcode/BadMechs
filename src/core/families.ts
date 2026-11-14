@@ -469,8 +469,8 @@ function crane(ctx: GenCtx, b: Builder, parent: string, at: Vec3, H: number, st:
   segmentOut(boom, boomL, H * 0.045, H * 0.06, cst, { housingAtEnd: H * 0.02 });
   const stick = boom.child('crane_stick', [0, 0, boomL], { rot: [1.9, 0, 0], joint: { axis: 'x', min: -60, max: 50, purpose: 'tool', kind: 'stick-pitch' } });
   segmentOut(stick, stickL, H * 0.035, H * 0.045, cst, { housingAtEnd: H * 0.016 });
-  b.piston({ name: 'crane_boom_ram', linkA: 'crane_slew', anchorA: [0, H * 0.06, H * 0.05], linkB: 'crane_boom', anchorB: [0, -H * 0.04, boomL * 0.4], radius: H * 0.008, drives: 'crane_boom' });
-  b.piston({ name: 'crane_stick_ram', linkA: 'crane_boom', anchorA: [0, H * 0.045, boomL * 0.55], linkB: 'crane_stick', anchorB: [0, H * 0.03, -H * 0.03], radius: H * 0.007, drives: 'crane_stick' });
+  b.piston({ name: 'crane_boom_ram', along: 'z', linkA: 'crane_slew', anchorA: [0, H * 0.06, H * 0.05], linkB: 'crane_boom', anchorB: [0, -H * 0.04, boomL * 0.4], radius: H * 0.008, drives: 'crane_boom' });
+  b.piston({ name: 'crane_stick_ram', along: 'z', linkA: 'crane_boom', anchorA: [0, H * 0.045, boomL * 0.55], linkB: 'crane_stick', anchorB: [0, H * 0.03, -H * 0.03], radius: H * 0.007, drives: 'crane_stick' });
   const wrist = stick.child('crane_wrist', [0, 0, stickL], { rot: [-1.2, 0, 0], joint: { axis: 'x', min: -60, max: 60, purpose: 'tool', kind: 'grab-pitch' } });
   const g = wrist.comp('equipment');
   g.box([0, 0, H * 0.02], [H * 0.04, H * 0.03, H * 0.04], 'darkMetal');

@@ -6,32 +6,32 @@
     "ok": true,
     "nodesChecked": 192,
     "missing": [],
-    "maxPosErrorM": 8.81826496548983e-06,
+    "maxPosErrorM": 1.0095555953855576e-05,
     "maxAxisErrorDeg": 0.0,
     "materials": "9 imported / 9 used in file",
     "skinnedHoses": 8,
-    "triangles": 85298
+    "triangles": 85458
   },
   "glb_lod1": {
     "ok": true,
     "nodesChecked": 192,
-    "maxPosErrorM": 8.81826496548983e-06,
-    "triangles": 45978
+    "maxPosErrorM": 1.0095555953855576e-05,
+    "triangles": 46074
   },
   "glb_lod2": {
     "ok": true,
     "nodesChecked": 192,
-    "maxPosErrorM": 8.81826496548983e-06,
-    "triangles": 22232
+    "maxPosErrorM": 1.0095555953855576e-05,
+    "triangles": 22328
   },
   "fbx": {
     "ok": true,
     "boneCount": 67,
     "missingBones": [],
-    "maxPosErrorM": 1.817941665649414e-06,
+    "maxPosErrorM": 2.9910903065001834e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 85298,
+    "triangles": 85458,
     "vertexGroups": 67,
     "blend": "harrow_octo.blend",
     "fbx": "harrow_octo.fbx"
@@ -39,10 +39,10 @@
   "fbx_pose": {
     "ok": true,
     "posedJoint": "leg_L0_tibia",
-    "angleRad": -0.918048,
+    "angleRad": -1.6406,
     "verticesMoved": 3954,
-    "verticesTotal": 103004,
-    "pivotDrift": 2.489163043239248e-06
+    "verticesTotal": 103196,
+    "pivotDrift": 2.1851423716334533e-06
   },
   "usd": {
     "pxr": {
@@ -50,23 +50,23 @@
       "upAxis": "Y",
       "metersPerUnit": 1.0,
       "xforms": 193,
-      "meshes": 335,
+      "meshes": 334,
       "missing": [],
-      "maxPosErrorM": 0.00010342958564614321,
+      "maxPosErrorM": 0.00010348135396618299,
       "maxAxisErrorDeg": 0.0,
       "jointLimitsPreserved": "33/33"
     },
     "blender": {
       "ok": true,
-      "objects": 526,
-      "meshes": 335
+      "objects": 525,
+      "meshes": 334
     },
     "ok": true
   },
   "obj": {
     "ok": true,
     "objects": 155,
-    "triangles": 83378,
+    "triangles": 83538,
     "materials": 9,
     "note": "static only, by design"
   },

@@ -133,6 +133,8 @@ export class NodeRef {
 
 interface PistonReq {
   name: string;
+  /** the link axis the anchors run along ('y' hanging limbs, 'z' sprawled limbs / booms) */
+  along?: 'y' | 'z';
   /** x of the member surface the bracket is welded to (side-mounted rams get a standoff) */
   mountA?: number;
   mountB?: number;
@@ -280,6 +282,9 @@ export class Builder {
     if (!driven?.joint) throw new Error(`piston ${p.name}: drives '${p.drives}' which is not a joint`);
     const j = driven.joint;
     const margin = p.radius * 2.2;
+    // Keep the ram out of the steel first (this moves the anchors, so it must happen before the
+    // stroke is measured and the barrel/rod are sized).
+    this.clearRamPath(mech, p);
 
     const lengthAt = (angle: number) => {
       const w = worldMatrices(mech, { [p.drives]: angle });
@@ -361,6 +366,48 @@ export class Builder {
       barrelLength: round(barrel, 4),
       rodLength: round(rod, 4),
     });
+  }
+
+  private clearRamPath(mech: Mech, p: PistonReq) {
+    const j = mech.nodes.find((n) => n.name === p.drives)!.joint!;
+    const solids = (link: string) => {
+      const out: { node: string; prim: Prim }[] = [];
+      const visit = (name: string) => {
+        const n = this.get(name).node;
+        for (const prim of n.prims) if (prim.collide && prim.detail === 0 && !prim.hidden) out.push({ node: name, prim });
+        for (const c of n.children) if (!this.get(c).node.joint && this.get(c).node.role !== 'actuator') visit(c);
+      };
+      visit(link);
+      return out;
+    };
+    const parts = [...solids(p.linkA), ...solids(p.linkB)];
+    const along = p.along ?? 'y';
+    const push = (a: Vec3, k: number): Vec3 => {
+      const v = new Vector3(a[0], along === 'y' ? 0 : a[1], along === 'z' ? 0 : a[2]);
+      if (v.lengthSq() < 1e-10) return a;
+      v.normalize().multiplyScalar(k);
+      return [a[0] + v.x, a[1] + v.y, a[2] + v.z];
+    };
+    const blocked = () => {
+      for (const ang of [0, j.min, j.max]) {
+        const w = worldMatrices(mech, { [p.drives]: ang });
+        const A = new Vector3(...p.anchorA).applyMatrix4(w.get(p.linkA)!);
+        const B = new Vector3(...p.anchorB).applyMatrix4(w.get(p.linkB)!);
+        for (const { node, prim } of parts) {
+          const inv = w.get(node)!.clone().multiply(primMatrix(prim)).invert();
+          const h = primHalfExtents(prim).addScalar(p.radius * 0.9);
+          for (let i = 1; i < 9; i++) {
+            const q = A.clone().lerp(B, 0.15 + (0.7 * i) / 9).applyMatrix4(inv);
+            if (Math.abs(q.x) < h.x && Math.abs(q.y) < h.y && Math.abs(q.z) < h.z) return true;
+          }
+        }
+      }
+      return false;
+    };
+    for (let i = 0; i < 10 && blocked(); i++) {
+      p.anchorA = push(p.anchorA, p.radius * 0.8);
+      p.anchorB = push(p.anchorB, p.radius * 0.8);
+    }
   }
 
   private resolveCable(mech: Mech, c: CableReq) {

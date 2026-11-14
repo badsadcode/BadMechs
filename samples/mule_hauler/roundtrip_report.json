@@ -1,7 +1,7 @@
 {
   "mech": "Mule Hauler",
   "family": "quadruped",
-  "heightM": 6.63,
+  "heightM": 6.8,
   "glb": {
     "ok": true,
     "nodesChecked": 129,
@@ -10,28 +10,28 @@
     "maxAxisErrorDeg": 0.0,
     "materials": "11 imported / 11 used in file",
     "skinnedHoses": 4,
-    "triangles": 48482
+    "triangles": 48622
   },
   "glb_lod1": {
     "ok": true,
     "nodesChecked": 129,
     "maxPosErrorM": 1.537799835205078e-05,
-    "triangles": 25870
+    "triangles": 25978
   },
   "glb_lod2": {
     "ok": true,
     "nodesChecked": 129,
     "maxPosErrorM": 1.537799835205078e-05,
-    "triangles": 11504
+    "triangles": 11648
   },
   "fbx": {
     "ok": true,
     "boneCount": 45,
     "missingBones": [],
-    "maxPosErrorM": 1.7192608239479013e-06,
+    "maxPosErrorM": 2.5678466830894965e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 48482,
+    "triangles": 48622,
     "vertexGroups": 45,
     "blend": "mule_hauler.blend",
     "fbx": "mule_hauler.fbx"
@@ -39,10 +39,10 @@
   "fbx_pose": {
     "ok": true,
     "posedJoint": "leg_FL_tibia",
-    "angleRad": -1.224176,
+    "angleRad": -1.521928,
     "verticesMoved": 3739,
-    "verticesTotal": 59497,
-    "pivotDrift": 1.7520115919946514e-06
+    "verticesTotal": 59583,
+    "pivotDrift": 1.5078914929239175e-06
   },
   "usd": {
     "pxr": {
@@ -50,7 +50,7 @@
       "upAxis": "Y",
       "metersPerUnit": 1.0,
       "xforms": 130,
-      "meshes": 213,
+      "meshes": 211,
       "missing": [],
       "maxPosErrorM": 7.911366511131127e-05,
       "maxAxisErrorDeg": 0.0,
@@ -58,15 +58,15 @@
     },
     "blender": {
       "ok": true,
-      "objects": 335,
-      "meshes": 213
+      "objects": 332,
+      "meshes": 211
     },
     "ok": true
   },
   "obj": {
     "ok": true,
     "objects": 102,
-    "triangles": 47522,
+    "triangles": 47662,
     "materials": 11,
     "note": "static only, by design"
   },

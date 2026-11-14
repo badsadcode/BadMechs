@@ -2,7 +2,7 @@ BadMech export package: Mule Hauler
 =========================================
 
 Units: metres · Up: +Y · Forward (mech faces): +Z · Right-handed (glTF convention)
-Height 6.63 m · quadruped · medium
+Height 6.8 m · quadruped · medium
 
 FILES
   mule_hauler.glb              Full articulated mech (LOD0). Hierarchy, pivots, PBR materials, skinned

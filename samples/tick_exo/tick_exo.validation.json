@@ -8,12 +8,12 @@
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_L: 6-joint chain, foot on ground (Δy -0.0 mm), reach 0.56–1.09 m"
+      "message": "leg_L: 6-joint chain, foot on ground (Δy -0.0 mm), reach 0.52–1.09 m"
     },
     {
       "id": "leg.chain",
       "severity": "ok",
-      "message": "leg_R: 6-joint chain, foot on ground (Δy -0.0 mm), reach 0.59–1.09 m"
+      "message": "leg_R: 6-joint chain, foot on ground (Δy -0.0 mm), reach 0.54–1.09 m"
     },
     {
       "id": "piston.stroke",
