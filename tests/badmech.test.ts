@@ -2,7 +2,8 @@ import { createRequire } from 'node:module';
 import { readFileSync } from 'node:fs';
 import { Matrix4, Object3D, Vector3 } from 'three';
 import { describe, expect, it } from 'vitest';
-import { calibrateGait } from '../src/controller/calibrate';
+import { calibrateGait, skeletonTree } from '../src/controller/calibrate';
+import { Terrain } from '../src/controller/terrain';
 import { RigWalker } from '../src/controller/walker';
 import { generate } from '../src/core/families';
 import { worldMatrices } from '../src/core/kinematics';
@@ -209,6 +210,30 @@ describe('animation readiness: the reference controller walks the EXPORTED file'
     expect(sum / n).toBeLessThan(0.02);
     expect(max).toBeLessThan(Math.max(0.05, mech.stats.height * 0.006));
     expect(v.maxFootErrorM).toBeLessThan(Math.max(0.05, mech.stats.height * 0.006));
+  });
+
+  it.each(fams)('%s plants its feet on rough terrain while walking and turning (foot-placement IK)', (f) => {
+    const { mech } = generate(defaultRecipe(f, 1));
+    calibrateGait(mech);
+    const rig = JSON.parse(JSON.stringify(rigSidecar(mech)));
+    const terrain = new Terrain({ size: mech.stats.height, step: rig.gait.stepHeight, seed: 7, roughness: 0.7 });
+    const w = new RigWalker(skeletonTree(mech), rig, { ground: terrain });
+    const fps = 30;
+    let gap = 0;
+    let gn = 0;
+    let miss = 0;
+    let mn = 0;
+    for (let i = 0; i < fps * rig.gait.cycleSeconds * 6; i++) {
+      w.input = { forward: 1, turn: 0.35 * Math.sin(i / 60) };
+      w.update(1 / fps);
+      if (i < fps * rig.gait.cycleSeconds) continue;
+      for (const e of w.stanceGroundErrors()) (gap += e), gn++;
+      for (const e of w.footErrors()) (miss += e), mn++;
+    }
+    const tol = Math.max(0.03, mech.stats.height * 0.007);
+    expect(gap / gn).toBeLessThan(tol); // planted feet are ON the ground
+    expect(miss / mn).toBeLessThan(tol); // and the IK actually reaches its targets
+    expect(w.distance).toBeGreaterThan(rig.gait.strideLength * 2);
   });
 
   it('piston aim constraint keeps barrel and rod pointing at each other while walking', async () => {

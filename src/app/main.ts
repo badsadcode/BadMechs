@@ -11,6 +11,7 @@ import { defaultRecipe, Family, FAMILIES, MechRecipe, MechRole } from '../core/r
 import { validate } from '../core/validate';
 import { calibrateGait } from '../controller/calibrate';
 import { RigWalker } from '../controller/walker';
+import { Terrain } from '../controller/terrain';
 import { exportGlb } from '../export/gltf';
 import { buildPackage, slug } from '../export/package';
 import { collisionBoxes, rigSidecar } from '../export/rig';
@@ -27,7 +28,7 @@ let result: GenResult;
 let view: MechView | null = null;
 let lod: 0 | 1 | 2 = 0;
 let selected: string | null = null;
-let mode: 'rest' | 'flex' | 'walk' = 'rest';
+let mode: 'rest' | 'flex' | 'walk' | 'terrain' = 'rest';
 const manualPose: Pose = {};
 const toggles = { armor: true, xray: false, joints: false, collision: false, human: true };
 const hidden = new Set<string>();
@@ -229,16 +230,73 @@ function poseForFlex(t: number): Pose {
   return p;
 }
 
+// ─────────────────────────────────────────────────────── terrain test ──
+let terrain: Terrain | null = null;
+let terrainGroup: THREE.Group | null = null;
+let terrainSeed = 1;
+const markers: THREE.Mesh[] = [];
+const keys = new Set<string>();
+let followPrev: THREE.Vector3 | null = null;
+
+function buildTerrainMesh(t: Terrain): THREE.Group {
+  const g = new THREE.Group();
+  const E = t.extent;
+  const N = 240;
+  const geo = new THREE.PlaneGeometry(E * 2, E * 2, N, N);
+  geo.rotateX(-Math.PI / 2);
+  const pos = geo.attributes.position as THREE.BufferAttribute;
+  const col: number[] = [];
+  const c1 = new THREE.Color(0x4b4a42);
+  const c2 = new THREE.Color(0x6e6852);
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i);
+    const z = pos.getZ(i);
+    const y = t.base(x, z);
+    pos.setY(i, y);
+    const k = Math.min(1, Math.max(0, 0.5 + y / (t.o.step * 2)));
+    const c = c1.clone().lerp(c2, k);
+    col.push(c.r, c.g, c.b);
+  }
+  geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  geo.computeVertexNormals();
+  const ground = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.95, metalness: 0 }));
+  ground.receiveShadow = true;
+  g.add(ground);
+  // grid lines draped over the ground help read the slopes
+  const lines = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.PlaneGeometry(E * 2, E * 2, 60, 60).rotateX(-Math.PI / 2)), new THREE.LineBasicMaterial({ color: 0x8c8466, transparent: true, opacity: 0.18 }));
+  const lp = lines.geometry.attributes.position as THREE.BufferAttribute;
+  for (let i = 0; i < lp.count; i++) lp.setY(i, t.base(lp.getX(i), lp.getZ(i)) + 0.01);
+  g.add(lines);
+  const stepMat = new THREE.MeshStandardMaterial({ color: 0x8b8779, roughness: 0.85 });
+  const rockMat = new THREE.MeshStandardMaterial({ color: 0x5a544b, roughness: 0.95, flatShading: true });
+  for (const o of t.obstacles) {
+    let low = o.top;
+    for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
+      const c = Math.cos(o.rot), s = Math.sin(o.rot);
+      const lx = sx * o.hw, lz = sz * o.hd;
+      low = Math.min(low, t.base(o.x + lx * c + lz * s, o.z - lx * s + lz * c));
+    }
+    low -= t.o.step * 0.3;
+    const m = new THREE.Mesh(new THREE.BoxGeometry(o.hw * 2, o.top - low, o.hd * 2), o.kind === 'step' ? stepMat : rockMat);
+    m.position.set(o.x, (o.top + low) / 2, o.z);
+    m.rotation.y = o.rot;
+    m.castShadow = m.receiveShadow = true;
+    g.add(m);
+  }
+  return g;
+}
+
 async function startWalk() {
   stopWalk();
   if (!view) return;
   const mech = result.mech;
-  toast('Walk test: exporting GLB → loading it back → walking it with only the rig file…');
+  const onTerrain = mode === 'terrain';
+  toast(onTerrain ? 'Terrain test: exported GLB + rig.json, foot-placement IK on procedural ground. Drive with WASD / arrows.' : 'Walk test: exporting GLB → loading it back → walking it with only the rig file…');
   calibrateGait(mech);
   const glb = exportGlb(mech, { lod });
   const rig = JSON.parse(JSON.stringify(rigSidecar(mech, recipe)));
   const gltf = await new GLTFLoader().parseAsync(glb.buffer.slice(glb.byteOffset, glb.byteOffset + glb.byteLength) as ArrayBuffer, '');
-  if (mode !== 'walk') return;
+  if (mode !== 'walk' && mode !== 'terrain') return;
   walkScene = gltf.scene;
   walkScene.traverse((o) => {
     if ((o as THREE.Mesh).isMesh) {
@@ -249,14 +307,48 @@ async function startWalk() {
   });
   scene.add(walkScene);
   view.root.visible = false;
-  walker = new RigWalker(walkScene, rig);
-  toast(`Walking the exported file: ${rig.legs.length} legs, ${rig.gait.type}, ${walker.speed.toFixed(1)} m/s`);
+  if (onTerrain) {
+    const rough = Number(($('t-rough') as HTMLInputElement).value);
+    terrain = new Terrain({ size: mech.stats.height, step: rig.gait.stepHeight, seed: terrainSeed, roughness: rough });
+    terrainGroup = buildTerrainMesh(terrain);
+    scene.add(terrainGroup);
+    ground.visible = grid.visible = false;
+    const mm = new THREE.SphereGeometry(mech.stats.height * 0.012, 10, 8);
+    for (const _ of rig.legs) {
+      const m = new THREE.Mesh(mm, new THREE.MeshBasicMaterial({ color: 0x48ff7a, depthTest: false }));
+      m.renderOrder = 20;
+      markers.push(m);
+      scene.add(m);
+    }
+    $('terrain-hud').hidden = false;
+  }
+  walker = new RigWalker(walkScene, rig, { ground: terrain ?? undefined });
+  followPrev = null;
+  if (!onTerrain) toast(`Walking the exported file: ${rig.legs.length} legs, ${rig.gait.type}, ${walker.speed.toFixed(1)} m/s`);
 }
 function stopWalk() {
   if (walkScene) scene.remove(walkScene);
   walkScene = null;
   walker = null;
+  if (terrainGroup) {
+    scene.remove(terrainGroup);
+    terrainGroup.traverse((o) => (o as THREE.Mesh).geometry?.dispose());
+  }
+  terrainGroup = null;
+  terrain = null;
+  for (const m of markers) scene.remove(m);
+  markers.length = 0;
+  ground.visible = grid.visible = true;
+  $('terrain-hud').hidden = true;
   if (view) view.root.visible = true;
+}
+
+function terrainInput(): { forward: number; turn: number } {
+  const f = (keys.has('w') || keys.has('arrowup') ? 1 : 0) - (keys.has('s') || keys.has('arrowdown') ? 1 : 0);
+  const t = (keys.has('a') || keys.has('arrowleft') ? 1 : 0) - (keys.has('d') || keys.has('arrowright') ? 1 : 0);
+  if (f || t) return { forward: f, turn: t };
+  if (($('t-auto') as HTMLInputElement).checked) return { forward: 0.85, turn: 0.45 * Math.sin(clock * 0.25) };
+  return { forward: 0, turn: 0 };
 }
 
 // ─────────────────────────────────────────────────────────── picking ──
@@ -653,7 +745,7 @@ $('pose-modes').addEventListener('click', (e) => {
 function setMode(m: typeof mode) {
   mode = m;
   document.querySelectorAll('#pose-modes button').forEach((b) => b.classList.toggle('on', (b as HTMLElement).dataset.mode === m));
-  if (m === 'walk') {
+  if (m === 'walk' || m === 'terrain') {
     selBox.visible = false;
     startWalk();
   } else {
@@ -695,10 +787,34 @@ $('toggles').addEventListener('click', (e) => {
     buildOverlays();
   } else applyVisibility();
 });
+window.addEventListener('keyup', (e) => keys.delete(e.key.toLowerCase()));
+window.addEventListener('blur', () => keys.clear());
+// on-screen pad (touch)
+document.querySelectorAll<HTMLElement>('#terrain-hud [data-k]').forEach((b) => {
+  const k = b.dataset.k!;
+  b.addEventListener('pointerdown', (e) => {
+    keys.add(k);
+    b.setPointerCapture(e.pointerId);
+  });
+  for (const ev of ['pointerup', 'pointercancel', 'pointerleave']) b.addEventListener(ev, () => keys.delete(k));
+});
+$('t-new').addEventListener('click', () => {
+  terrainSeed++;
+  if (mode === 'terrain') startWalk();
+});
+$('t-rough').addEventListener('change', () => mode === 'terrain' && startWalk());
 window.addEventListener('keydown', (e) => {
   if ((e.target as HTMLElement).matches('input, select, textarea')) return;
   if (e.key === 'r' || e.key === 'R') randomize();
   if (e.key === 'f' || e.key === 'F') frameCamera();
+  if (mode === 'terrain') {
+    const k = e.key.toLowerCase();
+    if (['w', 'a', 's', 'd', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright'].includes(k)) {
+      keys.add(k);
+      e.preventDefault();
+    }
+    return;
+  }
   if (e.key === 'w' || e.key === 'W') setMode(mode === 'walk' ? 'rest' : 'walk');
   if (e.key === 'Escape') select(null);
 });
@@ -738,16 +854,31 @@ function loop(now: number) {
   last = now;
   clock += dt;
   if (mode === 'flex' && view) view.setPose(poseForFlex(clock));
-  if (mode === 'walk' && walker && walkScene) {
+  if ((mode === 'walk' || mode === 'terrain') && walker && walkScene) {
+    if (mode === 'terrain') walker.input = terrainInput();
     walker.update(dt);
     const root = walker.obj.get(walker.rig.rootNode)!;
-    const z = root.position.z;
-    const dz = z - (controls.target.z ?? 0);
-    controls.target.z += dz;
-    camera.position.z += dz;
-    sun.position.z += dz;
-    sun.target.position.z = z;
-    grid.position.z = Math.floor(z);
+    // camera + sun follow the mech (over terrain: x, y and z)
+    const body = walker.obj.get(walker.rig.bodyNode)!.getWorldPosition(new THREE.Vector3());
+    const follow = new THREE.Vector3(root.position.x, mode === 'terrain' ? body.y - result.mech.gait.bodyHeight : 0, root.position.z);
+    if (followPrev) {
+      const d = follow.clone().sub(followPrev);
+      controls.target.add(d);
+      camera.position.add(d);
+      sun.position.add(d);
+    }
+    followPrev = follow;
+    sun.target.position.copy(follow);
+    grid.position.z = Math.floor(root.position.z);
+    if (mode === 'terrain') {
+      walker.footTargets().forEach((ft, i) => {
+        const m = markers[i];
+        if (!m) return;
+        m.position.copy(ft.pos);
+        (m.material as THREE.MeshBasicMaterial).color.setHex(ft.swinging ? 0xffa53d : 0x48ff7a);
+        m.visible = ($('t-markers') as HTMLInputElement).checked;
+      });
+    }
   } else {
     sun.target.position.set(0, 0, 0);
     grid.position.z = 0;

@@ -149,3 +149,27 @@ The cockpit glass was still sized for the old box cockpit, so it poked through t
 
 *Mood: brackets are the size of brackets. Life is good.* 🔩
 
+---
+
+## Day 2, Afternoon — "Can It Walk on Rocks Though?"
+
+BadSad asked the big one: *are these mechs actually ready for procedural foot placement with IK? Could we test it on terrain with obstacles?* (He apologised for asking. Never apologise for the good questions.)
+
+### 🦶 Honest answer first
+The **rig was already ready**: every leg exports its joint chain, the foot's contact point, which joints level the ankle, reach limits and gait phases. The **controller wasn't**: it believed the whole world was flat at height zero. Bless it.
+
+### 🧠 Teaching the controller about the ground
+- Each foot asks the ground "how high, and which way is up?" before it lands
+- Swinging feet look along their path and **lift higher to clear rocks and step edges**
+- Planted feet **tilt onto the slope** using the ankle joints from the rig file
+- The body **rises and sinks with the ground**, and many-legged mechs **tilt their body** to fit a plane through their feet (bipeds stay upright, like proud little robots)
+- **Steering**: forward, reverse, turning — and when you stop, the mech finishes its current step and stands still instead of moonwalking
+
+### 🏔️ The test range
+New **Terrain test** button: procedural hills, concrete step blocks and rocks, all scaled to the mech (a 2 m exosuit and a 23 m colossus get proportionate obstacles). Drive with **WASD / arrows** (or the on-screen pad on a phone), or let the autopilot wander. Green dots = planted feet, orange = swinging. And yes, it's the **exported GLB + rig.json** walking, not the generator's internal model.
+
+### 📏 Numbers, because vibes aren't tests
+New test: every family walks and turns over rough terrain, and we measure (1) how far planted feet are from the real ground, (2) how far feet miss their IK targets. Typical results: **feet within a few millimetres of the ground**, IK targets hit within **0.3–2 cm**. Honest outlier: a big four-legged colossus overreaches on the tallest rocks (avg 9 cm, worst ~50 cm), because some obstacles approach its leg's lift range. 64/64 tests green.
+
+*Mood: watching a spider tank climb a concrete block. Peak garage.* 🕷️🧱
+

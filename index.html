@@ -62,6 +62,7 @@
             <button data-mode="rest" class="on">Rest</button>
             <button data-mode="flex">Flex test</button>
             <button data-mode="walk" title="Loads the EXPORTED .glb + rig.json and walks it with the reference controller">Walk test</button>
+            <button data-mode="terrain" title="Foot-placement IK on procedural terrain with obstacles. Drive with WASD / arrows">Terrain test</button>
           </div>
           <div class="seg" id="toggles">
             <button data-t="armor" class="on" title="Armour plating">Armor</button>
@@ -73,6 +74,18 @@
           </div>
         </div>
         <div class="hud bottom" id="stats"></div>
+        <div class="terrain-hud" id="terrain-hud" hidden>
+          <div class="th-title">Terrain test</div>
+          <div class="th-help">Drive: <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> / arrows. Green = planted foot, orange = swinging.</div>
+          <label><input type="checkbox" id="t-auto" checked /> Autopilot when idle</label>
+          <label><input type="checkbox" id="t-markers" checked /> Foot targets</label>
+          <label class="th-row">Roughness <input type="range" id="t-rough" min="0" max="1" step="0.05" value="0.7" /></label>
+          <button class="mini" id="t-new">🎲 New terrain</button>
+          <div class="pad">
+            <span></span><button data-k="w">▲</button><span></span>
+            <button data-k="a">◀</button><button data-k="s">▼</button><button data-k="d">▶</button>
+          </div>
+        </div>
         <div class="toast" id="toast"></div>
       </main>
 
