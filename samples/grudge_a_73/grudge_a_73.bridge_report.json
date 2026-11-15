@@ -26,7 +26,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L_ankle": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_L_foot": {
@@ -50,7 +50,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R_ankle": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_R_foot": {
@@ -82,7 +82,7 @@
       "axisErrDeg": 0.0
     },
     "arm_L_barrels_spin": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "arm_R_shoulder_pitch": {
@@ -102,27 +102,27 @@
       "axisErrDeg": 0.0
     },
     "pod_L_yaw": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "pod_L_pitch": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "pod_R_yaw": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "pod_R_pitch": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "sensor_head_yaw": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "sensor_head_pitch": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L_shin_ram_barrel": {
@@ -130,7 +130,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L_shin_ram_rod": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L_hip_ram_barrel": {
@@ -146,7 +146,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R_shin_ram_rod": {
-      "posErr": 0.0,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R_hip_ram_barrel": {
@@ -176,10 +176,10 @@
   },
   "boneCount": 43,
   "missingBones": [],
-  "maxPosErrorM": 1.5497207641601562e-06,
+  "maxPosErrorM": 1.6731711677465302e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 46656,
+  "triangles": 47018,
   "vertexGroups": 43,
   "blend": "grudge_a_73.blend",
   "fbx": "grudge_a_73.fbx"

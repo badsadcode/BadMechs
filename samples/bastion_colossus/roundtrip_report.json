@@ -10,19 +10,19 @@
     "maxAxisErrorDeg": 0.0,
     "materials": "11 imported / 11 used in file",
     "skinnedHoses": 4,
-    "triangles": 50238
+    "triangles": 50100
   },
   "glb_lod1": {
     "ok": true,
     "nodesChecked": 124,
     "maxPosErrorM": 8.148196931188136e-06,
-    "triangles": 29776
+    "triangles": 29814
   },
   "glb_lod2": {
     "ok": true,
     "nodesChecked": 124,
     "maxPosErrorM": 8.148196931188136e-06,
-    "triangles": 13392
+    "triangles": 13536
   },
   "fbx": {
     "ok": true,
@@ -31,7 +31,7 @@
     "maxPosErrorM": 2.1851423716334533e-06,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 50238,
+    "triangles": 50100,
     "vertexGroups": 46,
     "blend": "bastion_colossus.blend",
     "fbx": "bastion_colossus.fbx"
@@ -41,7 +41,7 @@
     "posedJoint": "leg_FL_shin",
     "angleRad": -1.2706,
     "verticesMoved": 7539,
-    "verticesTotal": 69958,
+    "verticesTotal": 69820,
     "pivotDrift": 1.430511474609375e-06
   },
   "usd": {
@@ -50,7 +50,7 @@
       "upAxis": "Y",
       "metersPerUnit": 1.0,
       "xforms": 125,
-      "meshes": 196,
+      "meshes": 195,
       "missing": [],
       "maxPosErrorM": 0.000544265922537943,
       "maxAxisErrorDeg": 0.0,
@@ -58,15 +58,15 @@
     },
     "blender": {
       "ok": true,
-      "objects": 312,
-      "meshes": 196
+      "objects": 310,
+      "meshes": 195
     },
     "ok": true
   },
   "obj": {
     "ok": true,
     "objects": 90,
-    "triangles": 49278,
+    "triangles": 49140,
     "materials": 11,
     "note": "static only, by design"
   },

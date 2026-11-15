@@ -33,6 +33,12 @@ export interface MechRecipe {
   scheme: string;
   /** per-subsystem re-roll counters: bump one to re-roll only that subsystem */
   rerolls: Record<string, number>;
+  /**
+   * 'engineered' (default): every mechanism exposed and physically plausible.
+   * 'cool': "trust me, I'm a scientist" — mechanisms hidden under armour, heroic proportions,
+   * glowing accents. Same fully rigged, animation-ready skeleton either way.
+   */
+  realism?: 'engineered' | 'cool';
   /** explicit user choices, keyed by option key, win over random picks */
   overrides: Record<string, string | number | boolean>;
 }

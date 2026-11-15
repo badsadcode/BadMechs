@@ -18,7 +18,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L0_tibia": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L0_foot": {
@@ -34,7 +34,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R0_tibia": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R0_foot": {
@@ -137,8 +137,12 @@
       "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
-    "cockpit_hatch": {
+    "cockpit": {
       "posErr": 0.0,
+      "axisErrDeg": 0.0
+    },
+    "cockpit_hatch": {
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "pod_C_yaw": {
@@ -150,7 +154,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L0_femur_ram_barrel": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_L0_femur_ram_rod": {
@@ -162,11 +166,11 @@
       "axisErrDeg": 0.0
     },
     "leg_L0_tibia_ram_rod": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_R0_femur_ram_barrel": {
-      "posErr": 1e-06,
+      "posErr": 0.0,
       "axisErrDeg": 0.0
     },
     "leg_R0_femur_ram_rod": {
@@ -178,7 +182,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R0_tibia_ram_rod": {
-      "posErr": 2e-06,
+      "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
     "leg_L1_femur_ram_barrel": {
@@ -278,13 +282,13 @@
       "axisErrDeg": 0.0
     }
   },
-  "boneCount": 69,
+  "boneCount": 70,
   "missingBones": [],
-  "maxPosErrorM": 2.496467097927745e-06,
+  "maxPosErrorM": 2.1851423716334533e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 85826,
-  "vertexGroups": 69,
+  "triangles": 85566,
+  "vertexGroups": 70,
   "blend": "harrow_octo.blend",
   "fbx": "harrow_octo.fbx"
 }

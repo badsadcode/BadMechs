@@ -19,8 +19,8 @@ import type { V3 } from './hs/mesh';
 import type { Section } from './hs/shapes';
 import { block } from './hs/kit';
 
-export type CabinType = 'hood' | 'pod' | 'greenhouse' | 'bunker' | 'ball' | 'tandem';
-export const CABINS: CabinType[] = ['hood', 'pod', 'greenhouse', 'bunker', 'ball', 'tandem'];
+export type CabinType = 'hood' | 'pod' | 'greenhouse' | 'bunker' | 'ball' | 'tandem' | 'visor';
+export const CABINS: CabinType[] = ['hood', 'pod', 'greenhouse', 'bunker', 'ball', 'tandem', 'visor'];
 
 export interface CabinDims {
   iw: number;
@@ -160,6 +160,32 @@ export function buildCabin(pod: NodeRef, type: Exclude<CabinType, 'hood'>, d: Ca
       frame.box([sx * W, Ht + t * 1.8, idp * 0.12 + t * 1.22], [W * 0.24, t * 1.1, 0.012], 'glass', { detail: 1, collide: false });
     }
     frame.bolts([-W * 0.8, Ht * 0.92, idp / 2 + t * 2.2], [W * 0.8, Ht * 0.92, idp / 2 + t * 2.2], 7, t * 0.4, 'z');
+  } else if (type === 'visor') {
+    // armoured helmet with a wraparound visor: three angled glass panes at eye height
+    const prof: P2[] = [
+      [W, 0],
+      [W, Ht * 0.55],
+      [W * 0.62, Ht],
+      [-W * 0.62, Ht],
+      [-W, Ht * 0.55],
+      [-W, 0],
+    ];
+    const zf = idp / 2 + t * 2;
+    const secs: Section[] = [
+      { p: { k: 'pts', pts: prof }, z: -idp / 2 - t },
+      { p: { k: 'pts', pts: prof }, z: idp * 0.2 },
+      { p: { k: 'pts', pts: prof }, z: zf, sx: 0.8, sy: 0.86, oy: Ht * 0.06 },
+    ];
+    shell.shape([0, 0, 0], { t: 'loft', sections: secs, bevel: t * 0.4 }, d.armor, { collide: false });
+    const ey = ih * 0.68;
+    const vh = ih * 0.2;
+    const fw = W * 0.8 * 1.95;
+    glass.box([0, ey, zf + 0.012], [fw, vh, t * 0.5], 'glass', { collide: false });
+    for (const sx of [-1, 1]) glass.box([sx * (W * 0.9), ey, idp * 0.42], [t * 0.5, vh, idp * 0.32], 'glass', { rot: [0, -sx * 0.45, 0], collide: false });
+    for (const dy of [-1, 1]) block(frame, [0, ey + dy * vh * 0.6, zf + t * 0.2], [fw * 1.02, vh * 0.14, t * 0.7], d.frame, { r: t * 0.1, collide: false, detail: 1 });
+    // brow ridge and a chin vent
+    block(shell, [0, Ht * 0.96, idp * 0.25], [W * 1.2, t * 1.6, idp * 0.6], d.armor, { r: t * 0.4, top: [0.8, 0.7], collide: false });
+    block(shell, [0, ih * 0.3, zf - t * 0.2], [W * 0.9, ih * 0.16, t * 1.2], 'darkMetal', { r: t * 0.2, frontPanel: { inset: t * 0.2, depth: t * 0.3, slats: 3 }, collide: false });
   } else if (type === 'ball') {
     // faceted ball head (8-sided lathe), centred over the floor, eye window to the front
     const R = Math.max(iw, ih, idp) * 0.74 + t;
@@ -212,7 +238,7 @@ export function cabinInterior(int: NodeRef, type: CabinType, iw: number, ih: num
   }
   const sz = -idp * 0.18;
   seat(sz);
-  if (type === 'pod' || type === 'ball' || type === 'hood') {
+  if (type === 'pod' || type === 'ball' || type === 'hood' || type === 'visor') {
     // wraparound consoles
     int.box([0, 0.5, idp * 0.3], [iw * 0.85, 0.12, 0.35], 'interior', { rot: [-0.35, 0, 0] });
     screen(0, 0.72, idp * 0.38, iw * 0.55, 0.28);

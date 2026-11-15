@@ -101,14 +101,6 @@
       "posErr": 0.0,
       "axisErrDeg": 0.0
     },
-    "arm_R_wrist": {
-      "posErr": 0.0,
-      "axisErrDeg": 0.0
-    },
-    "arm_R_drill_spin": {
-      "posErr": 0.0,
-      "axisErrDeg": 0.0
-    },
     "leg_L_shin_ram_barrel": {
       "posErr": 0.0,
       "axisErrDeg": 0.0
@@ -158,13 +150,13 @@
       "axisErrDeg": 0.0
     }
   },
-  "boneCount": 39,
+  "boneCount": 37,
   "missingBones": [],
   "maxPosErrorM": 2.4783501918216143e-07,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 34792,
-  "vertexGroups": 39,
+  "triangles": 33838,
+  "vertexGroups": 37,
   "blend": "tick_exo.blend",
   "fbx": "tick_exo.fbx"
 }

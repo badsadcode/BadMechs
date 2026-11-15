@@ -2,7 +2,7 @@ BadMech export package: Grudge A-73
 =========================================
 
 Units: metres · Up: +Y · Forward (mech faces): +Z · Right-handed (glTF convention)
-Height 11.02 m · biped · heavy
+Height 10.59 m · biped · heavy
 
 FILES
   grudge_a_73.glb              Full articulated mech (LOD0). Hierarchy, pivots, PBR materials, skinned

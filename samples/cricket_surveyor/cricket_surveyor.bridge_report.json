@@ -22,7 +22,7 @@
       "axisErrDeg": 0.0
     },
     "leg_L0_foot": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_R0_coxa": {
@@ -38,7 +38,7 @@
       "axisErrDeg": 0.0
     },
     "leg_R0_foot": {
-      "posErr": 1e-06,
+      "posErr": 2e-06,
       "axisErrDeg": 0.0
     },
     "leg_L1_coxa": {
@@ -105,10 +105,6 @@
       "posErr": 1e-06,
       "axisErrDeg": 0.0
     },
-    "cockpit": {
-      "posErr": 0.0,
-      "axisErrDeg": 0.0
-    },
     "cockpit_hatch": {
       "posErr": 0.0,
       "axisErrDeg": 0.0
@@ -122,13 +118,13 @@
       "axisErrDeg": 0.0
     }
   },
-  "boneCount": 30,
+  "boneCount": 29,
   "missingBones": [],
-  "maxPosErrorM": 1.411762151995541e-06,
+  "maxPosErrorM": 1.7691638564653194e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 46326,
-  "vertexGroups": 30,
+  "triangles": 46770,
+  "vertexGroups": 29,
   "blend": "cricket_surveyor.blend",
   "fbx": "cricket_surveyor.fbx"
 }

@@ -4,35 +4,35 @@
   "heightM": 2.22,
   "glb": {
     "ok": true,
-    "nodesChecked": 106,
+    "nodesChecked": 102,
     "missing": [],
-    "maxPosErrorM": 7.788847076377694e-06,
+    "maxPosErrorM": 7.929882225781722e-06,
     "maxAxisErrorDeg": 0.0,
-    "materials": "8 imported / 8 used in file",
+    "materials": "9 imported / 9 used in file",
     "skinnedHoses": 4,
-    "triangles": 34792
+    "triangles": 33838
   },
   "glb_lod1": {
     "ok": true,
-    "nodesChecked": 106,
-    "maxPosErrorM": 7.788847076377694e-06,
-    "triangles": 19276
+    "nodesChecked": 102,
+    "maxPosErrorM": 7.929882225781722e-06,
+    "triangles": 18850
   },
   "glb_lod2": {
     "ok": true,
-    "nodesChecked": 106,
-    "maxPosErrorM": 7.788847076377694e-06,
-    "triangles": 8588
+    "nodesChecked": 102,
+    "maxPosErrorM": 7.929882225781722e-06,
+    "triangles": 8580
   },
   "fbx": {
     "ok": true,
-    "boneCount": 39,
+    "boneCount": 37,
     "missingBones": [],
     "maxPosErrorM": 2.4783501918216143e-07,
     "maxAxisErrorDeg": 0.0,
     "meshCount": 1,
-    "triangles": 34792,
-    "vertexGroups": 39,
+    "triangles": 33838,
+    "vertexGroups": 37,
     "blend": "tick_exo.blend",
     "fbx": "tick_exo.fbx"
   },
@@ -41,7 +41,7 @@
     "posedJoint": "leg_L_shin",
     "angleRad": 1.206368,
     "verticesMoved": 6618,
-    "verticesTotal": 46828,
+    "verticesTotal": 45768,
     "pivotDrift": 1.2644054553268208e-07
   },
   "usd": {
@@ -49,25 +49,25 @@
       "ok": true,
       "upAxis": "Y",
       "metersPerUnit": 1.0,
-      "xforms": 107,
-      "meshes": 146,
+      "xforms": 103,
+      "meshes": 147,
       "missing": [],
       "maxPosErrorM": 9.364001618243942e-06,
       "maxAxisErrorDeg": 0.0,
-      "jointLimitsPreserved": "25/25"
+      "jointLimitsPreserved": "23/23"
     },
     "blender": {
       "ok": true,
-      "objects": 245,
-      "meshes": 146
+      "objects": 244,
+      "meshes": 147
     },
     "ok": true
   },
   "obj": {
     "ok": true,
-    "objects": 74,
-    "triangles": 33832,
-    "materials": 8,
+    "objects": 72,
+    "triangles": 32878,
+    "materials": 9,
     "note": "static only, by design"
   },
   "ok": true

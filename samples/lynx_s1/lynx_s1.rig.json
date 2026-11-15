@@ -1466,6 +1466,30 @@
    "tags": []
   },
   {
+   "name": "torso__frame_shoulder_L",
+   "parent": "torso",
+   "role": "component",
+   "system": "torso",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    4.0887,
+    0
+   ],
+   "tags": []
+  },
+  {
    "name": "arm_L_shoulder_pitch",
    "parent": "torso",
    "role": "link",
@@ -1774,6 +1798,30 @@
     1.3031,
     3.4305,
     1.6402
+   ],
+   "tags": []
+  },
+  {
+   "name": "torso__frame_shoulder_R",
+   "parent": "torso",
+   "role": "component",
+   "system": "torso",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    4.0887,
+    0
    ],
    "tags": []
   },

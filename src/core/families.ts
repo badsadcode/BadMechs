@@ -62,8 +62,11 @@ export function generate(recipe: MechRecipe): GenResult {
 }
 
 function style(ctx: GenCtx, slot: string, plating: number, lattice: boolean, armor: MaterialId = 'paint', accent: MaterialId = 'hazard'): SegStyle {
-  return { armor, accent, plating, lattice, rng: ctx.rng(slot + '.style') };
+  const cool = ctx.recipe.realism === 'cool';
+  // Rule of Cool: everything is armoured, nothing is an open lattice
+  return { armor, accent, plating: cool ? Math.max(plating, 0.85) : plating, lattice: cool ? false : lattice, rng: ctx.rng(slot + '.style'), cool };
 }
+const isCool = (ctx: GenCtx) => ctx.recipe.realism === 'cool';
 
 const isFighter = (r: string) => r === 'combat' || r === 'scout';
 
@@ -81,11 +84,14 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
       : ctx.choice('body.weight', 'Weight class', 'body', ['light', 'medium', 'heavy', 'assault'] as const, r.role === 'scout' ? [6, 2, 0.5, 0] : fighter ? [1, 3, 3, 2] : [1, 3, 2, 0.5]);
   const baseH = H0 ?? (exo ? 2.6 : ({ light: 7, medium: 9.5, heavy: 11.5, assault: 13, colossal: 28 } as Record<string, number>)[weight]);
   const H = baseH * r.scale;
-  const ms = ctx.maker.shape;
+  const msBase = ctx.maker.shape;
+  // Rule of Cool: heroic proportions — big chest and shoulders, bigger feet and guns
+  const cool = isCool(ctx);
+  const ms = cool && !exo ? { ...msBase, torsoW: msBase.torsoW * 1.18, torsoH: msBase.torsoH * 1.08, foot: msBase.foot * 1.2, stance: msBase.stance * 1.05 } : msBase;
   const bulk = Math.min(1, Math.max(0, r.bulk + ms.bulk + (weight === 'heavy' ? 0.12 : weight === 'assault' ? 0.25 : weight === 'light' ? -0.15 : 0)));
   const plating = Math.min(1, Math.max(0, (exo ? 0.25 + bulk * 0.3 : fighter ? 0.55 + bulk * 0.45 : 0.3 + bulk * 0.4) + ms.plating));
   const lattice = exo || ctx.flag('frame.lattice', 'Open lattice frame', 'body', r.role === 'industrial' || r.role === 'salvage' ? 0.45 : 0.08);
-  const hydraulics = ctx.flag('frame.hydraulics', 'Exposed hydraulics', 'legs', exo ? 0.95 : fighter ? 0.55 : 0.9);
+  const hydraulics = ctx.flag('frame.hydraulics', 'Exposed hydraulics', 'legs', exo ? 0.95 : fighter ? 0.55 : 0.9) && !isCool(ctx);
   const legStyle = exo ? 'plantigrade' : ctx.choice('legs.style', 'Leg style', 'legs', ['plantigrade', 'digitigrade'] as const, r.role === 'scout' ? [1, 3] : [3, 1.4]);
   const foot = ctx.choice('legs.foot', 'Foot', 'legs', ['flat', 'claw', 'hoof'] as const, legStyle === 'digitigrade' ? [1, 3, 0.5] : [4, 1, 1]);
   const legStyleS = style(ctx, 'legs', plating, lattice);
@@ -150,7 +156,7 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
     : ctx.choice('cockpit.style', 'Cockpit', 'cockpit', ['canopy', 'armored', 'bubble'] as const, r.role === 'scout' ? [2, 0.5, 2] : fighter ? [2, 2, 0.6] : [1.5, 0.6, 2]);
   const cockpitPos0 = exo ? 'center' : ctx.choice('cockpit.position', 'Cockpit position', 'cockpit', ['center', 'offset', 'high', 'embedded'] as const, [3, 1, 1.4, 0]);
   // Mech Factory (v2): the cabin is a real architectural choice; pre-factory designs keep the hood
-  const cabin: CabinType = exo || r.version < 2 ? 'hood' : ctx.choice('cockpit.cabin', 'Cabin', 'cockpit', CABINS, [0.8, 2.5, 1.2, 1.5, 0.8, r.role === 'scout' ? 2 : 0.3]);
+  const cabin: CabinType = exo || r.version < 2 ? 'hood' : ctx.choice('cockpit.cabin', 'Cabin', 'cockpit', CABINS, [0.8, 2.5, 1.2, 1.5, 0.8, r.role === 'scout' ? 2 : 0.3, 1.5]);
   // a ball cab is a head: it always sits up high on a neck
   const cockpitPos = cabin === 'ball' ? 'high' : cockpitPos0;
 
@@ -173,7 +179,10 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
     cockpitAt = [0, 0.02, -td * 0.3 + idp / 2 + 0.03];
   } else {
     const coreZ = -td * 0.18;
-    const arch = ctx.choice('torso.arch', 'Torso architecture', 'torso', TORSO_ARCHES, r.role === 'scout' || weight === 'light' ? [0.5, 4, 0.5, 1.5, 0.5] : weight === 'assault' ? [2, 0.3, 3, 1, 1.5] : fighter ? [3, 0.8, 1.5, 1.5, 2] : [3, 1.5, 0.5, 2, 1]);
+    const archW5 = r.role === 'scout' || weight === 'light' ? [0.5, 4, 0.5, 1.5, 0.5] : weight === 'assault' ? [2, 0.3, 3, 1, 1.5] : fighter ? [3, 0.8, 1.5, 1.5, 2] : [3, 1.5, 0.5, 2, 1];
+    // pre-factory recipes only ever saw the first five hulls (zero weight keeps their picks identical)
+    const archW = r.version < 2 ? [...archW5, 0, 0, 0] : [...archW5, 1.2, 1.0, 1.0];
+    const arch = ctx.choice('torso.arch', 'Torso architecture', 'torso', TORSO_ARCHES, archW);
     hull = torsoHull(torso, arch, tw, th, td * 0.8, coreZ, 'paint', 'paint2', ctx.rng('torso.hull'), colo);
     // backpack: reactor / ammo housing hung on the back of the hull
     if (ctx.flag('torso.backpack', 'Reactor backpack', 'torso', 0.6)) {
@@ -231,10 +240,11 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
 
   // ── arms
   const armless = !exo && !colo && fighter && ctx.flag('arms.none', 'Armless (weapon pods)', 'arms', 0.12);
-  const armW = H * (exo ? 0.065 : 0.06) * (0.85 + bulk * 0.5);
+  const armW = H * (exo ? 0.065 : 0.06) * (0.85 + bulk * 0.5) * (cool && !exo ? 1.2 : 1);
   // every tool is pickable; the role only changes the odds
-  const tools: ArmTool[] = ['cannon', 'rotary', 'missile', 'gripper', 'claw', 'drill', 'shield'];
-  const weights = fighter ? [3, 3, 2, 1, 0.3, 0, 0.6] : [0.3, 0, 0, 3, 2, 1.5, 0];
+  const tools: ArmTool[] = ['cannon', 'rotary', 'missile', 'gripper', 'claw', 'drill', 'shield', 'railgun', 'blade'];
+  const coolW = isCool(ctx) ? 2.5 : 1;
+  const weights = (fighter ? [3, 3, 2, 1, 0.3, 0, 0.6] : [0.3, 0, 0, 3, 2, 1.5, 0]).concat(r.version < 2 ? [0, 0] : fighter ? [1.4 * coolW, 0.8 * coolW] : [0, 0.2 * coolW]);
   if (!armless) {
     const toolL = ctx.choice('arms.L.tool', 'Left arm tool', 'arms.L', tools, weights);
     const sym = ctx.flag('arms.symmetric', 'Symmetric arms', 'arms', fighter ? 0.35 : 0.6);
@@ -245,11 +255,24 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
       ['L', 1, toolL],
       ['R', -1, toolR],
     ] as const) {
+      // shoulder mount: a structural block from inside the hull out to the shoulder bearing,
+      // so every arm is visibly carried by the body (exo arms hang off the backpack frame)
+      {
+        const d = armW * 1.15;
+        const zS = exo ? -td * 0.1 : -td * 0.15;
+        const zB = exo ? -td * 0.55 : zS;
+        const outer = shoulderX - armW * 0.22;
+        const inner = Math.min(outer - d * 0.6, (hull ? hull.halfW * 0.55 : tw * 0.25));
+        const mt = torso.comp('frame', `shoulder_${id}`);
+        block(mt, [side * (inner + outer) / 2, shoulderY, (zS + zB) / 2], [outer - inner, d * 0.95, Math.abs(zS - zB) + d * 1.15], 'darkMetal', { r: d * 0.18, collide: false });
+        mt.shape([side * (outer - d * 0.04), shoulderY, zS], { t: 'lathe', axis: 'x', segs: 16, pts: [[0, -d * 0.08], [d * 0.62, -d * 0.08], [d * 0.66, -d * 0.03], [d * 0.66, d * 0.04], [0, d * 0.04]] }, 'steel', { collide: false, detail: 1 });
+        mt.bolts([side * (outer - d * 0.02), shoulderY + d * 0.5, zS - d * 0.3], [side * (outer - d * 0.02), shoulderY + d * 0.5, zS + d * 0.3], 3, d * 0.04, 'x');
+      }
       arm(b, 'torso', [side * shoulderX, shoulderY, exo ? -td * 0.1 : -td * 0.15], {
         id,
         side,
         upper: H * (exo ? 0.2 : 0.19),
-        fore: H * (exo ? 0.17 : 0.17),
+        fore: H * (exo ? 0.17 : 0.17) * (cool && !exo ? 1.15 : 1),
         w: armW,
         d: armW * 1.15,
         tool,
@@ -272,7 +295,10 @@ function biped(ctx: GenCtx, b: Builder, mode: 'standard' | 'exo' | 'colossus', H
   }
   if (!exo && H > 8.5) {
     // boarding ladder up the back of the left thigh is silly; real mechs kneel. Put it on the torso flank.
-    ladder(torso, tw * 0.56 + 0.05, -td * 0.05, -th * 0.2, th * 0.95);
+    // boarding ladder flat against the BACK of the hull (the flanks belong to the arms)
+    const bz = hull ? hull.backZ - 0.12 : -td * 0.6;
+    const lx = hull ? hull.shiftX + hull.halfW * 0.82 : tw * 0.4;
+    ladder(torso, lx, bz, -th * 0.2, hull ? hull.topY : th * 0.95, 0.45, 'z', hull ? hull.backZ : undefined);
     b.mounts.push({ name: 'boarding_ladder', node: 'torso', type: 'ladder', note: 'kneel pose brings the ladder base within reach' });
   }
 
@@ -345,7 +371,7 @@ function quadruped(ctx: GenCtx, b: Builder, colossal: boolean): string {
   const bulk = r.bulk;
   const plating = fighter ? 0.6 + bulk * 0.3 : 0.25 + bulk * 0.35;
   const lattice = !fighter && ctx.flag('frame.lattice', 'Open lattice frame', 'body', 0.4);
-  const hydraulics = ctx.flag('frame.hydraulics', 'Exposed hydraulics', 'legs', 0.85);
+  const hydraulics = ctx.flag('frame.hydraulics', 'Exposed hydraulics', 'legs', 0.85) && !isCool(ctx);
   const bodyL = H * (colossal ? 0.95 : 0.85) * (0.9 + bulk * 0.25);
   const bodyW = H * 0.5 * (0.85 + bulk * 0.3);
   const bodyH = H * (colossal ? 0.3 : 0.2) * (0.9 + bulk * 0.3);
@@ -419,14 +445,14 @@ function quadruped(ctx: GenCtx, b: Builder, colossal: boolean): string {
 
   // ── cab
   const cabStyle = ctx.choice('cockpit.style', 'Cockpit', 'cockpit', ['canopy', 'armored', 'bubble'] as const, fighter ? [1, 2, 0.5] : [2, 0.5, 1.5]);
-  const qcabin: CabinType = r.version < 2 ? 'hood' : ctx.choice('cockpit.cabin', 'Cabin', 'cockpit', CABINS, [0.8, 2, 2, 1.5, 0.6, 0.4]);
+  const qcabin: CabinType = r.version < 2 ? 'hood' : ctx.choice('cockpit.cabin', 'Cabin', 'cockpit', CABINS, [0.8, 2, 2, 1.5, 0.6, 0.4, 1]);
   const iw = Math.max(1.4, H * (colossal ? 0.12 : 0.15));
   const ih = Math.max(1.5, H * (colossal ? 0.1 : 0.14));
   const idp = Math.max(1.4, H * (colossal ? 0.1 : 0.14)) * (qcabin === 'tandem' ? 1.6 : 1);
   cockpit(b, 'body', [0, deckTop + bodyH * 0.06, bodyL * 0.5 - idp * 0.45], { style: cabStyle, iw, ih, id: idp, wall: Math.max(0.07, H * 0.008), armor: 'paint', hatch: 'rear', rng: ctx.rng('cockpit'), cabin: qcabin, frame: cabinFrame(ctx.maker.id) });
   lightPod(body, [bodyW * 0.36, 0, bodyL * 0.48], H * 0.015);
   lightPod(body, [-bodyW * 0.36, 0, bodyL * 0.48], H * 0.015);
-  ladder(body, bodyW * 0.51, bodyL * 0.15, -drop + H * 0.05 > -bodyH ? -bodyH * 0.4 : -bodyH * 0.4, deckTop);
+  ladder(body, bodyW * 0.56, bodyL * 0.15, -bodyH * 0.4, deckTop, 0.45, 'x', bodyW * 0.48);
   b.mounts.push({ name: 'side_ladder', node: 'body', type: 'ladder' });
   applySignature(b, ctx.maker.signature, {
     host: 'body',
@@ -437,7 +463,7 @@ function quadruped(ctx: GenCtx, b: Builder, colossal: boolean): string {
     shiftX: 0,
     H,
     cockpit: { at: [0, deckTop + bodyH * 0.06, bodyL * 0.5 - idp * 0.45], iw, ih, idp, wall: Math.max(0.07, H * 0.008) },
-    topSpot: [0, deckTop + bodyH * 0.04, bodyL * 0.5 - idp * 1.4],
+    topSpot: [0, deckTop + bodyH * 0.04, bodyL * 0.5 - idp * 2.3],
   });
 
   // ── mission kit on the deck
@@ -554,7 +580,7 @@ function multiLeg(ctx: GenCtx, b: Builder, n: 6 | 8): string {
   const bulk = r.bulk;
   const plating = fighter ? 0.55 + bulk * 0.3 : 0.25 + bulk * 0.35;
   const lattice = ctx.flag('frame.lattice', 'Open lattice frame', 'body', fighter ? 0.1 : 0.35);
-  const hydraulics = ctx.flag('frame.hydraulics', 'Exposed hydraulics', 'legs', 0.8);
+  const hydraulics = ctx.flag('frame.hydraulics', 'Exposed hydraulics', 'legs', 0.8) && !isCool(ctx);
   const bodyShape = ctx.choice('body.shape', 'Body shape', 'body', ['pod', 'saucer', 'long', 'chassis'] as const, [2, 1.5, 1, 1]);
   const bodyW = H * (bodyShape === 'saucer' ? 0.75 : 0.55) * (0.9 + bulk * 0.25);
   const bodyL = H * (bodyShape === 'long' ? 1.15 : bodyShape === 'saucer' ? 0.8 : 0.85) * (0.9 + bulk * 0.2);
@@ -606,7 +632,7 @@ function multiLeg(ctx: GenCtx, b: Builder, n: 6 | 8): string {
   bodyHull(body, bodyShape, bodyW * 0.92, bodyH, bodyL, 'paint', 'paint2', ctx.rng('body.hull'), false, false);
   hub(body.comp('frame'), [0, -bodyH * 0.5, 0], 'y', { r: bodyW * 0.16, w: bodyH * 0.14, bolts: 8, detail: 1 }); // belly hardpoint
   const cabStyle = ctx.choice('cockpit.style', 'Cockpit', 'cockpit', ['bubble', 'canopy', 'armored'] as const, fighter ? [1, 1, 2] : [2.5, 1.5, 0.5]);
-  const mcabin: CabinType = r.version < 2 ? 'hood' : ctx.choice('cockpit.cabin', 'Cabin', 'cockpit', CABINS, [0.8, 3, 0.8, 1.2, 1, 0.8]);
+  const mcabin: CabinType = r.version < 2 ? 'hood' : ctx.choice('cockpit.cabin', 'Cabin', 'cockpit', CABINS, [0.8, 3, 0.8, 1.2, 1, 0.8, 1.2]);
   const iw = Math.max(1.2, H * 0.2);
   const ih = Math.max(1.4, H * 0.18);
   const idp = Math.max(1.35, H * 0.18) * (mcabin === 'tandem' ? 1.6 : 1);

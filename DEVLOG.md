@@ -243,3 +243,37 @@ Under the hood (ha): every cabin shares the same floor, bulkhead and invisible c
 
 *Mood: interior decorator for very angry robots.* 🛋️
 
+---
+
+## Day 4 — "Trust Me, I'm a Scientist" 🧪
+
+Tom came in with three requests and a grin: more shapes, a bug report, and a whole new philosophy.
+
+### 🐛 The case of the floating arms
+Measured it instead of guessing: on lots of designs the hull ended **20–30 cm short** of the shoulder bearing. Nothing connected the arm to the body — light-armoured mechs had nowhere to hide it. Every shoulder now gets a **structural mount**: a chamfered block from deep inside the hull out to a bolted flange the bearing seats on (exosuits angle theirs back to the backpack frame).
+
+### 🪜 The case of the sideways ladder
+Tom spotted ladders standing out from the hull like little fences. They were built facing *forward* even when bolted to a *side* wall. Ladders now know which wall they're on, lie flat against it on standoff brackets, and the biped's boarding ladder moved to the back of the hull, out of the arms' way.
+
+### 🧪 Rule of Cool mode
+A new **Realism** switch: *Engineered (it would work)* or *Rule of Cool (trust me, I'm a scientist)*.
+
+![Engineered vs Rule of Cool](public/rule_of_cool.png)
+
+In Rule of Cool:
+- **Mechanisms vanish**: no pistons, hoses, brackets or exposed bearings — limbs are fully wrapped in armour, joints hide under **kneecaps and elbow guards** with glowing slits
+- **Heroic proportions**: bigger chest and shoulders, bigger feet and guns
+- **Glowing accent lines** on the limbs, and Bastion's shoulder shields **float on a glowing field ring** (don't ask how)
+- A deal with the rig: *cool armour never steals joint range*. The skeleton, pivots, limits and IK chains are exactly as walkable as in Engineered mode — it just stops worrying about physics.
+
+### ✨ New shapes
+![New hulls, visor cabin, railgun and blade](public/new_shapes.png)
+
+- Three new hulls: **Keel** (inverted wedge, broad shoulders, prow chest), **Drum** (octagonal barrel), **Spine** (hunched with a stepped dorsal ridge)
+- A seventh cabin: **Visor** — an armoured helmet with a wraparound glass strip
+- Two new weapons: **Railgun** (twin accelerator rails, glowing coils, capacitor pack) and **Blade** (a faceted forearm sword — which, on its first attempt, pointed backwards through its own elbow. Fixed. Very embarrassing for a sword.)
+
+Old saved designs still rebuild bit-identical skeletons; all 70 tests green; every sample still round-trips through Blender and USD.
+
+*Mood: lab coat on, safety goggles optional.* 🥼
+

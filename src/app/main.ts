@@ -411,6 +411,7 @@ function renderUI() {
   else mk.innerHTML = `<option value="">🎲 Any maker (${maker.name})</option>` + MAKERS.map((m) => `<option value="${m.id}" ${m.id === pinned ? 'selected' : ''}>${m.name}</option>`).join('');
   mk.disabled = recipe.version < 2;
   $('maker-motto').textContent = maker.motto ? `“${maker.motto}”` : '';
+  $<HTMLSelectElement>('in-realism').value = recipe.realism ?? 'engineered';
   const role = $<HTMLSelectElement>('in-role');
   role.innerHTML = ROLES.map((r) => `<option value="${r}" ${r === recipe.role ? 'selected' : ''}>${r}</option>`).join('');
   $<HTMLInputElement>('in-seed').value = String(recipe.seed);
@@ -657,6 +658,11 @@ $<HTMLSelectElement>('in-maker').onchange = (e) => {
   else delete recipe.overrides.maker;
   rebuild(true);
   toast(v ? `${makerById(v).name}: “${makerById(v).motto}”` : 'Maker left to the dice');
+};
+$<HTMLSelectElement>('in-realism').onchange = (e) => {
+  recipe.realism = (e.target as HTMLSelectElement).value as 'engineered' | 'cool';
+  rebuild();
+  toast(recipe.realism === 'cool' ? "Rule of Cool: mechanisms hidden, proportions heroic. Trust us, we're scientists." : 'Engineered: every piston, hose and bearing where it would really be.');
 };
 $<HTMLSelectElement>('in-role').onchange = (e) => {
   recipe.role = (e.target as HTMLSelectElement).value as MechRole;

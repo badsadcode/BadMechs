@@ -22,6 +22,8 @@ export interface SegStyle {
   /** open lattice frame instead of a boxed beam */
   lattice: boolean;
   rng: Rng;
+  /** Rule of Cool: hide mechanisms, wrap limbs in armour, add glowing accents */
+  cool?: boolean;
 }
 
 /**
@@ -61,18 +63,34 @@ export function segmentDown(link: NodeRef, L: number, w: number, d: number, st: 
       taperStart: 1.05,
       taperEnd: rng.range(0.7, 0.95),
       belly: Math.abs(bow) * 0.4 + d * 0.03,
+      collide: !st.cool,
       inlay: st.plating > 0.5,
       inlayMaterial: rng.chance(0.35) ? 'paint2' : st.armor,
     });
     if (st.plating > 0.45) {
-      for (const sx of [-1, 1]) shellDown(armor, -L * 0.2, [sx * (side + w * 0.03 + th * 0.8), 0, bow * 0.5], sx > 0 ? '+x' : '-x', { len: L * 0.5, width: d * 0.72, span: 0.6, thick: th * 0.8, material: st.armor, taperEnd: 0.8, belly: d * 0.02 });
+      for (const sx of [-1, 1]) shellDown(armor, -L * 0.2, [sx * (side + w * 0.03 + th * 0.8), 0, bow * 0.5], sx > 0 ? '+x' : '-x', { len: L * (st.cool ? 0.62 : 0.5), width: d * (st.cool ? 0.9 : 0.72), span: 0.6, thick: th * 0.8, material: st.armor, taperEnd: 0.8, belly: d * 0.02, collide: !st.cool });
+    }
+    if (st.cool) {
+      // full wrap: a back plate too, and a glowing seam line down the front plate
+      // (Rule of Cool armour is decorative: it never steals joint range from the rig)
+      shellDown(armor, -L * 0.16, [0, 0, -(front + d * 0.03 + th) + bow * 0.55], '-z', { len: L * 0.6, width: w * 0.95, span: 1.0, thick: th * 0.9, material: st.armor, taperEnd: 0.8, belly: d * 0.02, collide: false });
+      armor.box([0, -L * 0.12 - len * 0.5, front + d * 0.03 + th + bow * 0.55 + 0.008], [Math.max(0.03, w * 0.1), len * 0.6, 0.016], 'emissive', { detail: 1, collide: false });
+      // armoured knee/elbow cap over the joint at the far end: hides the fork and bearing
+      if (opts.housingAtEnd) {
+        const cz = front + d * 0.12;
+        block(armor, [0, -L * 0.98, cz], [w * 1.05, d * 0.95, d * 0.55], st.armor, { r: d * 0.14, top: [0.7, 0.75], shift: [0, -d * 0.06], rot: [-0.25, 0, 0], collide: false });
+        block(armor, [0, -L * 0.98, cz + d * 0.3], [w * 0.45, d * 0.08, d * 0.06], 'emissive', { detail: 1, collide: false, rot: [-0.25, 0, 0] });
+      }
+      // armoured caps hide the bearing at the pivot
+      for (const sx of [-1, 1]) armor.shape([sx * w * 0.36, 0, 0], { t: 'lathe', axis: 'x', segs: 8, pts: sx > 0 ? [[0, 0], [d * 0.44, 0], [d * 0.4, w * 0.05], [d * 0.22, w * 0.1], [0, w * 0.11]] : [[0, -w * 0.11], [d * 0.22, -w * 0.1], [d * 0.4, -w * 0.05], [d * 0.44, 0], [0, 0]] }, 'paint2', { collide: false });
     }
     // bolt row along the shell's upper edge
     const fz = front + d * 0.03 + th + bow * 0.55 + 0.004;
     armor.bolts([-w * 0.28, -L * 0.12 - th * 0.8, fz], [w * 0.28, -L * 0.12 - th * 0.8, fz], 4, Math.max(0.01, w * 0.022), 'z');
     if (rng.chance(0.5)) armor.box([w * 0.2, -L * 0.42, fz + d * 0.02], [w * 0.16, L * 0.1, 0.008], st.accent, { detail: 1, collide: false });
   }
-  // conduit up the back, clamped to the member
+  // conduit up the back, clamped to the member (hidden in Rule of Cool)
+  if (st.cool) return;
   const det = link.comp('detail');
   const cr = Math.max(0.012, w * 0.035);
   const cx = w * 0.68 * 0.5 + cr * 1.2;
@@ -110,13 +128,20 @@ export function segmentOut(link: NodeRef, L: number, w: number, h: number, st: S
       taperStart: 0.95,
       taperEnd: rng.range(0.65, 0.9),
       belly: Math.abs(bow) * 0.4 + h * 0.03,
+      collide: !st.cool,
       inlay: st.plating > 0.5,
       inlayMaterial: rng.chance(0.35) ? 'paint2' : st.armor,
     });
+    if (st.cool) {
+      shellOut(armor, L * 0.12, [0, -(top + h * 0.03 + th) + bow * 0.55, 0], '-y', { len: L * 0.6, width: w * 0.95, span: 1.0, thick: th * 0.9, material: st.armor, taperEnd: 0.8, belly: h * 0.02, collide: false });
+      armor.box([0, top + h * 0.03 + th + bow * 0.55 + 0.006, L * 0.45], [Math.max(0.02, w * 0.05), 0.012, L * 0.45], 'emissive', { detail: 1, collide: false });
+      for (const sx of [-1, 1]) armor.shape([sx * w * 0.35, 0, 0], { t: 'lathe', axis: 'x', segs: 8, pts: sx > 0 ? [[0, 0], [h * 0.42, 0], [h * 0.38, w * 0.05], [h * 0.2, w * 0.1], [0, w * 0.11]] : [[0, -w * 0.11], [h * 0.2, -w * 0.1], [h * 0.38, -w * 0.05], [h * 0.42, 0], [0, 0]] }, 'paint2', { collide: false });
+    }
     const ty = top + h * 0.03 + th + bow * 0.55 + 0.004;
     armor.bolts([-w * 0.25, ty, L * 0.15], [-w * 0.25, ty, L * 0.55], 4, Math.max(0.01, w * 0.025), 'y');
     if (rng.chance(0.6)) armor.box([w * 0.16, ty + 0.002, L * 0.4], [w * 0.2, 0.008, L * 0.12], st.accent, { detail: 1, collide: false });
   }
+  if (st.cool) return;
   const det = link.comp('detail');
   const cr = Math.max(0.012, w * 0.045);
   det.shape([0, 0, 0], { t: 'tube', path: [[w * 0.24, -h * 0.28, L * 0.12], [w * 0.26, -h * 0.32 + bow * 0.4, L * 0.5], [w * 0.24, -h * 0.28, L * 0.88]], r: cr, segs: 8 }, 'rubber', { detail: 1, collide: false });
@@ -240,7 +265,7 @@ export function uprightLeg(b: Builder, parent: string, at: Vec3, sp: UprightLegS
   }
   // flex hoses over every pitch joint (skinned in exports)
   for (let i = 1; i < n; i++) {
-    b.cable({ name: `${p}_${names[i]}_hose`, from: links[i - 1].name, fromOffset: [-s * sp.w * 0.32, -sp.lens[i - 1] * 0.72, -sp.d * 0.38], to: links[i].name, toOffset: [-s * sp.w * 0.32, -sp.lens[i] * 0.25, -sp.d * 0.36], radius: Math.max(0.012, sp.w * 0.035) });
+    if (!sp.style.cool) b.cable({ name: `${p}_${names[i]}_hose`, from: links[i - 1].name, fromOffset: [-s * sp.w * 0.32, -sp.lens[i - 1] * 0.72, -sp.d * 0.38], to: links[i].name, toOffset: [-s * sp.w * 0.32, -sp.lens[i] * 0.25, -sp.d * 0.36], radius: Math.max(0.012, sp.w * 0.035) });
   }
 
   // ankle pitch + roll, foot levelled
@@ -378,7 +403,7 @@ export function sprawlLeg(b: Builder, parent: string, at: Vec3, sp: SprawlLegSpe
     const plateTop = hf + sp.h * 0.03 + sp.h * 0.85 * (0.08 + sp.style.plating * 0.06) * 1.2;
     if (links[1]) b.piston({ name: `${p}_tibia_ram`, along: 'z', linkA: links[0].name, anchorA: [0, plateTop + rt * 1.8, sp.lens[1] * 0.3], linkB: links[1].name, anchorB: [0, sp.h * 0.7 * 0.33 * 1.1 + rt * 1.6, sp.lens[2] * 0.2], radius: rt, drives: links[1].name });
   }
-  for (let i = 1; i < links.length; i++) b.cable({ name: `${p}_${names[i]}_hose`, from: links[i - 1].name, fromOffset: [sp.w * 0.25, -sp.h * 0.3, sp.lens[i] * 0.7], to: links[i].name, toOffset: [sp.w * 0.25, -sp.h * 0.25, sp.lens[i + 1] * 0.2], radius: Math.max(0.01, sp.w * 0.04) });
+  for (let i = 1; i < links.length && !sp.style.cool; i++) b.cable({ name: `${p}_${names[i]}_hose`, from: links[i - 1].name, fromOffset: [sp.w * 0.25, -sp.h * 0.3, sp.lens[i] * 0.7], to: links[i].name, toOffset: [sp.w * 0.25, -sp.h * 0.25, sp.lens[i + 1] * 0.2], radius: Math.max(0.01, sp.w * 0.04) });
 
   // foot: ball-jointed pad, levelled. modelled as a passive pitch joint for terrain conformance
   const lastElev = sp.elev[sp.elev.length - 1];
@@ -397,7 +422,7 @@ export function sprawlLeg(b: Builder, parent: string, at: Vec3, sp: SprawlLegSpe
 
 // ──────────────────────────────────────────────────────────────── arms ──
 
-export type ArmTool = 'gripper' | 'claw' | 'cannon' | 'rotary' | 'missile' | 'shield' | 'drill';
+export type ArmTool = 'gripper' | 'claw' | 'cannon' | 'rotary' | 'missile' | 'shield' | 'drill' | 'railgun' | 'blade';
 
 export interface ArmSpec {
   id: string; // L / R
@@ -417,20 +442,24 @@ export function arm(b: Builder, parent: string, at: Vec3, sp: ArmSpec) {
   const p = `arm_${sp.id}`;
   const sys = `arm.${sp.id}`;
   const s = sp.side;
-  const gun = sp.tool === 'cannon' || sp.tool === 'rotary' || sp.tool === 'missile';
+  const gun = sp.tool === 'cannon' || sp.tool === 'rotary' || sp.tool === 'missile' || sp.tool === 'railgun' || sp.tool === 'blade';
   const joints: string[] = [];
   const sh = b.node(`${p}_shoulder_pitch`, parent, at, { system: sys, joint: { axis: 'x', min: -110, max: 50, purpose: 'manipulation', kind: 'shoulder-pitch' } });
   const shh = sh.comp('joint-housing');
   hub(shh, [s * sp.w * 0.2, 0, 0], 'x', { r: sp.d * 0.6, w: sp.w * 0.9, bolts: 10 });
   // shoulder armour, in the maker's style
   const pst = sp.pauldron ?? 'hood';
+  // Rule of Cool: heroic shoulders
+  const K = sp.style.cool ? 1.35 : 1;
   if (sp.style.plating > 0.2) {
     const pa = sh.comp('armor');
     if (pst === 'shield') {
       // octagonal shoulder shield standing off the outer face (A-73), smaller hood over the bearing
-      pauldron(pa, [s * sp.w * 0.3, -sp.d * 0.05, 0], s, sp.d * 0.66, sp.d * 1.2, sp.d * 0.12, sp.style.armor, sp.style.rng);
-      const R = sp.d * (1.0 + sp.style.plating * 0.25);
-      const x = s * (sp.w * 0.78 + sp.d * 0.1);
+      pauldron(pa, [s * sp.w * 0.3, -sp.d * 0.05, 0], s, sp.d * 0.66 * K, sp.d * 1.2 * K, sp.d * 0.12, sp.style.armor, sp.style.rng);
+      const R = sp.d * (1.0 + sp.style.plating * 0.25) * K;
+      // Rule of Cool: the shield floats off the shoulder on a glowing field ring
+      const x = s * (sp.w * 0.78 + sp.d * (sp.style.cool ? 0.45 : 0.1));
+      if (sp.style.cool) pa.shape([x - s * sp.d * 0.2, -sp.d * 0.2, 0], { t: 'lathe', axis: 'x', segs: 8, pts: [[R * 0.3, -sp.d * 0.03], [R * 0.42, -sp.d * 0.03], [R * 0.42, sp.d * 0.03], [R * 0.3, sp.d * 0.03]] }, 'emissive', { detail: 1, collide: false });
       const oct = { k: 'ngon' as const, r: R, n: 8, rot: Math.PI / 8 };
       pa.shape([x, -sp.d * 0.2, 0], { t: 'loft', axis: 'x', sections: [{ p: oct, z: -sp.d * 0.09 }, { p: oct, z: sp.d * 0.09 }], bevel: sp.d * 0.035 }, sp.style.armor);
       const inl = { k: 'ngon' as const, r: R * 0.62, n: 8, rot: Math.PI / 8 };
@@ -441,11 +470,11 @@ export function arm(b: Builder, parent: string, at: Vec3, sp: ArmSpec) {
       }
     } else if (pst === 'slab') {
       // angled armour slab over the shoulder, with a stepped inlay
-      block(pa, [s * sp.w * 0.42, sp.d * 0.42, 0], [sp.w * 1.25, sp.d * 0.32, sp.d * 1.9], sp.style.armor, { r: sp.d * 0.1, top: [0.72, 0.82], shift: [s * sp.w * 0.06, 0], rot: [0, 0, -s * 0.22] });
+      block(pa, [s * sp.w * 0.42, sp.d * 0.42, 0], [sp.w * 1.25 * K, sp.d * 0.32 * K, sp.d * 1.9 * K], sp.style.armor, { r: sp.d * 0.1, top: [0.72, 0.82], shift: [s * sp.w * 0.06, 0], rot: [0, 0, -s * 0.22] });
       block(pa, [s * sp.w * 0.44, sp.d * 0.6, 0], [sp.w * 0.7, sp.d * 0.08, sp.d * 1.2], 'paint2', { r: sp.d * 0.04, rot: [0, 0, -s * 0.22], detail: 1, collide: false });
       pa.bolts([s * sp.w * 0.1, sp.d * 0.58, -sp.d * 0.8], [s * sp.w * 0.1, sp.d * 0.58, sp.d * 0.8], 5, sp.w * 0.03, 'y');
     } else {
-      pauldron(pa, [s * sp.w * 0.32, -sp.d * 0.05, 0], s, sp.d * (0.72 + sp.style.plating * 0.2), sp.d * (1.4 + sp.style.plating * 0.4), sp.d * 0.13, sp.style.armor, sp.style.rng);
+      pauldron(pa, [s * sp.w * 0.32, -sp.d * 0.05, 0], s, sp.d * (0.72 + sp.style.plating * 0.2) * K, sp.d * (1.4 + sp.style.plating * 0.4) * K, sp.d * 0.13, sp.style.armor, sp.style.rng);
     }
   }
   joints.push(sh.name);
@@ -461,7 +490,7 @@ export function arm(b: Builder, parent: string, at: Vec3, sp: ArmSpec) {
   if (sp.hydraulics) {
     b.piston({ name: `${p}_elbow_ram`, linkA: up.name, anchorA: [0, -sp.upper * 0.25, -(sp.d * 0.35 * 1.1 + Math.max(0.03, sp.w * 0.11) * 1.6)], linkB: fore.name, anchorB: [0, -sp.fore * 0.25, -(sp.d * 0.92 * 0.35 * 1.1 + Math.max(0.03, sp.w * 0.11) * 1.6)], radius: Math.max(0.03, sp.w * 0.11), drives: fore.name });
   }
-  b.cable({ name: `${p}_elbow_hose`, from: up.name, fromOffset: [-s * sp.w * 0.3, -sp.upper * 0.7, -sp.d * 0.3], to: fore.name, toOffset: [-s * sp.w * 0.3, -sp.fore * 0.3, -sp.d * 0.3], radius: Math.max(0.01, sp.w * 0.03) });
+  if (!sp.style.cool) b.cable({ name: `${p}_elbow_hose`, from: up.name, fromOffset: [-s * sp.w * 0.3, -sp.upper * 0.7, -sp.d * 0.3], to: fore.name, toOffset: [-s * sp.w * 0.3, -sp.fore * 0.3, -sp.d * 0.3], radius: Math.max(0.01, sp.w * 0.03) });
 
   let end = fore.name;
   if (gun) {
@@ -545,6 +574,24 @@ function gunArm(b: Builder, fore: NodeRef, sp: ArmSpec): string {
     // motor drum
     body.shape([0, 0, 0], { t: 'lathe', segs: 20, pts: [[0, -L * 0.62], [W * 0.44, -L * 0.62], [W * 0.5, -L * 0.58], [W * 0.5, -L * 0.48], [W * 0.42, -L * 0.45], [0, -L * 0.45]] }, 'darkMetal');
     b.mounts.push({ name: `${p}_rotary`, node: spin.name, type: 'weapon', note: 'barrel cluster spins on Y (continuous)' });
+  } else if (sp.tool === 'railgun') {
+    // twin accelerator rails either side of a slim barrel, glowing coil rings, capacitor pack
+    for (const sz of [-1, 1]) block(body, [0, -L * 0.9, sz * W * 0.3], [W * 0.26, L * 0.72, W * 0.16], 'darkMetal', { r: W * 0.04, top: [0.7, 1], collide: true });
+    body.shape([0, 0, 0], { t: 'lathe', segs: 12, pts: [[0, -L * 1.27], [W * 0.1, -L * 1.27], [W * 0.1, -L * 0.5], [0, -L * 0.5]] }, 'chrome');
+    for (let i = 0; i < 4; i++) {
+      const y = -L * (0.66 + i * 0.16);
+      body.shape([0, y, 0], { t: 'lathe', segs: 8, pts: [[W * 0.16, -L * 0.02], [W * 0.42, -L * 0.02], [W * 0.42, L * 0.02], [W * 0.16, L * 0.02]] }, 'paint2', { detail: 1, collide: false });
+      body.shape([0, y, 0], { t: 'lathe', segs: 8, pts: [[W * 0.12, -L * 0.008], [W * 0.17, -L * 0.008], [W * 0.17, L * 0.008], [W * 0.12, L * 0.008]] }, 'emissive', { detail: 1, collide: false });
+    }
+    block(body, [-sp.side * W * 0.7, -L * 0.42, 0], [W * 0.32, L * 0.36, W * 0.8], sp.style.armor, { r: W * 0.06, frontPanel: { inset: W * 0.05, depth: W * 0.03, slats: 4 } });
+  } else if (sp.tool === 'blade') {
+    // faceted forearm blade: edges front/back, tapering to a point with a slight hook
+    const bl = (s: number): { k: 'pts'; pts: [number, number][] } => ({ k: 'pts', pts: [[0.08 * W * s, -0.2 * W], [0.08 * W * s, 0.22 * W], [0, 0.5 * W], [-0.08 * W * s, 0.22 * W], [-0.08 * W * s, -0.2 * W], [0, -0.4 * W]] });
+    // (loft axis 'y' runs +Z → +Y, so forward along the forearm is NEGATIVE z)
+    body.shape([0, 0, 0], { t: 'loft', axis: 'y', sections: [{ p: bl(1), z: -L * 0.5, sx: 1.6, sy: 1.6 }, { p: bl(1), z: -L * 1.25, sx: 1.6, sy: 1.5 }, { p: bl(0.6), z: -L * 1.65, sx: 1.6, sy: 0.8, oy: W * 0.2 }, { p: bl(0.25), z: -L * 1.85, sx: 1.6, sy: 0.12, oy: W * 0.4 }] }, 'chrome');
+    // guard and glowing edge line
+    block(body, [0, -L * 0.48, 0], [W * 1.25, L * 0.08, W * 1.1], sp.style.armor, { r: W * 0.08, collide: false });
+    body.box([0, -L * 1.05, W * 0.72], [W * 0.06, L * 1.0, W * 0.05], 'emissive', { detail: 1, collide: false });
   } else {
     // missile box: launch face points forward (-Y in the forearm frame)
     block(body, [0, -L * 0.78, 0], [W * 1.35, sp.d * 1.35, L * 0.48], sp.style.armor, { r: W * 0.12, segs: 2, rot: [Math.PI / 2, 0, 0], frontPanel: { inset: W * 0.08, depth: W * 0.05 } });
@@ -704,12 +751,31 @@ export function cockpit(b: Builder, parent: string, at: Vec3, sp: CockpitSpec): 
 
 // ────────────────────────────────────────────────────────── details ──
 
-export function ladder(ref: NodeRef, x: number, z: number, y0: number, y1: number, width = 0.45) {
+/**
+ * A ladder lying flat against a wall. `face` is the wall's normal axis: 'z' for front/back walls
+ * (rungs run along X), 'x' for side walls (rungs run along Z). If `wall` is given (the wall's
+ * coordinate on that axis), standoff brackets tie the rails to it.
+ */
+export function ladder(ref: NodeRef, x: number, z: number, y0: number, y1: number, width = 0.45, face: 'x' | 'z' = 'z', wall?: number) {
   const det = ref.comp('equipment', 'ladder');
   const h = y1 - y0;
-  for (const sx of [-1, 1]) det.cyl([x + (sx * width) / 2, y0 + h / 2, z], 0.022, h, 'hazard', { segments: 6, collide: false, detail: 1 });
+  const along = (o: number): [number, number] => (face === 'z' ? [x + o, z] : [x, z + o]);
+  for (const sx of [-1, 1]) {
+    const [rx, rz] = along((sx * width) / 2);
+    det.cyl([rx, y0 + h / 2, rz], 0.022, h, 'hazard', { segments: 6, collide: false, detail: 1 });
+    if (wall !== undefined)
+      for (const t of [0.08, 0.5, 0.92]) {
+        const y = y0 + h * t;
+        if (face === 'x') det.box([(rx + wall) / 2, y, rz], [Math.abs(rx - wall) + 0.03, 0.035, 0.035], 'darkMetal', { detail: 1, collide: false });
+        else det.box([rx, y, (rz + wall) / 2], [0.035, 0.035, Math.abs(rz - wall) + 0.03], 'darkMetal', { detail: 1, collide: false });
+      }
+  }
   const rungs = Math.max(2, Math.floor(h / 0.3));
-  for (let i = 0; i <= rungs; i++) det.cylX([x, y0 + (i / rungs) * h, z], 0.016, width, 'steel', { segments: 6, collide: false, detail: 1 });
+  for (let i = 0; i <= rungs; i++) {
+    const [rx, rz] = along(0);
+    if (face === 'z') det.cylX([rx, y0 + (i / rungs) * h, rz], 0.016, width, 'steel', { segments: 6, collide: false, detail: 1 });
+    else det.cylZ([rx, y0 + (i / rungs) * h, rz], 0.016, width, 'steel', { segments: 6, collide: false, detail: 1 });
+  }
 }
 
 export function vents(ref: NodeRef, center: Vec3, w: number, h: number, normal: 'x' | 'z' | 'y', sign = 1) {

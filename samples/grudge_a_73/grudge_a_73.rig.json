@@ -16,10 +16,10 @@
  "rootNode": "root",
  "bodyNode": "pelvis",
  "stats": {
-  "height": 11.02,
+  "height": 10.59,
   "width": 9.08,
   "length": 5.01,
-  "estimatedMassTonnes": 113.6,
+  "estimatedMassTonnes": 99.9,
   "sizeClass": "heavy"
  },
  "nodes": [
@@ -1112,7 +1112,7 @@
    "system": "cockpit",
    "component": null,
    "restTranslation": [
-    0,
+    -0.40834,
     0.48351,
     1.37609
    ],
@@ -1123,7 +1123,7 @@
     1
    ],
    "restWorldPosition": [
-    0,
+    -0.4083,
     6.5363,
     1.3761
    ],
@@ -1147,7 +1147,7 @@
     1
    ],
    "restWorldPosition": [
-    0,
+    -0.4083,
     6.5363,
     1.3761
    ],
@@ -1171,7 +1171,7 @@
     1
    ],
    "restWorldPosition": [
-    0,
+    -0.4083,
     6.5363,
     1.3761
    ],
@@ -1195,7 +1195,7 @@
     1
    ],
    "restWorldPosition": [
-    0,
+    -0.4083,
     6.5363,
     1.3761
    ],
@@ -1219,7 +1219,7 @@
     1
    ],
    "restWorldPosition": [
-    0,
+    -0.4083,
     6.5363,
     1.3761
    ],
@@ -1243,7 +1243,7 @@
     1
    ],
    "restWorldPosition": [
-    0,
+    -0.4083,
     6.5363,
     1.3761
    ],
@@ -1267,7 +1267,7 @@
     1
    ],
    "restWorldPosition": [
-    0.736,
+    0.3277,
     6.6363,
     0.7911
    ],
@@ -1291,9 +1291,33 @@
     1
    ],
    "restWorldPosition": [
-    0.736,
+    0.3277,
     6.6363,
     0.7911
+   ],
+   "tags": []
+  },
+  {
+   "name": "torso__frame_shoulder_L",
+   "parent": "torso",
+   "role": "component",
+   "system": "torso",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    6.0528,
+    0
    ],
    "tags": []
   },
@@ -1660,6 +1684,30 @@
    "tags": []
   },
   {
+   "name": "torso__frame_shoulder_R",
+   "parent": "torso",
+   "role": "component",
+   "system": "torso",
+   "component": "frame",
+   "restTranslation": [
+    0,
+    0,
+    0
+   ],
+   "restRotation": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "restWorldPosition": [
+    0,
+    6.0528,
+    0
+   ],
+   "tags": []
+  },
+  {
    "name": "arm_R_shoulder_pitch",
    "parent": "torso",
    "role": "link",
@@ -1979,7 +2027,7 @@
    "component": null,
    "restTranslation": [
     1.63334,
-    3.09444,
+    2.56258,
     -0.68396
    ],
    "restRotation": [
@@ -1990,7 +2038,7 @@
    ],
    "restWorldPosition": [
     1.6333,
-    9.1472,
+    8.6153,
     -0.684
    ],
    "tags": []
@@ -2014,7 +2062,7 @@
    ],
    "restWorldPosition": [
     1.6333,
-    9.1472,
+    8.6153,
     -0.684
    ],
    "tags": []
@@ -2038,7 +2086,7 @@
    ],
    "restWorldPosition": [
     1.6333,
-    9.5571,
+    9.0252,
     -0.684
    ],
    "tags": []
@@ -2062,7 +2110,7 @@
    ],
    "restWorldPosition": [
     1.6333,
-    9.5571,
+    9.0252,
     -0.684
    ],
    "tags": []
@@ -2075,7 +2123,7 @@
    "component": null,
    "restTranslation": [
     -1.63334,
-    3.09444,
+    2.56258,
     -0.68396
    ],
    "restRotation": [
@@ -2086,7 +2134,7 @@
    ],
    "restWorldPosition": [
     -1.6333,
-    9.1472,
+    8.6153,
     -0.684
    ],
    "tags": []
@@ -2110,7 +2158,7 @@
    ],
    "restWorldPosition": [
     -1.6333,
-    9.1472,
+    8.6153,
     -0.684
    ],
    "tags": []
@@ -2134,7 +2182,7 @@
    ],
    "restWorldPosition": [
     -1.6333,
-    9.5571,
+    9.0252,
     -0.684
    ],
    "tags": []
@@ -2158,7 +2206,7 @@
    ],
    "restWorldPosition": [
     -1.6333,
-    9.5571,
+    9.0252,
     -0.684
    ],
    "tags": []
@@ -2218,8 +2266,8 @@
    "system": "sensor",
    "component": null,
    "restTranslation": [
-    0,
-    3.09444,
+    -0.40834,
+    2.56258,
     0
    ],
    "restRotation": [
@@ -2229,8 +2277,8 @@
     1
    ],
    "restWorldPosition": [
-    0,
-    9.1472,
+    -0.4083,
+    8.6153,
     0
    ],
    "tags": []
@@ -2253,8 +2301,8 @@
     1
    ],
    "restWorldPosition": [
-    0,
-    9.1472,
+    -0.4083,
+    8.6153,
     0
    ],
    "tags": []
@@ -2277,8 +2325,8 @@
     1
    ],
    "restWorldPosition": [
-    0,
-    9.1472,
+    -0.4083,
+    8.6153,
     0
    ],
    "tags": []
@@ -2301,8 +2349,8 @@
     1
    ],
    "restWorldPosition": [
-    0,
-    9.7912,
+    -0.4083,
+    9.2593,
     0
    ],
    "tags": []
@@ -2325,8 +2373,8 @@
     1
    ],
    "restWorldPosition": [
-    0,
-    9.7912,
+    -0.4083,
+    9.2593,
     0
    ],
    "tags": []
@@ -2924,9 +2972,9 @@
     1
    ],
    "min": -0.08945,
-   "max": 0.08899,
+   "max": 0.38397,
    "minDeg": -5.12,
-   "maxDeg": 5.1,
+   "maxDeg": 22,
    "continuous": false,
    "purpose": "locomotion",
    "kind": "hip-roll",
@@ -3500,9 +3548,9 @@
     0
    ],
    "min": -0.5236,
-   "max": 0.5236,
+   "max": 0.08045,
    "minDeg": -30,
-   "maxDeg": 30,
+   "maxDeg": 4.61,
    "continuous": false,
    "purpose": "aim",
    "kind": "pod-yaw",
@@ -3547,10 +3595,10 @@
     1,
     0
    ],
-   "min": -1.309,
-   "max": 1.309,
-   "minDeg": -75,
-   "maxDeg": 75,
+   "min": -0.56246,
+   "max": 0.13635,
+   "minDeg": -32.23,
+   "maxDeg": 7.81,
    "continuous": false,
    "purpose": "aim",
    "kind": "sensor-yaw",
@@ -4579,8 +4627,8 @@
    {
     "body": "torso",
     "center": [
-     0,
-     1.4735,
+     -0.416,
+     1.21,
      -0.4925
     ],
     "rotation": [
@@ -4590,17 +4638,17 @@
      1
     ],
     "halfExtents": [
-     2.2718,
-     1.3284,
+     1.9089,
+     1.0891,
      0.9849
     ]
    },
    {
     "body": "torso",
     "center": [
-     0,
-     1.4747,
-     -0.89
+     -0.4112,
+     1.2088,
+     -0.9228
     ],
     "rotation": [
      0,
@@ -4609,17 +4657,17 @@
      1
     ],
     "halfExtents": [
-     2.5242,
-     1.4747,
-     0.6968
+     2.1153,
+     1.2088,
+     0.664
     ]
    },
    {
     "body": "torso",
     "center": [
-     0,
-     1.4747,
-     0.2334
+     -0.4083,
+     1.2088,
+     0.2005
     ],
     "rotation": [
      0,
@@ -4628,17 +4676,17 @@
      1
     ],
     "halfExtents": [
-     2.5242,
-     1.4747,
-     0.3685
+     2.1125,
+     1.2088,
+     0.4013
     ]
    },
    {
     "body": "torso",
     "center": [
-     0,
-     1.4989,
-     -1.9698
+     2.3479,
+     1.0879,
+     -0.3557
     ],
     "rotation": [
      0,
@@ -4647,9 +4695,9 @@
      1
     ],
     "halfExtents": [
-     1.414,
+     0.655,
      0.7494,
-     0.3283
+     0.8481
     ]
    },
    {
@@ -5380,7 +5428,7 @@
    ],
    "after": [
     -0.08944812416470937,
-    0.0889936113386692
+    0.3839724354387525
    ],
    "blockedBy": "leg_L_thigh ↔ torso"
   },
@@ -5505,6 +5553,18 @@
    "blockedBy": "pod_L_pitch ↔ torso"
   },
   {
+   "joint": "pod_R_yaw",
+   "before": [
+    -0.5235987755982988,
+    0.5235987755982988
+   ],
+   "after": [
+    -0.5235987755982988,
+    0.08044877020911362
+   ],
+   "blockedBy": "pod_R_pitch ↔ sensor_head_pitch"
+  },
+  {
    "joint": "pod_R_pitch",
    "before": [
     -0.7853981633974483,
@@ -5515,6 +5575,18 @@
     0.2617993877991494
    ],
    "blockedBy": "pod_R_pitch ↔ torso"
+  },
+  {
+   "joint": "sensor_head_yaw",
+   "before": [
+    -1.3089969389957472,
+    1.3089969389957472
+   ],
+   "after": [
+    -0.5624596222247351,
+    0.136353847812057
+   ],
+   "blockedBy": "sensor_head_pitch ↔ pod_R_pitch"
   }
  ]
 }

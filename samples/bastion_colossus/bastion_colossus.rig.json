@@ -17,8 +17,8 @@
  "bodyNode": "body",
  "stats": {
   "height": 23.38,
-  "width": 13.39,
-  "length": 24.79,
+  "width": 13.64,
+  "length": 24.71,
   "estimatedMassTonnes": 660.2,
   "sizeClass": "colossal"
  },
@@ -2026,7 +2026,7 @@
    "restTranslation": [
     0,
     4.19904,
-    8.61
+    6.45
    ],
    "restRotation": [
     0,
@@ -2037,7 +2037,7 @@
    "restWorldPosition": [
     0,
     19.7637,
-    8.61
+    6.45
    ],
    "tags": []
   },
@@ -2061,7 +2061,7 @@
    "restWorldPosition": [
     0,
     19.7637,
-    8.61
+    6.45
    ],
    "tags": []
   },
@@ -2085,7 +2085,7 @@
    "restWorldPosition": [
     0,
     19.7637,
-    8.61
+    6.45
    ],
    "tags": []
   },
@@ -2109,7 +2109,7 @@
    "restWorldPosition": [
     0,
     21.1077,
-    8.61
+    6.45
    ],
    "tags": []
   },
@@ -2133,7 +2133,7 @@
    "restWorldPosition": [
     0,
     21.1077,
-    8.61
+    6.45
    ],
    "tags": []
   },
@@ -3649,10 +3649,10 @@
     1,
     0
    ],
-   "min": -0.09204,
-   "max": 0.09204,
-   "minDeg": -5.27,
-   "maxDeg": 5.27,
+   "min": -1.309,
+   "max": 1.309,
+   "minDeg": -75,
+   "maxDeg": 75,
    "continuous": false,
    "purpose": "aim",
    "kind": "sensor-yaw",
@@ -3673,10 +3673,10 @@
     0,
     0
    ],
-   "min": -0.16772,
-   "max": 0.16726,
-   "minDeg": -9.61,
-   "maxDeg": 9.58,
+   "min": -0.5236,
+   "max": 0.34907,
+   "minDeg": -30,
+   "maxDeg": 20,
    "continuous": false,
    "purpose": "aim",
    "kind": "sensor-pitch",
@@ -5497,30 +5497,5 @@
    "colossus.frame": "quad"
   }
  },
- "limitFits": [
-  {
-   "joint": "sensor_head_yaw",
-   "before": [
-    -1.3089969389957472,
-    1.3089969389957472
-   ],
-   "after": [
-    -0.09203884727313848,
-    0.09203884727313848
-   ],
-   "blockedBy": "sensor_head_pitch ↔ body"
-  },
-  {
-   "joint": "sensor_head_pitch",
-   "before": [
-    -0.5235987755982988,
-    0.3490658503988659
-   ],
-   "after": [
-    -0.16771523280883008,
-    0.1672607199827899
-   ],
-   "blockedBy": "sensor_head_pitch ↔ body"
-  }
- ]
+ "limitFits": []
 }

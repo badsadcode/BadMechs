@@ -18,8 +18,8 @@
  "stats": {
   "height": 4.48,
   "width": 9.37,
-  "length": 9.2,
-  "estimatedMassTonnes": 24.1,
+  "length": 9.81,
+  "estimatedMassTonnes": 24.3,
   "sizeClass": "medium"
  },
  "nodes": [
@@ -2308,13 +2308,13 @@
   {
    "name": "cockpit",
    "parent": "body",
-   "role": "link",
+   "role": "group",
    "system": "cockpit",
    "component": null,
    "restTranslation": [
     0,
     -0.14904,
-    3.2595
+    3.6645
    ],
    "restRotation": [
     0,
@@ -2325,7 +2325,7 @@
    "restWorldPosition": [
     0,
     1.7844,
-    3.2595
+    3.6645
    ],
    "tags": []
   },
@@ -2349,7 +2349,7 @@
    "restWorldPosition": [
     0,
     1.7844,
-    3.2595
+    3.6645
    ],
    "tags": []
   },
@@ -2373,7 +2373,7 @@
    "restWorldPosition": [
     0,
     1.7844,
-    3.2595
+    3.6645
    ],
    "tags": []
   },
@@ -2397,7 +2397,7 @@
    "restWorldPosition": [
     0,
     1.7844,
-    3.2595
+    3.6645
    ],
    "tags": []
   },
@@ -2421,7 +2421,7 @@
    "restWorldPosition": [
     0,
     1.7844,
-    3.2595
+    3.6645
    ],
    "tags": []
   },
@@ -2445,7 +2445,7 @@
    "restWorldPosition": [
     0,
     1.7844,
-    3.2595
+    3.6645
    ],
    "tags": []
   },
@@ -2458,7 +2458,7 @@
    "restTranslation": [
     0,
     1.46,
-    -0.675
+    -1.08
    ],
    "restRotation": [
     0,
@@ -3246,30 +3246,6 @@
    "system": "leg.R2"
   },
   {
-   "name": "cockpit",
-   "type": "revolute",
-   "axis": "y",
-   "axisVector": [
-    0,
-    1,
-    0
-   ],
-   "restWorldAxis": [
-    0,
-    1,
-    0
-   ],
-   "min": -0.69813,
-   "max": 0.69813,
-   "minDeg": -40,
-   "maxDeg": 40,
-   "continuous": false,
-   "purpose": "aim",
-   "kind": "head-yaw",
-   "maxSpeed": 1.5,
-   "system": "cockpit"
-  },
-  {
    "name": "cockpit_hatch",
    "type": "revolute",
    "axis": "x",
@@ -3649,12 +3625,12 @@
    "min": [
     -0.6000000000000001,
     0,
-    -0.675
+    -1.08
    ],
    "max": [
     0.6000000000000001,
     1.4,
-    0.675
+    1.08
    ],
    "walkable": false,
    "kind": "cockpit"
@@ -3724,6 +3700,44 @@
      1.4386,
      0.7452,
      1.0009
+    ]
+   },
+   {
+    "body": "body",
+    "center": [
+     0,
+     -0.179,
+     3.6645
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.66,
+     0.03,
+     1.14
+    ]
+   },
+   {
+    "body": "body",
+    "center": [
+     -0.63,
+     0.551,
+     3.5565
+    ],
+    "rotation": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "halfExtents": [
+     0.03,
+     0.7,
+     1.002
     ]
    },
    {
@@ -5095,87 +5109,11 @@
     ]
    },
    {
-    "body": "cockpit",
-    "center": [
-     0,
-     -0.03,
-     0
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.66,
-     0.03,
-     0.735
-    ]
-   },
-   {
-    "body": "cockpit",
-    "center": [
-     0,
-     0.7,
-     -0.705
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.66,
-     0.73,
-     0.03
-    ]
-   },
-   {
-    "body": "cockpit",
-    "center": [
-     -0.63,
-     0.7,
-     -0.0675
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.03,
-     0.7,
-     0.6375
-    ]
-   },
-   {
-    "body": "cockpit",
-    "center": [
-     0.63,
-     0.7,
-     -0.0675
-    ],
-    "rotation": [
-     0,
-     0,
-     0,
-     1
-    ],
-    "halfExtents": [
-     0.03,
-     0.7,
-     0.6375
-    ]
-   },
-   {
     "body": "cockpit_hatch",
     "center": [
      0,
      0.03,
-     0.432
+     0.6912
     ],
     "rotation": [
      0,
@@ -5186,7 +5124,7 @@
     "halfExtents": [
      0.42,
      0.018,
-     0.405
+     0.648
     ]
    },
    {

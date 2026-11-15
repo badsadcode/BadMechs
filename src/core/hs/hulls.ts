@@ -12,8 +12,9 @@ import type { P2 } from './profile';
 import type { Section } from './shapes';
 import { block, grille, hatchPanel } from './kit';
 
-export type TorsoArch = 'bulwark' | 'hunch' | 'tower' | 'wedge' | 'asym';
-export const TORSO_ARCHES: TorsoArch[] = ['bulwark', 'hunch', 'tower', 'wedge', 'asym'];
+export type TorsoArch = 'bulwark' | 'hunch' | 'tower' | 'wedge' | 'asym' | 'keel' | 'drum' | 'spine';
+/** order matters: pre-factory recipes pick from the first five with their original weights */
+export const TORSO_ARCHES: TorsoArch[] = ['bulwark', 'hunch', 'tower', 'wedge', 'asym', 'keel', 'drum', 'spine'];
 
 /** One hull cross-section, all fractions of the hull's nominal w/h/d. */
 interface HS {
@@ -58,6 +59,30 @@ const ARCH: Record<TorsoArch, HS[]> = {
     { z: -0.12, w: 1, h: 0.86, y0: 0.08, ts: 0.9, rt: 0.12, rb: 0.08 },
     { z: 0.2, w: 0.98, h: 0.62, y0: 0.14, ts: 0.88, rt: 0.12, rb: 0.08 },
     { z: 0.5, w: 0.84, h: 0.26, y0: 0.22, ts: 0.85, rt: 0.08, rb: 0.06 },
+  ],
+  // inverted wedge: broad shoulders, narrow belly, a prow-like chest (ts > 1 = top wider)
+  keel: [
+    { z: -0.5, w: 0.62, h: 0.78, y0: 0.18, ts: 1.25, rt: 0.12, rb: 0.2 },
+    { z: -0.22, w: 0.72, h: 1.02, y0: 0.02, ts: 1.38, rt: 0.12, rb: 0.24 },
+    { z: 0.14, w: 0.7, h: 1.05, y0: 0, ts: 1.4, rt: 0.12, rb: 0.26 },
+    { z: 0.4, w: 0.5, h: 0.86, y0: 0.08, ts: 1.55, rt: 0.12, rb: 0.3 },
+    { z: 0.5, w: 0.34, h: 0.62, y0: 0.2, ts: 1.8, rt: 0.12, rb: 0.3 },
+  ],
+  // stout octagonal barrel: big equal chamfers top and bottom, slight bulge
+  drum: [
+    { z: -0.5, w: 0.84, h: 0.84, y0: 0.08, ts: 1, rt: 0.36, rb: 0.36 },
+    { z: -0.25, w: 0.98, h: 0.98, y0: 0.01, ts: 1, rt: 0.38, rb: 0.38 },
+    { z: 0.15, w: 1, h: 1, y0: 0, ts: 1, rt: 0.38, rb: 0.38 },
+    { z: 0.42, w: 0.94, h: 0.94, y0: 0.03, ts: 1, rt: 0.38, rb: 0.38 },
+    { z: 0.5, w: 0.82, h: 0.82, y0: 0.09, ts: 1, rt: 0.36, rb: 0.36 },
+  ],
+  // hunched, high-backed hull that drops toward the front (dorsal ridge added below)
+  spine: [
+    { z: -0.5, w: 0.7, h: 1.12, y0: 0.06, ts: 0.7, rt: 0.2, rb: 0.08 },
+    { z: -0.2, w: 0.95, h: 1.16, y0: 0, ts: 0.74, rt: 0.22, rb: 0.08 },
+    { z: 0.12, w: 1, h: 0.96, y0: 0.02, ts: 0.8, rt: 0.22, rb: 0.08 },
+    { z: 0.38, w: 0.92, h: 0.74, y0: 0.08, ts: 0.82, rt: 0.2, rb: 0.08 },
+    { z: 0.5, w: 0.8, h: 0.56, y0: 0.14, ts: 0.8, rt: 0.18, rb: 0.1 },
   ],
   // M-47: hull mass shifted to one side, weapon bay hung on the other
   asym: [
@@ -167,6 +192,18 @@ export function torsoHull(ref: NodeRef, arch: TorsoArch, w: number, h: number, d
         collide: false,
       });
     }
+  }
+  if (arch === 'spine') {
+    // stepped dorsal ridge: three overlapping armour fins along the centre line
+    for (let i = 0; i < 3; i++) {
+      const zc = cz - d * (0.32 - i * 0.2);
+      const hh = h * (0.16 - i * 0.035);
+      block(pl, [shiftX, topY + hh * 0.35 - i * h * 0.05, zc], [w * 0.14, hh, d * 0.26], armor2, { r: w * 0.03, top: [0.4, 0.8], shift: [0, d * 0.05], collide: false });
+    }
+  }
+  if (arch === 'keel') {
+    // a hard keel line down the chest
+    block(pl, [shiftX, h * 0.38, cz + d * 0.47], [w * 0.06, h * 0.55, d * 0.08], armor2, { r: w * 0.01, top: [0.6, 1], collide: false });
   }
   // under-hull: twist bearing skirt
   block(frame, [0, h * 0.02, cz - d * 0.05], [w * 0.5, h * 0.06, d * 0.5], 'darkMetal', { r: h * 0.02, collide: false, detail: 1 });

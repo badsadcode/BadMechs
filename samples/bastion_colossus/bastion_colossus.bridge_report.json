@@ -191,7 +191,7 @@
   "maxPosErrorM": 2.1851423716334533e-06,
   "maxAxisErrorDeg": 0.0,
   "meshCount": 1,
-  "triangles": 50238,
+  "triangles": 50100,
   "vertexGroups": 46,
   "blend": "bastion_colossus.blend",
   "fbx": "bastion_colossus.fbx"
